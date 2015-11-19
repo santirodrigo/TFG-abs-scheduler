@@ -1,0 +1,10 @@
+New max = 0.345000; F = 0.690000; n = 1
+Count = 2
+1 1 2 | 25 | Solution (vec): 0 1  | New max = 0.660000; F = 0.880000; n = 1
+Count = 2
+2 1 2 | 23 | Solution (vec): 1 0  | New max = 0.390000; F = 0.780000; n = 1
+Count = 4
+1 2 2 | 24 | Solution (vec): 0 1  | New max = 0.760000; F = 1.520000; n = 2
+New max = 0.772500; F = 1.030000; n = 1
+Count = 5
+2 2 2 | 26 | Solution (vec): 1 2  | 

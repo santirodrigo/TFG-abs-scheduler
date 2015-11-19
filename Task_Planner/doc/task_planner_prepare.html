@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task Planner Documentation</title>
+
+<link rel="stylesheet" type="text/css" href="pldoc.css">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+
+
+<h1 class="file"><span style="float:right"></span>task_planner_prepare.pl -- Prepare Task Planner</h1>
+
+<p>
+This module describes predicates that will be used together with Task Planner's predicates (see
+<a href="task_planner.html#planner/3">planner/3</a>). The basic functionality of the module is to prepare task objects, and their domains, so
+that they can be passed to the scheduler (see <a class="extmanual" href="http://www.swi-prolog.org/pldoc/man?predicate=schedule/2">schedule/2</a>).</p>
+
+<dl class="tags">
+<dt class="keyword-author">author</dt><dd class="keyword-author">- Carles Araguz López</dd>
+</dl>
+
+<dl>
+<dt class="pubdef"><span style="float:right"></span><a name="fill/2"><b class="pred">fill</b><var class="arglist">(+List, +Element)</var></a> is <b class="det">det</b></dt><dd class="defbody">Fills <var>List</var> with <var>Element</var>. <var>List</var> has to be previously created but their objects uninstantiated (for
+instance using <code>length(List,Lenght)</code>). <a href="task_planner_prepare.html#fill/2">fill/2</a> can be used to check whether a list contains
+only the same <var>Element</var> repeatedly.</dd>
+</dl>
+
+<h2 class="undoc">Undocumented predicates</h2>
+
+<p>
+The following predicates are exported, but not or incorrectly documented.</p>
+
+<dl class="undoc">
+<dt class="undoc"><span style="float:right"></span><a name="constrain_position/4"><b class="pred">constrain_position</b><var class="arglist">(Arg1, Arg2, Arg3, Arg4)</var></a></dt>
+<dt class="undoc"><span style="float:right"></span><a name="constrain_all/4"><b class="pred">constrain_all</b><var class="arglist">(Arg1, Arg2, Arg3, Arg4)</var></a></dt>
+<dt class="undoc"><span style="float:right"></span><a name="zeros/2"><b class="pred">zeros</b><var class="arglist">(Arg1, Arg2)</var></a></dt>
+<dt class="undoc"><span style="float:right"></span><a name="constrain_time/4"><b class="pred">constrain_time</b><var class="arglist">(Arg1, Arg2, Arg3, Arg4)</var></a></dt>
+<dt class="undoc"><span style="float:right"></span><a name="constrain_temperature/4"><b class="pred">constrain_temperature</b><var class="arglist">(Arg1, Arg2, Arg3, Arg4)</var></a></dt>
+<dt class="undoc"><span style="float:right"></span><a name="build_tasks/1"><b class="pred">build_tasks</b><var class="arglist">(Arg1)</var></a></dt>
+<dt class="undoc"><span style="float:right"></span><a name="read_outfile/2"><b class="pred">read_outfile</b><var class="arglist">(Arg1, Arg2)</var></a></dt>
+<dt class="undoc"><span style="float:right"></span><a name="constrain_radiation/4"><b class="pred">constrain_radiation</b><var class="arglist">(Arg1, Arg2, Arg3, Arg4)</var></a></dt>
+</dl>
+
+</body>
+</html>

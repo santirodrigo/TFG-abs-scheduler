@@ -1,0 +1,1620 @@
+1 1 1  | 3	| 0.770000	Solution (brute): 1 	 | 32	| 0.770000	Solution (vec): 1 	
+1 1 1  | 2	| 0.280000	Solution (brute): 1 	 | 30	| 0.280000	Solution (vec): 1 	
+1 1 1  | 2	| 0.920000	Solution (brute): 1 	 | 27	| 0.920000	Solution (vec): 1 	
+1 1 1  | 3	| 0.920000	Solution (brute): 1 	 | 26	| 0.920000	Solution (vec): 1 	
+1 1 1  | 2	| 0.730000	Solution (brute): 1 	 | 22	| 0.730000	Solution (vec): 1 	
+2 1 1  | 3	| 0.990000	Solution (brute): 1 	 | 79	| 0.990000	Solution (vec): 1 	
+2 1 1  | 2	| 0.030000	Solution (brute): 1 	 | 27	| 0.030000	Solution (vec): 1 	
+2 1 1  | 2	| 0.350000	Solution (brute): 1 	 | 29	| 0.350000	Solution (vec): 1 	
+2 1 1  | 2	| 0.230000	Solution (brute): 1 	 | 24	| 0.230000	Solution (vec): 1 	
+2 1 1  | 1	| 0.070000	Solution (brute): 1 	 | 23	| 0.070000	Solution (vec): 1 	
+3 1 1  | 3	| 0.350000	Solution (brute): 1 	 | 31	| 0.350000	Solution (vec): 1 	
+3 1 1  | 2	| 0.190000	Solution (brute): 1 	 | 27	| 0.190000	Solution (vec): 1 	
+3 1 1  | 2	| 0.070000	Solution (brute): 1 	 | 26	| 0.070000	Solution (vec): 1 	
+3 1 1  | 2	| 0.440000	Solution (brute): 1 	 | 28	| 0.440000	Solution (vec): 1 	
+3 1 1  | 2	| 0.430000	Solution (brute): 1 	 | 26	| 0.430000	Solution (vec): 1 	
+4 1 1  | 2	| 0.800000	Solution (brute): 1 	 | 25	| 0.800000	Solution (vec): 1 	
+4 1 1  | 3	| 0.870000	Solution (brute): 1 	 | 23	| 0.870000	Solution (vec): 1 	
+4 1 1  | 2	| 0.740000	Solution (brute): 1 	 | 23	| 0.740000	Solution (vec): 1 	
+4 1 1  | 2	| 0.280000	Solution (brute): 1 	 | 23	| 0.280000	Solution (vec): 1 	
+4 1 1  | 2	| 0.500000	Solution (brute): 1 	 | 24	| 0.500000	Solution (vec): 1 	
+5 1 1  | 3	| 0.540000	Solution (brute): 1 	 | 23	| 0.540000	Solution (vec): 1 	
+5 1 1  | 3	| 0.560000	Solution (brute): 1 	 | 23	| 0.560000	Solution (vec): 1 	
+5 1 1  | 3	| 0.880000	Solution (brute): 1 	 | 23	| 0.880000	Solution (vec): 1 	
+5 1 1  | 2	| 0.250000	Solution (brute): 1 	 | 23	| 0.250000	Solution (vec): 1 	
+5 1 1  | 2	| 0.870000	Solution (brute): 1 	 | 24	| 0.870000	Solution (vec): 1 	
+6 1 1  | 3	| 0.260000	Solution (brute): 1 	 | 25	| 0.260000	Solution (vec): 1 	
+6 1 1  | 2	| 0.170000	Solution (brute): 1 	 | 25	| 0.170000	Solution (vec): 1 	
+6 1 1  | 2	| 0.280000	Solution (brute): 1 	 | 30	| 0.280000	Solution (vec): 1 	
+6 1 1  | 3	| 0.620000	Solution (brute): 1 	 | 35	| 0.620000	Solution (vec): 1 	
+6 1 1  | 3	| 0.020000	Solution (brute): 1 	 | 29	| 0.020000	Solution (vec): 1 	
+7 1 1  | 3	| 0.830000	Solution (brute): 1 	 | 24	| 0.830000	Solution (vec): 1 	
+7 1 1  | 2	| 0.600000	Solution (brute): 1 	 | 24	| 0.600000	Solution (vec): 1 	
+7 1 1  | 2	| 0.130000	Solution (brute): 1 	 | 24	| 0.130000	Solution (vec): 1 	
+7 1 1  | 2	| 0.130000	Solution (brute): 1 	 | 22	| 0.130000	Solution (vec): 1 	
+7 1 1  | 3	| 0.750000	Solution (brute): 1 	 | 23	| 0.750000	Solution (vec): 1 	
+8 1 1  | 3	| 0.790000	Solution (brute): 1 	 | 23	| 0.790000	Solution (vec): 1 	
+8 1 1  | 2	| 0.780000	Solution (brute): 1 	 | 23	| 0.780000	Solution (vec): 1 	
+8 1 1  | 2	| 0.440000	Solution (brute): 1 	 | 22	| 0.440000	Solution (vec): 1 	
+8 1 1  | 2	| 0.790000	Solution (brute): 1 	 | 21	| 0.790000	Solution (vec): 1 	
+8 1 1  | 2	| 0.680000	Solution (brute): 1 	 | 22	| 0.680000	Solution (vec): 1 	
+9 1 1  | 2	| 0.080000	Solution (brute): 1 	 | 23	| 0.080000	Solution (vec): 1 	
+9 1 1  | 3	| 0.450000	Solution (brute): 1 	 | 21	| 0.450000	Solution (vec): 1 	
+9 1 1  | 2	| 0.180000	Solution (brute): 1 	 | 22	| 0.180000	Solution (vec): 1 	
+9 1 1  | 2	| 0.730000	Solution (brute): 1 	 | 23	| 0.730000	Solution (vec): 1 	
+9 1 1  | 3	| 0.810000	Solution (brute): 1 	 | 24	| 0.810000	Solution (vec): 1 	
+1 2 1  | 3	| 0.810000	Solution (brute): 1 	 | 31	| 0.810000	Solution (vec): 1 	
+1 2 1  | 3	| 0.570000	Solution (brute): 1 	 | 27	| 0.570000	Solution (vec): 1 	
+1 2 1  | 3	| 0.690000	Solution (brute): 1 	 | 27	| 0.690000	Solution (vec): 1 	
+1 2 1  | 2	| 0.180000	Solution (brute): 1 	 | 24	| 0.180000	Solution (vec): 1 	
+1 2 1  | 3	| 0.190000	Solution (brute): 1 	 | 40	| 0.190000	Solution (vec): 1 	
+2 2 1  | 3	| 0.070000	Solution (brute): 1 	 | 25	| 0.070000	Solution (vec): 1 	
+2 2 1  | 3	| 0.750000	Solution (brute): 1 	 | 23	| 0.750000	Solution (vec): 1 	
+2 2 1  | 2	| 0.580000	Solution (brute): 1 	 | 23	| 0.580000	Solution (vec): 1 	
+2 2 1  | 3	| 0.940000	Solution (brute): 1 	 | 22	| 0.940000	Solution (vec): 1 	
+2 2 1  | 2	| 0.930000	Solution (brute): 1 	 | 22	| 0.930000	Solution (vec): 1 	
+3 2 1  | 2	| 0.870000	Solution (brute): 1 	 | 23	| 0.870000	Solution (vec): 1 	
+3 2 1  | 2	| 0.570000	Solution (brute): 1 	 | 23	| 0.570000	Solution (vec): 1 	
+3 2 1  | 3	| 0.500000	Solution (brute): 1 	 | 21	| 0.500000	Solution (vec): 1 	
+3 2 1  | 3	| 0.550000	Solution (brute): 1 	 | 22	| 0.550000	Solution (vec): 1 	
+3 2 1  | 3	| 0.820000	Solution (brute): 1 	 | 23	| 0.820000	Solution (vec): 1 	
+4 2 1  | 2	| 0.460000	Solution (brute): 1 	 | 25	| 0.460000	Solution (vec): 1 	
+4 2 1  | 3	| 0.280000	Solution (brute): 1 	 | 21	| 0.280000	Solution (vec): 1 	
+4 2 1  | 3	| 0.940000	Solution (brute): 1 	 | 29	| 0.940000	Solution (vec): 1 	
+4 2 1  | 2	| 0.900000	Solution (brute): 1 	 | 21	| 0.900000	Solution (vec): 1 	
+4 2 1  | 2	| 0.780000	Solution (brute): 1 	 | 21	| 0.780000	Solution (vec): 1 	
+5 2 1  | 3	| 0.450000	Solution (brute): 1 	 | 20	| 0.450000	Solution (vec): 1 	
+5 2 1  | 3	| 0.830000	Solution (brute): 1 	 | 20	| 0.830000	Solution (vec): 1 	
+5 2 1  | 2	| 0.340000	Solution (brute): 1 	 | 19	| 0.340000	Solution (vec): 1 	
+5 2 1  | 3	| 0.500000	Solution (brute): 1 	 | 19	| 0.500000	Solution (vec): 1 	
+5 2 1  | 2	| 0.960000	Solution (brute): 1 	 | 19	| 0.960000	Solution (vec): 1 	
+6 2 1  | 3	| 0.960000	Solution (brute): 1 	 | 20	| 0.960000	Solution (vec): 1 	
+6 2 1  | 2	| 0.750000	Solution (brute): 1 	 | 18	| 0.750000	Solution (vec): 1 	
+6 2 1  | 3	| 0.890000	Solution (brute): 1 	 | 19	| 0.890000	Solution (vec): 1 	
+6 2 1  | 2	| 0.980000	Solution (brute): 1 	 | 19	| 0.980000	Solution (vec): 1 	
+6 2 1  | 3	| 0.670000	Solution (brute): 1 	 | 18	| 0.670000	Solution (vec): 1 	
+7 2 1  | 3	| 0.960000	Solution (brute): 1 	 | 19	| 0.960000	Solution (vec): 1 	
+7 2 1  | 3	| 0.950000	Solution (brute): 1 	 | 19	| 0.950000	Solution (vec): 1 	
+7 2 1  | 3	| 0.860000	Solution (brute): 1 	 | 20	| 0.860000	Solution (vec): 1 	
+7 2 1  | 3	| 0.820000	Solution (brute): 1 	 | 28	| 0.820000	Solution (vec): 1 	
+7 2 1  | 3	| 0.800000	Solution (brute): 1 	 | 23	| 0.800000	Solution (vec): 1 	
+8 2 1  | 3	| 0.550000	Solution (brute): 1 	 | 32	| 0.550000	Solution (vec): 1 	
+8 2 1  | 2	| 0.320000	Solution (brute): 1 	 | 17	| 0.320000	Solution (vec): 1 	
+8 2 1  | 2	| 0.730000	Solution (brute): 1 	 | 16	| 0.730000	Solution (vec): 1 	
+8 2 1  | 1	| 0.240000	Solution (brute): 1 	 | 15	| 0.240000	Solution (vec): 1 	
+8 2 1  | 2	| 0.980000	Solution (brute): 1 	 | 15	| 0.980000	Solution (vec): 1 	
+9 2 1  | 2	| 0.430000	Solution (brute): 1 	 | 15	| 0.430000	Solution (vec): 1 	
+9 2 1  | 2	| 0.400000	Solution (brute): 1 	 | 16	| 0.400000	Solution (vec): 1 	
+9 2 1  | 3	| 0.390000	Solution (brute): 1 	 | 25	| 0.390000	Solution (vec): 1 	
+9 2 1  | 3	| 0.940000	Solution (brute): 1 	 | 24	| 0.940000	Solution (vec): 1 	
+9 2 1  | 3	| 0.800000	Solution (brute): 1 	 | 24	| 0.800000	Solution (vec): 1 	
+1 3 1  | 3	| 0.890000	Solution (brute): 1 	 | 27	| 0.890000	Solution (vec): 1 	
+1 3 1  | 3	| 0.810000	Solution (brute): 1 	 | 24	| 0.810000	Solution (vec): 1 	
+1 3 1  | 2	| 0.480000	Solution (brute): 1 	 | 24	| 0.480000	Solution (vec): 1 	
+1 3 1  | 3	| 0.850000	Solution (brute): 1 	 | 23	| 0.850000	Solution (vec): 1 	
+1 3 1  | 2	| 0.750000	Solution (brute): 1 	 | 22	| 0.750000	Solution (vec): 1 	
+2 3 1  | 3	| 0.360000	Solution (brute): 1 	 | 24	| 0.360000	Solution (vec): 1 	
+2 3 1  | 3	| 0.440000	Solution (brute): 1 	 | 25	| 0.440000	Solution (vec): 1 	
+2 3 1  | 3	| 0.990000	Solution (brute): 1 	 | 30	| 0.990000	Solution (vec): 1 	
+2 3 1  | 2	| 0.940000	Solution (brute): 1 	 | 25	| 0.940000	Solution (vec): 1 	
+2 3 1  | 3	| 0.850000	Solution (brute): 1 	 | 23	| 0.850000	Solution (vec): 1 	
+3 3 1  | 3	| 0.990000	Solution (brute): 1 	 | 24	| 0.990000	Solution (vec): 1 	
+3 3 1  | 3	| 0.360000	Solution (brute): 1 	 | 24	| 0.360000	Solution (vec): 1 	
+3 3 1  | 3	| 0.990000	Solution (brute): 1 	 | 19	| 0.990000	Solution (vec): 1 	
+3 3 1  | 2	| 0.910000	Solution (brute): 1 	 | 19	| 0.910000	Solution (vec): 1 	
+3 3 1  | 2	| 0.600000	Solution (brute): 1 	 | 20	| 0.600000	Solution (vec): 1 	
+4 3 1  | 2	| 0.850000	Solution (brute): 1 	 | 20	| 0.850000	Solution (vec): 1 	
+4 3 1  | 2	| 0.990000	Solution (brute): 1 	 | 19	| 0.990000	Solution (vec): 1 	
+4 3 1  | 3	| 0.990000	Solution (brute): 1 	 | 20	| 0.990000	Solution (vec): 1 	
+4 3 1  | 3	| 0.980000	Solution (brute): 1 	 | 20	| 0.980000	Solution (vec): 1 	
+4 3 1  | 3	| 0.370000	Solution (brute): 1 	 | 20	| 0.370000	Solution (vec): 1 	
+5 3 1  | 2	| 0.750000	Solution (brute): 1 	 | 21	| 0.750000	Solution (vec): 1 	
+5 3 1  | 2	| 0.460000	Solution (brute): 1 	 | 20	| 0.460000	Solution (vec): 1 	
+5 3 1  | 2	| 0.940000	Solution (brute): 1 	 | 20	| 0.940000	Solution (vec): 1 	
+5 3 1  | 2	| 0.600000	Solution (brute): 1 	 | 20	| 0.600000	Solution (vec): 1 	
+5 3 1  | 5	| 0.870000	Solution (brute): 1 	 | 27	| 0.870000	Solution (vec): 1 	
+6 3 1  | 8	| 0.830000	Solution (brute): 1 	 | 52	| 0.830000	Solution (vec): 1 	
+6 3 1  | 3	| 0.610000	Solution (brute): 1 	 | 21	| 0.610000	Solution (vec): 1 	
+6 3 1  | 4	| 0.780000	Solution (brute): 1 	 | 26	| 0.780000	Solution (vec): 1 	
+6 3 1  | 3	| 0.710000	Solution (brute): 1 	 | 20	| 0.710000	Solution (vec): 1 	
+6 3 1  | 3	| 0.850000	Solution (brute): 1 	 | 20	| 0.850000	Solution (vec): 1 	
+7 3 1  | 3	| 0.810000	Solution (brute): 1 	 | 21	| 0.810000	Solution (vec): 1 	
+7 3 1  | 3	| 0.740000	Solution (brute): 1 	 | 20	| 0.740000	Solution (vec): 1 	
+7 3 1  | 3	| 0.570000	Solution (brute): 1 	 | 20	| 0.570000	Solution (vec): 1 	
+7 3 1  | 3	| 0.800000	Solution (brute): 1 	 | 22	| 0.800000	Solution (vec): 1 	
+7 3 1  | 2	| 0.440000	Solution (brute): 1 	 | 21	| 0.440000	Solution (vec): 1 	
+8 3 1  | 4	| 0.810000	Solution (brute): 1 	 | 21	| 0.810000	Solution (vec): 1 	
+8 3 1  | 4	| 0.790000	Solution (brute): 1 	 | 25	| 0.790000	Solution (vec): 1 	
+8 3 1  | 4	| 0.960000	Solution (brute): 1 	 | 25	| 0.960000	Solution (vec): 1 	
+8 3 1  | 3	| 0.840000	Solution (brute): 1 	 | 27	| 0.840000	Solution (vec): 1 	
+8 3 1  | 5	| 0.780000	Solution (brute): 1 	 | 27	| 0.780000	Solution (vec): 1 	
+9 3 1  | 5	| 0.460000	Solution (brute): 1 	 | 28	| 0.460000	Solution (vec): 1 	
+9 3 1  | 5	| 0.700000	Solution (brute): 1 	 | 28	| 0.700000	Solution (vec): 1 	
+9 3 1  | 5	| 0.280000	Solution (brute): 1 	 | 28	| 0.280000	Solution (vec): 1 	
+9 3 1  | 5	| 0.680000	Solution (brute): 1 	 | 31	| 0.680000	Solution (vec): 1 	
+9 3 1  | 4	| 0.810000	Solution (brute): 1 	 | 29	| 0.810000	Solution (vec): 1 	
+1 4 1  | 4	| 0.680000	Solution (brute): 1 	 | 31	| 0.680000	Solution (vec): 1 	
+1 4 1  | 3	| 0.730000	Solution (brute): 1 	 | 27	| 0.730000	Solution (vec): 1 	
+1 4 1  | 3	| 0.830000	Solution (brute): 1 	 | 23	| 0.830000	Solution (vec): 1 	
+1 4 1  | 3	| 0.740000	Solution (brute): 1 	 | 24	| 0.740000	Solution (vec): 1 	
+1 4 1  | 3	| 0.740000	Solution (brute): 1 	 | 23	| 0.740000	Solution (vec): 1 	
+2 4 1  | 3	| 0.960000	Solution (brute): 1 	 | 24	| 0.960000	Solution (vec): 1 	
+2 4 1  | 3	| 0.950000	Solution (brute): 1 	 | 23	| 0.950000	Solution (vec): 1 	
+2 4 1  | 3	| 0.740000	Solution (brute): 1 	 | 23	| 0.740000	Solution (vec): 1 	
+2 4 1  | 4	| 0.740000	Solution (brute): 1 	 | 27	| 0.740000	Solution (vec): 1 	
+2 4 1  | 3	| 0.900000	Solution (brute): 1 	 | 22	| 0.900000	Solution (vec): 1 	
+3 4 1  | 4	| 0.940000	Solution (brute): 1 	 | 23	| 0.940000	Solution (vec): 1 	
+3 4 1  | 5	| 0.730000	Solution (brute): 1 	 | 36	| 0.730000	Solution (vec): 1 	
+3 4 1  | 4	| 0.900000	Solution (brute): 1 	 | 29	| 0.900000	Solution (vec): 1 	
+3 4 1  | 4	| 0.600000	Solution (brute): 1 	 | 25	| 0.600000	Solution (vec): 1 	
+3 4 1  | 4	| 0.820000	Solution (brute): 1 	 | 36	| 0.820000	Solution (vec): 1 	
+4 4 1  | 4	| 0.680000	Solution (brute): 1 	 | 29	| 0.680000	Solution (vec): 1 	
+4 4 1  | 4	| 0.940000	Solution (brute): 1 	 | 28	| 0.940000	Solution (vec): 1 	
+4 4 1  | 4	| 0.580000	Solution (brute): 1 	 | 27	| 0.580000	Solution (vec): 1 	
+4 4 1  | 3	| 0.910000	Solution (brute): 1 	 | 21	| 0.910000	Solution (vec): 1 	
+4 4 1  | 4	| 0.390000	Solution (brute): 1 	 | 36	| 0.390000	Solution (vec): 1 	
+5 4 1  | 3	| 0.850000	Solution (brute): 1 	 | 23	| 0.850000	Solution (vec): 1 	
+5 4 1  | 3	| 0.860000	Solution (brute): 1 	 | 22	| 0.860000	Solution (vec): 1 	
+5 4 1  | 3	| 0.720000	Solution (brute): 1 	 | 22	| 0.720000	Solution (vec): 1 	
+5 4 1  | 4	| 0.190000	Solution (brute): 1 	 | 22	| 0.190000	Solution (vec): 1 	
+5 4 1  | 3	| 0.780000	Solution (brute): 1 	 | 22	| 0.780000	Solution (vec): 1 	
+6 4 1  | 3	| 0.400000	Solution (brute): 1 	 | 22	| 0.400000	Solution (vec): 1 	
+6 4 1  | 3	| 0.910000	Solution (brute): 1 	 | 22	| 0.910000	Solution (vec): 1 	
+6 4 1  | 4	| 0.320000	Solution (brute): 1 	 | 22	| 0.320000	Solution (vec): 1 	
+6 4 1  | 4	| 0.690000	Solution (brute): 1 	 | 22	| 0.690000	Solution (vec): 1 	
+6 4 1  | 4	| 0.790000	Solution (brute): 1 	 | 23	| 0.790000	Solution (vec): 1 	
+7 4 1  | 7	| 0.680000	Solution (brute): 1 	 | 36	| 0.680000	Solution (vec): 1 	
+7 4 1  | 5	| 0.910000	Solution (brute): 1 	 | 29	| 0.910000	Solution (vec): 1 	
+7 4 1  | 4	| 0.690000	Solution (brute): 1 	 | 22	| 0.690000	Solution (vec): 1 	
+7 4 1  | 3	| 0.790000	Solution (brute): 1 	 | 22	| 0.790000	Solution (vec): 1 	
+7 4 1  | 3	| 0.780000	Solution (brute): 1 	 | 22	| 0.780000	Solution (vec): 1 	
+8 4 1  | 3	| 0.530000	Solution (brute): 1 	 | 23	| 0.530000	Solution (vec): 1 	
+8 4 1  | 3	| 0.970000	Solution (brute): 1 	 | 24	| 0.970000	Solution (vec): 1 	
+8 4 1  | 4	| 0.530000	Solution (brute): 1 	 | 24	| 0.530000	Solution (vec): 1 	
+8 4 1  | 4	| 0.650000	Solution (brute): 1 	 | 22	| 0.650000	Solution (vec): 1 	
+8 4 1  | 3	| 0.860000	Solution (brute): 1 	 | 21	| 0.860000	Solution (vec): 1 	
+9 4 1  | 4	| 0.750000	Solution (brute): 1 	 | 21	| 0.750000	Solution (vec): 1 	
+9 4 1  | 4	| 0.880000	Solution (brute): 1 	 | 20	| 0.880000	Solution (vec): 1 	
+9 4 1  | 4	| 0.930000	Solution (brute): 1 	 | 20	| 0.930000	Solution (vec): 1 	
+9 4 1  | 3	| 0.890000	Solution (brute): 1 	 | 20	| 0.890000	Solution (vec): 1 	
+9 4 1  | 3	| 0.810000	Solution (brute): 1 	 | 21	| 0.810000	Solution (vec): 1 	
+1 5 1  | 2	| 0.930000	Solution (brute): 1 	 | 21	| 0.930000	Solution (vec): 1 	
+1 5 1  | 4	| 0.630000	Solution (brute): 1 	 | 35	| 0.630000	Solution (vec): 1 	
+1 5 1  | 3	| 0.930000	Solution (brute): 1 	 | 24	| 0.930000	Solution (vec): 1 	
+1 5 1  | 3	| 0.980000	Solution (brute): 1 	 | 46	| 0.980000	Solution (vec): 1 	
+1 5 1  | 3	| 0.760000	Solution (brute): 1 	 | 23	| 0.760000	Solution (vec): 1 	
+2 5 1  | 4	| 0.930000	Solution (brute): 1 	 | 27	| 0.930000	Solution (vec): 1 	
+2 5 1  | 3	| 0.980000	Solution (brute): 1 	 | 27	| 0.980000	Solution (vec): 1 	
+2 5 1  | 3	| 0.990000	Solution (brute): 1 	 | 27	| 0.990000	Solution (vec): 1 	
+2 5 1  | 3	| 0.980000	Solution (brute): 1 	 | 21	| 0.980000	Solution (vec): 1 	
+2 5 1  | 2	| 0.960000	Solution (brute): 1 	 | 22	| 0.960000	Solution (vec): 1 	
+3 5 1  | 3	| 0.980000	Solution (brute): 1 	 | 22	| 0.980000	Solution (vec): 1 	
+3 5 1  | 4	| 0.740000	Solution (brute): 1 	 | 21	| 0.740000	Solution (vec): 1 	
+3 5 1  | 3	| 0.950000	Solution (brute): 1 	 | 21	| 0.950000	Solution (vec): 1 	
+3 5 1  | 3	| 0.610000	Solution (brute): 1 	 | 23	| 0.610000	Solution (vec): 1 	
+3 5 1  | 4	| 0.960000	Solution (brute): 1 	 | 21	| 0.960000	Solution (vec): 1 	
+4 5 1  | 4	| 0.750000	Solution (brute): 1 	 | 23	| 0.750000	Solution (vec): 1 	
+4 5 1  | 3	| 0.750000	Solution (brute): 1 	 | 22	| 0.750000	Solution (vec): 1 	
+4 5 1  | 4	| 0.840000	Solution (brute): 1 	 | 22	| 0.840000	Solution (vec): 1 	
+4 5 1  | 3	| 0.970000	Solution (brute): 1 	 | 20	| 0.970000	Solution (vec): 1 	
+4 5 1  | 3	| 0.740000	Solution (brute): 1 	 | 19	| 0.740000	Solution (vec): 1 	
+5 5 1  | 4	| 0.980000	Solution (brute): 1 	 | 30	| 0.980000	Solution (vec): 1 	
+5 5 1  | 9	| 0.680000	Solution (brute): 1 	 | 50	| 0.680000	Solution (vec): 1 	
+5 5 1  | 5	| 0.640000	Solution (brute): 1 	 | 30	| 0.640000	Solution (vec): 1 	
+5 5 1  | 4	| 0.950000	Solution (brute): 1 	 | 24	| 0.950000	Solution (vec): 1 	
+5 5 1  | 4	| 0.880000	Solution (brute): 1 	 | 24	| 0.880000	Solution (vec): 1 	
+6 5 1  | 4	| 0.690000	Solution (brute): 1 	 | 24	| 0.690000	Solution (vec): 1 	
+6 5 1  | 3	| 0.920000	Solution (brute): 1 	 | 23	| 0.920000	Solution (vec): 1 	
+6 5 1  | 5	| 0.950000	Solution (brute): 1 	 | 23	| 0.950000	Solution (vec): 1 	
+6 5 1  | 5	| 0.970000	Solution (brute): 1 	 | 23	| 0.970000	Solution (vec): 1 	
+6 5 1  | 5	| 0.900000	Solution (brute): 1 	 | 23	| 0.900000	Solution (vec): 1 	
+7 5 1  | 4	| 0.960000	Solution (brute): 1 	 | 24	| 0.960000	Solution (vec): 1 	
+7 5 1  | 4	| 0.920000	Solution (brute): 1 	 | 22	| 0.920000	Solution (vec): 1 	
+7 5 1  | 5	| 0.660000	Solution (brute): 1 	 | 23	| 0.660000	Solution (vec): 1 	
+7 5 1  | 4	| 0.830000	Solution (brute): 1 	 | 58	| 0.830000	Solution (vec): 1 	
+7 5 1  | 5	| 0.920000	Solution (brute): 1 	 | 23	| 0.920000	Solution (vec): 1 	
+8 5 1  | 4	| 0.980000	Solution (brute): 1 	 | 23	| 0.980000	Solution (vec): 1 	
+8 5 1  | 4	| 0.790000	Solution (brute): 1 	 | 21	| 0.790000	Solution (vec): 1 	
+8 5 1  | 4	| 0.830000	Solution (brute): 1 	 | 22	| 0.830000	Solution (vec): 1 	
+8 5 1  | 6	| 0.520000	Solution (brute): 1 	 | 31	| 0.520000	Solution (vec): 1 	
+8 5 1  | 6	| 0.880000	Solution (brute): 1 	 | 46	| 0.880000	Solution (vec): 1 	
+9 5 1  | 5	| 0.710000	Solution (brute): 1 	 | 25	| 0.710000	Solution (vec): 1 	
+9 5 1  | 4	| 0.910000	Solution (brute): 1 	 | 23	| 0.910000	Solution (vec): 1 	
+9 5 1  | 6	| 0.980000	Solution (brute): 1 	 | 29	| 0.980000	Solution (vec): 1 	
+9 5 1  | 6	| 0.710000	Solution (brute): 1 	 | 27	| 0.710000	Solution (vec): 1 	
+9 5 1  | 5	| 0.980000	Solution (brute): 1 	 | 27	| 0.980000	Solution (vec): 1 	
+1 6 1  | 3	| 0.770000	Solution (brute): 1 	 | 29	| 0.770000	Solution (vec): 1 	
+1 6 1  | 3	| 0.970000	Solution (brute): 1 	 | 26	| 0.970000	Solution (vec): 1 	
+1 6 1  | 3	| 0.980000	Solution (brute): 1 	 | 26	| 0.980000	Solution (vec): 1 	
+1 6 1  | 3	| 0.900000	Solution (brute): 1 	 | 25	| 0.900000	Solution (vec): 1 	
+1 6 1  | 4	| 0.920000	Solution (brute): 1 	 | 25	| 0.920000	Solution (vec): 1 	
+2 6 1  | 4	| 0.810000	Solution (brute): 1 	 | 29	| 0.810000	Solution (vec): 1 	
+2 6 1  | 3	| 0.800000	Solution (brute): 1 	 | 26	| 0.800000	Solution (vec): 1 	
+2 6 1  | 5	| 0.980000	Solution (brute): 1 	 | 32	| 0.980000	Solution (vec): 1 	
+2 6 1  | 4	| 0.790000	Solution (brute): 1 	 | 28	| 0.790000	Solution (vec): 1 	
+2 6 1  | 5	| 0.960000	Solution (brute): 1 	 | 27	| 0.960000	Solution (vec): 1 	
+3 6 1  | 5	| 0.980000	Solution (brute): 1 	 | 30	| 0.980000	Solution (vec): 1 	
+3 6 1  | 3	| 0.460000	Solution (brute): 1 	 | 22	| 0.460000	Solution (vec): 1 	
+3 6 1  | 4	| 0.720000	Solution (brute): 1 	 | 22	| 0.720000	Solution (vec): 1 	
+3 6 1  | 4	| 0.970000	Solution (brute): 1 	 | 21	| 0.970000	Solution (vec): 1 	
+3 6 1  | 4	| 0.840000	Solution (brute): 1 	 | 28	| 0.840000	Solution (vec): 1 	
+4 6 1  | 4	| 0.920000	Solution (brute): 1 	 | 22	| 0.920000	Solution (vec): 1 	
+4 6 1  | 3	| 0.750000	Solution (brute): 1 	 | 22	| 0.750000	Solution (vec): 1 	
+4 6 1  | 3	| 0.980000	Solution (brute): 1 	 | 22	| 0.980000	Solution (vec): 1 	
+4 6 1  | 4	| 0.440000	Solution (brute): 1 	 | 21	| 0.440000	Solution (vec): 1 	
+4 6 1  | 4	| 0.950000	Solution (brute): 1 	 | 21	| 0.950000	Solution (vec): 1 	
+5 6 1  | 4	| 0.960000	Solution (brute): 1 	 | 23	| 0.960000	Solution (vec): 1 	
+5 6 1  | 5	| 0.980000	Solution (brute): 1 	 | 21	| 0.980000	Solution (vec): 1 	
+5 6 1  | 5	| 0.970000	Solution (brute): 1 	 | 22	| 0.970000	Solution (vec): 1 	
+5 6 1  | 4	| 0.730000	Solution (brute): 1 	 | 22	| 0.730000	Solution (vec): 1 	
+5 6 1  | 4	| 0.840000	Solution (brute): 1 	 | 27	| 0.840000	Solution (vec): 1 	
+6 6 1  | 4	| 0.990000	Solution (brute): 1 	 | 22	| 0.990000	Solution (vec): 1 	
+6 6 1  | 6	| 0.880000	Solution (brute): 1 	 | 30	| 0.880000	Solution (vec): 1 	
+6 6 1  | 6	| 0.890000	Solution (brute): 1 	 | 25	| 0.890000	Solution (vec): 1 	
+6 6 1  | 6	| 0.990000	Solution (brute): 1 	 | 29	| 0.990000	Solution (vec): 1 	
+6 6 1  | 5	| 0.980000	Solution (brute): 1 	 | 28	| 0.980000	Solution (vec): 1 	
+7 6 1  | 5	| 0.950000	Solution (brute): 1 	 | 29	| 0.950000	Solution (vec): 1 	
+7 6 1  | 6	| 0.720000	Solution (brute): 1 	 | 27	| 0.720000	Solution (vec): 1 	
+7 6 1  | 6	| 0.540000	Solution (brute): 1 	 | 27	| 0.540000	Solution (vec): 1 	
+7 6 1  | 6	| 0.810000	Solution (brute): 1 	 | 29	| 0.810000	Solution (vec): 1 	
+7 6 1  | 6	| 0.470000	Solution (brute): 1 	 | 27	| 0.470000	Solution (vec): 1 	
+8 6 1  | 7	| 0.970000	Solution (brute): 1 	 | 28	| 0.970000	Solution (vec): 1 	
+8 6 1  | 5	| 0.930000	Solution (brute): 1 	 | 20	| 0.930000	Solution (vec): 1 	
+8 6 1  | 4	| 0.830000	Solution (brute): 1 	 | 21	| 0.830000	Solution (vec): 1 	
+8 6 1  | 4	| 0.990000	Solution (brute): 1 	 | 19	| 0.990000	Solution (vec): 1 	
+8 6 1  | 3	| 0.980000	Solution (brute): 1 	 | 19	| 0.980000	Solution (vec): 1 	
+9 6 1  | 4	| 0.600000	Solution (brute): 1 	 | 20	| 0.600000	Solution (vec): 1 	
+9 6 1  | 4	| 0.930000	Solution (brute): 1 	 | 20	| 0.930000	Solution (vec): 1 	
+9 6 1  | 5	| 0.970000	Solution (brute): 1 	 | 19	| 0.970000	Solution (vec): 1 	
+9 6 1  | 5	| 0.570000	Solution (brute): 1 	 | 21	| 0.570000	Solution (vec): 1 	
+9 6 1  | 6	| 0.880000	Solution (brute): 1 	 | 31	| 0.880000	Solution (vec): 1 	
+1 7 1  | 3	| 0.940000	Solution (brute): 1 	 | 27	| 0.940000	Solution (vec): 1 	
+1 7 1  | 3	| 0.830000	Solution (brute): 1 	 | 24	| 0.830000	Solution (vec): 1 	
+1 7 1  | 3	| 0.850000	Solution (brute): 1 	 | 23	| 0.850000	Solution (vec): 1 	
+1 7 1  | 3	| 0.890000	Solution (brute): 1 	 | 25	| 0.890000	Solution (vec): 1 	
+1 7 1  | 3	| 0.910000	Solution (brute): 1 	 | 20	| 0.910000	Solution (vec): 1 	
+2 7 1  | 3	| 0.720000	Solution (brute): 1 	 | 21	| 0.720000	Solution (vec): 1 	
+2 7 1  | 3	| 0.990000	Solution (brute): 1 	 | 20	| 0.990000	Solution (vec): 1 	
+2 7 1  | 3	| 0.930000	Solution (brute): 1 	 | 20	| 0.930000	Solution (vec): 1 	
+2 7 1  | 3	| 0.980000	Solution (brute): 1 	 | 20	| 0.980000	Solution (vec): 1 	
+2 7 1  | 3	| 0.920000	Solution (brute): 1 	 | 20	| 0.920000	Solution (vec): 1 	
+3 7 1  | 4	| 0.870000	Solution (brute): 1 	 | 21	| 0.870000	Solution (vec): 1 	
+3 7 1  | 4	| 0.820000	Solution (brute): 1 	 | 20	| 0.820000	Solution (vec): 1 	
+3 7 1  | 4	| 0.910000	Solution (brute): 1 	 | 20	| 0.910000	Solution (vec): 1 	
+3 7 1  | 4	| 0.950000	Solution (brute): 1 	 | 20	| 0.950000	Solution (vec): 1 	
+3 7 1  | 3	| 0.910000	Solution (brute): 1 	 | 20	| 0.910000	Solution (vec): 1 	
+4 7 1  | 4	| 0.920000	Solution (brute): 1 	 | 22	| 0.920000	Solution (vec): 1 	
+4 7 1  | 4	| 0.900000	Solution (brute): 1 	 | 23	| 0.900000	Solution (vec): 1 	
+4 7 1  | 4	| 0.980000	Solution (brute): 1 	 | 22	| 0.980000	Solution (vec): 1 	
+4 7 1  | 5	| 0.610000	Solution (brute): 1 	 | 41	| 0.610000	Solution (vec): 1 	
+4 7 1  | 4	| 0.860000	Solution (brute): 1 	 | 23	| 0.860000	Solution (vec): 1 	
+5 7 1  | 6	| 0.910000	Solution (brute): 1 	 | 27	| 0.910000	Solution (vec): 1 	
+5 7 1  | 5	| 0.950000	Solution (brute): 1 	 | 29	| 0.950000	Solution (vec): 1 	
+5 7 1  | 6	| 0.840000	Solution (brute): 1 	 | 28	| 0.840000	Solution (vec): 1 	
+5 7 1  | 6	| 0.930000	Solution (brute): 1 	 | 27	| 0.930000	Solution (vec): 1 	
+5 7 1  | 6	| 0.760000	Solution (brute): 1 	 | 27	| 0.760000	Solution (vec): 1 	
+6 7 1  | 6	| 0.890000	Solution (brute): 1 	 | 27	| 0.890000	Solution (vec): 1 	
+6 7 1  | 6	| 0.980000	Solution (brute): 1 	 | 28	| 0.980000	Solution (vec): 1 	
+6 7 1  | 4	| 0.860000	Solution (brute): 1 	 | 20	| 0.860000	Solution (vec): 1 	
+6 7 1  | 4	| 0.960000	Solution (brute): 1 	 | 20	| 0.960000	Solution (vec): 1 	
+6 7 1  | 4	| 0.740000	Solution (brute): 1 	 | 20	| 0.740000	Solution (vec): 1 	
+7 7 1  | 4	| 0.990000	Solution (brute): 1 	 | 21	| 0.990000	Solution (vec): 1 	
+7 7 1  | 4	| 0.930000	Solution (brute): 1 	 | 19	| 0.930000	Solution (vec): 1 	
+7 7 1  | 4	| 0.930000	Solution (brute): 1 	 | 20	| 0.930000	Solution (vec): 1 	
+7 7 1  | 4	| 0.890000	Solution (brute): 1 	 | 19	| 0.890000	Solution (vec): 1 	
+7 7 1  | 6	| 0.980000	Solution (brute): 1 	 | 26	| 0.980000	Solution (vec): 1 	
+8 7 1  | 7	| 0.890000	Solution (brute): 1 	 | 31	| 0.890000	Solution (vec): 1 	
+8 7 1  | 6	| 0.940000	Solution (brute): 1 	 | 31	| 0.940000	Solution (vec): 1 	
+8 7 1  | 6	| 0.920000	Solution (brute): 1 	 | 34	| 0.920000	Solution (vec): 1 	
+8 7 1  | 6	| 0.950000	Solution (brute): 1 	 | 28	| 0.950000	Solution (vec): 1 	
+8 7 1  | 6	| 0.940000	Solution (brute): 1 	 | 29	| 0.940000	Solution (vec): 1 	
+9 7 1  | 7	| 0.990000	Solution (brute): 1 	 | 27	| 0.990000	Solution (vec): 1 	
+9 7 1  | 5	| 0.940000	Solution (brute): 1 	 | 19	| 0.940000	Solution (vec): 1 	
+9 7 1  | 4	| 0.910000	Solution (brute): 1 	 | 20	| 0.910000	Solution (vec): 1 	
+9 7 1  | 4	| 0.840000	Solution (brute): 1 	 | 20	| 0.840000	Solution (vec): 1 	
+9 7 1  | 4	| 0.900000	Solution (brute): 1 	 | 19	| 0.900000	Solution (vec): 1 	
+1 8 1  | 4	| 0.900000	Solution (brute): 1 	 | 20	| 0.900000	Solution (vec): 1 	
+1 8 1  | 3	| 0.930000	Solution (brute): 1 	 | 19	| 0.930000	Solution (vec): 1 	
+1 8 1  | 3	| 0.850000	Solution (brute): 1 	 | 20	| 0.850000	Solution (vec): 1 	
+1 8 1  | 2	| 0.980000	Solution (brute): 1 	 | 19	| 0.980000	Solution (vec): 1 	
+1 8 1  | 2	| 0.970000	Solution (brute): 1 	 | 19	| 0.970000	Solution (vec): 1 	
+2 8 1  | 3	| 0.850000	Solution (brute): 1 	 | 21	| 0.850000	Solution (vec): 1 	
+2 8 1  | 4	| 0.980000	Solution (brute): 1 	 | 19	| 0.980000	Solution (vec): 1 	
+2 8 1  | 4	| 0.780000	Solution (brute): 1 	 | 27	| 0.780000	Solution (vec): 1 	
+2 8 1  | 5	| 0.990000	Solution (brute): 1 	 | 30	| 0.990000	Solution (vec): 1 	
+2 8 1  | 4	| 0.940000	Solution (brute): 1 	 | 30	| 0.940000	Solution (vec): 1 	
+3 8 1  | 5	| 0.970000	Solution (brute): 1 	 | 31	| 0.970000	Solution (vec): 1 	
+3 8 1  | 6	| 0.990000	Solution (brute): 1 	 | 29	| 0.990000	Solution (vec): 1 	
+3 8 1  | 5	| 0.990000	Solution (brute): 1 	 | 28	| 0.990000	Solution (vec): 1 	
+3 8 1  | 6	| 0.950000	Solution (brute): 1 	 | 28	| 0.950000	Solution (vec): 1 	
+3 8 1  | 5	| 0.970000	Solution (brute): 1 	 | 27	| 0.970000	Solution (vec): 1 	
+4 8 1  | 5	| 0.910000	Solution (brute): 1 	 | 29	| 0.910000	Solution (vec): 1 	
+4 8 1  | 6	| 0.970000	Solution (brute): 1 	 | 27	| 0.970000	Solution (vec): 1 	
+4 8 1  | 6	| 0.930000	Solution (brute): 1 	 | 27	| 0.930000	Solution (vec): 1 	
+4 8 1  | 6	| 0.660000	Solution (brute): 1 	 | 27	| 0.660000	Solution (vec): 1 	
+4 8 1  | 6	| 0.900000	Solution (brute): 1 	 | 27	| 0.900000	Solution (vec): 1 	
+5 8 1  | 5	| 0.930000	Solution (brute): 1 	 | 21	| 0.930000	Solution (vec): 1 	
+5 8 1  | 5	| 0.870000	Solution (brute): 1 	 | 20	| 0.870000	Solution (vec): 1 	
+5 8 1  | 6	| 0.990000	Solution (brute): 1 	 | 27	| 0.990000	Solution (vec): 1 	
+5 8 1  | 6	| 0.880000	Solution (brute): 1 	 | 27	| 0.880000	Solution (vec): 1 	
+5 8 1  | 8	| 0.860000	Solution (brute): 1 	 | 40	| 0.860000	Solution (vec): 1 	
+6 8 1  | 7	| 0.790000	Solution (brute): 1 	 | 32	| 0.790000	Solution (vec): 1 	
+6 8 1  | 5	| 0.810000	Solution (brute): 1 	 | 31	| 0.810000	Solution (vec): 1 	
+6 8 1  | 7	| 0.800000	Solution (brute): 1 	 | 28	| 0.800000	Solution (vec): 1 	
+6 8 1  | 6	| 0.840000	Solution (brute): 1 	 | 27	| 0.840000	Solution (vec): 1 	
+6 8 1  | 7	| 0.890000	Solution (brute): 1 	 | 27	| 0.890000	Solution (vec): 1 	
+7 8 1  | 10	| 0.810000	Solution (brute): 1 	 | 43	| 0.810000	Solution (vec): 1 	
+7 8 1  | 7	| 0.730000	Solution (brute): 1 	 | 29	| 0.730000	Solution (vec): 1 	
+7 8 1  | 7	| 0.830000	Solution (brute): 1 	 | 28	| 0.830000	Solution (vec): 1 	
+7 8 1  | 7	| 0.980000	Solution (brute): 1 	 | 28	| 0.980000	Solution (vec): 1 	
+7 8 1  | 7	| 0.890000	Solution (brute): 1 	 | 28	| 0.890000	Solution (vec): 1 	
+8 8 1  | 8	| 0.820000	Solution (brute): 1 	 | 31	| 0.820000	Solution (vec): 1 	
+8 8 1  | 7	| 0.880000	Solution (brute): 1 	 | 25	| 0.880000	Solution (vec): 1 	
+8 8 1  | 5	| 0.970000	Solution (brute): 1 	 | 25	| 0.970000	Solution (vec): 1 	
+8 8 1  | 7	| 0.900000	Solution (brute): 1 	 | 24	| 0.900000	Solution (vec): 1 	
+8 8 1  | 7	| 0.960000	Solution (brute): 1 	 | 47	| 0.960000	Solution (vec): 1 	
+9 8 1  | 7	| 0.990000	Solution (brute): 1 	 | 30	| 0.990000	Solution (vec): 1 	
+9 8 1  | 8	| 0.870000	Solution (brute): 1 	 | 44	| 0.870000	Solution (vec): 1 	
+9 8 1  | 8	| 0.970000	Solution (brute): 1 	 | 32	| 0.970000	Solution (vec): 1 	
+9 8 1  | 7	| 0.890000	Solution (brute): 1 	 | 27	| 0.890000	Solution (vec): 1 	
+9 8 1  | 6	| 0.950000	Solution (brute): 1 	 | 24	| 0.950000	Solution (vec): 1 	
+1 9 1  | 4	| 0.850000	Solution (brute): 1 	 | 23	| 0.850000	Solution (vec): 1 	
+1 9 1  | 4	| 0.930000	Solution (brute): 1 	 | 22	| 0.930000	Solution (vec): 1 	
+1 9 1  | 3	| 0.740000	Solution (brute): 1 	 | 23	| 0.740000	Solution (vec): 1 	
+1 9 1  | 4	| 0.910000	Solution (brute): 1 	 | 28	| 0.910000	Solution (vec): 1 	
+1 9 1  | 4	| 0.930000	Solution (brute): 1 	 | 27	| 0.930000	Solution (vec): 1 	
+2 9 1  | 4	| 0.970000	Solution (brute): 1 	 | 23	| 0.970000	Solution (vec): 1 	
+2 9 1  | 5	| 0.910000	Solution (brute): 1 	 | 28	| 0.910000	Solution (vec): 1 	
+2 9 1  | 4	| 0.900000	Solution (brute): 1 	 | 28	| 0.900000	Solution (vec): 1 	
+2 9 1  | 4	| 0.940000	Solution (brute): 1 	 | 30	| 0.940000	Solution (vec): 1 	
+2 9 1  | 5	| 0.960000	Solution (brute): 1 	 | 27	| 0.960000	Solution (vec): 1 	
+3 9 1  | 6	| 0.800000	Solution (brute): 1 	 | 27	| 0.800000	Solution (vec): 1 	
+3 9 1  | 4	| 0.860000	Solution (brute): 1 	 | 22	| 0.860000	Solution (vec): 1 	
+3 9 1  | 10	| 0.850000	Solution (brute): 1 	 | 42	| 0.850000	Solution (vec): 1 	
+3 9 1  | 6	| 0.980000	Solution (brute): 1 	 | 29	| 0.980000	Solution (vec): 1 	
+3 9 1  | 5	| 0.910000	Solution (brute): 1 	 | 28	| 0.910000	Solution (vec): 1 	
+4 9 1  | 6	| 0.970000	Solution (brute): 1 	 | 27	| 0.970000	Solution (vec): 1 	
+4 9 1  | 6	| 0.990000	Solution (brute): 1 	 | 28	| 0.990000	Solution (vec): 1 	
+4 9 1  | 5	| 0.720000	Solution (brute): 1 	 | 28	| 0.720000	Solution (vec): 1 	
+4 9 1  | 6	| 0.980000	Solution (brute): 1 	 | 26	| 0.980000	Solution (vec): 1 	
+4 9 1  | 5	| 0.910000	Solution (brute): 1 	 | 27	| 0.910000	Solution (vec): 1 	
+5 9 1  | 7	| 0.990000	Solution (brute): 1 	 | 27	| 0.990000	Solution (vec): 1 	
+5 9 1  | 5	| 0.870000	Solution (brute): 1 	 | 19	| 0.870000	Solution (vec): 1 	
+5 9 1  | 5	| 0.880000	Solution (brute): 1 	 | 20	| 0.880000	Solution (vec): 1 	
+5 9 1  | 5	| 0.970000	Solution (brute): 1 	 | 19	| 0.970000	Solution (vec): 1 	
+5 9 1  | 5	| 0.590000	Solution (brute): 1 	 | 20	| 0.590000	Solution (vec): 1 	
+6 9 1  | 6	| 0.700000	Solution (brute): 1 	 | 20	| 0.700000	Solution (vec): 1 	
+6 9 1  | 7	| 0.980000	Solution (brute): 1 	 | 24	| 0.980000	Solution (vec): 1 	
+6 9 1  | 5	| 0.670000	Solution (brute): 1 	 | 20	| 0.670000	Solution (vec): 1 	
+6 9 1  | 5	| 0.980000	Solution (brute): 1 	 | 20	| 0.980000	Solution (vec): 1 	
+6 9 1  | 8	| 0.860000	Solution (brute): 1 	 | 40	| 0.860000	Solution (vec): 1 	
+7 9 1  | 8	| 0.790000	Solution (brute): 1 	 | 34	| 0.790000	Solution (vec): 1 	
+7 9 1  | 4	| 0.930000	Solution (brute): 1 	 | 18	| 0.930000	Solution (vec): 1 	
+7 9 1  | 4	| 0.950000	Solution (brute): 1 	 | 17	| 0.950000	Solution (vec): 1 	
+7 9 1  | 4	| 0.840000	Solution (brute): 1 	 | 18	| 0.840000	Solution (vec): 1 	
+7 9 1  | 5	| 0.820000	Solution (brute): 1 	 | 17	| 0.820000	Solution (vec): 1 	
+8 9 1  | 5	| 0.910000	Solution (brute): 1 	 | 18	| 0.910000	Solution (vec): 1 	
+8 9 1  | 5	| 0.850000	Solution (brute): 1 	 | 18	| 0.850000	Solution (vec): 1 	
+8 9 1  | 4	| 0.680000	Solution (brute): 1 	 | 18	| 0.680000	Solution (vec): 1 	
+8 9 1  | 5	| 0.970000	Solution (brute): 1 	 | 18	| 0.970000	Solution (vec): 1 	
+8 9 1  | 4	| 0.690000	Solution (brute): 1 	 | 17	| 0.690000	Solution (vec): 1 	
+9 9 1  | 5	| 0.910000	Solution (brute): 1 	 | 19	| 0.910000	Solution (vec): 1 	
+9 9 1  | 5	| 0.760000	Solution (brute): 1 	 | 18	| 0.760000	Solution (vec): 1 	
+9 9 1  | 5	| 0.970000	Solution (brute): 1 	 | 18	| 0.970000	Solution (vec): 1 	
+9 9 1  | 5	| 0.810000	Solution (brute): 1 	 | 18	| 0.810000	Solution (vec): 1 	
+9 9 1  | 4	| 0.630000	Solution (brute): 1 	 | 18	| 0.630000	Solution (vec): 1 	
+1 1 2  | 4	| 0.780000	Solution (brute): 1 0 	 | 34	| 0.780000	Solution (vec): 1 0 	
+1 1 2  | 2	| 0.840000	Solution (brute): 1 0 	 | 21	| 0.840000	Solution (vec): 1 0 	
+1 1 2  | 3	| 0.700000	Solution (brute): 0 1 	 | 20	| 0.700000	Solution (vec): 0 1 	
+1 1 2  | 4	| 0.790000	Solution (brute): 1 0 	 | 43	| 0.790000	Solution (vec): 1 0 	
+1 1 2  | 4	| 0.930000	Solution (brute): 1 0 	 | 31	| 0.930000	Solution (vec): 1 0 	
+2 1 2  | 4	| 0.580000	Solution (brute): 0 1 	 | 30	| 0.580000	Solution (vec): 0 1 	
+2 1 2  | 4	| 0.610000	Solution (brute): 1 0 	 | 30	| 0.610000	Solution (vec): 1 0 	
+2 1 2  | 3	| 0.600000	Solution (brute): 0 1 	 | 25	| 0.600000	Solution (vec): 0 1 	
+2 1 2  | 2	| 0.720000	Solution (brute): 1 1 	 | 20	| 0.720000	Solution (vec): 1 1 	
+2 1 2  | 2	| 0.660000	Solution (brute): 0 1 	 | 19	| 0.660000	Solution (vec): 0 1 	
+3 1 2  | 3	| 0.860000	Solution (brute): 0 1 	 | 19	| 0.860000	Solution (vec): 0 1 	
+3 1 2  | 2	| 0.910000	Solution (brute): 1 0 	 | 19	| 0.910000	Solution (vec): 1 0 	
+3 1 2  | 2	| 0.760000	Solution (brute): 0 1 	 | 19	| 0.760000	Solution (vec): 0 1 	
+3 1 2  | 3	| 0.440000	Solution (brute): 1 0 	 | 19	| 0.440000	Solution (vec): 1 0 	
+3 1 2  | 3	| 0.650000	Solution (brute): 0 1 	 | 22	| 0.650000	Solution (vec): 0 1 	
+4 1 2  | 4	| 0.960000	Solution (brute): 1 0 	 | 35	| 0.960000	Solution (vec): 1 0 	
+4 1 2  | 3	| 1.080000	Solution (brute): 1 1 	 | 18	| 1.080000	Solution (vec): 1 1 	
+4 1 2  | 4	| 0.980000	Solution (brute): 1 0 	 | 29	| 0.980000	Solution (vec): 1 0 	
+4 1 2  | 4	| 0.705000	Solution (brute): 1 1 	 | 28	| 0.705000	Solution (vec): 1 1 	
+4 1 2  | 4	| 0.750000	Solution (brute): 1 0 	 | 29	| 0.750000	Solution (vec): 1 0 	
+5 1 2  | 5	| 0.950000	Solution (brute): 0 1 	 | 34	| 0.950000	Solution (vec): 0 1 	
+5 1 2  | 4	| 1.180000	Solution (brute): 1 1 	 | 29	| 1.180000	Solution (vec): 1 1 	
+5 1 2  | 4	| 1.296000	Solution (brute): 1 1 	 | 28	| 1.296000	Solution (vec): 1 1 	
+5 1 2  | 5	| 0.584000	Solution (brute): 1 1 	 | 36	| 0.584000	Solution (vec): 1 1 	
+5 1 2  | 4	| 0.810000	Solution (brute): 0 1 	 | 25	| 0.810000	Solution (vec): 0 1 	
+6 1 2  | 3	| 0.370000	Solution (brute): 0 1 	 | 26	| 0.370000	Solution (vec): 0 1 	
+6 1 2  | 3	| 0.630000	Solution (brute): 1 0 	 | 24	| 0.630000	Solution (vec): 1 0 	
+6 1 2  | 3	| 0.180000	Solution (brute): 1 1 	 | 23	| 0.180000	Solution (vec): 1 1 	
+6 1 2  | 4	| 0.280000	Solution (brute): 1 0 	 | 23	| 0.280000	Solution (vec): 1 0 	
+6 1 2  | 3	| 1.400000	Solution (brute): 1 1 	 | 22	| 1.400000	Solution (vec): 1 1 	
+7 1 2  | 4	| 0.660000	Solution (brute): 1 1 	 | 24	| 0.660000	Solution (vec): 1 1 	
+7 1 2  | 4	| 0.960000	Solution (brute): 0 1 	 | 24	| 0.960000	Solution (vec): 0 1 	
+7 1 2  | 4	| 0.730000	Solution (brute): 1 0 	 | 23	| 0.730000	Solution (vec): 1 0 	
+7 1 2  | 3	| 0.940000	Solution (brute): 0 1 	 | 25	| 0.940000	Solution (vec): 0 1 	
+7 1 2  | 3	| 0.870000	Solution (brute): 0 1 	 | 23	| 0.870000	Solution (vec): 0 1 	
+8 1 2  | 4	| 1.215000	Solution (brute): 1 1 	 | 23	| 1.215000	Solution (vec): 1 1 	
+8 1 2  | 4	| 0.885000	Solution (brute): 1 1 	 | 23	| 0.885000	Solution (vec): 1 1 	
+8 1 2  | 6	| 1.172500	Solution (brute): 1 1 	 | 39	| 1.172500	Solution (vec): 1 1 	
+8 1 2  | 5	| 0.840000	Solution (brute): 1 1 	 | 31	| 0.840000	Solution (vec): 1 1 	
+8 1 2  | 4	| 0.760000	Solution (brute): 1 1 	 | 51	| 0.760000	Solution (vec): 1 1 	
+9 1 2  | 4	| 1.400000	Solution (brute): 1 1 	 | 30	| 1.400000	Solution (vec): 1 1 	
+9 1 2  | 5	| 1.617778	Solution (brute): 1 1 	 | 28	| 1.617778	Solution (vec): 1 1 	
+9 1 2  | 5	| 0.590000	Solution (brute): 0 1 	 | 30	| 0.590000	Solution (vec): 0 1 	
+9 1 2  | 5	| 1.120000	Solution (brute): 1 1 	 | 28	| 1.120000	Solution (vec): 1 1 	
+9 1 2  | 5	| 0.880000	Solution (brute): 1 0 	 | 69	| 0.880000	Solution (vec): 1 0 	
+1 2 2  | 4	| 0.810000	Solution (brute): 1 0 	 | 24	| 0.810000	Solution (vec): 1 0 	
+1 2 2  | 4	| 0.950000	Solution (brute): 1 0 	 | 23	| 0.950000	Solution (vec): 1 0 	
+1 2 2  | 3	| 0.860000	Solution (brute): 0 1 	 | 23	| 0.860000	Solution (vec): 0 1 	
+1 2 2  | 3	| 0.750000	Solution (brute): 1 0 	 | 23	| 0.750000	Solution (vec): 1 0 	
+1 2 2  | 3	| 0.880000	Solution (brute): 1 0 	 | 23	| 0.880000	Solution (vec): 1 0 	
+2 2 2  | 4	| 1.790000	Solution (brute): 1 1 	 | 20	| 1.790000	Solution (vec): 1 1 	
+2 2 2  | 4	| 0.600000	Solution (brute): 0 1 	 | 24	| 0.600000	Solution (vec): 0 1 	
+2 2 2  | 4	| 1.160000	Solution (brute): 1 2 	 | 21	| 1.160000	Solution (vec): 1 2 	
+2 2 2  | 4	| 0.990000	Solution (brute): 0 1 	 | 23	| 0.990000	Solution (vec): 0 1 	
+2 2 2  | 6	| 0.650000	Solution (brute): 0 1 	 | 27	| 0.620000	Solution (vec): 1 1 	
+3 2 2  | 6	| 1.126667	Solution (brute): 1 1 	 | 30	| 1.126667	Solution (vec): 1 1 	
+3 2 2  | 7	| 1.550000	Solution (brute): 1 1 	 | 35	| 1.550000	Solution (vec): 1 1 	
+3 2 2  | 7	| 0.660000	Solution (brute): 0 1 	 | 35	| 0.660000	Solution (vec): 0 1 	
+3 2 2  | 3	| 0.773333	Solution (brute): 1 1 	 | 17	| 0.773333	Solution (vec): 1 1 	
+3 2 2  | 3	| 0.480000	Solution (brute): 1 0 	 | 19	| 0.480000	Solution (vec): 1 0 	
+4 2 2  | 4	| 1.132500	Solution (brute): 1 1 	 | 16	| 1.132500	Solution (vec): 1 1 	
+4 2 2  | 3	| 0.890000	Solution (brute): 1 0 	 | 19	| 0.890000	Solution (vec): 1 0 	
+4 2 2  | 4	| 1.050000	Solution (brute): 1 1 	 | 15	| 1.050000	Solution (vec): 1 1 	
+4 2 2  | 4	| 0.975000	Solution (brute): 1 1 	 | 16	| 0.975000	Solution (vec): 1 1 	
+4 2 2  | 7	| 0.960000	Solution (brute): 1 2 	 | 34	| 0.960000	Solution (vec): 1 2 	
+5 2 2  | 8	| 0.950000	Solution (brute): 0 1 	 | 38	| 0.950000	Solution (vec): 0 1 	
+5 2 2  | 7	| 0.928000	Solution (brute): 1 1 	 | 31	| 0.928000	Solution (vec): 1 1 	
+5 2 2  | 7	| 0.610000	Solution (brute): 1 0 	 | 35	| 0.610000	Solution (vec): 1 0 	
+5 2 2  | 7	| 1.424000	Solution (brute): 1 2 	 | 47	| 1.424000	Solution (vec): 1 2 	
+5 2 2  | 8	| 0.870000	Solution (brute): 1 2 	 | 33	| 0.870000	Solution (vec): 1 2 	
+6 2 2  | 7	| 0.886667	Solution (brute): 1 1 	 | 23	| 0.886667	Solution (vec): 1 1 	
+6 2 2  | 6	| 0.775000	Solution (brute): 1 2 	 | 26	| 0.775000	Solution (vec): 1 2 	
+6 2 2  | 7	| 0.590000	Solution (brute): 1 0 	 | 27	| 0.586667	Solution (vec): 1 1 	
+6 2 2  | 6	| 0.810000	Solution (brute): 1 0 	 | 27	| 0.700000	Solution (vec): 1 2 	
+6 2 2  | 7	| 1.525000	Solution (brute): 1 1 	 | 32	| 1.525000	Solution (vec): 1 1 	
+7 2 2  | 8	| 0.810000	Solution (brute): 1 0 	 | 38	| 0.810000	Solution (vec): 1 0 	
+7 2 2  | 8	| 0.754286	Solution (brute): 1 1 	 | 33	| 0.754286	Solution (vec): 1 1 	
+7 2 2  | 9	| 1.440000	Solution (brute): 1 2 	 | 33	| 1.440000	Solution (vec): 1 2 	
+7 2 2  | 8	| 1.050000	Solution (brute): 1 2 	 | 33	| 1.050000	Solution (vec): 1 2 	
+7 2 2  | 6	| 1.360000	Solution (brute): 1 1 	 | 24	| 1.360000	Solution (vec): 1 1 	
+8 2 2  | 9	| 0.810000	Solution (brute): 1 0 	 | 28	| 0.735000	Solution (vec): 1 2 	
+8 2 2  | 7	| 1.452500	Solution (brute): 1 2 	 | 26	| 1.452500	Solution (vec): 1 2 	
+8 2 2  | 6	| 0.960000	Solution (brute): 2 1 	 | 31	| 0.960000	Solution (vec): 2 1 	
+8 2 2  | 11	| 0.952500	Solution (brute): 1 1 	 | 33	| 0.952500	Solution (vec): 1 1 	
+8 2 2  | 7	| 1.012500	Solution (brute): 1 1 	 | 27	| 1.012500	Solution (vec): 1 1 	
+9 2 2  | 8	| 0.880000	Solution (brute): 1 0 	 | 31	| 0.880000	Solution (vec): 1 0 	
+9 2 2  | 8	| 1.400000	Solution (brute): 1 1 	 | 26	| 1.400000	Solution (vec): 1 1 	
+9 2 2  | 8	| 0.870000	Solution (brute): 0 1 	 | 31	| 0.870000	Solution (vec): 0 1 	
+9 2 2  | 7	| 1.190000	Solution (brute): 1 1 	 | 24	| 1.190000	Solution (vec): 1 1 	
+9 2 2  | 10	| 0.426667	Solution (brute): 1 1 	 | 34	| 0.426667	Solution (vec): 1 1 	
+1 3 2  | 10	| 0.850000	Solution (brute): 1 0 	 | 57	| 0.850000	Solution (vec): 1 0 	
+1 3 2  | 9	| 0.960000	Solution (brute): 0 1 	 | 56	| 0.960000	Solution (vec): 0 1 	
+1 3 2  | 8	| 0.960000	Solution (brute): 0 1 	 | 39	| 0.960000	Solution (vec): 0 1 	
+1 3 2  | 7	| 0.850000	Solution (brute): 1 0 	 | 39	| 0.850000	Solution (vec): 1 0 	
+1 3 2  | 7	| 0.960000	Solution (brute): 1 0 	 | 36	| 0.960000	Solution (vec): 1 0 	
+2 3 2  | 6	| 0.900000	Solution (brute): 1 0 	 | 29	| 0.900000	Solution (vec): 1 0 	
+2 3 2  | 6	| 1.010000	Solution (brute): 2 3 	 | 28	| 1.010000	Solution (vec): 2 3 	
+2 3 2  | 8	| 0.940000	Solution (brute): 1 0 	 | 29	| 0.940000	Solution (vec): 1 0 	
+2 3 2  | 5	| 1.770000	Solution (brute): 1 1 	 | 20	| 1.770000	Solution (vec): 1 1 	
+2 3 2  | 6	| 0.990000	Solution (brute): 0 1 	 | 28	| 0.990000	Solution (vec): 0 1 	
+3 3 2  | 6	| 1.610000	Solution (brute): 1 1 	 | 21	| 1.610000	Solution (vec): 1 1 	
+3 3 2  | 7	| 1.170000	Solution (brute): 1 1 	 | 20	| 1.170000	Solution (vec): 1 1 	
+3 3 2  | 6	| 0.773333	Solution (brute): 1 1 	 | 22	| 0.773333	Solution (vec): 1 1 	
+3 3 2  | 7	| 0.900000	Solution (brute): 0 1 	 | 24	| 0.900000	Solution (vec): 0 1 	
+3 3 2  | 7	| 0.760000	Solution (brute): 0 1 	 | 26	| 0.760000	Solution (vec): 0 1 	
+4 3 2  | 11	| 1.110000	Solution (brute): 1 1 	 | 39	| 1.110000	Solution (vec): 1 1 	
+4 3 2  | 17	| 0.990000	Solution (brute): 1 2 	 | 65	| 0.990000	Solution (vec): 1 2 	
+4 3 2  | 11	| 1.090000	Solution (brute): 1 3 	 | 41	| 1.090000	Solution (vec): 1 3 	
+4 3 2  | 14	| 1.600000	Solution (brute): 1 2 	 | 43	| 1.600000	Solution (vec): 1 2 	
+4 3 2  | 11	| 1.140000	Solution (brute): 1 1 	 | 37	| 1.140000	Solution (vec): 1 1 	
+5 3 2  | 12	| 1.288000	Solution (brute): 1 1 	 | 35	| 1.288000	Solution (vec): 1 1 	
+5 3 2  | 10	| 0.984000	Solution (brute): 2 1 	 | 41	| 0.984000	Solution (vec): 2 1 	
+5 3 2  | 12	| 0.960000	Solution (brute): 0 1 	 | 36	| 0.960000	Solution (vec): 0 1 	
+5 3 2  | 9	| 1.010000	Solution (brute): 3 1 	 | 47	| 1.010000	Solution (vec): 3 1 	
+5 3 2  | 11	| 0.696000	Solution (brute): 1 1 	 | 40	| 0.696000	Solution (vec): 1 1 	
+6 3 2  | 10	| 1.510000	Solution (brute): 1 2 	 | 24	| 1.510000	Solution (vec): 1 2 	
+6 3 2  | 8	| 1.190000	Solution (brute): 2 1 	 | 25	| 1.190000	Solution (vec): 2 1 	
+6 3 2  | 8	| 1.690000	Solution (brute): 1 1 	 | 22	| 1.690000	Solution (vec): 1 1 	
+6 3 2  | 9	| 0.960000	Solution (brute): 1 2 	 | 29	| 0.960000	Solution (vec): 1 2 	
+6 3 2  | 9	| 0.950000	Solution (brute): 2 1 	 | 24	| 0.950000	Solution (vec): 2 1 	
+7 3 2  | 9	| 1.171429	Solution (brute): 1 1 	 | 22	| 1.171429	Solution (vec): 1 1 	
+7 3 2  | 9	| 0.900000	Solution (brute): 1 1 	 | 23	| 0.900000	Solution (vec): 1 1 	
+7 3 2  | 9	| 1.320000	Solution (brute): 2 1 	 | 23	| 1.320000	Solution (vec): 2 1 	
+7 3 2  | 13	| 0.917143	Solution (brute): 2 1 	 | 44	| 0.917143	Solution (vec): 2 1 	
+7 3 2  | 15	| 1.148571	Solution (brute): 1 1 	 | 40	| 1.148571	Solution (vec): 1 1 	
+8 3 2  | 10	| 0.796250	Solution (brute): 2 1 	 | 31	| 0.796250	Solution (vec): 2 1 	
+8 3 2  | 10	| 1.496250	Solution (brute): 1 1 	 | 22	| 1.496250	Solution (vec): 1 1 	
+8 3 2  | 9	| 1.410000	Solution (brute): 2 1 	 | 24	| 1.410000	Solution (vec): 2 1 	
+8 3 2  | 10	| 1.360000	Solution (brute): 1 2 	 | 25	| 1.360000	Solution (vec): 1 2 	
+8 3 2  | 9	| 0.940000	Solution (brute): 0 1 	 | 26	| 0.940000	Solution (vec): 0 1 	
+9 3 2  | 10	| 1.271111	Solution (brute): 1 1 	 | 23	| 1.271111	Solution (vec): 1 1 	
+9 3 2  | 11	| 0.853333	Solution (brute): 1 3 	 | 26	| 0.853333	Solution (vec): 1 3 	
+9 3 2  | 9	| 0.940000	Solution (brute): 0 1 	 | 31	| 0.940000	Solution (vec): 0 1 	
+9 3 2  | 10	| 1.493333	Solution (brute): 1 1 	 | 22	| 1.493333	Solution (vec): 1 1 	
+9 3 2  | 11	| 1.360000	Solution (brute): 1 1 	 | 21	| 1.360000	Solution (vec): 1 1 	
+1 4 2  | 7	| 0.740000	Solution (brute): 0 1 	 | 29	| 0.740000	Solution (vec): 0 1 	
+1 4 2  | 6	| 0.990000	Solution (brute): 1 0 	 | 30	| 0.990000	Solution (vec): 1 0 	
+1 4 2  | 8	| 0.590000	Solution (brute): 1 0 	 | 36	| 0.590000	Solution (vec): 1 0 	
+1 4 2  | 9	| 0.920000	Solution (brute): 1 0 	 | 45	| 0.920000	Solution (vec): 1 0 	
+1 4 2  | 8	| 0.980000	Solution (brute): 0 1 	 | 41	| 0.980000	Solution (vec): 0 1 	
+2 4 2  | 10	| 1.390000	Solution (brute): 1 2 	 | 33	| 1.390000	Solution (vec): 1 2 	
+2 4 2  | 16	| 0.980000	Solution (brute): 0 1 	 | 71	| 0.980000	Solution (vec): 0 1 	
+2 4 2  | 12	| 1.150000	Solution (brute): 3 3 	 | 47	| 1.150000	Solution (vec): 3 3 	
+2 4 2  | 7	| 0.900000	Solution (brute): 0 1 	 | 36	| 0.900000	Solution (vec): 0 1 	
+2 4 2  | 8	| 1.470000	Solution (brute): 3 1 	 | 25	| 1.470000	Solution (vec): 3 1 	
+3 4 2  | 10	| 1.320000	Solution (brute): 1 1 	 | 23	| 1.320000	Solution (vec): 1 1 	
+3 4 2  | 11	| 0.840000	Solution (brute): 3 2 	 | 33	| 0.833333	Solution (vec): 3 1 	
+3 4 2  | 10	| 1.770000	Solution (brute): 1 1 	 | 21	| 1.770000	Solution (vec): 1 1 	
+3 4 2  | 9	| 0.950000	Solution (brute): 0 1 	 | 30	| 0.940000	Solution (vec): 1 2 	
+3 4 2  | 11	| 1.300000	Solution (brute): 2 3 	 | 36	| 1.300000	Solution (vec): 2 3 	
+4 4 2  | 11	| 1.140000	Solution (brute): 1 1 	 | 29	| 1.140000	Solution (vec): 1 1 	
+4 4 2  | 12	| 0.690000	Solution (brute): 2 1 	 | 30	| 0.690000	Solution (vec): 2 1 	
+4 4 2  | 13	| 1.335000	Solution (brute): 1 1 	 | 27	| 1.335000	Solution (vec): 1 1 	
+4 4 2  | 12	| 1.050000	Solution (brute): 2 2 	 | 47	| 1.050000	Solution (vec): 2 2 	
+4 4 2  | 13	| 1.110000	Solution (brute): 2 1 	 | 44	| 1.110000	Solution (vec): 2 1 	
+5 4 2  | 16	| 1.144000	Solution (brute): 1 2 	 | 47	| 1.144000	Solution (vec): 1 2 	
+5 4 2  | 16	| 1.432000	Solution (brute): 1 1 	 | 33	| 1.432000	Solution (vec): 1 1 	
+5 4 2  | 16	| 1.528000	Solution (brute): 2 1 	 | 37	| 1.528000	Solution (vec): 2 1 	
+5 4 2  | 17	| 1.116000	Solution (brute): 1 1 	 | 43	| 1.116000	Solution (vec): 1 1 	
+5 4 2  | 15	| 1.408000	Solution (brute): 1 1 	 | 43	| 1.408000	Solution (vec): 1 1 	
+6 4 2  | 12	| 1.008333	Solution (brute): 1 1 	 | 28	| 1.008333	Solution (vec): 1 1 	
+6 4 2  | 13	| 1.058333	Solution (brute): 1 2 	 | 34	| 1.058333	Solution (vec): 1 2 	
+6 4 2  | 12	| 1.470000	Solution (brute): 1 2 	 | 25	| 1.470000	Solution (vec): 1 2 	
+6 4 2  | 17	| 1.190000	Solution (brute): 3 1 	 | 39	| 1.190000	Solution (vec): 3 1 	
+6 4 2  | 19	| 1.220000	Solution (brute): 1 3 	 | 35	| 1.116667	Solution (vec): 1 1 	
+7 4 2  | 21	| 1.510000	Solution (brute): 1 2 	 | 36	| 1.510000	Solution (vec): 1 2 	
+7 4 2  | 18	| 1.890000	Solution (brute): 1 1 	 | 31	| 1.890000	Solution (vec): 1 1 	
+7 4 2  | 19	| 1.302857	Solution (brute): 3 1 	 | 37	| 1.302857	Solution (vec): 3 1 	
+7 4 2  | 19	| 1.310000	Solution (brute): 3 1 	 | 46	| 1.310000	Solution (vec): 3 1 	
+7 4 2  | 20	| 1.122857	Solution (brute): 1 3 	 | 39	| 1.122857	Solution (vec): 1 3 	
+8 4 2  | 19	| 1.100000	Solution (brute): 1 1 	 | 33	| 1.100000	Solution (vec): 1 1 	
+8 4 2  | 20	| 1.580000	Solution (brute): 1 2 	 | 33	| 1.580000	Solution (vec): 1 2 	
+8 4 2  | 19	| 1.312500	Solution (brute): 2 1 	 | 36	| 1.312500	Solution (vec): 2 1 	
+8 4 2  | 15	| 1.312500	Solution (brute): 1 1 	 | 26	| 1.312500	Solution (vec): 1 1 	
+8 4 2  | 13	| 1.020000	Solution (brute): 1 2 	 | 24	| 1.020000	Solution (vec): 1 2 	
+9 4 2  | 16	| 1.217778	Solution (brute): 1 1 	 | 28	| 1.217778	Solution (vec): 1 1 	
+9 4 2  | 27	| 1.528889	Solution (brute): 1 1 	 | 45	| 1.528889	Solution (vec): 1 1 	
+9 4 2  | 21	| 1.210000	Solution (brute): 1 2 	 | 36	| 1.210000	Solution (vec): 1 2 	
+9 4 2  | 16	| 0.861111	Solution (brute): 1 1 	 | 36	| 0.861111	Solution (vec): 1 1 	
+9 4 2  | 15	| 1.003333	Solution (brute): 1 2 	 | 29	| 1.003333	Solution (vec): 1 2 	
+1 5 2  | 11	| 0.800000	Solution (brute): 0 1 	 | 53	| 0.800000	Solution (vec): 0 1 	
+1 5 2  | 11	| 0.830000	Solution (brute): 1 0 	 | 61	| 0.830000	Solution (vec): 1 0 	
+1 5 2  | 11	| 0.930000	Solution (brute): 0 1 	 | 57	| 0.930000	Solution (vec): 0 1 	
+1 5 2  | 8	| 0.950000	Solution (brute): 0 1 	 | 41	| 0.950000	Solution (vec): 0 1 	
+1 5 2  | 8	| 0.990000	Solution (brute): 0 1 	 | 38	| 0.990000	Solution (vec): 0 1 	
+2 5 2  | 11	| 1.350000	Solution (brute): 1 2 	 | 27	| 1.350000	Solution (vec): 1 2 	
+2 5 2  | 11	| 1.200000	Solution (brute): 2 3 	 | 34	| 1.200000	Solution (vec): 2 3 	
+2 5 2  | 10	| 0.930000	Solution (brute): 1 0 	 | 39	| 0.930000	Solution (vec): 1 0 	
+2 5 2  | 10	| 1.660000	Solution (brute): 1 2 	 | 42	| 1.660000	Solution (vec): 1 2 	
+2 5 2  | 15	| 0.980000	Solution (brute): 3 2 	 | 49	| 0.980000	Solution (vec): 3 2 	
+3 5 2  | 13	| 1.440000	Solution (brute): 1 3 	 | 58	| 1.440000	Solution (vec): 1 3 	
+3 5 2  | 25	| 1.113333	Solution (brute): 1 1 	 | 50	| 1.113333	Solution (vec): 1 1 	
+3 5 2  | 17	| 0.970000	Solution (brute): 0 1 	 | 65	| 0.970000	Solution (vec): 0 1 	
+3 5 2  | 16	| 1.550000	Solution (brute): 1 1 	 | 31	| 1.550000	Solution (vec): 1 1 	
+3 5 2  | 16	| 1.960000	Solution (brute): 1 1 	 | 34	| 1.960000	Solution (vec): 1 1 	
+4 5 2  | 21	| 0.967500	Solution (brute): 1 4 	 | 59	| 0.967500	Solution (vec): 1 4 	
+4 5 2  | 17	| 1.065000	Solution (brute): 2 1 	 | 48	| 1.065000	Solution (vec): 2 1 	
+4 5 2  | 13	| 1.390000	Solution (brute): 1 2 	 | 23	| 1.390000	Solution (vec): 1 2 	
+4 5 2  | 12	| 1.620000	Solution (brute): 1 1 	 | 20	| 1.620000	Solution (vec): 1 1 	
+4 5 2  | 12	| 1.330000	Solution (brute): 2 1 	 | 26	| 1.330000	Solution (vec): 2 1 	
+5 5 2  | 14	| 1.080000	Solution (brute): 1 2 	 | 37	| 1.080000	Solution (vec): 1 2 	
+5 5 2  | 14	| 1.432000	Solution (brute): 1 1 	 | 22	| 1.432000	Solution (vec): 1 1 	
+5 5 2  | 13	| 1.750000	Solution (brute): 2 2 	 | 27	| 1.750000	Solution (vec): 2 2 	
+5 5 2  | 14	| 1.570000	Solution (brute): 1 2 	 | 22	| 1.570000	Solution (vec): 1 2 	
+5 5 2  | 15	| 1.200000	Solution (brute): 2 3 	 | 28	| 1.200000	Solution (vec): 2 3 	
+6 5 2  | 20	| 1.700000	Solution (brute): 1 1 	 | 28	| 1.700000	Solution (vec): 1 1 	
+6 5 2  | 21	| 1.466667	Solution (brute): 1 1 	 | 31	| 1.466667	Solution (vec): 1 1 	
+6 5 2  | 19	| 1.580000	Solution (brute): 2 1 	 | 30	| 1.580000	Solution (vec): 2 1 	
+6 5 2  | 21	| 0.816667	Solution (brute): 2 1 	 | 36	| 0.816667	Solution (vec): 2 1 	
+6 5 2  | 22	| 1.350000	Solution (brute): 1 1 	 | 28	| 1.350000	Solution (vec): 1 1 	
+7 5 2  | 28	| 1.242857	Solution (brute): 1 2 	 | 66	| 1.242857	Solution (vec): 1 2 	
+7 5 2  | 23	| 1.320000	Solution (brute): 1 2 	 | 35	| 1.320000	Solution (vec): 1 2 	
+7 5 2  | 27	| 1.740000	Solution (brute): 2 1 	 | 41	| 1.740000	Solution (vec): 2 1 	
+7 5 2  | 23	| 1.590000	Solution (brute): 2 1 	 | 34	| 1.590000	Solution (vec): 2 1 	
+7 5 2  | 16	| 0.920000	Solution (brute): 0 1 	 | 56	| 0.920000	Solution (vec): 0 1 	
+8 5 2  | 33	| 1.557500	Solution (brute): 1 1 	 | 33	| 1.557500	Solution (vec): 1 1 	
+8 5 2  | 21	| 1.072500	Solution (brute): 1 1 	 | 29	| 1.072500	Solution (vec): 1 1 	
+8 5 2  | 20	| 1.570000	Solution (brute): 1 1 	 | 24	| 1.570000	Solution (vec): 1 1 	
+8 5 2  | 21	| 1.520000	Solution (brute): 1 2 	 | 55	| 1.520000	Solution (vec): 1 2 	
+8 5 2  | 24	| 1.750000	Solution (brute): 1 1 	 | 28	| 1.750000	Solution (vec): 1 1 	
+9 5 2  | 25	| 1.422222	Solution (brute): 2 2 	 | 37	| 1.422222	Solution (vec): 2 2 	
+9 5 2  | 26	| 1.333333	Solution (brute): 1 1 	 | 29	| 1.333333	Solution (vec): 1 1 	
+9 5 2  | 26	| 1.226667	Solution (brute): 1 2 	 | 29	| 1.226667	Solution (vec): 1 2 	
+9 5 2  | 24	| 1.820000	Solution (brute): 1 2 	 | 29	| 1.820000	Solution (vec): 1 2 	
+9 5 2  | 30	| 1.493333	Solution (brute): 1 1 	 | 33	| 1.493333	Solution (vec): 1 1 	
+1 6 2  | 12	| 0.990000	Solution (brute): 1 0 	 | 52	| 0.990000	Solution (vec): 1 0 	
+1 6 2  | 13	| 0.860000	Solution (brute): 1 0 	 | 58	| 0.860000	Solution (vec): 1 0 	
+1 6 2  | 12	| 0.890000	Solution (brute): 1 0 	 | 56	| 0.890000	Solution (vec): 1 0 	
+1 6 2  | 12	| 0.920000	Solution (brute): 1 0 	 | 61	| 0.920000	Solution (vec): 1 0 	
+1 6 2  | 12	| 0.990000	Solution (brute): 0 1 	 | 55	| 0.990000	Solution (vec): 0 1 	
+2 6 2  | 13	| 1.200000	Solution (brute): 1 2 	 | 27	| 1.200000	Solution (vec): 1 2 	
+2 6 2  | 13	| 1.670000	Solution (brute): 1 2 	 | 27	| 1.670000	Solution (vec): 1 2 	
+2 6 2  | 13	| 1.350000	Solution (brute): 2 1 	 | 29	| 1.350000	Solution (vec): 2 1 	
+2 6 2  | 12	| 0.960000	Solution (brute): 1 0 	 | 58	| 0.960000	Solution (vec): 1 0 	
+2 6 2  | 14	| 0.960000	Solution (brute): 0 1 	 | 48	| 0.960000	Solution (vec): 0 1 	
+3 6 2  | 18	| 1.930000	Solution (brute): 1 1 	 | 24	| 1.930000	Solution (vec): 1 1 	
+3 6 2  | 15	| 0.970000	Solution (brute): 1 0 	 | 46	| 0.970000	Solution (vec): 1 0 	
+3 6 2  | 17	| 1.290000	Solution (brute): 1 3 	 | 27	| 1.290000	Solution (vec): 1 3 	
+3 6 2  | 16	| 1.790000	Solution (brute): 1 3 	 | 81	| 1.790000	Solution (vec): 1 3 	
+3 6 2  | 18	| 1.850000	Solution (brute): 1 2 	 | 26	| 1.850000	Solution (vec): 1 2 	
+4 6 2  | 22	| 1.630000	Solution (brute): 1 1 	 | 34	| 1.630000	Solution (vec): 1 1 	
+4 6 2  | 20	| 1.110000	Solution (brute): 1 4 	 | 45	| 1.110000	Solution (vec): 1 4 	
+4 6 2  | 20	| 1.870000	Solution (brute): 2 1 	 | 26	| 1.870000	Solution (vec): 2 1 	
+4 6 2  | 20	| 0.960000	Solution (brute): 3 2 	 | 69	| 0.960000	Solution (vec): 3 2 	
+4 6 2  | 25	| 1.550000	Solution (brute): 2 1 	 | 37	| 1.550000	Solution (vec): 2 1 	
+5 6 2  | 38	| 1.250000	Solution (brute): 5 1 	 | 72	| 1.250000	Solution (vec): 5 1 	
+5 6 2  | 20	| 1.080000	Solution (brute): 4 1 	 | 42	| 1.080000	Solution (vec): 4 1 	
+5 6 2  | 21	| 1.550000	Solution (brute): 1 1 	 | 24	| 1.550000	Solution (vec): 1 1 	
+5 6 2  | 20	| 1.630000	Solution (brute): 1 1 	 | 24	| 1.630000	Solution (vec): 1 1 	
+5 6 2  | 18	| 0.840000	Solution (brute): 0 1 	 | 35	| 0.840000	Solution (vec): 0 1 	
+6 6 2  | 24	| 1.500000	Solution (brute): 4 2 	 | 36	| 1.500000	Solution (vec): 4 2 	
+6 6 2  | 22	| 1.180000	Solution (brute): 1 2 	 | 41	| 1.180000	Solution (vec): 1 2 	
+6 6 2  | 24	| 1.566667	Solution (brute): 1 1 	 | 31	| 1.566667	Solution (vec): 1 1 	
+6 6 2  | 23	| 1.770000	Solution (brute): 1 2 	 | 25	| 1.770000	Solution (vec): 1 2 	
+6 6 2  | 25	| 1.600000	Solution (brute): 3 2 	 | 31	| 1.600000	Solution (vec): 3 2 	
+7 6 2  | 26	| 1.810000	Solution (brute): 1 1 	 | 24	| 1.810000	Solution (vec): 1 1 	
+7 6 2  | 25	| 1.135714	Solution (brute): 3 1 	 | 38	| 1.135714	Solution (vec): 3 1 	
+7 6 2  | 26	| 1.400000	Solution (brute): 1 2 	 | 27	| 1.400000	Solution (vec): 1 2 	
+7 6 2  | 25	| 1.645714	Solution (brute): 1 1 	 | 24	| 1.645714	Solution (vec): 1 1 	
+7 6 2  | 28	| 1.292857	Solution (brute): 1 2 	 | 29	| 1.292857	Solution (vec): 1 2 	
+8 6 2  | 28	| 1.706250	Solution (brute): 1 1 	 | 27	| 1.706250	Solution (vec): 1 1 	
+8 6 2  | 40	| 1.531250	Solution (brute): 3 1 	 | 47	| 1.531250	Solution (vec): 3 1 	
+8 6 2  | 37	| 1.487500	Solution (brute): 1 1 	 | 36	| 1.487500	Solution (vec): 1 1 	
+8 6 2  | 49	| 1.470000	Solution (brute): 4 1 	 | 66	| 1.470000	Solution (vec): 4 1 	
+8 6 2  | 36	| 1.680000	Solution (brute): 2 3 	 | 49	| 1.680000	Solution (vec): 2 3 	
+9 6 2  | 36	| 1.870000	Solution (brute): 1 1 	 | 33	| 1.870000	Solution (vec): 1 1 	
+9 6 2  | 34	| 1.320000	Solution (brute): 1 1 	 | 26	| 1.320000	Solution (vec): 1 1 	
+9 6 2  | 41	| 1.143333	Solution (brute): 2 1 	 | 52	| 1.143333	Solution (vec): 2 1 	
+9 6 2  | 32	| 1.560000	Solution (brute): 1 1 	 | 25	| 1.560000	Solution (vec): 1 1 	
+9 6 2  | 29	| 1.440000	Solution (brute): 1 1 	 | 37	| 1.440000	Solution (vec): 1 1 	
+1 7 2  | 13	| 0.950000	Solution (brute): 1 0 	 | 57	| 0.950000	Solution (vec): 1 0 	
+1 7 2  | 16	| 0.900000	Solution (brute): 1 0 	 | 70	| 0.900000	Solution (vec): 1 0 	
+1 7 2  | 16	| 0.980000	Solution (brute): 1 0 	 | 66	| 0.980000	Solution (vec): 1 0 	
+1 7 2  | 16	| 0.890000	Solution (brute): 1 0 	 | 89	| 0.890000	Solution (vec): 1 0 	
+1 7 2  | 15	| 0.850000	Solution (brute): 1 0 	 | 82	| 0.850000	Solution (vec): 1 0 	
+2 7 2  | 24	| 1.810000	Solution (brute): 2 2 	 | 37	| 1.810000	Solution (vec): 2 2 	
+2 7 2  | 30	| 1.310000	Solution (brute): 2 3 	 | 63	| 1.310000	Solution (vec): 2 3 	
+2 7 2  | 21	| 1.760000	Solution (brute): 2 3 	 | 44	| 1.760000	Solution (vec): 2 3 	
+2 7 2  | 34	| 1.720000	Solution (brute): 3 2 	 | 60	| 1.720000	Solution (vec): 3 2 	
+2 7 2  | 22	| 1.520000	Solution (brute): 3 2 	 | 46	| 1.520000	Solution (vec): 3 2 	
+3 7 2  | 27	| 1.730000	Solution (brute): 1 1 	 | 33	| 1.730000	Solution (vec): 1 1 	
+3 7 2  | 25	| 1.213333	Solution (brute): 1 1 	 | 52	| 1.213333	Solution (vec): 1 1 	
+3 7 2  | 26	| 1.320000	Solution (brute): 4 1 	 | 45	| 1.320000	Solution (vec): 4 1 	
+3 7 2  | 26	| 1.520000	Solution (brute): 1 5 	 | 52	| 1.520000	Solution (vec): 1 5 	
+3 7 2  | 19	| 1.420000	Solution (brute): 1 1 	 | 20	| 1.420000	Solution (vec): 1 1 	
+4 7 2  | 22	| 1.680000	Solution (brute): 1 1 	 | 21	| 1.680000	Solution (vec): 1 1 	
+4 7 2  | 19	| 1.580000	Solution (brute): 1 2 	 | 24	| 1.580000	Solution (vec): 1 2 	
+4 7 2  | 19	| 1.120000	Solution (brute): 1 6 	 | 37	| 1.120000	Solution (vec): 1 6 	
+4 7 2  | 21	| 1.280000	Solution (brute): 4 1 	 | 30	| 1.280000	Solution (vec): 4 1 	
+4 7 2  | 20	| 1.620000	Solution (brute): 1 1 	 | 20	| 1.620000	Solution (vec): 1 1 	
+5 7 2  | 23	| 1.368000	Solution (brute): 2 1 	 | 29	| 1.368000	Solution (vec): 2 1 	
+5 7 2  | 23	| 1.370000	Solution (brute): 1 5 	 | 33	| 1.370000	Solution (vec): 1 5 	
+5 7 2  | 25	| 1.448000	Solution (brute): 1 2 	 | 36	| 1.448000	Solution (vec): 1 2 	
+5 7 2  | 24	| 1.250000	Solution (brute): 5 2 	 | 34	| 1.250000	Solution (vec): 5 2 	
+5 7 2  | 24	| 1.690000	Solution (brute): 1 1 	 | 21	| 1.690000	Solution (vec): 1 1 	
+6 7 2  | 27	| 1.170000	Solution (brute): 3 1 	 | 32	| 1.170000	Solution (vec): 3 1 	
+6 7 2  | 53	| 1.500000	Solution (brute): 1 3 	 | 62	| 1.500000	Solution (vec): 1 3 	
+6 7 2  | 122	| 1.780000	Solution (brute): 3 1 	 | 62	| 1.780000	Solution (vec): 3 1 	
+6 7 2  | 50	| 1.630000	Solution (brute): 1 2 	 | 41	| 1.630000	Solution (vec): 1 2 	
+6 7 2  | 39	| 1.410000	Solution (brute): 1 2 	 | 42	| 1.410000	Solution (vec): 1 2 	
+7 7 2  | 35	| 1.560000	Solution (brute): 1 1 	 | 30	| 1.560000	Solution (vec): 1 1 	
+7 7 2  | 36	| 1.650000	Solution (brute): 1 1 	 | 27	| 1.650000	Solution (vec): 1 1 	
+7 7 2  | 34	| 1.337143	Solution (brute): 1 3 	 | 43	| 1.337143	Solution (vec): 1 3 	
+7 7 2  | 36	| 1.474286	Solution (brute): 1 2 	 | 31	| 1.474286	Solution (vec): 1 2 	
+7 7 2  | 31	| 1.542857	Solution (brute): 1 1 	 | 41	| 1.542857	Solution (vec): 1 1 	
+8 7 2  | 35	| 1.230000	Solution (brute): 1 3 	 | 62	| 1.230000	Solution (vec): 1 3 	
+8 7 2  | 37	| 1.710000	Solution (brute): 2 1 	 | 28	| 1.710000	Solution (vec): 2 1 	
+8 7 2  | 36	| 1.650000	Solution (brute): 1 2 	 | 28	| 1.650000	Solution (vec): 1 2 	
+8 7 2  | 38	| 0.850000	Solution (brute): 1 6 	 | 47	| 0.850000	Solution (vec): 1 6 	
+8 7 2  | 39	| 1.350000	Solution (brute): 2 1 	 | 43	| 1.350000	Solution (vec): 2 1 	
+9 7 2  | 37	| 1.182222	Solution (brute): 1 1 	 | 34	| 1.182222	Solution (vec): 1 1 	
+9 7 2  | 39	| 1.700000	Solution (brute): 1 1 	 | 24	| 1.700000	Solution (vec): 1 1 	
+9 7 2  | 37	| 1.146667	Solution (brute): 1 2 	 | 37	| 1.146667	Solution (vec): 1 2 	
+9 7 2  | 49	| 1.608889	Solution (brute): 1 1 	 | 34	| 1.608889	Solution (vec): 1 1 	
+9 7 2  | 38	| 1.760000	Solution (brute): 2 1 	 | 31	| 1.760000	Solution (vec): 2 1 	
+1 8 2  | 19	| 0.950000	Solution (brute): 1 0 	 | 94	| 0.950000	Solution (vec): 1 0 	
+1 8 2  | 14	| 0.950000	Solution (brute): 0 1 	 | 71	| 0.950000	Solution (vec): 0 1 	
+1 8 2  | 23	| 0.990000	Solution (brute): 1 0 	 | 101	| 0.990000	Solution (vec): 1 0 	
+1 8 2  | 14	| 0.930000	Solution (brute): 0 1 	 | 62	| 0.930000	Solution (vec): 0 1 	
+1 8 2  | 15	| 0.940000	Solution (brute): 1 0 	 | 66	| 0.940000	Solution (vec): 1 0 	
+2 8 2  | 19	| 1.700000	Solution (brute): 3 1 	 | 28	| 1.700000	Solution (vec): 3 1 	
+2 8 2  | 19	| 1.630000	Solution (brute): 4 2 	 | 39	| 1.630000	Solution (vec): 4 2 	
+2 8 2  | 18	| 1.410000	Solution (brute): 1 4 	 | 46	| 1.410000	Solution (vec): 1 4 	
+2 8 2  | 20	| 1.600000	Solution (brute): 4 1 	 | 37	| 1.600000	Solution (vec): 4 1 	
+2 8 2  | 19	| 1.110000	Solution (brute): 3 5 	 | 52	| 1.110000	Solution (vec): 3 5 	
+3 8 2  | 23	| 1.840000	Solution (brute): 2 1 	 | 27	| 1.840000	Solution (vec): 2 1 	
+3 8 2  | 74	| 1.760000	Solution (brute): 1 1 	 | 34	| 1.760000	Solution (vec): 1 1 	
+3 8 2  | 24	| 1.870000	Solution (brute): 2 2 	 | 29	| 1.870000	Solution (vec): 2 2 	
+3 8 2  | 24	| 1.340000	Solution (brute): 2 5 	 | 41	| 1.340000	Solution (vec): 2 5 	
+3 8 2  | 28	| 1.206667	Solution (brute): 1 1 	 | 77	| 1.206667	Solution (vec): 1 1 	
+4 8 2  | 51	| 1.540000	Solution (brute): 2 1 	 | 58	| 1.540000	Solution (vec): 2 1 	
+4 8 2  | 41	| 1.550000	Solution (brute): 2 3 	 | 53	| 1.550000	Solution (vec): 2 3 	
+4 8 2  | 44	| 1.310000	Solution (brute): 1 5 	 | 47	| 1.310000	Solution (vec): 1 5 	
+4 8 2  | 38	| 1.630000	Solution (brute): 1 1 	 | 32	| 1.630000	Solution (vec): 1 1 	
+4 8 2  | 38	| 1.710000	Solution (brute): 4 2 	 | 47	| 1.710000	Solution (vec): 4 2 	
+5 8 2  | 29	| 1.512000	Solution (brute): 1 1 	 | 23	| 1.512000	Solution (vec): 1 1 	
+5 8 2  | 31	| 1.730000	Solution (brute): 1 2 	 | 23	| 1.730000	Solution (vec): 1 2 	
+5 8 2  | 28	| 1.460000	Solution (brute): 1 2 	 | 27	| 1.460000	Solution (vec): 1 2 	
+5 8 2  | 29	| 1.310000	Solution (brute): 2 4 	 | 29	| 1.272000	Solution (vec): 3 1 	
+5 8 2  | 29	| 1.800000	Solution (brute): 1 1 	 | 21	| 1.800000	Solution (vec): 1 1 	
+6 8 2  | 39	| 1.920000	Solution (brute): 1 3 	 | 31	| 1.920000	Solution (vec): 1 3 	
+6 8 2  | 38	| 1.900000	Solution (brute): 1 1 	 | 25	| 1.900000	Solution (vec): 1 1 	
+6 8 2  | 38	| 1.226667	Solution (brute): 1 1 	 | 47	| 1.226667	Solution (vec): 1 1 	
+6 8 2  | 39	| 1.770000	Solution (brute): 1 1 	 | 25	| 1.770000	Solution (vec): 1 1 	
+6 8 2  | 41	| 1.560000	Solution (brute): 1 1 	 | 26	| 1.560000	Solution (vec): 1 1 	
+7 8 2  | 51	| 1.510000	Solution (brute): 1 4 	 | 55	| 1.510000	Solution (vec): 1 4 	
+7 8 2  | 53	| 1.900000	Solution (brute): 1 1 	 | 32	| 1.900000	Solution (vec): 1 1 	
+7 8 2  | 39	| 1.850000	Solution (brute): 1 1 	 | 28	| 1.850000	Solution (vec): 1 1 	
+7 8 2  | 67	| 1.590000	Solution (brute): 1 3 	 | 36	| 1.590000	Solution (vec): 1 3 	
+7 8 2  | 63	| 1.422857	Solution (brute): 1 2 	 | 59	| 1.422857	Solution (vec): 1 2 	
+8 8 2  | 59	| 1.450000	Solution (brute): 4 2 	 | 57	| 1.450000	Solution (vec): 4 2 	
+8 8 2  | 60	| 1.780000	Solution (brute): 1 3 	 | 44	| 1.780000	Solution (vec): 1 3 	
+8 8 2  | 56	| 1.575000	Solution (brute): 1 1 	 | 34	| 1.575000	Solution (vec): 1 1 	
+8 8 2  | 58	| 1.370000	Solution (brute): 2 1 	 | 41	| 1.370000	Solution (vec): 2 1 	
+8 8 2  | 44	| 1.270000	Solution (brute): 2 2 	 | 33	| 1.270000	Solution (vec): 2 2 	
+9 8 2  | 46	| 1.430000	Solution (brute): 4 1 	 | 29	| 1.430000	Solution (vec): 4 1 	
+9 8 2  | 43	| 1.724445	Solution (brute): 1 1 	 | 25	| 1.724445	Solution (vec): 1 1 	
+9 8 2  | 44	| 1.475556	Solution (brute): 2 1 	 | 37	| 1.475556	Solution (vec): 2 1 	
+9 8 2  | 43	| 1.940000	Solution (brute): 1 2 	 | 26	| 1.940000	Solution (vec): 1 2 	
+9 8 2  | 43	| 1.530000	Solution (brute): 2 1 	 | 32	| 1.530000	Solution (vec): 2 2 	
+1 9 2  | 16	| 0.910000	Solution (brute): 0 1 	 | 84	| 0.910000	Solution (vec): 0 1 	
+1 9 2  | 16	| 0.990000	Solution (brute): 0 1 	 | 77	| 0.990000	Solution (vec): 0 1 	
+1 9 2  | 16	| 0.930000	Solution (brute): 0 1 	 | 66	| 0.930000	Solution (vec): 0 1 	
+1 9 2  | 23	| 0.990000	Solution (brute): 0 1 	 | 108	| 0.990000	Solution (vec): 0 1 	
+1 9 2  | 16	| 0.920000	Solution (brute): 0 1 	 | 78	| 0.920000	Solution (vec): 0 1 	
+2 9 2  | 29	| 1.540000	Solution (brute): 2 3 	 | 40	| 1.540000	Solution (vec): 2 3 	
+2 9 2  | 26	| 1.620000	Solution (brute): 3 1 	 | 32	| 1.620000	Solution (vec): 3 1 	
+2 9 2  | 21	| 1.520000	Solution (brute): 1 3 	 | 31	| 1.520000	Solution (vec): 1 3 	
+2 9 2  | 22	| 1.660000	Solution (brute): 4 1 	 | 31	| 1.660000	Solution (vec): 4 1 	
+2 9 2  | 21	| 1.200000	Solution (brute): 1 4 	 | 36	| 1.200000	Solution (vec): 1 4 	
+3 9 2  | 38	| 1.290000	Solution (brute): 1 5 	 | 58	| 1.290000	Solution (vec): 1 5 	
+3 9 2  | 37	| 1.590000	Solution (brute): 3 1 	 | 37	| 1.590000	Solution (vec): 3 1 	
+3 9 2  | 36	| 1.650000	Solution (brute): 2 1 	 | 34	| 1.650000	Solution (vec): 2 1 	
+3 9 2  | 38	| 1.470000	Solution (brute): 1 3 	 | 41	| 1.470000	Solution (vec): 1 3 	
+3 9 2  | 41	| 1.900000	Solution (brute): 1 1 	 | 32	| 1.900000	Solution (vec): 1 1 	
+4 9 2  | 50	| 1.010000	Solution (brute): 3 3 	 | 78	| 1.010000	Solution (vec): 3 3 	
+4 9 2  | 48	| 1.365000	Solution (brute): 2 1 	 | 61	| 1.365000	Solution (vec): 2 1 	
+4 9 2  | 47	| 1.730000	Solution (brute): 1 2 	 | 39	| 1.730000	Solution (vec): 1 2 	
+4 9 2  | 91	| 1.850000	Solution (brute): 1 2 	 | 39	| 1.850000	Solution (vec): 1 2 	
+4 9 2  | 44	| 1.790000	Solution (brute): 4 1 	 | 39	| 1.790000	Solution (vec): 4 1 	
+5 9 2  | 41	| 1.820000	Solution (brute): 2 1 	 | 30	| 1.820000	Solution (vec): 2 1 	
+5 9 2  | 83	| 1.570000	Solution (brute): 5 2 	 | 75	| 1.570000	Solution (vec): 5 2 	
+5 9 2  | 43	| 1.880000	Solution (brute): 2 1 	 | 31	| 1.880000	Solution (vec): 2 1 	
+5 9 2  | 57	| 1.720000	Solution (brute): 3 1 	 | 46	| 1.720000	Solution (vec): 3 1 	
+5 9 2  | 43	| 1.690000	Solution (brute): 3 2 	 | 39	| 1.690000	Solution (vec): 3 2 	
+6 9 2  | 49	| 1.510000	Solution (brute): 1 7 	 | 50	| 1.510000	Solution (vec): 1 7 	
+6 9 2  | 46	| 1.860000	Solution (brute): 3 1 	 | 34	| 1.860000	Solution (vec): 3 1 	
+6 9 2  | 44	| 1.920000	Solution (brute): 1 2 	 | 29	| 1.920000	Solution (vec): 1 2 	
+6 9 2  | 51	| 1.458333	Solution (brute): 2 2 	 | 43	| 1.458333	Solution (vec): 2 2 	
+6 9 2  | 47	| 1.850000	Solution (brute): 1 1 	 | 25	| 1.850000	Solution (vec): 1 1 	
+7 9 2  | 61	| 1.590000	Solution (brute): 1 3 	 | 36	| 1.590000	Solution (vec): 1 3 	
+7 9 2  | 58	| 1.500000	Solution (brute): 2 1 	 | 30	| 1.500000	Solution (vec): 2 1 	
+7 9 2  | 54	| 1.414286	Solution (brute): 5 1 	 | 76	| 1.414286	Solution (vec): 5 1 	
+7 9 2  | 54	| 1.910000	Solution (brute): 1 2 	 | 30	| 1.910000	Solution (vec): 1 2 	
+7 9 2  | 51	| 1.142857	Solution (brute): 1 5 	 | 79	| 1.142857	Solution (vec): 1 5 	
+8 9 2  | 57	| 1.670000	Solution (brute): 1 2 	 | 29	| 1.670000	Solution (vec): 1 2 	
+8 9 2  | 52	| 1.460000	Solution (brute): 1 2 	 | 28	| 1.460000	Solution (vec): 1 2 	
+8 9 2  | 56	| 1.540000	Solution (brute): 1 1 	 | 34	| 1.540000	Solution (vec): 1 1 	
+8 9 2  | 56	| 1.740000	Solution (brute): 1 1 	 | 26	| 1.740000	Solution (vec): 1 1 	
+8 9 2  | 57	| 1.660000	Solution (brute): 1 4 	 | 48	| 1.660000	Solution (vec): 1 4 	
+9 9 2  | 71	| 1.333333	Solution (brute): 1 2 	 | 64	| 1.333333	Solution (vec): 1 2 	
+9 9 2  | 67	| 1.280000	Solution (brute): 3 6 	 | 84	| 1.280000	Solution (vec): 3 6 	
+9 9 2  | 69	| 1.400000	Solution (brute): 3 1 	 | 52	| 1.400000	Solution (vec): 3 1 	
+9 9 2  | 72	| 1.860000	Solution (brute): 1 1 	 | 31	| 1.860000	Solution (vec): 1 1 	
+9 9 2  | 69	| 1.790000	Solution (brute): 1 1 	 | 29	| 1.790000	Solution (vec): 1 1 	
+1 1 3  | 5	| 0.960000	Solution (brute): 1 0 0 	 | 34	| 0.960000	Solution (vec): 1 0 0 	
+1 1 3  | 5	| 0.990000	Solution (brute): 1 0 0 	 | 31	| 0.990000	Solution (vec): 1 0 0 	
+1 1 3  | 5	| 0.980000	Solution (brute): 0 1 0 	 | 30	| 0.980000	Solution (vec): 0 1 0 	
+1 1 3  | 5	| 0.960000	Solution (brute): 0 0 1 	 | 33	| 0.960000	Solution (vec): 0 0 1 	
+1 1 3  | 5	| 0.740000	Solution (brute): 1 0 0 	 | 33	| 0.740000	Solution (vec): 1 0 0 	
+2 1 3  | 5	| 0.980000	Solution (brute): 0 1 1 	 | 27	| 0.980000	Solution (vec): 0 1 1 	
+2 1 3  | 4	| 0.860000	Solution (brute): 1 0 1 	 | 21	| 0.860000	Solution (vec): 1 0 1 	
+2 1 3  | 4	| 0.940000	Solution (brute): 0 1 1 	 | 45	| 0.940000	Solution (vec): 0 1 1 	
+2 1 3  | 6	| 1.066667	Solution (brute): 1 0 1 	 | 31	| 1.066667	Solution (vec): 1 0 1 	
+2 1 3  | 5	| 1.060000	Solution (brute): 0 1 1 	 | 32	| 1.060000	Solution (vec): 0 1 1 	
+3 1 3  | 8	| 1.532222	Solution (brute): 1 1 0 	 | 49	| 1.532222	Solution (vec): 1 1 0 	
+3 1 3  | 6	| 0.940000	Solution (brute): 0 1 0 	 | 29	| 0.940000	Solution (vec): 0 1 0 	
+3 1 3  | 5	| 0.676667	Solution (brute): 0 1 1 	 | 24	| 0.676667	Solution (vec): 0 1 1 	
+3 1 3  | 4	| 0.990000	Solution (brute): 0 0 1 	 | 24	| 0.866667	Solution (vec): 0 1 1 	
+3 1 3  | 6	| 0.925556	Solution (brute): 1 0 1 	 | 30	| 0.925556	Solution (vec): 1 0 1 	
+4 1 3  | 7	| 0.383333	Solution (brute): 1 0 1 	 | 30	| 0.383333	Solution (vec): 1 0 1 	
+4 1 3  | 6	| 1.333333	Solution (brute): 1 1 0 	 | 32	| 1.333333	Solution (vec): 1 1 0 	
+4 1 3  | 6	| 0.650000	Solution (brute): 1 0 1 	 | 32	| 0.650000	Solution (vec): 1 0 1 	
+4 1 3  | 6	| 1.220000	Solution (brute): 0 1 1 	 | 28	| 1.220000	Solution (vec): 0 1 1 	
+4 1 3  | 6	| 1.275000	Solution (brute): 1 0 1 	 | 31	| 1.275000	Solution (vec): 1 0 1 	
+5 1 3  | 6	| 0.720000	Solution (brute): 0 1 0 	 | 33	| 0.720000	Solution (vec): 0 1 0 	
+5 1 3  | 6	| 0.884000	Solution (brute): 1 0 1 	 | 25	| 0.884000	Solution (vec): 1 0 1 	
+5 1 3  | 8	| 0.652667	Solution (brute): 1 1 0 	 | 36	| 0.652667	Solution (vec): 1 1 0 	
+5 1 3  | 8	| 0.912000	Solution (brute): 1 1 1 	 | 36	| 0.912000	Solution (vec): 1 1 1 	
+5 1 3  | 7	| 1.063333	Solution (brute): 1 1 1 	 | 29	| 1.063333	Solution (vec): 1 1 1 	
+6 1 3  | 6	| 2.186667	Solution (brute): 1 1 1 	 | 24	| 2.186667	Solution (vec): 1 1 1 	
+6 1 3  | 8	| 1.000000	Solution (brute): 1 0 1 	 | 38	| 1.000000	Solution (vec): 1 0 1 	
+6 1 3  | 6	| 1.377778	Solution (brute): 1 0 1 	 | 33	| 1.377778	Solution (vec): 1 0 1 	
+6 1 3  | 6	| 0.853333	Solution (brute): 0 1 1 	 | 26	| 0.853333	Solution (vec): 0 1 1 	
+6 1 3  | 5	| 0.970000	Solution (brute): 0 1 0 	 | 28	| 0.970000	Solution (vec): 0 1 0 	
+7 1 3  | 9	| 1.510952	Solution (brute): 0 1 1 	 | 37	| 1.510952	Solution (vec): 0 1 1 	
+7 1 3  | 9	| 0.950000	Solution (brute): 1 0 1 	 | 34	| 0.950000	Solution (vec): 1 0 1 	
+7 1 3  | 9	| 1.014286	Solution (brute): 1 0 1 	 | 34	| 1.014286	Solution (vec): 1 0 1 	
+7 1 3  | 7	| 1.027619	Solution (brute): 1 0 1 	 | 34	| 1.027619	Solution (vec): 1 0 1 	
+7 1 3  | 8	| 1.257619	Solution (brute): 1 0 1 	 | 36	| 1.257619	Solution (vec): 1 0 1 	
+8 1 3  | 9	| 0.770000	Solution (brute): 1 0 0 	 | 39	| 0.770000	Solution (vec): 1 0 0 	
+8 1 3  | 7	| 1.677500	Solution (brute): 0 1 1 	 | 23	| 1.677500	Solution (vec): 0 1 1 	
+8 1 3  | 7	| 1.177500	Solution (brute): 1 0 1 	 | 23	| 1.177500	Solution (vec): 1 0 1 	
+8 1 3  | 6	| 2.034584	Solution (brute): 1 1 1 	 | 20	| 2.034584	Solution (vec): 1 1 1 	
+8 1 3  | 5	| 0.973750	Solution (brute): 1 1 1 	 | 22	| 0.973750	Solution (vec): 1 1 1 	
+9 1 3  | 7	| 1.787037	Solution (brute): 1 1 0 	 | 24	| 1.787037	Solution (vec): 1 1 0 	
+9 1 3  | 6	| 0.703704	Solution (brute): 1 1 0 	 | 24	| 0.703704	Solution (vec): 1 1 0 	
+9 1 3  | 6	| 1.414444	Solution (brute): 1 1 1 	 | 21	| 1.414444	Solution (vec): 1 1 1 	
+9 1 3  | 7	| 1.107407	Solution (brute): 1 0 1 	 | 30	| 1.107407	Solution (vec): 1 0 1 	
+9 1 3  | 7	| 1.570000	Solution (brute): 0 1 1 	 | 28	| 1.570000	Solution (vec): 0 1 1 	
+1 2 3  | 12	| 0.880000	Solution (brute): 0 1 0 	 | 60	| 0.880000	Solution (vec): 0 1 0 	
+1 2 3  | 11	| 0.640000	Solution (brute): 0 0 1 	 | 51	| 0.640000	Solution (vec): 0 0 1 	
+1 2 3  | 11	| 0.980000	Solution (brute): 0 1 0 	 | 57	| 0.980000	Solution (vec): 0 1 0 	
+1 2 3  | 11	| 0.990000	Solution (brute): 0 0 1 	 | 59	| 0.990000	Solution (vec): 0 0 1 	
+1 2 3  | 11	| 0.840000	Solution (brute): 0 1 0 	 | 44	| 0.840000	Solution (vec): 0 1 0 	
+2 2 3  | 11	| 1.360000	Solution (brute): 1 0 1 	 | 31	| 1.360000	Solution (vec): 1 0 1 	
+2 2 3  | 10	| 1.186667	Solution (brute): 1 0 1 	 | 32	| 1.186667	Solution (vec): 1 0 1 	
+2 2 3  | 10	| 0.913333	Solution (brute): 2 0 1 	 | 42	| 0.913333	Solution (vec): 2 0 1 	
+2 2 3  | 8	| 1.010000	Solution (brute): 1 0 2 	 | 35	| 1.010000	Solution (vec): 1 0 2 	
+2 2 3  | 10	| 0.693333	Solution (brute): 1 0 1 	 | 30	| 0.693333	Solution (vec): 1 0 1 	
+3 2 3  | 11	| 1.820000	Solution (brute): 1 0 1 	 | 29	| 1.820000	Solution (vec): 1 0 1 	
+3 2 3  | 11	| 0.964444	Solution (brute): 1 1 0 	 | 31	| 0.964444	Solution (vec): 1 1 0 	
+3 2 3  | 11	| 1.796667	Solution (brute): 1 1 1 	 | 27	| 1.796667	Solution (vec): 1 1 1 	
+3 2 3  | 12	| 1.626667	Solution (brute): 1 1 1 	 | 29	| 1.626667	Solution (vec): 1 1 1 	
+3 2 3  | 11	| 1.440000	Solution (brute): 1 0 1 	 | 32	| 1.440000	Solution (vec): 1 0 1 	
+4 2 3  | 17	| 1.360000	Solution (brute): 1 1 0 	 | 44	| 1.360000	Solution (vec): 1 1 0 	
+4 2 3  | 18	| 0.966667	Solution (brute): 2 1 0 	 | 60	| 0.966667	Solution (vec): 2 1 0 	
+4 2 3  | 21	| 1.100000	Solution (brute): 1 0 2 	 | 69	| 1.100000	Solution (vec): 1 0 2 	
+4 2 3  | 18	| 1.000000	Solution (brute): 1 0 1 	 | 47	| 1.000000	Solution (vec): 1 0 1 	
+4 2 3  | 15	| 1.820000	Solution (brute): 1 1 1 	 | 88	| 1.820000	Solution (vec): 1 1 1 	
+5 2 3  | 18	| 1.280000	Solution (brute): 1 0 1 	 | 44	| 1.280000	Solution (vec): 1 0 1 	
+5 2 3  | 20	| 1.430000	Solution (brute): 0 2 1 	 | 43	| 1.430000	Solution (vec): 0 2 1 	
+5 2 3  | 20	| 1.437333	Solution (brute): 1 1 1 	 | 37	| 1.437333	Solution (vec): 1 1 1 	
+5 2 3  | 19	| 1.650000	Solution (brute): 1 1 2 	 | 43	| 1.650000	Solution (vec): 1 1 2 	
+5 2 3  | 19	| 1.166667	Solution (brute): 2 1 2 	 | 62	| 1.166667	Solution (vec): 2 1 2 	
+6 2 3  | 16	| 0.613333	Solution (brute): 1 1 0 	 | 26	| 0.599444	Solution (vec): 1 1 1 	
+6 2 3  | 16	| 1.582222	Solution (brute): 1 2 1 	 | 24	| 1.582222	Solution (vec): 1 2 1 	
+6 2 3  | 16	| 1.027778	Solution (brute): 1 1 2 	 | 47	| 1.027778	Solution (vec): 1 1 2 	
+6 2 3  | 16	| 0.894444	Solution (brute): 1 1 0 	 | 38	| 0.894444	Solution (vec): 1 1 0 	
+6 2 3  | 15	| 1.564444	Solution (brute): 1 0 1 	 | 27	| 1.564444	Solution (vec): 1 0 1 	
+7 2 3  | 48	| 1.392381	Solution (brute): 1 2 1 	 | 57	| 1.392381	Solution (vec): 1 2 1 	
+7 2 3  | 30	| 1.178571	Solution (brute): 2 1 2 	 | 64	| 1.178571	Solution (vec): 2 1 2 	
+7 2 3  | 18	| 0.570000	Solution (brute): 0 1 1 	 | 36	| 0.570000	Solution (vec): 0 1 1 	
+7 2 3  | 18	| 1.700000	Solution (brute): 1 1 1 	 | 31	| 1.700000	Solution (vec): 1 1 1 	
+7 2 3  | 26	| 1.058571	Solution (brute): 1 0 1 	 | 56	| 1.058571	Solution (vec): 1 0 1 	
+8 2 3  | 20	| 0.810000	Solution (brute): 0 1 1 	 | 39	| 0.810000	Solution (vec): 0 1 1 	
+8 2 3  | 19	| 0.877500	Solution (brute): 1 1 2 	 | 40	| 0.877500	Solution (vec): 1 1 2 	
+8 2 3  | 22	| 1.164167	Solution (brute): 1 2 1 	 | 47	| 1.164167	Solution (vec): 1 2 1 	
+8 2 3  | 23	| 1.050000	Solution (brute): 2 1 1 	 | 50	| 1.050000	Solution (vec): 2 1 1 	
+8 2 3  | 23	| 1.700000	Solution (brute): 1 0 1 	 | 45	| 1.700000	Solution (vec): 1 0 1 	
+9 2 3  | 23	| 1.213333	Solution (brute): 0 1 1 	 | 48	| 1.213333	Solution (vec): 0 1 1 	
+9 2 3  | 25	| 1.220000	Solution (brute): 0 1 1 	 | 41	| 1.220000	Solution (vec): 0 1 1 	
+9 2 3  | 26	| 1.592593	Solution (brute): 1 0 1 	 | 40	| 1.592593	Solution (vec): 1 0 1 	
+9 2 3  | 27	| 1.836667	Solution (brute): 1 1 1 	 | 47	| 1.836667	Solution (vec): 1 1 1 	
+9 2 3  | 16	| 1.388889	Solution (brute): 1 0 2 	 | 40	| 1.388889	Solution (vec): 1 0 2 	
+1 3 3  | 13	| 0.850000	Solution (brute): 0 1 0 	 | 69	| 0.850000	Solution (vec): 0 1 0 	
+1 3 3  | 20	| 0.870000	Solution (brute): 0 0 1 	 | 86	| 0.870000	Solution (vec): 0 0 1 	
+1 3 3  | 19	| 0.980000	Solution (brute): 0 0 1 	 | 76	| 0.980000	Solution (vec): 0 0 1 	
+1 3 3  | 30	| 0.860000	Solution (brute): 0 1 0 	 | 97	| 0.860000	Solution (vec): 0 1 0 	
+1 3 3  | 12	| 0.980000	Solution (brute): 1 0 0 	 | 122	| 0.980000	Solution (vec): 1 0 0 	
+2 3 3  | 29	| 1.580000	Solution (brute): 0 1 1 	 | 67	| 1.580000	Solution (vec): 0 1 1 	
+2 3 3  | 29	| 1.060000	Solution (brute): 1 0 3 	 | 84	| 1.060000	Solution (vec): 1 0 3 	
+2 3 3  | 17	| 1.750000	Solution (brute): 1 2 0 	 | 43	| 1.750000	Solution (vec): 1 2 0 	
+2 3 3  | 17	| 1.033333	Solution (brute): 1 2 0 	 | 55	| 1.033333	Solution (vec): 1 2 0 	
+2 3 3  | 26	| 1.013333	Solution (brute): 0 1 1 	 | 83	| 1.013333	Solution (vec): 0 1 1 	
+3 3 3  | 30	| 1.392222	Solution (brute): 0 1 1 	 | 68	| 1.392222	Solution (vec): 0 1 1 	
+3 3 3  | 34	| 1.711111	Solution (brute): 1 2 1 	 | 54	| 1.711111	Solution (vec): 1 2 1 	
+3 3 3  | 19	| 1.088889	Solution (brute): 1 0 1 	 | 39	| 1.088889	Solution (vec): 1 0 1 	
+3 3 3  | 30	| 0.844444	Solution (brute): 0 1 1 	 | 92	| 0.844444	Solution (vec): 0 1 1 	
+3 3 3  | 30	| 1.423333	Solution (brute): 1 1 0 	 | 105	| 1.423333	Solution (vec): 1 1 0 	
+4 3 3  | 36	| 1.450000	Solution (brute): 1 1 0 	 | 77	| 1.450000	Solution (vec): 1 1 0 	
+4 3 3  | 37	| 1.720000	Solution (brute): 0 2 2 	 | 67	| 1.720000	Solution (vec): 0 2 2 	
+4 3 3  | 32	| 1.560000	Solution (brute): 1 1 0 	 | 63	| 1.560000	Solution (vec): 1 1 0 	
+4 3 3  | 36	| 2.083333	Solution (brute): 1 1 2 	 | 46	| 2.083333	Solution (vec): 1 1 2 	
+4 3 3  | 35	| 1.258333	Solution (brute): 0 1 2 	 | 85	| 1.258333	Solution (vec): 0 1 2 	
+5 3 3  | 38	| 0.589333	Solution (brute): 0 1 1 	 | 74	| 0.589333	Solution (vec): 0 1 1 	
+5 3 3  | 28	| 1.730000	Solution (brute): 2 0 2 	 | 83	| 1.730000	Solution (vec): 2 0 2 	
+5 3 3  | 51	| 0.924000	Solution (brute): 1 0 1 	 | 104	| 0.924000	Solution (vec): 1 0 1 	
+5 3 3  | 30	| 1.532667	Solution (brute): 1 1 2 	 | 35	| 1.532667	Solution (vec): 1 1 2 	
+5 3 3  | 32	| 1.640000	Solution (brute): 1 1 3 	 | 36	| 1.640000	Solution (vec): 1 1 3 	
+6 3 3  | 37	| 1.537778	Solution (brute): 1 1 0 	 | 74	| 1.537778	Solution (vec): 1 1 0 	
+6 3 3  | 39	| 1.511111	Solution (brute): 1 0 1 	 | 61	| 1.511111	Solution (vec): 1 0 1 	
+6 3 3  | 39	| 1.930000	Solution (brute): 1 1 0 	 | 44	| 1.930000	Solution (vec): 1 1 0 	
+6 3 3  | 39	| 1.153333	Solution (brute): 1 1 0 	 | 79	| 1.153333	Solution (vec): 1 1 0 	
+6 3 3  | 42	| 1.351111	Solution (brute): 1 1 0 	 | 65	| 1.351111	Solution (vec): 1 1 0 	
+7 3 3  | 41	| 1.071429	Solution (brute): 2 0 1 	 | 92	| 1.071429	Solution (vec): 2 0 1 	
+7 3 3  | 37	| 2.041905	Solution (brute): 1 1 1 	 | 30	| 2.041905	Solution (vec): 1 1 1 	
+7 3 3  | 49	| 1.773333	Solution (brute): 2 1 3 	 | 62	| 1.773333	Solution (vec): 2 1 3 	
+7 3 3  | 34	| 1.699048	Solution (brute): 1 1 1 	 | 28	| 1.699048	Solution (vec): 1 1 1 	
+7 3 3  | 46	| 1.176190	Solution (brute): 1 1 0 	 | 80	| 1.176190	Solution (vec): 1 1 0 	
+8 3 3  | 39	| 1.690000	Solution (brute): 2 1 0 	 | 63	| 1.690000	Solution (vec): 2 1 0 	
+8 3 3  | 40	| 1.548750	Solution (brute): 1 3 2 	 | 50	| 1.548750	Solution (vec): 1 3 2 	
+8 3 3  | 41	| 2.053333	Solution (brute): 1 1 2 	 | 32	| 2.053333	Solution (vec): 1 1 2 	
+8 3 3  | 57	| 1.697500	Solution (brute): 1 2 1 	 | 131	| 1.697500	Solution (vec): 1 2 1 	
+8 3 3  | 54	| 1.510000	Solution (brute): 3 1 3 	 | 80	| 1.510000	Solution (vec): 3 1 3 	
+9 3 3  | 41	| 1.325926	Solution (brute): 1 3 1 	 | 58	| 1.325926	Solution (vec): 1 3 1 	
+9 3 3  | 40	| 1.527778	Solution (brute): 1 1 2 	 | 39	| 1.527778	Solution (vec): 1 1 2 	
+9 3 3  | 41	| 1.936667	Solution (brute): 1 2 2 	 | 47	| 1.936667	Solution (vec): 1 2 2 	
+9 3 3  | 42	| 2.260000	Solution (brute): 1 1 2 	 | 27	| 2.260000	Solution (vec): 1 1 2 	
+9 3 3  | 37	| 2.120000	Solution (brute): 2 1 1 	 | 38	| 2.120000	Solution (vec): 2 1 1 	
+1 4 3  | 33	| 0.990000	Solution (brute): 1 0 0 	 | 173	| 0.990000	Solution (vec): 1 0 0 	
+1 4 3  | 32	| 0.970000	Solution (brute): 1 0 0 	 | 177	| 0.970000	Solution (vec): 0 1 0 	
+1 4 3  | 33	| 0.850000	Solution (brute): 0 0 1 	 | 175	| 0.850000	Solution (vec): 0 0 1 	
+1 4 3  | 32	| 0.730000	Solution (brute): 1 0 0 	 | 215	| 0.730000	Solution (vec): 1 0 0 	
+1 4 3  | 32	| 0.870000	Solution (brute): 1 0 0 	 | 153	| 0.870000	Solution (vec): 1 0 0 	
+2 4 3  | 33	| 1.380000	Solution (brute): 1 0 3 	 | 71	| 1.380000	Solution (vec): 1 0 3 	
+2 4 3  | 36	| 1.300000	Solution (brute): 0 1 3 	 | 71	| 1.293333	Solution (vec): 1 1 3 	
+2 4 3  | 33	| 1.610000	Solution (brute): 1 0 3 	 | 72	| 1.610000	Solution (vec): 1 0 3 	
+2 4 3  | 64	| 1.460000	Solution (brute): 2 0 1 	 | 76	| 1.460000	Solution (vec): 2 0 1 	
+2 4 3  | 51	| 1.650000	Solution (brute): 1 1 0 	 | 127	| 1.650000	Solution (vec): 1 1 0 	
+3 4 3  | 63	| 2.100000	Solution (brute): 4 3 1 	 | 78	| 2.100000	Solution (vec): 4 3 1 	
+3 4 3  | 52	| 1.540000	Solution (brute): 1 1 2 	 | 69	| 1.540000	Solution (vec): 1 1 2 	
+3 4 3  | 32	| 0.824444	Solution (brute): 1 0 1 	 | 58	| 0.824444	Solution (vec): 1 0 1 	
+3 4 3  | 36	| 1.726667	Solution (brute): 2 2 2 	 | 69	| 1.726667	Solution (vec): 2 2 2 	
+3 4 3  | 30	| 1.236667	Solution (brute): 2 1 0 	 | 77	| 1.236667	Solution (vec): 2 1 0 	
+4 4 3  | 37	| 1.975000	Solution (brute): 1 1 1 	 | 27	| 1.975000	Solution (vec): 1 1 1 	
+4 4 3  | 36	| 1.441667	Solution (brute): 0 1 1 	 | 53	| 1.441667	Solution (vec): 0 1 1 	
+4 4 3  | 37	| 2.160000	Solution (brute): 1 2 2 	 | 26	| 2.160000	Solution (vec): 1 2 2 	
+4 4 3  | 47	| 1.350000	Solution (brute): 1 3 2 	 | 57	| 1.350000	Solution (vec): 1 3 2 	
+4 4 3  | 38	| 1.166667	Solution (brute): 1 2 0 	 | 69	| 1.166667	Solution (vec): 1 2 0 	
+5 4 3  | 45	| 1.254000	Solution (brute): 0 1 2 	 | 74	| 1.254000	Solution (vec): 0 1 2 	
+5 4 3  | 46	| 1.360667	Solution (brute): 2 2 2 	 | 64	| 1.360667	Solution (vec): 2 2 2 	
+5 4 3  | 44	| 1.716000	Solution (brute): 2 2 1 	 | 52	| 1.716000	Solution (vec): 2 2 1 	
+5 4 3  | 47	| 2.248000	Solution (brute): 1 1 1 	 | 28	| 2.248000	Solution (vec): 1 1 1 	
+5 4 3  | 65	| 1.958667	Solution (brute): 1 3 1 	 | 66	| 1.958667	Solution (vec): 1 3 1 	
+6 4 3  | 72	| 1.393889	Solution (brute): 1 1 1 	 | 85	| 1.393889	Solution (vec): 1 1 1 	
+6 4 3  | 77	| 1.960000	Solution (brute): 1 3 2 	 | 56	| 1.960000	Solution (vec): 1 3 2 	
+6 4 3  | 66	| 1.964444	Solution (brute): 1 2 1 	 | 81	| 1.964444	Solution (vec): 1 2 1 	
+6 4 3  | 79	| 1.290000	Solution (brute): 2 1 0 	 | 73	| 1.290000	Solution (vec): 2 1 0 	
+6 4 3  | 64	| 1.863333	Solution (brute): 1 1 1 	 | 43	| 1.863333	Solution (vec): 1 1 1 	
+7 4 3  | 69	| 2.117143	Solution (brute): 1 1 2 	 | 47	| 2.117143	Solution (vec): 1 1 2 	
+7 4 3  | 62	| 1.497619	Solution (brute): 1 0 1 	 | 88	| 1.497619	Solution (vec): 1 0 1 	
+7 4 3  | 63	| 1.501905	Solution (brute): 2 1 0 	 | 57	| 1.501905	Solution (vec): 2 1 0 	
+7 4 3  | 64	| 2.056190	Solution (brute): 1 1 1 	 | 46	| 2.056190	Solution (vec): 1 1 1 	
+7 4 3  | 86	| 1.426666	Solution (brute): 1 1 1 	 | 73	| 1.426666	Solution (vec): 1 1 1 	
+8 4 3  | 70	| 1.366667	Solution (brute): 1 1 0 	 | 65	| 1.366667	Solution (vec): 1 1 0 	
+8 4 3  | 70	| 1.905000	Solution (brute): 1 1 2 	 | 65	| 1.905000	Solution (vec): 1 1 2 	
+8 4 3  | 67	| 1.390000	Solution (brute): 2 2 4 	 | 93	| 1.390000	Solution (vec): 2 2 4 	
+8 4 3  | 94	| 1.910000	Solution (brute): 1 1 0 	 | 69	| 1.910000	Solution (vec): 1 1 0 	
+8 4 3  | 72	| 1.341667	Solution (brute): 1 1 0 	 | 136	| 1.341667	Solution (vec): 1 1 0 	
+9 4 3  | 85	| 1.311111	Solution (brute): 1 1 2 	 | 74	| 1.311111	Solution (vec): 1 1 2 	
+9 4 3  | 79	| 1.235185	Solution (brute): 0 2 2 	 | 88	| 1.235185	Solution (vec): 0 2 2 	
+9 4 3  | 80	| 2.104074	Solution (brute): 1 2 3 	 | 64	| 2.104074	Solution (vec): 1 2 3 	
+9 4 3  | 82	| 2.510000	Solution (brute): 1 2 1 	 | 69	| 2.510000	Solution (vec): 1 2 1 	
+9 4 3  | 73	| 0.981481	Solution (brute): 0 1 3 	 | 68	| 0.981481	Solution (vec): 0 1 3 	
+1 5 3  | 37	| 0.830000	Solution (brute): 0 0 1 	 | 222	| 0.830000	Solution (vec): 0 0 1 	
+1 5 3  | 37	| 0.980000	Solution (brute): 1 0 0 	 | 185	| 0.980000	Solution (vec): 1 0 0 	
+1 5 3  | 37	| 0.860000	Solution (brute): 0 1 0 	 | 193	| 0.860000	Solution (vec): 0 1 0 	
+1 5 3  | 37	| 0.870000	Solution (brute): 0 0 1 	 | 203	| 0.870000	Solution (vec): 0 0 1 	
+1 5 3  | 35	| 0.900000	Solution (brute): 0 0 1 	 | 218	| 0.900000	Solution (vec): 0 0 1 	
+2 5 3  | 66	| 1.033333	Solution (brute): 1 0 2 	 | 319	| 1.033333	Solution (vec): 1 0 2 	
+2 5 3  | 72	| 1.540000	Solution (brute): 3 0 1 	 | 105	| 1.540000	Solution (vec): 3 0 1 	
+2 5 3  | 66	| 1.690000	Solution (brute): 2 0 1 	 | 112	| 1.690000	Solution (vec): 2 0 1 	
+2 5 3  | 69	| 1.470000	Solution (brute): 1 0 3 	 | 209	| 1.470000	Solution (vec): 1 0 3 	
+2 5 3  | 72	| 1.860000	Solution (brute): 1 0 1 	 | 93	| 1.860000	Solution (vec): 1 0 1 	
+3 5 3  | 67	| 1.720000	Solution (brute): 4 5 2 	 | 108	| 1.720000	Solution (vec): 4 2 3 	
+3 5 3  | 59	| 1.827778	Solution (brute): 1 2 1 	 | 54	| 1.827778	Solution (vec): 1 2 1 	
+3 5 3  | 66	| 1.423333	Solution (brute): 2 2 3 	 | 103	| 1.423333	Solution (vec): 2 2 3 	
+3 5 3  | 57	| 1.244444	Solution (brute): 1 5 2 	 | 129	| 1.244444	Solution (vec): 1 5 2 	
+3 5 3  | 57	| 1.213333	Solution (brute): 1 1 0 	 | 81	| 1.213333	Solution (vec): 1 1 0 	
+4 5 3  | 74	| 1.370000	Solution (brute): 1 2 0 	 | 99	| 1.370000	Solution (vec): 1 2 0 	
+4 5 3  | 75	| 2.175000	Solution (brute): 2 2 1 	 | 38	| 2.175000	Solution (vec): 2 2 1 	
+4 5 3  | 69	| 1.233333	Solution (brute): 2 5 1 	 | 58	| 1.233333	Solution (vec): 2 5 1 	
+4 5 3  | 68	| 1.690000	Solution (brute): 0 1 2 	 | 115	| 1.690000	Solution (vec): 0 1 2 	
+4 5 3  | 160	| 0.875000	Solution (brute): 1 0 2 	 | 173	| 0.875000	Solution (vec): 1 0 2 	
+5 5 3  | 92	| 2.020000	Solution (brute): 2 1 1 	 | 28	| 2.020000	Solution (vec): 2 1 1 	
+5 5 3  | 156	| 2.048000	Solution (brute): 3 1 1 	 | 66	| 2.048000	Solution (vec): 3 1 1 	
+5 5 3  | 82	| 1.334667	Solution (brute): 0 1 1 	 | 89	| 1.334667	Solution (vec): 0 1 1 	
+5 5 3  | 79	| 1.811333	Solution (brute): 2 2 1 	 | 54	| 1.811333	Solution (vec): 2 2 1 	
+5 5 3  | 110	| 1.508000	Solution (brute): 0 1 1 	 | 157	| 1.508000	Solution (vec): 0 1 1 	
+6 5 3  | 126	| 2.193333	Solution (brute): 1 1 1 	 | 62	| 2.193333	Solution (vec): 1 1 1 	
+6 5 3  | 123	| 1.946667	Solution (brute): 4 1 1 	 | 44	| 1.946667	Solution (vec): 4 1 1 	
+6 5 3  | 125	| 1.720000	Solution (brute): 4 3 1 	 | 148	| 1.720000	Solution (vec): 4 3 1 	
+6 5 3  | 127	| 1.573333	Solution (brute): 3 1 2 	 | 129	| 1.573333	Solution (vec): 3 1 2 	
+6 5 3  | 126	| 1.902222	Solution (brute): 2 1 2 	 | 76	| 1.902222	Solution (vec): 2 1 2 	
+7 5 3  | 105	| 1.250000	Solution (brute): 0 1 2 	 | 195	| 1.250000	Solution (vec): 0 1 2 	
+7 5 3  | 113	| 1.407143	Solution (brute): 1 1 2 	 | 75	| 1.407143	Solution (vec): 1 1 2 	
+7 5 3  | 100	| 2.515238	Solution (brute): 1 2 1 	 | 38	| 2.515238	Solution (vec): 1 2 1 	
+7 5 3  | 99	| 2.352381	Solution (brute): 1 1 1 	 | 32	| 2.352381	Solution (vec): 1 1 1 	
+7 5 3  | 150	| 2.008571	Solution (brute): 1 1 1 	 | 48	| 2.008571	Solution (vec): 1 1 1 	
+8 5 3  | 177	| 2.245833	Solution (brute): 1 2 2 	 | 76	| 2.245833	Solution (vec): 1 2 2 	
+8 5 3  | 122	| 1.432917	Solution (brute): 1 3 4 	 | 134	| 1.432917	Solution (vec): 1 3 4 	
+8 5 3  | 150	| 1.977500	Solution (brute): 1 3 1 	 | 58	| 1.977500	Solution (vec): 1 3 1 	
+8 5 3  | 125	| 1.851667	Solution (brute): 1 3 2 	 | 81	| 1.851667	Solution (vec): 1 3 2 	
+8 5 3  | 127	| 2.250000	Solution (brute): 1 2 2 	 | 35	| 2.250000	Solution (vec): 1 2 2 	
+9 5 3  | 138	| 1.508889	Solution (brute): 1 1 1 	 | 52	| 1.508889	Solution (vec): 1 1 1 	
+9 5 3  | 124	| 1.637778	Solution (brute): 1 1 2 	 | 62	| 1.637778	Solution (vec): 1 1 2 	
+9 5 3  | 142	| 2.510000	Solution (brute): 3 1 2 	 | 39	| 2.510000	Solution (vec): 3 1 2 	
+9 5 3  | 132	| 1.860000	Solution (brute): 2 1 1 	 | 35	| 1.860000	Solution (vec): 2 1 1 	
+9 5 3  | 130	| 2.305556	Solution (brute): 1 1 2 	 | 42	| 2.305556	Solution (vec): 1 1 2 	
+1 6 3  | 64	| 0.860000	Solution (brute): 0 0 1 	 | 407	| 0.860000	Solution (vec): 0 0 1 	
+1 6 3  | 63	| 0.960000	Solution (brute): 0 0 1 	 | 377	| 0.960000	Solution (vec): 0 0 1 	
+1 6 3  | 62	| 0.990000	Solution (brute): 1 0 0 	 | 380	| 0.990000	Solution (vec): 1 0 0 	
+1 6 3  | 61	| 0.890000	Solution (brute): 1 0 0 	 | 352	| 0.890000	Solution (vec): 1 0 0 	
+1 6 3  | 55	| 0.950000	Solution (brute): 0 1 0 	 | 290	| 0.950000	Solution (vec): 0 1 0 	
+2 6 3  | 154	| 1.830000	Solution (brute): 1 1 0 	 | 233	| 1.830000	Solution (vec): 1 1 0 	
+2 6 3  | 103	| 1.220000	Solution (brute): 5 0 1 	 | 243	| 1.220000	Solution (vec): 5 0 1 	
+2 6 3  | 114	| 1.200000	Solution (brute): 1 0 1 	 | 293	| 1.200000	Solution (vec): 1 0 1 	
+2 6 3  | 112	| 1.650000	Solution (brute): 0 2 3 	 | 303	| 1.650000	Solution (vec): 0 2 3 	
+2 6 3  | 97	| 1.420000	Solution (brute): 1 0 2 	 | 216	| 1.420000	Solution (vec): 1 0 2 	
+3 6 3  | 137	| 1.510000	Solution (brute): 1 4 4 	 | 234	| 1.510000	Solution (vec): 1 4 4 	
+3 6 3  | 102	| 1.610000	Solution (brute): 2 2 0 	 | 122	| 1.610000	Solution (vec): 2 2 0 	
+3 6 3  | 95	| 1.446667	Solution (brute): 5 1 2 	 | 228	| 1.446667	Solution (vec): 5 1 2 	
+3 6 3  | 100	| 1.720000	Solution (brute): 1 0 2 	 | 119	| 1.720000	Solution (vec): 1 0 2 	
+3 6 3  | 94	| 1.700000	Solution (brute): 1 0 2 	 | 114	| 1.700000	Solution (vec): 1 0 2 	
+4 6 3  | 105	| 1.641667	Solution (brute): 1 3 2 	 | 96	| 1.641667	Solution (vec): 1 3 2 	
+4 6 3  | 107	| 1.755000	Solution (brute): 4 1 2 	 | 89	| 1.755000	Solution (vec): 4 1 2 	
+4 6 3  | 106	| 2.340000	Solution (brute): 3 4 2 	 | 79	| 2.340000	Solution (vec): 3 4 2 	
+4 6 3  | 125	| 1.533333	Solution (brute): 1 0 1 	 | 144	| 1.533333	Solution (vec): 1 0 1 	
+4 6 3  | 109	| 1.658333	Solution (brute): 1 1 4 	 | 122	| 1.658333	Solution (vec): 1 1 4 	
+5 6 3  | 137	| 1.368000	Solution (brute): 2 3 2 	 | 183	| 1.368000	Solution (vec): 2 3 2 	
+5 6 3  | 159	| 1.976000	Solution (brute): 1 2 2 	 | 120	| 1.976000	Solution (vec): 1 2 2 	
+5 6 3  | 187	| 1.610000	Solution (brute): 6 3 2 	 | 183	| 1.610000	Solution (vec): 6 3 2 	
+5 6 3  | 265	| 1.553333	Solution (brute): 1 1 1 	 | 141	| 1.553333	Solution (vec): 1 1 1 	
+5 6 3  | 119	| 1.820000	Solution (brute): 1 0 1 	 | 77	| 1.820000	Solution (vec): 1 0 1 	
+6 6 3  | 153	| 1.874444	Solution (brute): 1 1 3 	 | 113	| 1.874444	Solution (vec): 1 1 3 	
+6 6 3  | 161	| 2.110000	Solution (brute): 3 2 1 	 | 50	| 2.110000	Solution (vec): 3 2 1 	
+6 6 3  | 162	| 2.068889	Solution (brute): 1 1 1 	 | 37	| 2.068889	Solution (vec): 1 1 1 	
+6 6 3  | 150	| 2.426667	Solution (brute): 2 1 1 	 | 37	| 2.426667	Solution (vec): 2 1 1 	
+6 6 3  | 156	| 1.900000	Solution (brute): 1 4 1 	 | 59	| 1.900000	Solution (vec): 1 4 1 	
+7 6 3  | 158	| 1.622857	Solution (brute): 2 2 3 	 | 195	| 1.622857	Solution (vec): 2 2 3 	
+7 6 3  | 169	| 1.432857	Solution (brute): 6 2 2 	 | 163	| 1.432857	Solution (vec): 6 2 2 	
+7 6 3  | 163	| 2.080000	Solution (brute): 3 4 3 	 | 89	| 2.080000	Solution (vec): 3 4 3 	
+7 6 3  | 153	| 1.892857	Solution (brute): 3 1 1 	 | 144	| 1.892857	Solution (vec): 3 1 1 	
+7 6 3  | 168	| 2.070000	Solution (brute): 4 1 3 	 | 88	| 2.070000	Solution (vec): 4 1 3 	
+8 6 3  | 264	| 1.671250	Solution (brute): 1 2 2 	 | 95	| 1.671250	Solution (vec): 1 2 2 	
+8 6 3  | 274	| 2.200833	Solution (brute): 1 2 1 	 | 116	| 2.200833	Solution (vec): 1 2 1 	
+8 6 3  | 252	| 2.083333	Solution (brute): 1 2 1 	 | 73	| 2.083333	Solution (vec): 1 2 1 	
+8 6 3  | 225	| 1.884167	Solution (brute): 1 1 1 	 | 125	| 1.884167	Solution (vec): 1 1 1 	
+8 6 3  | 237	| 1.816666	Solution (brute): 2 3 2 	 | 157	| 1.816666	Solution (vec): 2 3 2 	
+9 6 3  | 186	| 1.210370	Solution (brute): 1 0 2 	 | 209	| 1.210370	Solution (vec): 1 0 2 	
+9 6 3  | 187	| 1.637037	Solution (brute): 1 2 1 	 | 123	| 1.637037	Solution (vec): 1 2 1 	
+9 6 3  | 189	| 1.734444	Solution (brute): 2 1 4 	 | 210	| 1.734444	Solution (vec): 2 1 4 	
+9 6 3  | 185	| 2.151111	Solution (brute): 1 2 1 	 | 36	| 2.151111	Solution (vec): 1 2 1 	
+9 6 3  | 201	| 2.020741	Solution (brute): 1 1 5 	 | 179	| 2.020741	Solution (vec): 1 1 5 	
+1 7 3  | 92	| 0.980000	Solution (brute): 1 0 0 	 | 612	| 0.980000	Solution (vec): 1 0 0 	
+1 7 3  | 90	| 0.910000	Solution (brute): 0 1 0 	 | 474	| 0.910000	Solution (vec): 0 1 0 	
+1 7 3  | 80	| 0.960000	Solution (brute): 1 0 0 	 | 475	| 0.960000	Solution (vec): 1 0 0 	
+1 7 3  | 81	| 0.940000	Solution (brute): 0 0 1 	 | 506	| 0.940000	Solution (vec): 0 0 1 	
+1 7 3  | 79	| 0.960000	Solution (brute): 0 0 1 	 | 465	| 0.960000	Solution (vec): 0 0 1 	
+2 7 3  | 116	| 1.750000	Solution (brute): 1 1 0 	 | 73	| 1.750000	Solution (vec): 1 1 0 	
+2 7 3  | 161	| 1.560000	Solution (brute): 3 1 0 	 | 271	| 1.560000	Solution (vec): 3 1 0 	
+2 7 3  | 106	| 1.580000	Solution (brute): 0 2 1 	 | 332	| 1.580000	Solution (vec): 0 2 1 	
+2 7 3  | 166	| 1.530000	Solution (brute): 2 1 0 	 | 351	| 1.530000	Solution (vec): 2 1 0 	
+2 7 3  | 116	| 1.630000	Solution (brute): 0 2 1 	 | 293	| 1.630000	Solution (vec): 0 2 1 	
+3 7 3  | 149	| 2.180000	Solution (brute): 4 2 1 	 | 56	| 2.180000	Solution (vec): 4 2 1 	
+3 7 3  | 148	| 1.590000	Solution (brute): 3 1 0 	 | 147	| 1.590000	Solution (vec): 3 1 0 	
+3 7 3  | 154	| 2.290000	Solution (brute): 3 2 1 	 | 75	| 2.290000	Solution (vec): 3 2 1 	
+3 7 3  | 146	| 2.115556	Solution (brute): 1 2 1 	 | 102	| 2.115556	Solution (vec): 1 2 1 	
+3 7 3  | 196	| 2.177778	Solution (brute): 2 1 1 	 | 114	| 2.177778	Solution (vec): 2 1 1 	
+4 7 3  | 182	| 2.050000	Solution (brute): 1 7 1 	 | 75	| 2.050000	Solution (vec): 1 7 1 	
+4 7 3  | 167	| 1.916667	Solution (brute): 2 4 1 	 | 107	| 1.916667	Solution (vec): 2 4 1 	
+4 7 3  | 248	| 1.930000	Solution (brute): 6 4 1 	 | 297	| 1.930000	Solution (vec): 6 4 1 	
+4 7 3  | 275	| 1.650000	Solution (brute): 2 4 7 	 | 379	| 1.650000	Solution (vec): 2 4 7 	
+4 7 3  | 225	| 1.900000	Solution (brute): 1 1 2 	 | 129	| 1.900000	Solution (vec): 1 1 2 	
+5 7 3  | 298	| 2.470000	Solution (brute): 1 1 2 	 | 55	| 2.470000	Solution (vec): 1 1 2 	
+5 7 3  | 342	| 1.958667	Solution (brute): 1 6 1 	 | 195	| 1.958667	Solution (vec): 1 6 1 	
+5 7 3  | 196	| 2.184000	Solution (brute): 1 3 1 	 | 59	| 2.184000	Solution (vec): 1 3 1 	
+5 7 3  | 294	| 1.366667	Solution (brute): 1 3 1 	 | 222	| 1.366667	Solution (vec): 1 3 1 	
+5 7 3  | 174	| 1.752667	Solution (brute): 1 2 2 	 | 163	| 1.752667	Solution (vec): 1 2 2 	
+6 7 3  | 209	| 1.946667	Solution (brute): 2 1 2 	 | 123	| 1.946667	Solution (vec): 2 1 2 	
+6 7 3  | 297	| 1.688889	Solution (brute): 3 5 2 	 | 239	| 1.688889	Solution (vec): 3 5 2 	
+6 7 3  | 287	| 1.800000	Solution (brute): 1 2 0 	 | 258	| 1.800000	Solution (vec): 1 2 0 	
+6 7 3  | 329	| 2.497778	Solution (brute): 1 3 1 	 | 52	| 2.497778	Solution (vec): 1 3 1 	
+6 7 3  | 317	| 2.110000	Solution (brute): 2 1 4 	 | 84	| 2.110000	Solution (vec): 2 1 4 	
+7 7 3  | 380	| 2.150000	Solution (brute): 3 1 1 	 | 111	| 2.150000	Solution (vec): 3 1 1 	
+7 7 3  | 357	| 2.100000	Solution (brute): 3 2 1 	 | 90	| 2.100000	Solution (vec): 3 2 1 	
+7 7 3  | 345	| 1.607619	Solution (brute): 5 1 1 	 | 409	| 1.607619	Solution (vec): 5 1 1 	
+7 7 3  | 336	| 2.201905	Solution (brute): 1 2 1 	 | 160	| 2.201905	Solution (vec): 1 2 1 	
+7 7 3  | 341	| 1.837619	Solution (brute): 2 1 4 	 | 131	| 1.837619	Solution (vec): 2 1 4 	
+8 7 3  | 381	| 1.695000	Solution (brute): 1 4 2 	 | 476	| 1.695000	Solution (vec): 1 4 2 	
+8 7 3  | 280	| 2.210000	Solution (brute): 1 1 4 	 | 64	| 2.210000	Solution (vec): 1 1 4 	
+8 7 3  | 363	| 1.860833	Solution (brute): 1 2 3 	 | 88	| 1.860833	Solution (vec): 1 2 3 	
+8 7 3  | 407	| 2.016667	Solution (brute): 1 3 1 	 | 113	| 2.016667	Solution (vec): 1 3 1 	
+8 7 3  | 401	| 2.213750	Solution (brute): 2 2 2 	 | 146	| 2.213750	Solution (vec): 2 2 2 	
+9 7 3  | 383	| 1.269259	Solution (brute): 0 1 4 	 | 194	| 1.269259	Solution (vec): 0 1 4 	
+9 7 3  | 282	| 2.296296	Solution (brute): 3 3 1 	 | 84	| 2.296296	Solution (vec): 3 3 1 	
+9 7 3  | 253	| 2.216296	Solution (brute): 1 2 2 	 | 85	| 2.216296	Solution (vec): 1 2 2 	
+9 7 3  | 263	| 2.490000	Solution (brute): 1 1 3 	 | 53	| 2.490000	Solution (vec): 1 1 3 	
+9 7 3  | 252	| 2.250000	Solution (brute): 4 1 2 	 | 117	| 2.250000	Solution (vec): 4 1 2 	
+1 8 3  | 106	| 0.930000	Solution (brute): 1 0 0 	 | 681	| 0.930000	Solution (vec): 1 0 0 	
+1 8 3  | 106	| 0.940000	Solution (brute): 1 0 0 	 | 739	| 0.940000	Solution (vec): 1 0 0 	
+1 8 3  | 106	| 0.860000	Solution (brute): 0 0 1 	 | 712	| 0.860000	Solution (vec): 0 0 1 	
+1 8 3  | 106	| 0.970000	Solution (brute): 0 1 0 	 | 708	| 0.970000	Solution (vec): 0 1 0 	
+1 8 3  | 143	| 0.770000	Solution (brute): 0 1 0 	 | 991	| 0.770000	Solution (vec): 0 1 0 	
+2 8 3  | 152	| 1.800000	Solution (brute): 0 3 1 	 | 239	| 1.800000	Solution (vec): 0 3 1 	
+2 8 3  | 152	| 1.700000	Solution (brute): 0 2 1 	 | 295	| 1.700000	Solution (vec): 0 2 1 	
+2 8 3  | 207	| 1.080000	Solution (brute): 0 1 1 	 | 660	| 1.080000	Solution (vec): 0 1 1 	
+2 8 3  | 217	| 1.730000	Solution (brute): 1 3 0 	 | 297	| 1.730000	Solution (vec): 1 3 0 	
+2 8 3  | 211	| 1.450000	Solution (brute): 4 0 2 	 | 605	| 1.450000	Solution (vec): 4 0 2 	
+3 8 3  | 284	| 2.260000	Solution (brute): 3 3 2 	 | 141	| 2.260000	Solution (vec): 3 3 2 	
+3 8 3  | 277	| 1.830000	Solution (brute): 3 0 1 	 | 206	| 1.830000	Solution (vec): 3 0 1 	
+3 8 3  | 194	| 1.310000	Solution (brute): 3 2 3 	 | 149	| 1.310000	Solution (vec): 3 2 3 	
+3 8 3  | 190	| 2.216667	Solution (brute): 1 1 1 	 | 131	| 2.216667	Solution (vec): 1 1 1 	
+3 8 3  | 191	| 1.940000	Solution (brute): 1 3 4 	 | 99	| 1.940000	Solution (vec): 1 3 4 	
+4 8 3  | 212	| 2.580000	Solution (brute): 3 3 1 	 | 52	| 2.580000	Solution (vec): 3 3 1 	
+4 8 3  | 218	| 2.166667	Solution (brute): 1 1 2 	 | 162	| 2.166667	Solution (vec): 1 1 2 	
+4 8 3  | 240	| 1.525000	Solution (brute): 0 2 5 	 | 512	| 1.525000	Solution (vec): 0 2 5 	
+4 8 3  | 358	| 2.570000	Solution (brute): 1 3 4 	 | 104	| 2.570000	Solution (vec): 1 3 4 	
+4 8 3  | 221	| 1.516667	Solution (brute): 4 3 1 	 | 230	| 1.516667	Solution (vec): 4 3 1 	
+5 8 3  | 295	| 2.097333	Solution (brute): 1 1 1 	 | 72	| 2.097333	Solution (vec): 1 1 1 	
+5 8 3  | 305	| 2.090000	Solution (brute): 3 5 1 	 | 147	| 2.090000	Solution (vec): 3 5 1 	
+5 8 3  | 286	| 1.690000	Solution (brute): 1 2 3 	 | 167	| 1.690000	Solution (vec): 1 2 3 	
+5 8 3  | 328	| 2.450000	Solution (brute): 2 2 2 	 | 45	| 2.450000	Solution (vec): 2 2 2 	
+5 8 3  | 288	| 2.280000	Solution (brute): 3 2 3 	 | 82	| 2.280000	Solution (vec): 3 2 3 	
+6 8 3  | 354	| 2.040000	Solution (brute): 4 5 1 	 | 188	| 2.040000	Solution (vec): 4 5 1 	
+6 8 3  | 309	| 1.361111	Solution (brute): 3 1 7 	 | 529	| 1.361111	Solution (vec): 3 1 7 	
+6 8 3  | 338	| 1.884444	Solution (brute): 2 4 5 	 | 208	| 1.884444	Solution (vec): 2 4 5 	
+6 8 3  | 325	| 1.970000	Solution (brute): 2 6 3 	 | 269	| 1.970000	Solution (vec): 2 6 3 	
+6 8 3  | 286	| 1.941667	Solution (brute): 1 1 2 	 | 157	| 1.941667	Solution (vec): 1 1 2 	
+7 8 3  | 339	| 2.730000	Solution (brute): 1 1 1 	 | 25	| 2.730000	Solution (vec): 1 1 1 	
+7 8 3  | 360	| 2.023809	Solution (brute): 2 1 1 	 | 109	| 2.023809	Solution (vec): 2 1 1 	
+7 8 3  | 636	| 2.520000	Solution (brute): 2 2 1 	 | 57	| 2.520000	Solution (vec): 2 1 2 	
+7 8 3  | 352	| 2.260000	Solution (brute): 2 1 5 	 | 79	| 2.260000	Solution (vec): 2 1 5 	
+7 8 3  | 503	| 1.870000	Solution (brute): 1 2 4 	 | 249	| 1.870000	Solution (vec): 1 2 4 	
+8 8 3  | 534	| 2.410000	Solution (brute): 1 4 3 	 | 97	| 2.410000	Solution (vec): 1 4 3 	
+8 8 3  | 534	| 1.990000	Solution (brute): 1 1 6 	 | 95	| 1.990000	Solution (vec): 1 1 6 	
+8 8 3  | 564	| 1.858333	Solution (brute): 5 2 1 	 | 154	| 1.858333	Solution (vec): 5 2 1 	
+8 8 3  | 342	| 2.580000	Solution (brute): 4 1 1 	 | 40	| 2.580000	Solution (vec): 4 1 1 	
+8 8 3  | 355	| 2.220000	Solution (brute): 2 1 2 	 | 36	| 2.220000	Solution (vec): 2 1 2 	
+9 8 3  | 561	| 2.600000	Solution (brute): 2 4 3 	 | 97	| 2.600000	Solution (vec): 2 4 3 	
+9 8 3  | 618	| 2.425926	Solution (brute): 1 2 2 	 | 109	| 2.425926	Solution (vec): 1 2 2 	
+9 8 3  | 558	| 2.212963	Solution (brute): 2 1 3 	 | 127	| 2.212963	Solution (vec): 2 1 4 	
+9 8 3  | 586	| 2.050000	Solution (brute): 1 1 5 	 | 78	| 2.050000	Solution (vec): 1 1 5 	
+9 8 3  | 534	| 2.530000	Solution (brute): 1 1 1 	 | 43	| 2.530000	Solution (vec): 1 1 1 	
+1 9 3  | 147	| 0.960000	Solution (brute): 1 0 0 	 | 999	| 0.960000	Solution (vec): 1 0 0 	
+1 9 3  | 214	| 0.930000	Solution (brute): 0 0 1 	 | 1672	| 0.930000	Solution (vec): 0 0 1 	
+1 9 3  | 215	| 0.970000	Solution (brute): 0 0 1 	 | 1263	| 0.970000	Solution (vec): 0 0 1 	
+1 9 3  | 212	| 0.940000	Solution (brute): 1 0 0 	 | 696	| 0.940000	Solution (vec): 1 0 0 	
+1 9 3  | 116	| 0.980000	Solution (brute): 0 0 1 	 | 834	| 0.980000	Solution (vec): 0 0 1 	
+2 9 3  | 163	| 1.590000	Solution (brute): 3 2 0 	 | 296	| 1.590000	Solution (vec): 3 2 0 	
+2 9 3  | 155	| 1.473333	Solution (brute): 4 1 6 	 | 496	| 1.473333	Solution (vec): 4 1 6 	
+2 9 3  | 154	| 1.800000	Solution (brute): 3 0 1 	 | 251	| 1.800000	Solution (vec): 3 0 1 	
+2 9 3  | 160	| 1.940000	Solution (brute): 1 1 0 	 | 155	| 1.940000	Solution (vec): 1 1 0 	
+2 9 3  | 162	| 1.790000	Solution (brute): 2 0 1 	 | 216	| 1.790000	Solution (vec): 2 0 1 	
+3 9 3  | 263	| 1.930000	Solution (brute): 7 3 3 	 | 317	| 1.930000	Solution (vec): 7 3 3 	
+3 9 3  | 232	| 1.353333	Solution (brute): 5 1 1 	 | 423	| 1.353333	Solution (vec): 5 1 1 	
+3 9 3  | 385	| 1.970000	Solution (brute): 1 0 1 	 | 158	| 1.970000	Solution (vec): 1 0 1 	
+3 9 3  | 246	| 1.991111	Solution (brute): 3 3 1 	 | 324	| 1.991111	Solution (vec): 3 3 1 	
+3 9 3  | 368	| 1.866667	Solution (brute): 1 1 1 	 | 222	| 1.866667	Solution (vec): 1 1 1 	
+4 9 3  | 501	| 1.858333	Solution (brute): 3 1 1 	 | 148	| 1.858333	Solution (vec): 3 1 1 	
+4 9 3  | 482	| 2.920000	Solution (brute): 1 1 1 	 | 36	| 2.920000	Solution (vec): 1 1 1 	
+4 9 3  | 458	| 2.110000	Solution (brute): 2 4 4 	 | 183	| 2.110000	Solution (vec): 2 4 4 	
+4 9 3  | 457	| 2.100000	Solution (brute): 1 3 1 	 | 157	| 2.100000	Solution (vec): 1 3 1 	
+4 9 3  | 336	| 2.140000	Solution (brute): 3 3 3 	 | 145	| 2.140000	Solution (vec): 3 3 3 	
+5 9 3  | 523	| 2.019333	Solution (brute): 2 4 1 	 | 169	| 2.019333	Solution (vec): 2 4 1 	
+5 9 3  | 475	| 1.906667	Solution (brute): 7 1 4 	 | 338	| 1.906667	Solution (vec): 7 1 4 	
+5 9 3  | 547	| 2.450000	Solution (brute): 1 2 1 	 | 43	| 2.450000	Solution (vec): 1 2 1 	
+5 9 3  | 521	| 2.460000	Solution (brute): 3 2 1 	 | 89	| 2.460000	Solution (vec): 3 2 1 	
+5 9 3  | 524	| 2.750000	Solution (brute): 1 1 1 	 | 35	| 2.750000	Solution (vec): 1 1 1 	
+6 9 3  | 662	| 2.350000	Solution (brute): 2 1 2 	 | 67	| 2.350000	Solution (vec): 2 1 2 	
+6 9 3  | 427	| 1.916667	Solution (brute): 3 1 4 	 | 220	| 1.916667	Solution (vec): 3 1 4 	
+6 9 3  | 605	| 2.370000	Solution (brute): 1 2 5 	 | 122	| 2.370000	Solution (vec): 1 2 5 	
+6 9 3  | 610	| 2.125000	Solution (brute): 1 3 1 	 | 127	| 2.125000	Solution (vec): 1 3 1 	
+6 9 3  | 519	| 2.670000	Solution (brute): 2 1 3 	 | 85	| 2.670000	Solution (vec): 2 1 3 	
+7 9 3  | 511	| 2.117143	Solution (brute): 2 1 1 	 | 138	| 2.117143	Solution (vec): 2 1 1 	
+7 9 3  | 528	| 2.108095	Solution (brute): 3 2 2 	 | 105	| 2.108095	Solution (vec): 3 2 2 	
+7 9 3  | 698	| 2.080952	Solution (brute): 2 2 5 	 | 232	| 2.080952	Solution (vec): 2 2 5 	
+7 9 3  | 539	| 2.243809	Solution (brute): 3 3 1 	 | 125	| 2.243809	Solution (vec): 3 3 1 	
+7 9 3  | 532	| 2.790000	Solution (brute): 1 1 2 	 | 36	| 2.790000	Solution (vec): 1 1 2 	
+8 9 3  | 575	| 2.566667	Solution (brute): 1 2 1 	 | 58	| 2.566667	Solution (vec): 1 2 1 	
+8 9 3  | 537	| 2.760000	Solution (brute): 1 1 1 	 | 28	| 2.760000	Solution (vec): 1 1 1 	
+8 9 3  | 534	| 2.080000	Solution (brute): 2 4 5 	 | 267	| 2.080000	Solution (vec): 2 4 5 	
+8 9 3  | 1012	| 2.300000	Solution (brute): 2 1 3 	 | 121	| 2.300000	Solution (vec): 2 1 3 	
+8 9 3  | 628	| 2.208333	Solution (brute): 2 2 2 	 | 127	| 2.208333	Solution (vec): 2 2 2 	
+9 9 3  | 606	| 2.050000	Solution (brute): 3 3 3 	 | 234	| 2.050000	Solution (vec): 3 3 3 	
+9 9 3  | 650	| 1.925185	Solution (brute): 3 2 1 	 | 177	| 1.925185	Solution (vec): 3 2 1 	
+9 9 3  | 611	| 2.509259	Solution (brute): 1 1 3 	 | 75	| 2.509259	Solution (vec): 1 1 3 	
+9 9 3  | 592	| 1.788889	Solution (brute): 4 1 3 	 | 392	| 1.788889	Solution (vec): 4 1 3 	
+9 9 3  | 593	| 2.287037	Solution (brute): 3 2 1 	 | 122	| 2.287037	Solution (vec): 3 2 1 	
+1 1 4  | 8	| 0.600000	Solution (brute): 0 0 1 0 	 | 39	| 0.600000	Solution (vec): 0 0 1 0 	
+1 1 4  | 8	| 0.970000	Solution (brute): 0 0 0 1 	 | 38	| 0.970000	Solution (vec): 0 0 0 1 	
+1 1 4  | 7	| 0.920000	Solution (brute): 0 0 0 1 	 | 32	| 0.920000	Solution (vec): 0 0 0 1 	
+1 1 4  | 7	| 0.850000	Solution (brute): 0 0 1 0 	 | 32	| 0.850000	Solution (vec): 0 0 1 0 	
+1 1 4  | 8	| 0.870000	Solution (brute): 0 0 1 0 	 | 34	| 0.870000	Solution (vec): 0 0 1 0 	
+2 1 4  | 9	| 0.910000	Solution (brute): 0 1 0 0 	 | 37	| 0.910000	Solution (vec): 0 1 0 0 	
+2 1 4  | 20	| 0.930000	Solution (brute): 0 1 0 0 	 | 52	| 0.930000	Solution (vec): 0 1 0 0 	
+2 1 4  | 9	| 1.256250	Solution (brute): 1 0 1 1 	 | 39	| 1.256250	Solution (vec): 1 0 1 1 	
+2 1 4  | 12	| 0.952500	Solution (brute): 1 1 0 1 	 | 44	| 0.952500	Solution (vec): 1 1 0 1 	
+2 1 4  | 11	| 1.117500	Solution (brute): 0 1 1 0 	 | 47	| 1.117500	Solution (vec): 0 1 1 0 	
+3 1 4  | 13	| 1.241667	Solution (brute): 1 1 0 0 	 | 46	| 1.241667	Solution (vec): 1 1 0 0 	
+3 1 4  | 16	| 1.530000	Solution (brute): 1 1 1 0 	 | 46	| 1.530000	Solution (vec): 1 1 1 0 	
+3 1 4  | 9	| 1.166667	Solution (brute): 0 0 1 1 	 | 28	| 1.166667	Solution (vec): 0 0 1 1 	
+3 1 4  | 9	| 0.933333	Solution (brute): 0 0 1 1 	 | 34	| 0.933333	Solution (vec): 0 0 1 1 	
+3 1 4  | 9	| 0.650000	Solution (brute): 0 1 1 0 	 | 33	| 0.650000	Solution (vec): 0 1 1 0 	
+4 1 4  | 9	| 0.910000	Solution (brute): 0 1 0 1 	 | 30	| 0.910000	Solution (vec): 0 1 0 1 	
+4 1 4  | 9	| 1.690000	Solution (brute): 1 1 1 0 	 | 26	| 1.690000	Solution (vec): 1 1 1 0 	
+4 1 4  | 9	| 2.340000	Solution (brute): 1 1 1 0 	 | 24	| 2.340000	Solution (vec): 1 1 1 0 	
+4 1 4  | 9	| 1.125000	Solution (brute): 0 1 1 1 	 | 32	| 1.125000	Solution (vec): 0 1 1 1 	
+4 1 4  | 13	| 1.546875	Solution (brute): 1 1 0 1 	 | 46	| 1.546875	Solution (vec): 1 1 0 1 	
+5 1 4  | 12	| 2.151000	Solution (brute): 1 1 1 1 	 | 33	| 2.151000	Solution (vec): 1 1 1 1 	
+5 1 4  | 15	| 2.169000	Solution (brute): 0 1 1 1 	 | 40	| 2.169000	Solution (vec): 0 1 1 1 	
+5 1 4  | 14	| 1.752000	Solution (brute): 1 1 1 1 	 | 41	| 1.752000	Solution (vec): 1 1 1 1 	
+5 1 4  | 17	| 1.404000	Solution (brute): 1 0 0 1 	 | 62	| 1.404000	Solution (vec): 1 0 0 1 	
+5 1 4  | 14	| 1.701000	Solution (brute): 0 1 1 1 	 | 40	| 1.701000	Solution (vec): 0 1 1 1 	
+6 1 4  | 9	| 1.880000	Solution (brute): 1 1 1 0 	 | 26	| 1.880000	Solution (vec): 1 1 1 0 	
+6 1 4  | 10	| 0.975000	Solution (brute): 1 1 1 0 	 | 29	| 0.975000	Solution (vec): 1 1 1 0 	
+6 1 4  | 10	| 1.668333	Solution (brute): 1 0 1 1 	 | 25	| 1.668333	Solution (vec): 1 0 1 1 	
+6 1 4  | 10	| 1.705000	Solution (brute): 0 1 1 1 	 | 24	| 1.705000	Solution (vec): 0 1 1 1 	
+6 1 4  | 9	| 1.090000	Solution (brute): 1 0 0 1 	 | 27	| 1.090000	Solution (vec): 1 0 0 1 	
+7 1 4  | 11	| 1.287143	Solution (brute): 0 1 1 1 	 | 35	| 1.287143	Solution (vec): 0 1 1 1 	
+7 1 4  | 10	| 0.992857	Solution (brute): 1 1 0 0 	 | 35	| 0.992857	Solution (vec): 1 1 0 0 	
+7 1 4  | 10	| 1.438571	Solution (brute): 1 1 0 1 	 | 31	| 1.438571	Solution (vec): 1 1 0 1 	
+7 1 4  | 14	| 1.234286	Solution (brute): 1 1 1 0 	 | 30	| 1.234286	Solution (vec): 1 1 1 0 	
+7 1 4  | 16	| 1.741071	Solution (brute): 0 1 1 1 	 | 46	| 1.741071	Solution (vec): 0 1 1 1 	
+8 1 4  | 15	| 1.273438	Solution (brute): 1 0 1 1 	 | 38	| 1.273438	Solution (vec): 1 0 1 1 	
+8 1 4  | 15	| 1.884375	Solution (brute): 1 0 1 1 	 | 33	| 1.884375	Solution (vec): 1 0 1 1 	
+8 1 4  | 15	| 1.522500	Solution (brute): 1 0 1 1 	 | 30	| 1.522500	Solution (vec): 1 0 1 1 	
+8 1 4  | 16	| 2.111562	Solution (brute): 1 0 1 1 	 | 43	| 2.111562	Solution (vec): 1 0 1 1 	
+8 1 4  | 14	| 1.067500	Solution (brute): 0 1 1 0 	 | 35	| 1.067500	Solution (vec): 0 1 1 0 	
+9 1 4  | 23	| 1.450000	Solution (brute): 1 1 1 1 	 | 71	| 1.450000	Solution (vec): 1 1 1 1 	
+9 1 4  | 14	| 1.457500	Solution (brute): 0 1 1 1 	 | 37	| 1.457500	Solution (vec): 0 1 1 1 	
+9 1 4  | 20	| 1.331667	Solution (brute): 1 0 1 0 	 | 57	| 1.331667	Solution (vec): 1 0 1 0 	
+9 1 4  | 17	| 0.765556	Solution (brute): 0 0 1 1 	 | 54	| 0.765556	Solution (vec): 0 0 1 1 	
+9 1 4  | 16	| 1.070000	Solution (brute): 1 0 0 1 	 | 45	| 1.070000	Solution (vec): 1 0 0 1 	
+1 2 4  | 28	| 0.950000	Solution (brute): 0 1 0 0 	 | 135	| 0.950000	Solution (vec): 0 1 0 0 	
+1 2 4  | 29	| 0.960000	Solution (brute): 1 0 0 0 	 | 123	| 0.960000	Solution (vec): 1 0 0 0 	
+1 2 4  | 30	| 0.950000	Solution (brute): 0 1 0 0 	 | 114	| 0.950000	Solution (vec): 0 1 0 0 	
+1 2 4  | 30	| 0.980000	Solution (brute): 0 0 1 0 	 | 128	| 0.980000	Solution (vec): 0 0 1 0 	
+1 2 4  | 28	| 0.830000	Solution (brute): 0 1 0 0 	 | 131	| 0.830000	Solution (vec): 0 1 0 0 	
+2 2 4  | 45	| 1.530000	Solution (brute): 1 1 0 0 	 | 74	| 1.530000	Solution (vec): 1 1 0 0 	
+2 2 4  | 39	| 1.425000	Solution (brute): 1 1 2 0 	 | 107	| 1.425000	Solution (vec): 1 1 2 0 	
+2 2 4  | 35	| 1.372500	Solution (brute): 0 1 0 1 	 | 112	| 1.372500	Solution (vec): 0 1 0 1 	
+2 2 4  | 43	| 1.718750	Solution (brute): 1 1 2 2 	 | 97	| 1.718750	Solution (vec): 1 1 2 2 	
+2 2 4  | 42	| 1.790000	Solution (brute): 0 0 1 1 	 | 51	| 1.790000	Solution (vec): 0 0 1 1 	
+3 2 4  | 43	| 1.425000	Solution (brute): 0 1 1 0 	 | 80	| 1.425000	Solution (vec): 0 1 1 0 	
+3 2 4  | 53	| 1.240000	Solution (brute): 1 0 0 1 	 | 122	| 1.240000	Solution (vec): 1 0 0 1 	
+3 2 4  | 43	| 1.700000	Solution (brute): 2 0 0 1 	 | 88	| 1.700000	Solution (vec): 2 0 0 1 	
+3 2 4  | 39	| 1.480000	Solution (brute): 1 0 1 0 	 | 69	| 1.480000	Solution (vec): 1 0 1 0 	
+3 2 4  | 39	| 1.025000	Solution (brute): 0 1 0 1 	 | 97	| 1.025000	Solution (vec): 0 1 0 1 	
+4 2 4  | 44	| 2.190000	Solution (brute): 1 1 1 2 	 | 69	| 2.190000	Solution (vec): 1 1 1 2 	
+4 2 4  | 51	| 2.083125	Solution (brute): 2 1 1 1 	 | 71	| 2.083125	Solution (vec): 2 1 1 1 	
+4 2 4  | 42	| 1.185000	Solution (brute): 1 0 1 0 	 | 139	| 1.185000	Solution (vec): 1 0 1 0 	
+4 2 4  | 44	| 1.898750	Solution (brute): 1 0 1 1 	 | 49	| 1.898750	Solution (vec): 1 0 1 1 	
+4 2 4  | 44	| 1.909375	Solution (brute): 2 1 1 0 	 | 54	| 1.909375	Solution (vec): 2 1 1 0 	
+5 2 4  | 45	| 1.479500	Solution (brute): 1 1 1 1 	 | 86	| 1.479500	Solution (vec): 1 1 1 1 	
+5 2 4  | 47	| 1.656000	Solution (brute): 2 1 1 0 	 | 61	| 1.656000	Solution (vec): 2 1 1 0 	
+5 2 4  | 44	| 1.207500	Solution (brute): 1 2 0 1 	 | 78	| 1.207500	Solution (vec): 1 2 0 1 	
+5 2 4  | 46	| 1.579500	Solution (brute): 1 0 1 1 	 | 69	| 1.579500	Solution (vec): 1 0 1 1 	
+5 2 4  | 43	| 1.666000	Solution (brute): 1 1 1 1 	 | 56	| 1.666000	Solution (vec): 1 1 1 1 	
+6 2 4  | 52	| 1.312500	Solution (brute): 0 1 1 1 	 | 50	| 1.312500	Solution (vec): 0 1 1 1 	
+6 2 4  | 55	| 1.650000	Solution (brute): 0 2 1 1 	 | 59	| 1.650000	Solution (vec): 0 2 1 1 	
+6 2 4  | 51	| 3.015834	Solution (brute): 1 2 1 1 	 | 35	| 3.015834	Solution (vec): 1 2 1 1 	
+6 2 4  | 82	| 1.983333	Solution (brute): 1 1 1 1 	 | 72	| 1.983333	Solution (vec): 1 1 1 1 	
+6 2 4  | 57	| 1.458333	Solution (brute): 0 0 1 1 	 | 139	| 1.458333	Solution (vec): 0 0 1 1 	
+7 2 4  | 55	| 1.592857	Solution (brute): 2 1 1 0 	 | 81	| 1.592857	Solution (vec): 2 1 1 0 	
+7 2 4  | 60	| 2.340000	Solution (brute): 1 2 2 1 	 | 72	| 2.340000	Solution (vec): 1 2 2 1 	
+7 2 4  | 55	| 2.205000	Solution (brute): 1 1 1 1 	 | 56	| 2.205000	Solution (vec): 1 1 1 1 	
+7 2 4  | 64	| 2.125000	Solution (brute): 2 2 1 1 	 | 77	| 2.125000	Solution (vec): 2 2 1 1 	
+7 2 4  | 49	| 1.766786	Solution (brute): 1 1 1 1 	 | 78	| 1.766786	Solution (vec): 1 1 1 1 	
+8 2 4  | 56	| 1.470000	Solution (brute): 1 0 1 1 	 | 84	| 1.470000	Solution (vec): 1 0 1 1 	
+8 2 4  | 54	| 1.365000	Solution (brute): 1 2 1 0 	 | 72	| 1.365000	Solution (vec): 1 2 1 0 	
+8 2 4  | 59	| 2.379375	Solution (brute): 0 1 1 1 	 | 39	| 2.379375	Solution (vec): 0 1 1 1 	
+8 2 4  | 61	| 2.428750	Solution (brute): 1 1 1 0 	 | 65	| 2.428750	Solution (vec): 1 1 1 0 	
+8 2 4  | 54	| 1.854375	Solution (brute): 0 1 1 1 	 | 113	| 1.854375	Solution (vec): 0 1 1 1 	
+9 2 4  | 52	| 1.377778	Solution (brute): 1 0 0 1 	 | 106	| 1.377778	Solution (vec): 1 0 0 1 	
+9 2 4  | 59	| 1.662222	Solution (brute): 2 1 2 2 	 | 66	| 1.662222	Solution (vec): 2 1 2 2 	
+9 2 4  | 56	| 2.420000	Solution (brute): 1 1 1 1 	 | 27	| 2.420000	Solution (vec): 1 1 1 1 	
+9 2 4  | 63	| 1.520833	Solution (brute): 1 2 0 1 	 | 79	| 1.520833	Solution (vec): 1 2 0 1 	
+9 2 4  | 72	| 2.441111	Solution (brute): 1 1 2 1 	 | 113	| 2.441111	Solution (vec): 1 1 2 1 	
+1 3 4  | 70	| 0.940000	Solution (brute): 0 1 0 0 	 | 288	| 0.940000	Solution (vec): 0 1 0 0 	
+1 3 4  | 70	| 0.910000	Solution (brute): 0 1 0 0 	 | 344	| 0.910000	Solution (vec): 0 1 0 0 	
+1 3 4  | 68	| 0.860000	Solution (brute): 0 1 0 0 	 | 380	| 0.860000	Solution (vec): 0 1 0 0 	
+1 3 4  | 67	| 0.890000	Solution (brute): 0 0 0 1 	 | 340	| 0.890000	Solution (vec): 0 0 0 1 	
+1 3 4  | 68	| 0.880000	Solution (brute): 0 1 0 0 	 | 345	| 0.880000	Solution (vec): 0 1 0 0 	
+2 3 4  | 57	| 1.312500	Solution (brute): 1 0 1 1 	 | 114	| 1.312500	Solution (vec): 1 0 1 1 	
+2 3 4  | 66	| 1.747500	Solution (brute): 2 1 2 0 	 | 97	| 1.747500	Solution (vec): 2 1 2 0 	
+2 3 4  | 86	| 1.425000	Solution (brute): 0 2 1 1 	 | 191	| 1.425000	Solution (vec): 0 2 1 1 	
+2 3 4  | 60	| 1.680000	Solution (brute): 0 1 0 2 	 | 69	| 1.680000	Solution (vec): 0 1 0 2 	
+2 3 4  | 75	| 1.820000	Solution (brute): 1 0 0 1 	 | 120	| 1.820000	Solution (vec): 1 0 0 1 	
+3 3 4  | 81	| 1.117500	Solution (brute): 2 1 2 0 	 | 106	| 1.117500	Solution (vec): 2 1 2 0 	
+3 3 4  | 79	| 1.897500	Solution (brute): 1 0 1 2 	 | 79	| 1.897500	Solution (vec): 1 0 1 2 	
+3 3 4  | 71	| 1.466667	Solution (brute): 2 1 0 1 	 | 122	| 1.466667	Solution (vec): 2 1 0 1 	
+3 3 4  | 74	| 1.417500	Solution (brute): 1 0 1 2 	 | 195	| 1.417500	Solution (vec): 1 0 1 2 	
+3 3 4  | 105	| 1.966667	Solution (brute): 1 1 0 1 	 | 127	| 1.966667	Solution (vec): 1 1 0 1 	
+4 3 4  | 118	| 1.790000	Solution (brute): 1 1 0 0 	 | 136	| 1.790000	Solution (vec): 1 1 0 0 	
+4 3 4  | 126	| 1.522500	Solution (brute): 2 1 0 1 	 | 222	| 1.522500	Solution (vec): 2 1 0 1 	
+4 3 4  | 165	| 2.345000	Solution (brute): 2 1 2 1 	 | 67	| 2.345000	Solution (vec): 2 1 2 1 	
+4 3 4  | 158	| 1.863750	Solution (brute): 1 0 2 3 	 | 205	| 1.863750	Solution (vec): 1 0 2 3 	
+4 3 4  | 121	| 1.711875	Solution (brute): 0 1 1 2 	 | 236	| 1.711875	Solution (vec): 0 1 1 2 	
+5 3 4  | 102	| 2.002000	Solution (brute): 1 1 1 2 	 | 152	| 2.002000	Solution (vec): 1 1 1 2 	
+5 3 4  | 107	| 2.093000	Solution (brute): 1 1 1 1 	 | 125	| 2.093000	Solution (vec): 1 1 1 1 	
+5 3 4  | 105	| 1.737000	Solution (brute): 1 2 1 0 	 | 177	| 1.737000	Solution (vec): 1 2 1 0 	
+5 3 4  | 106	| 1.759500	Solution (brute): 1 3 0 1 	 | 110	| 1.759500	Solution (vec): 1 3 0 1 	
+5 3 4  | 104	| 1.456000	Solution (brute): 0 1 0 1 	 | 196	| 1.456000	Solution (vec): 0 1 0 1 	
+6 3 4  | 125	| 2.316667	Solution (brute): 2 2 2 1 	 | 84	| 2.316667	Solution (vec): 2 2 2 1 	
+6 3 4  | 125	| 1.531250	Solution (brute): 2 1 1 1 	 | 176	| 1.531250	Solution (vec): 2 1 1 1 	
+6 3 4  | 123	| 2.217083	Solution (brute): 2 3 2 1 	 | 137	| 2.217083	Solution (vec): 2 3 2 1 	
+6 3 4  | 127	| 1.705000	Solution (brute): 0 1 3 2 	 | 250	| 1.705000	Solution (vec): 0 1 3 2 	
+6 3 4  | 110	| 1.387500	Solution (brute): 3 0 1 1 	 | 166	| 1.387500	Solution (vec): 3 0 1 1 	
+7 3 4  | 143	| 1.472500	Solution (brute): 1 2 3 1 	 | 217	| 1.472500	Solution (vec): 1 2 3 1 	
+7 3 4  | 158	| 2.040000	Solution (brute): 1 2 2 3 	 | 183	| 2.040000	Solution (vec): 1 2 2 3 	
+7 3 4  | 140	| 1.242857	Solution (brute): 0 2 1 1 	 | 249	| 1.242857	Solution (vec): 0 2 1 1 	
+7 3 4  | 129	| 2.653214	Solution (brute): 1 1 1 1 	 | 42	| 2.653214	Solution (vec): 1 1 1 1 	
+7 3 4  | 132	| 1.755000	Solution (brute): 1 1 1 0 	 | 161	| 1.755000	Solution (vec): 1 1 1 0 	
+8 3 4  | 154	| 2.046875	Solution (brute): 3 3 1 1 	 | 158	| 2.046875	Solution (vec): 3 3 1 1 	
+8 3 4  | 154	| 1.793750	Solution (brute): 1 1 0 1 	 | 77	| 1.793750	Solution (vec): 1 1 0 1 	
+8 3 4  | 147	| 2.510625	Solution (brute): 1 1 1 1 	 | 61	| 2.510625	Solution (vec): 1 1 1 1 	
+8 3 4  | 143	| 2.096875	Solution (brute): 1 2 1 1 	 | 124	| 2.096875	Solution (vec): 1 2 1 1 	
+8 3 4  | 147	| 2.310000	Solution (brute): 1 2 2 2 	 | 97	| 2.310000	Solution (vec): 1 2 2 2 	
+9 3 4  | 197	| 2.893333	Solution (brute): 1 1 1 1 	 | 38	| 2.893333	Solution (vec): 1 1 1 1 	
+9 3 4  | 160	| 1.560000	Solution (brute): 1 1 2 1 	 | 146	| 1.560000	Solution (vec): 1 1 2 1 	
+9 3 4  | 159	| 1.700000	Solution (brute): 1 1 0 1 	 | 156	| 1.700000	Solution (vec): 1 1 0 1 	
+9 3 4  | 162	| 2.271667	Solution (brute): 2 2 2 1 	 | 103	| 2.271667	Solution (vec): 2 2 2 1 	
+9 3 4  | 176	| 2.910556	Solution (brute): 1 2 1 1 	 | 67	| 2.910556	Solution (vec): 1 2 1 1 	
+1 4 4  | 116	| 0.820000	Solution (brute): 0 1 0 0 	 | 688	| 0.820000	Solution (vec): 0 1 0 0 	
+1 4 4  | 116	| 0.950000	Solution (brute): 0 0 1 0 	 | 815	| 0.950000	Solution (vec): 0 0 1 0 	
+1 4 4  | 116	| 0.970000	Solution (brute): 0 0 1 0 	 | 624	| 0.970000	Solution (vec): 0 0 1 0 	
+1 4 4  | 156	| 0.960000	Solution (brute): 0 0 1 0 	 | 734	| 0.960000	Solution (vec): 0 0 1 0 	
+1 4 4  | 156	| 0.750000	Solution (brute): 0 0 0 1 	 | 745	| 0.750000	Solution (vec): 0 0 0 1 	
+2 4 4  | 229	| 1.793750	Solution (brute): 2 3 1 1 	 | 561	| 1.793750	Solution (vec): 2 3 1 1 	
+2 4 4  | 209	| 1.927500	Solution (brute): 2 3 0 1 	 | 375	| 1.927500	Solution (vec): 2 3 0 1 	
+2 4 4  | 235	| 2.268750	Solution (brute): 1 1 1 1 	 | 212	| 2.268750	Solution (vec): 1 1 1 1 	
+2 4 4  | 218	| 1.825000	Solution (brute): 1 2 3 2 	 | 426	| 1.825000	Solution (vec): 1 2 3 2 	
+2 4 4  | 130	| 1.770000	Solution (brute): 0 1 0 2 	 | 251	| 1.770000	Solution (vec): 0 1 0 2 	
+3 4 4  | 173	| 1.792500	Solution (brute): 2 1 3 1 	 | 199	| 1.792500	Solution (vec): 2 1 3 1 	
+3 4 4  | 157	| 1.966667	Solution (brute): 2 1 0 3 	 | 245	| 1.966667	Solution (vec): 2 1 0 3 	
+3 4 4  | 167	| 2.741667	Solution (brute): 1 1 1 1 	 | 46	| 2.741667	Solution (vec): 1 1 1 1 	
+3 4 4  | 188	| 2.062500	Solution (brute): 2 2 1 2 	 | 126	| 2.062500	Solution (vec): 2 2 1 2 	
+3 4 4  | 151	| 1.300000	Solution (brute): 0 0 1 2 	 | 218	| 1.300000	Solution (vec): 0 0 1 2 	
+4 4 4  | 198	| 2.143750	Solution (brute): 1 1 1 0 	 | 100	| 2.143750	Solution (vec): 1 1 1 0 	
+4 4 4  | 193	| 1.641250	Solution (brute): 3 3 1 1 	 | 224	| 1.641250	Solution (vec): 3 3 1 1 	
+4 4 4  | 189	| 2.355000	Solution (brute): 1 2 1 2 	 | 236	| 2.355000	Solution (vec): 1 2 1 2 	
+4 4 4  | 204	| 2.782500	Solution (brute): 3 1 1 1 	 | 57	| 2.782500	Solution (vec): 3 1 1 1 	
+4 4 4  | 196	| 2.476250	Solution (brute): 2 1 2 2 	 | 118	| 2.476250	Solution (vec): 2 1 2 2 	
+5 4 4  | 275	| 2.106000	Solution (brute): 2 2 1 3 	 | 440	| 2.106000	Solution (vec): 2 2 1 3 	
+5 4 4  | 292	| 1.751000	Solution (brute): 1 0 1 1 	 | 103	| 1.751000	Solution (vec): 1 0 1 1 	
+5 4 4  | 263	| 1.776000	Solution (brute): 1 1 0 1 	 | 142	| 1.776000	Solution (vec): 1 1 0 1 	
+5 4 4  | 290	| 1.953000	Solution (brute): 3 1 1 3 	 | 406	| 1.953000	Solution (vec): 3 1 1 3 	
+5 4 4  | 391	| 2.034000	Solution (brute): 1 1 0 1 	 | 166	| 2.034000	Solution (vec): 1 1 0 1 	
+6 4 4  | 366	| 2.415000	Solution (brute): 1 1 2 4 	 | 103	| 2.415000	Solution (vec): 1 1 2 4 	
+6 4 4  | 421	| 2.066667	Solution (brute): 2 1 0 1 	 | 301	| 2.066667	Solution (vec): 2 1 0 1 	
+6 4 4  | 419	| 2.415000	Solution (brute): 1 1 2 1 	 | 115	| 2.415000	Solution (vec): 1 1 2 1 	
+6 4 4  | 392	| 1.820000	Solution (brute): 1 0 1 1 	 | 213	| 1.820000	Solution (vec): 1 0 1 1 	
+6 4 4  | 396	| 2.025833	Solution (brute): 1 1 3 1 	 | 199	| 2.025833	Solution (vec): 1 1 3 1 	
+7 4 4  | 423	| 1.685714	Solution (brute): 0 1 1 2 	 | 719	| 1.685714	Solution (vec): 0 1 1 2 	
+7 4 4  | 467	| 2.143929	Solution (brute): 1 1 1 2 	 | 254	| 2.143929	Solution (vec): 1 1 1 2 	
+7 4 4  | 422	| 2.451429	Solution (brute): 1 2 1 1 	 | 168	| 2.451429	Solution (vec): 1 2 1 1 	
+7 4 4  | 499	| 1.917143	Solution (brute): 1 3 1 1 	 | 122	| 1.917143	Solution (vec): 1 3 1 1 	
+7 4 4  | 468	| 1.791428	Solution (brute): 2 3 1 2 	 | 191	| 1.791428	Solution (vec): 2 3 1 2 	
+8 4 4  | 502	| 2.364375	Solution (brute): 2 1 1 3 	 | 141	| 2.364375	Solution (vec): 2 1 1 3 	
+8 4 4  | 422	| 2.826562	Solution (brute): 1 3 3 1 	 | 96	| 2.826562	Solution (vec): 1 3 3 1 	
+8 4 4  | 304	| 2.573125	Solution (brute): 1 1 1 1 	 | 99	| 2.573125	Solution (vec): 1 1 1 1 	
+8 4 4  | 309	| 2.143125	Solution (brute): 0 1 1 1 	 | 68	| 2.143125	Solution (vec): 0 1 1 1 	
+8 4 4  | 291	| 2.600000	Solution (brute): 1 3 1 1 	 | 93	| 2.600000	Solution (vec): 1 3 1 1 	
+9 4 4  | 328	| 1.135556	Solution (brute): 1 2 0 2 	 | 291	| 1.135556	Solution (vec): 1 2 0 2 	
+9 4 4  | 328	| 2.230278	Solution (brute): 1 2 0 2 	 | 190	| 2.230278	Solution (vec): 1 2 0 2 	
+9 4 4  | 338	| 1.780278	Solution (brute): 3 3 1 1 	 | 175	| 1.780278	Solution (vec): 3 3 1 1 	
+9 4 4  | 390	| 2.626111	Solution (brute): 3 2 1 1 	 | 172	| 2.626111	Solution (vec): 3 2 1 1 	
+9 4 4  | 334	| 2.308333	Solution (brute): 1 2 0 1 	 | 206	| 2.308333	Solution (vec): 1 2 0 1 	
+1 5 4  | 248	| 0.950000	Solution (brute): 0 1 0 0 	 | 1226	| 0.950000	Solution (vec): 0 1 0 0 	
+1 5 4  | 306	| 0.970000	Solution (brute): 1 0 0 0 	 | 1879	| 0.970000	Solution (vec): 1 0 0 0 	
+1 5 4  | 232	| 0.950000	Solution (brute): 1 0 0 0 	 | 1419	| 0.950000	Solution (vec): 1 0 0 0 	
+1 5 4  | 285	| 0.950000	Solution (brute): 0 0 0 1 	 | 1370	| 0.950000	Solution (vec): 0 0 0 1 	
+1 5 4  | 359	| 0.980000	Solution (brute): 1 0 0 0 	 | 1590	| 0.980000	Solution (vec): 1 0 0 0 	
+2 5 4  | 249	| 1.567500	Solution (brute): 1 1 0 1 	 | 289	| 1.567500	Solution (vec): 1 1 0 1 	
+2 5 4  | 259	| 2.025000	Solution (brute): 2 2 2 2 	 | 547	| 2.025000	Solution (vec): 2 2 2 2 	
+2 5 4  | 253	| 1.750000	Solution (brute): 0 0 1 2 	 | 369	| 1.750000	Solution (vec): 0 0 1 2 	
+2 5 4  | 312	| 1.531250	Solution (brute): 1 2 2 1 	 | 383	| 1.531250	Solution (vec): 1 2 2 1 	
+2 5 4  | 285	| 1.830000	Solution (brute): 3 0 0 1 	 | 464	| 1.830000	Solution (vec): 3 0 0 1 	
+3 5 4  | 380	| 2.380000	Solution (brute): 0 1 1 3 	 | 427	| 2.380000	Solution (vec): 0 1 1 3 	
+3 5 4  | 367	| 2.422500	Solution (brute): 3 1 2 3 	 | 264	| 2.422500	Solution (vec): 3 1 2 3 	
+3 5 4  | 363	| 1.733333	Solution (brute): 2 0 3 2 	 | 436	| 1.733333	Solution (vec): 2 0 3 2 	
+3 5 4  | 357	| 2.308333	Solution (brute): 1 1 1 0 	 | 240	| 2.308333	Solution (vec): 1 1 1 0 	
+3 5 4  | 415	| 1.845000	Solution (brute): 0 1 1 2 	 | 296	| 1.845000	Solution (vec): 0 1 1 2 	
+4 5 4  | 464	| 2.406250	Solution (brute): 1 1 1 1 	 | 396	| 2.406250	Solution (vec): 1 1 1 1 	
+4 5 4  | 446	| 2.205000	Solution (brute): 2 0 1 1 	 | 257	| 2.205000	Solution (vec): 2 0 1 1 	
+4 5 4  | 495	| 2.275000	Solution (brute): 3 1 4 2 	 | 295	| 2.275000	Solution (vec): 3 1 4 2 	
+4 5 4  | 456	| 2.362500	Solution (brute): 4 4 2 1 	 | 425	| 2.362500	Solution (vec): 4 4 2 1 	
+4 5 4  | 455	| 2.535000	Solution (brute): 1 5 1 1 	 | 286	| 2.535000	Solution (vec): 1 5 1 1 	
+5 5 4  | 455	| 1.876000	Solution (brute): 2 3 3 1 	 | 407	| 1.876000	Solution (vec): 2 3 3 1 	
+5 5 4  | 644	| 1.673000	Solution (brute): 1 3 1 3 	 | 260	| 1.673000	Solution (vec): 1 3 1 3 	
+5 5 4  | 496	| 1.696000	Solution (brute): 3 1 1 0 	 | 641	| 1.696000	Solution (vec): 3 1 1 0 	
+5 5 4  | 419	| 2.704000	Solution (brute): 1 1 1 2 	 | 108	| 2.704000	Solution (vec): 1 1 1 2 	
+5 5 4  | 505	| 1.632000	Solution (brute): 2 1 1 4 	 | 348	| 1.632000	Solution (vec): 2 1 1 4 	
+6 5 4  | 561	| 2.621667	Solution (brute): 1 5 1 1 	 | 108	| 2.621667	Solution (vec): 1 5 1 1 	
+6 5 4  | 677	| 1.852500	Solution (brute): 0 3 1 1 	 | 439	| 1.852500	Solution (vec): 0 3 1 1 	
+6 5 4  | 674	| 2.493333	Solution (brute): 3 2 1 1 	 | 259	| 2.493333	Solution (vec): 3 2 1 1 	
+6 5 4  | 683	| 2.208333	Solution (brute): 1 1 1 0 	 | 198	| 2.208333	Solution (vec): 1 1 1 0 	
+6 5 4  | 705	| 2.108750	Solution (brute): 1 3 1 1 	 | 157	| 2.108750	Solution (vec): 1 3 1 1 	
+7 5 4  | 729	| 1.935000	Solution (brute): 2 1 0 1 	 | 697	| 1.935000	Solution (vec): 2 1 0 1 	
+7 5 4  | 896	| 2.588572	Solution (brute): 1 1 1 3 	 | 106	| 2.588572	Solution (vec): 1 1 1 3 	
+7 5 4  | 618	| 2.590714	Solution (brute): 0 2 1 1 	 | 311	| 2.590714	Solution (vec): 0 2 1 1 	
+7 5 4  | 551	| 1.740000	Solution (brute): 1 2 1 1 	 | 168	| 1.740000	Solution (vec): 1 2 1 1 	
+7 5 4  | 758	| 2.237857	Solution (brute): 1 3 0 1 	 | 324	| 2.237857	Solution (vec): 1 3 0 1 	
+8 5 4  | 607	| 2.625000	Solution (brute): 1 2 2 1 	 | 274	| 2.625000	Solution (vec): 1 2 2 1 	
+8 5 4  | 713	| 2.483125	Solution (brute): 1 1 3 2 	 | 182	| 2.483125	Solution (vec): 1 1 3 2 	
+8 5 4  | 768	| 2.195313	Solution (brute): 1 5 2 3 	 | 596	| 2.195313	Solution (vec): 1 5 2 3 	
+8 5 4  | 739	| 1.969375	Solution (brute): 1 2 3 1 	 | 521	| 1.969375	Solution (vec): 1 2 3 1 	
+8 5 4  | 687	| 2.650000	Solution (brute): 2 0 1 1 	 | 192	| 2.650000	Solution (vec): 2 0 1 1 	
+9 5 4  | 702	| 2.924444	Solution (brute): 1 1 1 2 	 | 92	| 2.924444	Solution (vec): 1 1 1 2 	
+9 5 4  | 699	| 1.991667	Solution (brute): 1 2 2 4 	 | 302	| 1.991667	Solution (vec): 1 2 2 4 	
+9 5 4  | 650	| 1.711667	Solution (brute): 1 2 0 1 	 | 489	| 1.711667	Solution (vec): 1 2 0 1 	
+9 5 4  | 678	| 2.466667	Solution (brute): 3 2 2 3 	 | 278	| 2.466667	Solution (vec): 3 2 2 3 	
+9 5 4  | 659	| 2.423611	Solution (brute): 1 1 2 1 	 | 330	| 2.423611	Solution (vec): 1 1 2 1 	
+1 6 4  | 374	| 0.890000	Solution (brute): 1 0 0 0 	 | 2835	| 0.890000	Solution (vec): 1 0 1 0 	
+1 6 4  | 378	| 0.980000	Solution (brute): 1 0 0 0 	 | 2116	| 0.980000	Solution (vec): 1 0 0 0 	
+1 6 4  | 375	| 0.970000	Solution (brute): 0 0 1 0 	 | 1865	| 0.970000	Solution (vec): 0 0 1 0 	
+1 6 4  | 320	| 0.940000	Solution (brute): 0 0 0 1 	 | 2458	| 0.940000	Solution (vec): 0 0 0 1 	
+1 6 4  | 320	| 0.920000	Solution (brute): 0 0 0 1 	 | 2094	| 0.920000	Solution (vec): 0 0 0 1 	
+2 6 4  | 438	| 2.093750	Solution (brute): 2 1 1 3 	 | 406	| 2.093750	Solution (vec): 2 1 1 3 	
+2 6 4  | 782	| 1.672500	Solution (brute): 2 0 2 1 	 | 662	| 1.672500	Solution (vec): 2 0 2 1 	
+2 6 4  | 474	| 1.770000	Solution (brute): 1 1 2 0 	 | 414	| 1.770000	Solution (vec): 1 1 2 0 	
+2 6 4  | 459	| 2.137500	Solution (brute): 2 1 1 2 	 | 509	| 2.137500	Solution (vec): 2 1 1 2 	
+2 6 4  | 486	| 1.993750	Solution (brute): 2 1 1 1 	 | 576	| 1.993750	Solution (vec): 2 1 1 1 	
+3 6 4  | 1017	| 2.141667	Solution (brute): 1 3 0 2 	 | 686	| 2.141667	Solution (vec): 1 3 0 2 	
+3 6 4  | 954	| 1.792500	Solution (brute): 2 1 5 2 	 | 637	| 1.792500	Solution (vec): 2 1 5 2 	
+3 6 4  | 946	| 2.130000	Solution (brute): 1 1 3 1 	 | 236	| 2.130000	Solution (vec): 1 1 3 1 	
+3 6 4  | 901	| 2.291667	Solution (brute): 1 1 1 0 	 | 539	| 2.291667	Solution (vec): 1 1 1 0 	
+3 6 4  | 707	| 2.416667	Solution (brute): 1 1 2 2 	 | 216	| 2.416667	Solution (vec): 1 1 2 2 	
+4 6 4  | 793	| 1.743750	Solution (brute): 1 1 1 1 	 | 726	| 1.743750	Solution (vec): 1 1 1 1 	
+4 6 4  | 841	| 2.380625	Solution (brute): 1 2 2 2 	 | 215	| 2.380625	Solution (vec): 1 2 2 2 	
+4 6 4  | 832	| 1.750000	Solution (brute): 2 3 2 0 	 | 539	| 1.750000	Solution (vec): 2 3 2 0 	
+4 6 4  | 847	| 2.608125	Solution (brute): 2 1 2 4 	 | 299	| 2.608125	Solution (vec): 2 1 2 4 	
+4 6 4  | 762	| 2.265000	Solution (brute): 1 1 4 1 	 | 490	| 2.265000	Solution (vec): 1 1 4 1 	
+5 6 4  | 1852	| 1.323000	Solution (brute): 0 1 2 4 	 | 2257	| 1.323000	Solution (vec): 0 1 2 4 	
+5 6 4  | 1256	| 2.303500	Solution (brute): 4 2 1 2 	 | 346	| 2.303500	Solution (vec): 4 2 1 2 	
+5 6 4  | 2189	| 2.430000	Solution (brute): 4 1 1 1 	 | 669	| 2.430000	Solution (vec): 4 1 1 1 	
+5 6 4  | 1444	| 1.995500	Solution (brute): 2 1 1 1 	 | 963	| 1.995500	Solution (vec): 2 1 1 1 	
+5 6 4  | 1233	| 2.240000	Solution (brute): 2 5 2 1 	 | 504	| 2.240000	Solution (vec): 2 5 2 1 	
+6 6 4  | 841	| 2.636250	Solution (brute): 2 1 1 2 	 | 254	| 2.636250	Solution (vec): 2 1 1 2 	
+6 6 4  | 1435	| 2.782500	Solution (brute): 2 1 1 2 	 | 179	| 2.782500	Solution (vec): 2 1 1 2 	
+6 6 4  | 862	| 2.422500	Solution (brute): 3 1 1 1 	 | 329	| 2.422500	Solution (vec): 3 1 1 1 	
+6 6 4  | 1600	| 2.580833	Solution (brute): 1 1 1 1 	 | 190	| 2.580833	Solution (vec): 1 1 1 1 	
+6 6 4  | 1474	| 2.287500	Solution (brute): 1 2 2 1 	 | 464	| 2.287500	Solution (vec): 1 2 2 1 	
+7 6 4  | 1629	| 2.190000	Solution (brute): 3 3 2 1 	 | 552	| 2.190000	Solution (vec): 3 3 2 1 	
+7 6 4  | 1025	| 2.665714	Solution (brute): 3 3 1 3 	 | 201	| 2.665714	Solution (vec): 3 3 1 3 	
+7 6 4  | 1003	| 2.014286	Solution (brute): 1 2 0 1 	 | 1058	| 2.014286	Solution (vec): 1 2 0 1 	
+7 6 4  | 1019	| 2.470000	Solution (brute): 1 1 3 2 	 | 197	| 2.470000	Solution (vec): 1 1 3 2 	
+7 6 4  | 1011	| 2.280000	Solution (brute): 5 1 1 1 	 | 358	| 2.280000	Solution (vec): 5 1 1 1 	
+8 6 4  | 1202	| 2.505000	Solution (brute): 3 2 1 1 	 | 402	| 2.505000	Solution (vec): 3 2 1 1 	
+8 6 4  | 1202	| 2.617188	Solution (brute): 2 1 1 2 	 | 265	| 2.617188	Solution (vec): 2 1 1 2 	
+8 6 4  | 1163	| 1.758125	Solution (brute): 0 2 1 1 	 | 458	| 1.758125	Solution (vec): 0 2 1 1 	
+8 6 4  | 1257	| 2.737500	Solution (brute): 1 1 2 2 	 | 261	| 2.737500	Solution (vec): 1 1 2 3 	
+8 6 4  | 1158	| 2.478125	Solution (brute): 1 4 1 2 	 | 377	| 2.478125	Solution (vec): 1 4 1 2 	
+9 6 4  | 1208	| 2.933333	Solution (brute): 1 1 1 1 	 | 74	| 2.933333	Solution (vec): 1 1 1 1 	
+9 6 4  | 1207	| 2.488611	Solution (brute): 1 2 1 2 	 | 142	| 2.488611	Solution (vec): 1 2 1 2 	
+9 6 4  | 1168	| 2.817778	Solution (brute): 1 1 2 1 	 | 58	| 2.817778	Solution (vec): 1 1 2 1 	
+9 6 4  | 1134	| 2.781389	Solution (brute): 1 1 1 2 	 | 128	| 2.781389	Solution (vec): 1 1 1 2 	
+9 6 4  | 1129	| 1.920000	Solution (brute): 1 3 1 1 	 | 742	| 1.920000	Solution (vec): 1 3 1 1 	
+1 7 4  | 602	| 0.990000	Solution (brute): 0 1 0 0 	 | 3471	| 0.990000	Solution (vec): 0 1 0 0 	
+1 7 4  | 1133	| 0.910000	Solution (brute): 1 0 0 0 	 | 4643	| 0.910000	Solution (vec): 1 0 0 0 	
+1 7 4  | 777	| 0.920000	Solution (brute): 0 0 1 0 	 | 4247	| 0.920000	Solution (vec): 0 0 1 0 	
+1 7 4  | 367	| 0.990000	Solution (brute): 0 0 0 1 	 | 2441	| 0.990000	Solution (vec): 0 0 0 1 	
+1 7 4  | 408	| 0.970000	Solution (brute): 1 0 0 0 	 | 2257	| 0.970000	Solution (vec): 1 0 0 0 	
+2 7 4  | 504	| 1.556250	Solution (brute): 0 2 1 1 	 | 921	| 1.556250	Solution (vec): 0 2 1 1 	
+2 7 4  | 491	| 1.818750	Solution (brute): 3 1 3 2 	 | 889	| 1.818750	Solution (vec): 3 1 3 2 	
+2 7 4  | 479	| 1.897500	Solution (brute): 1 1 1 0 	 | 385	| 1.897500	Solution (vec): 1 1 1 0 	
+2 7 4  | 508	| 1.635000	Solution (brute): 0 2 3 1 	 | 910	| 1.635000	Solution (vec): 0 2 3 1 	
+2 7 4  | 543	| 1.875000	Solution (brute): 2 4 2 3 	 | 1272	| 1.875000	Solution (vec): 2 4 2 3 	
+3 7 4  | 1366	| 2.115000	Solution (brute): 4 2 1 3 	 | 1257	| 2.115000	Solution (vec): 4 2 1 3 	
+3 7 4  | 1364	| 1.972500	Solution (brute): 2 2 0 1 	 | 2021	| 1.972500	Solution (vec): 2 2 0 1 	
+3 7 4  | 1333	| 2.340000	Solution (brute): 1 3 0 4 	 | 540	| 2.340000	Solution (vec): 1 3 0 4 	
+3 7 4  | 1051	| 2.558333	Solution (brute): 1 1 1 4 	 | 185	| 2.558333	Solution (vec): 1 1 1 4 	
+3 7 4  | 876	| 2.900000	Solution (brute): 2 1 1 2 	 | 127	| 2.900000	Solution (vec): 2 1 1 2 	
+4 7 4  | 1571	| 1.808125	Solution (brute): 1 1 0 2 	 | 2168	| 1.808125	Solution (vec): 1 1 0 2 	
+4 7 4  | 1047	| 2.475000	Solution (brute): 1 1 1 3 	 | 576	| 2.475000	Solution (vec): 1 1 1 3 	
+4 7 4  | 2152	| 2.480000	Solution (brute): 3 2 0 2 	 | 1127	| 2.480000	Solution (vec): 3 2 0 2 	
+4 7 4  | 1964	| 2.782500	Solution (brute): 1 2 4 3 	 | 395	| 2.782500	Solution (vec): 1 2 4 3 	
+4 7 4  | 1685	| 2.301250	Solution (brute): 3 2 5 3 	 | 622	| 2.301250	Solution (vec): 3 2 5 3 	
+5 7 4  | 1384	| 2.700000	Solution (brute): 2 1 2 3 	 | 95	| 2.700000	Solution (vec): 2 1 2 3 	
+5 7 4  | 1289	| 2.440000	Solution (brute): 0 1 1 3 	 | 342	| 2.440000	Solution (vec): 0 1 1 3 	
+5 7 4  | 1305	| 2.320500	Solution (brute): 1 2 1 2 	 | 131	| 2.320500	Solution (vec): 1 2 1 2 	
+5 7 4  | 1495	| 2.565000	Solution (brute): 1 1 2 2 	 | 308	| 2.565000	Solution (vec): 1 1 2 2 	
+5 7 4  | 1459	| 3.213000	Solution (brute): 1 2 3 1 	 | 111	| 3.213000	Solution (vec): 1 2 3 1 	
+6 7 4  | 1641	| 2.905833	Solution (brute): 4 1 1 2 	 | 416	| 2.905833	Solution (vec): 4 1 1 2 	
+6 7 4  | 1645	| 2.430000	Solution (brute): 0 2 1 2 	 | 1407	| 2.430000	Solution (vec): 0 2 1 2 	
+6 7 4  | 1617	| 2.658333	Solution (brute): 7 2 3 1 	 | 503	| 2.658333	Solution (vec): 7 2 3 1 	
+6 7 4  | 1626	| 1.828750	Solution (brute): 4 5 1 2 	 | 696	| 1.828750	Solution (vec): 4 5 1 2 	
+6 7 4  | 1604	| 1.995000	Solution (brute): 1 1 1 0 	 | 819	| 1.995000	Solution (vec): 1 1 1 0 	
+7 7 4  | 1742	| 3.259286	Solution (brute): 2 1 1 1 	 | 82	| 3.259286	Solution (vec): 2 1 1 1 	
+7 7 4  | 2898	| 3.042857	Solution (brute): 3 2 1 1 	 | 219	| 3.042857	Solution (vec): 3 2 1 1 	
+7 7 4  | 2694	| 2.530000	Solution (brute): 2 1 1 4 	 | 817	| 2.530000	Solution (vec): 2 1 1 4 	
+7 7 4  | 1637	| 2.914286	Solution (brute): 2 2 1 1 	 | 185	| 2.914286	Solution (vec): 2 2 1 1 	
+7 7 4  | 2835	| 2.310000	Solution (brute): 3 4 3 1 	 | 1284	| 2.310000	Solution (vec): 3 4 3 1 	
+8 7 4  | 3076	| 2.620000	Solution (brute): 1 2 3 2 	 | 189	| 2.620000	Solution (vec): 1 2 3 2 	
+8 7 4  | 3122	| 2.213750	Solution (brute): 2 3 1 2 	 | 382	| 2.213750	Solution (vec): 2 3 1 2 	
+8 7 4  | 2218	| 2.250625	Solution (brute): 4 4 1 1 	 | 509	| 2.250625	Solution (vec): 4 4 1 1 	
+8 7 4  | 1726	| 2.345625	Solution (brute): 4 2 1 1 	 | 156	| 2.345625	Solution (vec): 4 2 1 1 	
+8 7 4  | 1664	| 2.227500	Solution (brute): 2 3 3 2 	 | 716	| 2.227500	Solution (vec): 2 3 3 2 	
+9 7 4  | 2146	| 2.616667	Solution (brute): 2 2 4 1 	 | 340	| 2.616667	Solution (vec): 2 2 4 1 	
+9 7 4  | 1835	| 2.210000	Solution (brute): 0 4 2 1 	 | 568	| 2.210000	Solution (vec): 0 4 2 1 	
+9 7 4  | 1855	| 2.666667	Solution (brute): 3 1 1 3 	 | 627	| 2.666667	Solution (vec): 3 1 1 3 	
+9 7 4  | 1855	| 2.880000	Solution (brute): 1 4 1 1 	 | 343	| 2.880000	Solution (vec): 1 4 1 1 	
+9 7 4  | 1939	| 2.293334	Solution (brute): 2 3 6 2 	 | 476	| 2.293334	Solution (vec): 2 3 6 2 	
+1 8 4  | 870	| 0.970000	Solution (brute): 0 0 1 0 	 | 5528	| 0.970000	Solution (vec): 0 0 1 0 	
+1 8 4  | 829	| 0.920000	Solution (brute): 1 0 0 0 	 | 4089	| 0.920000	Solution (vec): 1 0 0 0 	
+1 8 4  | 828	| 0.980000	Solution (brute): 1 0 0 0 	 | 5959	| 0.980000	Solution (vec): 1 0 0 0 	
+1 8 4  | 1522	| 0.990000	Solution (brute): 1 0 0 0 	 | 7899	| 0.990000	Solution (vec): 1 0 0 0 	
+1 8 4  | 996	| 0.950000	Solution (brute): 0 1 0 0 	 | 9164	| 0.950000	Solution (vec): 0 1 0 0 	
+2 8 4  | 1865	| 1.747500	Solution (brute): 2 0 2 1 	 | 1839	| 1.747500	Solution (vec): 2 0 2 1 	
+2 8 4  | 2013	| 1.906250	Solution (brute): 2 4 3 3 	 | 2110	| 1.906250	Solution (vec): 2 4 3 3 	
+2 8 4  | 1229	| 2.237500	Solution (brute): 1 1 1 1 	 | 1521	| 2.237500	Solution (vec): 1 1 1 1 	
+2 8 4  | 1170	| 1.600000	Solution (brute): 2 4 2 4 	 | 2130	| 1.600000	Solution (vec): 2 4 2 4 	
+2 8 4  | 1249	| 1.995000	Solution (brute): 1 1 3 0 	 | 1148	| 1.995000	Solution (vec): 1 1 3 0 	
+3 8 4  | 1400	| 2.280000	Solution (brute): 2 2 3 1 	 | 580	| 2.280000	Solution (vec): 2 2 3 1 	
+3 8 4  | 1394	| 2.842500	Solution (brute): 1 1 1 2 	 | 221	| 2.842500	Solution (vec): 1 1 1 2 	
+3 8 4  | 1351	| 1.510000	Solution (brute): 0 4 6 3 	 | 2699	| 1.510000	Solution (vec): 0 4 6 3 	
+3 8 4  | 1460	| 2.460000	Solution (brute): 1 1 6 1 	 | 490	| 2.460000	Solution (vec): 1 1 6 1 	
+3 8 4  | 1447	| 2.610000	Solution (brute): 1 1 2 4 	 | 799	| 2.610000	Solution (vec): 1 1 2 4 	
+4 8 4  | 1844	| 2.406250	Solution (brute): 1 1 3 1 	 | 998	| 2.406250	Solution (vec): 1 1 3 1 	
+4 8 4  | 1770	| 2.130000	Solution (brute): 3 2 4 3 	 | 1223	| 2.130000	Solution (vec): 3 2 4 3 	
+4 8 4  | 1795	| 3.106250	Solution (brute): 2 2 1 2 	 | 191	| 3.106250	Solution (vec): 2 2 1 2 	
+4 8 4  | 1702	| 2.770625	Solution (brute): 2 2 1 1 	 | 429	| 2.770625	Solution (vec): 2 2 1 1 	
+4 8 4  | 1935	| 2.540000	Solution (brute): 5 3 3 7 	 | 640	| 2.540000	Solution (vec): 5 3 3 7 	
+5 8 4  | 1980	| 2.137500	Solution (brute): 6 2 2 3 	 | 1146	| 2.137500	Solution (vec): 6 2 2 3 	
+5 8 4  | 1914	| 3.024000	Solution (brute): 2 2 2 1 	 | 135	| 3.024000	Solution (vec): 2 2 2 1 	
+5 8 4  | 2550	| 2.848000	Solution (brute): 3 3 1 1 	 | 533	| 2.848000	Solution (vec): 3 3 1 1 	
+5 8 4  | 2550	| 2.677500	Solution (brute): 3 2 1 1 	 | 334	| 2.677500	Solution (vec): 3 2 1 1 	
+5 8 4  | 2405	| 2.584000	Solution (brute): 6 1 2 1 	 | 653	| 2.584000	Solution (vec): 6 1 2 1 	
+6 8 4  | 2159	| 2.603333	Solution (brute): 2 3 1 1 	 | 233	| 2.603333	Solution (vec): 2 3 1 1 	
+6 8 4  | 2266	| 3.061667	Solution (brute): 3 1 3 1 	 | 119	| 3.061667	Solution (vec): 3 1 3 1 	
+6 8 4  | 4366	| 2.633333	Solution (brute): 2 1 2 2 	 | 1307	| 2.633333	Solution (vec): 2 2 2 2 	
+6 8 4  | 3438	| 1.820417	Solution (brute): 1 1 0 1 	 | 3005	| 1.820417	Solution (vec): 1 1 0 1 	
+6 8 4  | 3111	| 2.572500	Solution (brute): 2 2 2 1 	 | 1353	| 2.572500	Solution (vec): 2 2 2 1 	
+7 8 4  | 3456	| 2.500000	Solution (brute): 4 1 3 4 	 | 896	| 2.500000	Solution (vec): 4 1 3 4 	
+7 8 4  | 4044	| 2.545714	Solution (brute): 1 3 1 4 	 | 1500	| 2.545714	Solution (vec): 1 3 1 4 	
+7 8 4  | 2440	| 2.258929	Solution (brute): 4 2 7 1 	 | 591	| 2.258929	Solution (vec): 4 2 7 1 	
+7 8 4  | 4462	| 2.423572	Solution (brute): 2 1 0 1 	 | 1422	| 2.423572	Solution (vec): 2 1 0 1 	
+7 8 4  | 4919	| 2.380714	Solution (brute): 3 4 2 1 	 | 1493	| 2.380714	Solution (vec): 3 4 2 1 	
+8 8 4  | 2716	| 2.343750	Solution (brute): 1 2 1 3 	 | 405	| 2.343750	Solution (vec): 1 2 1 3 	
+8 8 4  | 4675	| 3.056250	Solution (brute): 2 2 1 3 	 | 388	| 3.056250	Solution (vec): 2 2 1 3 	
+8 8 4  | 3561	| 2.999687	Solution (brute): 2 2 2 1 	 | 243	| 2.999687	Solution (vec): 2 2 2 1 	
+8 8 4  | 3474	| 2.359375	Solution (brute): 1 1 4 1 	 | 1418	| 2.359375	Solution (vec): 1 1 4 1 	
+8 8 4  | 3443	| 2.596875	Solution (brute): 4 3 3 5 	 | 873	| 2.596875	Solution (vec): 4 3 3 5 	
+9 8 4  | 3099	| 3.336667	Solution (brute): 2 2 2 1 	 | 111	| 3.336667	Solution (vec): 2 2 2 1 	
+9 8 4  | 5159	| 2.948334	Solution (brute): 1 2 1 1 	 | 1690	| 2.948334	Solution (vec): 1 2 1 1 	
+9 8 4  | 4931	| 1.941389	Solution (brute): 6 2 2 1 	 | 2157	| 1.941389	Solution (vec): 6 2 2 1 	
+9 8 4  | 4619	| 2.867500	Solution (brute): 1 2 2 5 	 | 223	| 2.867500	Solution (vec): 1 2 2 5 	
+9 8 4  | 2687	| 2.663333	Solution (brute): 3 1 4 2 	 | 418	| 2.663333	Solution (vec): 3 1 4 2 	
+1 9 4  | 1358	| 0.980000	Solution (brute): 0 0 0 1 	 | 11872	| 0.980000	Solution (vec): 0 0 0 1 	
+1 9 4  | 1303	| 0.980000	Solution (brute): 0 0 0 1 	 | 7079	| 0.980000	Solution (vec): 0 0 0 1 	
+1 9 4  | 1150	| 0.990000	Solution (brute): 0 0 1 0 	 | 6750	| 0.990000	Solution (vec): 0 0 1 0 	
+1 9 4  | 1289	| 0.970000	Solution (brute): 0 0 0 1 	 | 8964	| 0.970000	Solution (vec): 0 0 0 1 	
+1 9 4  | 1181	| 0.960000	Solution (brute): 0 0 1 0 	 | 10988	| 0.960000	Solution (vec): 0 0 1 0 	
+2 9 4  | 1537	| 1.800000	Solution (brute): 1 0 1 0 	 | 1439	| 1.800000	Solution (vec): 1 0 1 0 	
+2 9 4  | 3182	| 1.905000	Solution (brute): 1 0 1 3 	 | 2984	| 1.905000	Solution (vec): 1 0 1 3 	
+2 9 4  | 1677	| 1.925000	Solution (brute): 2 1 3 2 	 | 3510	| 1.925000	Solution (vec): 2 1 3 2 	
+2 9 4  | 3062	| 2.237500	Solution (brute): 1 2 1 3 	 | 2228	| 2.237500	Solution (vec): 1 2 1 3 	
+2 9 4  | 2652	| 1.720000	Solution (brute): 1 3 0 0 	 | 1965	| 1.720000	Solution (vec): 1 3 0 0 	
+3 9 4  | 2129	| 1.957500	Solution (brute): 2 1 0 1 	 | 1678	| 1.957500	Solution (vec): 2 1 0 1 	
+3 9 4  | 2249	| 2.100000	Solution (brute): 4 4 3 3 	 | 1406	| 2.100000	Solution (vec): 4 4 3 3 	
+3 9 4  | 2199	| 1.883334	Solution (brute): 2 5 2 8 	 | 1980	| 1.883334	Solution (vec): 2 5 2 8 	
+3 9 4  | 2360	| 1.930000	Solution (brute): 0 1 3 2 	 | 1514	| 1.930000	Solution (vec): 0 1 3 2 	
+3 9 4  | 2029	| 2.025000	Solution (brute): 3 0 1 1 	 | 1429	| 2.025000	Solution (vec): 3 0 1 1 	
+4 9 4  | 2572	| 3.027500	Solution (brute): 2 1 1 1 	 | 162	| 3.027500	Solution (vec): 2 1 1 1 	
+4 9 4  | 3161	| 2.583750	Solution (brute): 3 1 1 1 	 | 255	| 2.583750	Solution (vec): 3 1 1 1 	
+4 9 4  | 2990	| 2.843750	Solution (brute): 1 1 1 6 	 | 655	| 2.843750	Solution (vec): 1 1 1 6 	
+4 9 4  | 2976	| 2.712500	Solution (brute): 2 1 3 2 	 | 428	| 2.712500	Solution (vec): 2 1 3 2 	
+4 9 4  | 2407	| 2.782500	Solution (brute): 4 1 1 3 	 | 226	| 2.782500	Solution (vec): 4 1 1 3 	
+5 9 4  | 2865	| 3.050000	Solution (brute): 2 1 2 2 	 | 67	| 3.050000	Solution (vec): 2 1 2 2 	
+5 9 4  | 3076	| 2.871000	Solution (brute): 3 1 4 1 	 | 267	| 2.871000	Solution (vec): 3 1 4 1 	
+5 9 4  | 3457	| 3.060000	Solution (brute): 2 2 1 4 	 | 186	| 3.060000	Solution (vec): 2 2 1 4 	
+5 9 4  | 3187	| 2.988000	Solution (brute): 1 2 2 6 	 | 353	| 2.988000	Solution (vec): 1 2 2 6 	
+5 9 4  | 2836	| 2.870000	Solution (brute): 3 3 2 1 	 | 161	| 2.870000	Solution (vec): 3 3 2 1 	
+6 9 4  | 3400	| 2.575833	Solution (brute): 4 1 2 1 	 | 382	| 2.575833	Solution (vec): 4 1 2 1 	
+6 9 4  | 6276	| 2.858333	Solution (brute): 2 2 2 3 	 | 1291	| 2.858333	Solution (vec): 2 2 2 3 	
+6 9 4  | 3987	| 2.970000	Solution (brute): 3 2 1 1 	 | 291	| 2.970000	Solution (vec): 3 2 1 1 	
+6 9 4  | 6534	| 2.273333	Solution (brute): 1 4 2 6 	 | 1402	| 2.273333	Solution (vec): 1 4 2 6 	
+6 9 4  | 3705	| 2.683333	Solution (brute): 1 5 3 1 	 | 888	| 2.683333	Solution (vec): 1 5 3 1 	
+7 9 4  | 3685	| 2.950000	Solution (brute): 3 1 2 4 	 | 106	| 2.950000	Solution (vec): 3 1 2 4 	
+7 9 4  | 3636	| 2.250000	Solution (brute): 1 3 3 2 	 | 3052	| 2.250000	Solution (vec): 1 3 3 2 	
+7 9 4  | 4008	| 2.472500	Solution (brute): 2 4 3 1 	 | 918	| 2.472500	Solution (vec): 2 4 3 1 	
+7 9 4  | 3444	| 2.439643	Solution (brute): 2 4 2 2 	 | 596	| 2.439643	Solution (vec): 2 4 2 2 	
+7 9 4  | 3519	| 3.537857	Solution (brute): 2 1 1 1 	 | 93	| 3.537857	Solution (vec): 2 1 1 1 	
+8 9 4  | 4394	| 2.463750	Solution (brute): 1 1 1 2 	 | 552	| 2.463750	Solution (vec): 1 1 1 2 	
+8 9 4  | 4051	| 2.791250	Solution (brute): 3 1 2 4 	 | 648	| 2.791250	Solution (vec): 3 1 2 4 	
+8 9 4  | 4143	| 2.915625	Solution (brute): 1 6 1 1 	 | 292	| 2.915625	Solution (vec): 1 6 1 1 	
+8 9 4  | 3927	| 2.944688	Solution (brute): 3 1 1 1 	 | 113	| 2.944688	Solution (vec): 3 1 1 1 	
+8 9 4  | 3936	| 3.250000	Solution (brute): 1 1 1 5 	 | 74	| 3.250000	Solution (vec): 1 1 1 5 	
+9 9 4  | 4186	| 2.958333	Solution (brute): 1 1 2 1 	 | 424	| 2.958333	Solution (vec): 1 1 2 1 	
+9 9 4  | 4363	| 3.333889	Solution (brute): 2 2 1 1 	 | 52	| 3.333889	Solution (vec): 2 2 1 1 	
+9 9 4  | 4707	| 2.635000	Solution (brute): 3 1 1 3 	 | 537	| 2.635000	Solution (vec): 3 1 1 3 	
+9 9 4  | 4576	| 2.653889	Solution (brute): 6 1 4 4 	 | 1097	| 2.653889	Solution (vec): 6 1 4 4 	
+9 9 4  | 4358	| 3.162500	Solution (brute): 3 1 2 2 	 | 154	| 3.162500	Solution (vec): 3 1 2 2 	

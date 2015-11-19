@@ -1,0 +1,683 @@
+Count = 2
+1 2 1 | 37 | Solution (vec): 0  | New max = 0.250000; F = 0.500000; n = 1
+Count = 2
+2 2 1 | 52 | Solution (vec): 1  | New max = 0.607500; F = 0.810000; n = 1
+Count = 2
+4 2 1 | 56 | Solution (vec): 1  | Count = 2
+1 3 1 | 38 | Solution (vec): 0  | New max = 0.450000; F = 0.900000; n = 1
+Count = 2
+2 3 1 | 54 | Solution (vec): 1  | New max = 0.632000; F = 0.790000; n = 1
+Count = 2
+5 3 1 | 58 | Solution (vec): 1  | Count = 2
+1 4 1 | 16 | Solution (vec): 0  | New max = 0.495000; F = 0.990000; n = 1
+Count = 2
+2 4 1 | 22 | Solution (vec): 1  | New max = 0.540000; F = 0.810000; n = 1
+Count = 2
+3 4 1 | 22 | Solution (vec): 1  | New max = 0.615000; F = 0.820000; n = 1
+Count = 2
+4 4 1 | 31 | Solution (vec): 1  | New max = 0.736000; F = 0.920000; n = 1
+Count = 2
+5 4 1 | 31 | Solution (vec): 1  | Count = 2
+1 5 1 | 37 | Solution (vec): 0  | New max = 0.480000; F = 0.960000; n = 1
+Count = 2
+2 5 1 | 52 | Solution (vec): 1  | New max = 0.653333; F = 0.980000; n = 1
+Count = 2
+3 5 1 | 52 | Solution (vec): 1  | New max = 0.720000; F = 0.900000; n = 1
+Count = 2
+5 5 1 | 25 | Solution (vec): 1  | New max = 0.758333; F = 0.910000; n = 1
+Count = 2
+6 5 1 | 23 | Solution (vec): 1  | Count = 2
+1 6 1 | 20 | Solution (vec): 0  | New max = 0.390000; F = 0.780000; n = 1
+Count = 2
+2 6 1 | 27 | Solution (vec): 1  | New max = 0.613333; F = 0.920000; n = 1
+Count = 2
+3 6 1 | 28 | Solution (vec): 1  | New max = 0.555000; F = 0.740000; n = 1
+Count = 2
+4 6 1 | 27 | Solution (vec): 1  | New max = 0.632000; F = 0.790000; n = 1
+Count = 2
+5 6 1 | 27 | Solution (vec): 1  | New max = 0.816667; F = 0.980000; n = 1
+Count = 2
+6 6 1 | 27 | Solution (vec): 1  | New max = 0.275000; F = 0.550000; n = 1
+Count = 2
+1 1 2 | 60 | Solution (vec): 0 1  | New max = 0.245000; F = 0.490000; n = 2
+New max = 0.330000; F = 0.440000; n = 1
+Count = 2
+2 1 2 | 67 | Solution (vec): 0 1  | New max = 0.120000; F = 0.180000; n = 2
+New max = 0.133333; F = 0.160000; n = 1
+Count = 2
+3 1 2 | 55 | Solution (vec): 1 0  | New max = 0.365000; F = 0.730000; n = 4
+New max = 0.376250; F = 0.430000; n = 1
+Count = 2
+4 1 2 | 54 | Solution (vec): 0 1  | New max = 0.795000; F = 1.590000; n = 6
+New max = 0.797500; F = 0.870000; n = 1
+Count = 2
+6 1 2 | 26 | Solution (vec): 1 0  | New max = 0.350000; F = 0.700000; n = 1
+Count = 6
+1 2 2 | 31 | Solution (vec): 0 1  | New max = 0.795000; F = 1.590000; n = 2
+Count = 3
+2 2 2 | 29 | Solution (vec): 1 1  | New max = 1.608333; F = 1.930000; n = 1
+Count = 2
+3 2 2 | 28 | Solution (vec): 1 1  | New max = 0.644000; F = 1.610000; n = 6
+New max = 0.786000; F = 1.310000; n = 4
+New max = 0.810000; F = 0.900000; n = 1
+Count = 4
+5 2 2 | 31 | Solution (vec): 0 1  | New max = 0.186667; F = 1.120000; n = 10
+New max = 0.440000; F = 0.880000; n = 6
+New max = 0.779167; F = 0.850000; n = 1
+Count = 5
+6 2 2 | 28 | Solution (vec): 1 0  | New max = 0.425000; F = 0.850000; n = 1
+Count = 11
+1 3 2 | 29 | Solution (vec): 1 0  | New max = 0.715000; F = 1.430000; n = 2
+New max = 0.885000; F = 1.180000; n = 1
+Count = 4
+2 3 2 | 26 | Solution (vec): 3 1  | New max = 0.590000; F = 1.770000; n = 4
+New max = 0.746667; F = 1.120000; n = 2
+New max = 0.808333; F = 0.970000; n = 1
+Count = 10
+3 3 2 | 31 | Solution (vec): 0 1  | New max = 0.380000; F = 1.520000; n = 6
+New max = 0.780000; F = 1.040000; n = 2
+Count = 7
+4 3 2 | 28 | Solution (vec): 2 1  | New max = 1.168000; F = 1.460000; n = 2
+New max = 1.197000; F = 1.330000; n = 1
+Count = 2
+5 3 2 | 23 | Solution (vec): 1 2  | New max = 1.541667; F = 1.850000; n = 2
+Count = 3
+6 3 2 | 23 | Solution (vec): 1 1  | New max = 0.415000; F = 0.830000; n = 1
+Count = 22
+1 4 2 | 41 | Solution (vec): 0 1  | New max = 0.850000; F = 1.700000; n = 2
+New max = 1.005000; F = 1.340000; n = 1
+Count = 11
+2 4 2 | 36 | Solution (vec): 2 3  | New max = 1.158333; F = 1.390000; n = 1
+Count = 2
+3 4 2 | 55 | Solution (vec): 1 1  | New max = 0.930000; F = 1.240000; n = 2
+Count = 2
+4 4 2 | 58 | Solution (vec): 1 1  | New max = 0.372000; F = 1.860000; n = 8
+New max = 1.392000; F = 1.740000; n = 2
+Count = 6
+5 4 2 | 66 | Solution (vec): 2 1  | New max = 0.926667; F = 1.390000; n = 4
+New max = 0.971667; F = 1.060000; n = 1
+Count = 10
+6 4 2 | 76 | Solution (vec): 2 1  | New max = 0.490000; F = 0.980000; n = 1
+Count = 26
+1 5 2 | 104 | Solution (vec): 1 0  | New max = 0.905000; F = 1.810000; n = 2
+Count = 15
+2 5 2 | 78 | Solution (vec): 1 1  | New max = 1.100000; F = 1.650000; n = 2
+Count = 7
+3 5 2 | 71 | Solution (vec): 1 1  | New max = 1.417500; F = 1.890000; n = 2
+Count = 2
+4 5 2 | 40 | Solution (vec): 1 1  | New max = 1.176000; F = 1.960000; n = 4
+New max = 1.512000; F = 1.680000; n = 1
+Count = 7
+5 5 2 | 66 | Solution (vec): 1 2  | New max = 1.166667; F = 1.750000; n = 4
+New max = 1.549167; F = 1.690000; n = 1
+Count = 3
+6 5 2 | 51 | Solution (vec): 1 2  | New max = 0.475000; F = 0.950000; n = 1
+Count = 37
+1 6 2 | 98 | Solution (vec): 1 0  | New max = 1.087500; F = 1.450000; n = 1
+Count = 11
+2 6 2 | 82 | Solution (vec): 1 1  | New max = 0.966667; F = 1.450000; n = 2
+New max = 1.158333; F = 1.390000; n = 1
+Count = 4
+3 6 2 | 61 | Solution (vec): 2 1  | New max = 1.297500; F = 1.730000; n = 2
+New max = 1.408750; F = 1.610000; n = 1
+Count = 6
+4 6 2 | 66 | Solution (vec): 1 3  | New max = 1.146667; F = 1.720000; n = 4
+New max = 1.391667; F = 1.670000; n = 2
+New max = 1.393333; F = 1.520000; n = 1
+Count = 10
+6 6 2 | 37 | Solution (vec): 2 3  | New max = 0.513333; F = 1.540000; n = 2
+New max = 0.613333; F = 0.920000; n = 1
+Count = 6
+1 1 3 | 28 | Solution (vec): 0 0 1  | New max = 0.303333; F = 0.910000; n = 4
+New max = 0.425000; F = 0.510000; n = 1
+Count = 5
+2 1 3 | 26 | Solution (vec): 0 1 0  | New max = 0.220000; F = 0.660000; n = 6
+New max = 0.355556; F = 0.640000; n = 4
+New max = 0.506667; F = 0.570000; n = 1
+Count = 3
+3 1 3 | 25 | Solution (vec): 1 0 1  | New max = 0.152500; F = 0.610000; n = 9
+New max = 0.235000; F = 0.470000; n = 6
+New max = 0.293333; F = 0.320000; n = 1
+Count = 4
+4 1 3 | 27 | Solution (vec): 0 0 1  | New max = 1.534000; F = 1.770000; n = 2
+Count = 2
+5 1 3 | 22 | Solution (vec): 1 1 1  | New max = 0.755556; F = 1.700000; n = 10
+New max = 0.925556; F = 1.190000; n = 4
+Count = 3
+6 1 3 | 50 | Solution (vec): 1 1 0  | New max = 0.620000; F = 1.860000; n = 2
+New max = 0.653333; F = 0.980000; n = 1
+Count = 24
+1 2 3 | 118 | Solution (vec): 0 1 0  | New max = 1.070000; F = 2.140000; n = 3
+Count = 12
+2 2 3 | 97 | Solution (vec): 1 1 1  | New max = 2.208889; F = 2.840000; n = 2
+Count = 2
+3 2 3 | 61 | Solution (vec): 1 1 1  | New max = 0.176667; F = 2.120000; n = 11
+New max = 0.879167; F = 2.110000; n = 7
+New max = 0.945000; F = 1.620000; n = 5
+New max = 1.333333; F = 1.600000; n = 2
+Count = 9
+4 2 3 | 64 | Solution (vec): 0 1 2  | New max = 1.232000; F = 2.640000; n = 8
+New max = 1.334667; F = 1.820000; n = 4
+New max = 1.614667; F = 1.730000; n = 1
+Count = 9
+5 2 3 | 64 | Solution (vec): 0 1 1  | New max = 1.765556; F = 2.270000; n = 4
+Count = 5
+6 2 3 | 52 | Solution (vec): 1 1 1  | New max = 0.560000; F = 1.680000; n = 2
+New max = 0.580000; F = 0.870000; n = 1
+Count = 45
+1 3 3 | 162 | Solution (vec): 0 1 0  | New max = 0.391667; F = 2.350000; n = 5
+New max = 0.783333; F = 2.350000; n = 4
+New max = 0.955000; F = 1.910000; n = 3
+New max = 1.416667; F = 1.700000; n = 1
+Count = 17
+2 3 3 | 108 | Solution (vec): 1 0 2  | New max = 0.786667; F = 1.770000; n = 5
+New max = 0.905555; F = 1.630000; n = 4
+New max = 1.042222; F = 1.340000; n = 2
+Count = 31
+3 3 3 | 142 | Solution (vec): 1 1 0  | New max = 1.533333; F = 1.840000; n = 2
+Count = 6
+4 3 3 | 66 | Solution (vec): 1 1 1  | New max = 0.150667; F = 2.260000; n = 14
+New max = 0.530667; F = 1.990000; n = 11
+New max = 0.630000; F = 1.890000; n = 10
+New max = 0.648000; F = 1.620000; n = 9
+New max = 0.709333; F = 1.520000; n = 8
+New max = 1.170000; F = 1.350000; n = 2
+Count = 35
+5 3 3 | 178 | Solution (vec): 0 2 1  | New max = 1.194445; F = 2.150000; n = 8
+New max = 1.420000; F = 2.130000; n = 6
+Count = 14
+6 3 3 | 94 | Solution (vec): 2 1 1  | New max = 0.633333; F = 1.900000; n = 2
+New max = 0.640000; F = 0.960000; n = 1
+Count = 115
+1 4 3 | 302 | Solution (vec): 0 1 0  | New max = 0.380000; F = 2.280000; n = 5
+New max = 1.015000; F = 2.030000; n = 3
+New max = 1.140000; F = 1.710000; n = 2
+Count = 35
+2 4 3 | 98 | Solution (vec): 0 2 1  | New max = 1.062222; F = 2.390000; n = 5
+New max = 1.250000; F = 2.250000; n = 4
+New max = 1.610000; F = 2.070000; n = 2
+Count = 32
+3 4 3 | 114 | Solution (vec): 1 1 4  | New max = 0.590000; F = 2.360000; n = 9
+New max = 0.750000; F = 2.250000; n = 8
+New max = 1.079167; F = 1.850000; n = 5
+New max = 1.166667; F = 1.750000; n = 4
+New max = 1.250000; F = 1.500000; n = 2
+Count = 56
+4 4 3 | 250 | Solution (vec): 1 0 1  | New max = 2.031333; F = 2.770000; n = 4
+New max = 2.270667; F = 2.620000; n = 2
+Count = 9
+5 4 3 | 85 | Solution (vec): 1 2 1  | New max = 1.075556; F = 2.420000; n = 10
+New max = 1.244444; F = 2.240000; n = 8
+New max = 1.380000; F = 2.070000; n = 6
+New max = 1.567778; F = 1.660000; n = 1
+Count = 27
+6 4 3 | 154 | Solution (vec): 1 0 1  | New max = 0.593333; F = 1.780000; n = 2
+New max = 0.600000; F = 0.900000; n = 1
+Count = 167
+1 5 3 | 700 | Solution (vec): 0 1 0  | New max = 0.368333; F = 2.210000; n = 5
+New max = 0.955000; F = 1.910000; n = 3
+New max = 1.033333; F = 1.550000; n = 2
+Count = 97
+2 5 3 | 234 | Solution (vec): 1 0 2  | New max = 0.582222; F = 2.620000; n = 7
+New max = 0.873333; F = 2.620000; n = 6
+New max = 1.305555; F = 2.350000; n = 4
+New max = 1.827778; F = 2.350000; n = 2
+Count = 40
+3 5 3 | 109 | Solution (vec): 1 2 2  | New max = 0.229167; F = 2.750000; n = 11
+New max = 0.615000; F = 2.460000; n = 9
+New max = 0.970833; F = 2.330000; n = 7
+New max = 1.195833; F = 2.050000; n = 5
+New max = 1.360000; F = 2.040000; n = 4
+Count = 101
+4 5 3 | 261 | Solution (vec): 4 1 2  | New max = 1.012000; F = 2.530000; n = 9
+New max = 1.349333; F = 2.530000; n = 7
+New max = 1.833333; F = 2.500000; n = 4
+New max = 1.898000; F = 2.190000; n = 2
+Count = 41
+5 5 3 | 121 | Solution (vec): 4 1 2  | New max = 1.375000; F = 2.750000; n = 9
+New max = 1.964444; F = 2.720000; n = 5
+Count = 35
+6 5 3 | 105 | Solution (vec): 2 1 2  | New max = 0.633333; F = 1.900000; n = 2
+New max = 0.653333; F = 0.980000; n = 1
+Count = 290
+1 6 3 | 736 | Solution (vec): 1 0 0  | New max = 1.110000; F = 2.220000; n = 3
+Count = 93
+2 6 3 | 231 | Solution (vec): 1 1 1  | New max = 0.580000; F = 2.610000; n = 7
+New max = 1.653333; F = 2.480000; n = 3
+Count = 69
+3 6 3 | 160 | Solution (vec): 2 2 1  | New max = 0.471667; F = 2.830000; n = 10
+New max = 1.633333; F = 2.800000; n = 5
+New max = 1.793333; F = 2.690000; n = 4
+Count = 73
+4 6 3 | 208 | Solution (vec): 2 1 2  | New max = 1.052000; F = 2.630000; n = 9
+New max = 1.218000; F = 2.610000; n = 8
+New max = 1.354667; F = 2.540000; n = 7
+New max = 1.488000; F = 2.480000; n = 6
+New max = 1.606667; F = 2.410000; n = 5
+New max = 1.624000; F = 1.740000; n = 1
+Count = 118
+5 6 3 | 340 | Solution (vec): 2 1 0  | New max = 1.280000; F = 2.880000; n = 10
+New max = 2.375000; F = 2.850000; n = 3
+New max = 2.391111; F = 2.690000; n = 2
+New max = 2.465000; F = 2.610000; n = 1
+Count = 19
+6 6 3 | 74 | Solution (vec): 2 2 3  | New max = 0.527500; F = 2.110000; n = 3
+New max = 0.940000; F = 1.880000; n = 2
+Count = 11
+1 1 4 | 64 | Solution (vec): 1 0 1 0  | New max = 0.825000; F = 3.300000; n = 6
+New max = 1.027500; F = 2.740000; n = 5
+New max = 1.512500; F = 2.420000; n = 3
+Count = 9
+2 1 4 | 59 | Solution (vec): 0 1 1 1  | New max = 0.570000; F = 1.140000; n = 6
+New max = 0.733333; F = 1.100000; n = 4
+New max = 0.816667; F = 0.980000; n = 2
+Count = 6
+3 1 4 | 58 | Solution (vec): 1 1 0 0  | New max = 0.503125; F = 1.610000; n = 11
+New max = 0.543750; F = 1.450000; n = 10
+New max = 0.881250; F = 1.410000; n = 6
+New max = 0.937500; F = 1.250000; n = 4
+Count = 6
+4 1 4 | 60 | Solution (vec): 1 0 1 0  | New max = 0.372500; F = 1.490000; n = 15
+New max = 0.676500; F = 1.230000; n = 9
+New max = 0.720000; F = 0.800000; n = 2
+Count = 8
+5 1 4 | 62 | Solution (vec): 1 0 1 0  | New max = 0.737917; F = 2.530000; n = 17
+New max = 1.095000; F = 2.190000; n = 12
+New max = 1.391667; F = 1.670000; n = 4
+Count = 7
+6 1 4 | 61 | Solution (vec): 1 0 1 0  | New max = 0.672500; F = 2.690000; n = 3
+New max = 0.905000; F = 1.810000; n = 2
+Count = 71
+1 2 4 | 198 | Solution (vec): 1 0 1 0  | New max = 0.765000; F = 3.060000; n = 6
+New max = 0.948750; F = 2.530000; n = 5
+New max = 1.085000; F = 2.170000; n = 4
+New max = 1.243750; F = 1.990000; n = 3
+Count = 53
+2 2 4 | 157 | Solution (vec): 1 1 2 0  | New max = 1.170000; F = 2.340000; n = 6
+New max = 1.200000; F = 1.800000; n = 4
+New max = 1.225000; F = 1.470000; n = 2
+Count = 29
+3 2 4 | 104 | Solution (vec): 0 1 1 2  | New max = 1.655000; F = 3.310000; n = 8
+New max = 1.770000; F = 2.360000; n = 4
+Count = 21
+4 2 4 | 90 | Solution (vec): 1 0 1 1  | New max = 1.183500; F = 2.630000; n = 11
+New max = 1.235000; F = 2.470000; n = 10
+New max = 1.344000; F = 2.240000; n = 8
+New max = 1.456000; F = 2.080000; n = 6
+New max = 1.494000; F = 1.660000; n = 2
+Count = 27
+5 2 4 | 137 | Solution (vec): 0 1 1 0  | New max = 0.768750; F = 2.050000; n = 15
+New max = 0.969583; F = 1.790000; n = 11
+New max = 1.133333; F = 1.600000; n = 7
+Count = 25
+6 2 4 | 111 | Solution (vec): 1 1 1 0  | New max = 0.687500; F = 2.750000; n = 3
+New max = 0.930000; F = 1.860000; n = 2
+Count = 156
+1 3 4 | 520 | Solution (vec): 1 0 0 1  | New max = 1.282500; F = 3.420000; n = 5
+New max = 1.480000; F = 2.960000; n = 4
+New max = 1.681250; F = 2.690000; n = 3
+New max = 1.822500; F = 2.430000; n = 2
+Count = 104
+2 3 4 | 323 | Solution (vec): 0 1 1 1  | New max = 1.091667; F = 2.620000; n = 7
+New max = 1.210000; F = 2.420000; n = 6
+New max = 1.376667; F = 2.360000; n = 5
+New max = 1.591667; F = 1.910000; n = 2
+Count = 57
+3 3 4 | 223 | Solution (vec): 0 1 1 1  | New max = 0.702500; F = 2.810000; n = 12
+New max = 0.856250; F = 2.740000; n = 11
+New max = 0.967500; F = 2.580000; n = 10
+New max = 1.098125; F = 2.510000; n = 9
+New max = 1.225000; F = 2.450000; n = 8
+New max = 1.248750; F = 2.220000; n = 7
+New max = 1.375000; F = 2.200000; n = 6
+New max = 1.478125; F = 2.150000; n = 5
+New max = 1.530000; F = 2.040000; n = 4
+New max = 1.723750; F = 1.970000; n = 2
+Count = 79
+4 3 4 | 285 | Solution (vec): 1 0 2 2  | New max = 2.142000; F = 3.570000; n = 8
+New max = 2.242500; F = 3.450000; n = 7
+New max = 2.367000; F = 2.630000; n = 2
+Count = 51
+5 3 4 | 206 | Solution (vec): 0 1 1 1  | New max = 0.577500; F = 2.310000; n = 18
+New max = 0.766667; F = 2.300000; n = 16
+New max = 0.944167; F = 2.060000; n = 13
+New max = 1.195833; F = 2.050000; n = 10
+New max = 1.267917; F = 1.790000; n = 7
+New max = 1.353750; F = 1.710000; n = 5
+Count = 64
+6 3 4 | 245 | Solution (vec): 2 3 2 1  | New max = 0.685000; F = 2.740000; n = 3
+New max = 0.930000; F = 1.860000; n = 2
+Count = 512
+1 4 4 | 1629 | Solution (vec): 1 1 0 0  | New max = 0.426250; F = 3.410000; n = 7
+New max = 0.832500; F = 3.330000; n = 6
+New max = 1.053750; F = 2.810000; n = 5
+New max = 1.230000; F = 2.460000; n = 4
+New max = 1.356250; F = 2.170000; n = 3
+New max = 1.410000; F = 1.880000; n = 2
+Count = 195
+2 4 4 | 652 | Solution (vec): 1 2 2 0  | New max = 0.842500; F = 3.370000; n = 9
+New max = 1.366667; F = 3.280000; n = 7
+New max = 1.435000; F = 2.870000; n = 6
+New max = 1.522500; F = 2.610000; n = 5
+New max = 1.582500; F = 2.110000; n = 3
+Count = 305
+3 4 4 | 984 | Solution (vec): 3 0 3 1  | New max = 1.408750; F = 3.220000; n = 9
+New max = 1.595000; F = 3.190000; n = 8
+New max = 2.186250; F = 3.180000; n = 5
+New max = 2.362500; F = 3.150000; n = 4
+Count = 59
+4 4 4 | 221 | Solution (vec): 2 1 1 3  | New max = 2.034500; F = 3.130000; n = 7
+New max = 2.184000; F = 3.120000; n = 6
+New max = 2.208000; F = 2.760000; n = 4
+New max = 2.337500; F = 2.750000; n = 3
+Count = 58
+5 4 4 | 228 | Solution (vec): 2 2 1 2  | New max = 1.083750; F = 2.890000; n = 15
+New max = 1.200000; F = 2.880000; n = 14
+New max = 1.287917; F = 2.810000; n = 13
+New max = 1.976250; F = 2.790000; n = 7
+New max = 2.113750; F = 2.670000; n = 5
+New max = 2.240000; F = 2.560000; n = 3
+Count = 38
+6 4 4 | 166 | Solution (vec): 1 1 4 3  | New max = 0.637500; F = 2.550000; n = 3
+New max = 0.920000; F = 1.840000; n = 2
+Count = 763
+1 5 4 | 2688 | Solution (vec): 1 0 1 0  | New max = 0.448750; F = 3.590000; n = 7
+New max = 0.832500; F = 3.330000; n = 6
+New max = 1.110000; F = 2.960000; n = 5
+New max = 1.325000; F = 2.650000; n = 4
+New max = 1.450000; F = 2.320000; n = 3
+New max = 1.545000; F = 2.060000; n = 2
+Count = 441
+2 5 4 | 1427 | Solution (vec): 4 2 0 1  | New max = 1.454167; F = 3.490000; n = 7
+New max = 1.690000; F = 3.380000; n = 6
+New max = 1.750000; F = 3.000000; n = 5
+New max = 1.875000; F = 2.500000; n = 3
+Count = 272
+3 5 4 | 946 | Solution (vec): 0 2 1 1  | New max = 0.740000; F = 2.960000; n = 12
+New max = 0.906250; F = 2.900000; n = 11
+New max = 1.176875; F = 2.690000; n = 9
+New max = 1.200000; F = 2.400000; n = 8
+New max = 1.271250; F = 2.260000; n = 7
+New max = 1.368750; F = 2.190000; n = 6
+New max = 1.409375; F = 2.050000; n = 5
+New max = 1.461250; F = 1.670000; n = 2
+Count = 262
+4 5 4 | 964 | Solution (vec): 0 1 1 0  | New max = 3.179000; F = 3.740000; n = 3
+Count = 8
+5 5 4 | 52 | Solution (vec): 1 1 1 1  | New max = 1.595000; F = 3.480000; n = 13
+New max = 2.062500; F = 3.300000; n = 9
+New max = 2.077500; F = 2.770000; n = 6
+Count = 208
+6 5 4 | 751 | Solution (vec): 2 1 1 2  | New max = 0.710000; F = 2.840000; n = 3
+New max = 0.965000; F = 1.930000; n = 2
+Count = 2016
+1 6 4 | 7892 | Solution (vec): 1 1 0 0  | New max = 0.902500; F = 3.610000; n = 6
+New max = 1.278750; F = 3.410000; n = 5
+New max = 1.660000; F = 3.320000; n = 4
+New max = 1.950000; F = 3.120000; n = 3
+Count = 580
+2 6 4 | 2278 | Solution (vec): 2 1 1 3  | New max = 0.302500; F = 3.630000; n = 11
+New max = 0.603333; F = 3.620000; n = 10
+New max = 0.862500; F = 3.450000; n = 9
+New max = 1.146667; F = 3.440000; n = 8
+New max = 1.320833; F = 3.170000; n = 7
+New max = 1.555000; F = 3.110000; n = 6
+New max = 1.703333; F = 2.920000; n = 5
+New max = 1.762500; F = 2.350000; n = 3
+Count = 419
+3 6 4 | 1665 | Solution (vec): 1 0 2 5  | New max = 0.216250; F = 3.460000; n = 15
+New max = 0.426250; F = 3.410000; n = 14
+New max = 0.637500; F = 3.400000; n = 13
+New max = 0.830000; F = 3.320000; n = 12
+New max = 1.018750; F = 3.260000; n = 11
+New max = 1.211250; F = 3.230000; n = 10
+New max = 1.391250; F = 3.180000; n = 9
+New max = 1.738125; F = 3.090000; n = 7
+New max = 2.069375; F = 3.010000; n = 5
+New max = 2.161250; F = 2.660000; n = 3
+Count = 288
+4 6 4 | 998 | Solution (vec): 6 2 2 3  | New max = 2.979000; F = 3.310000; n = 2
+Count = 10
+5 6 4 | 47 | Solution (vec): 1 1 1 1  | New max = 2.343750; F = 3.750000; n = 9
+New max = 3.263750; F = 3.730000; n = 3
+Count = 19
+6 6 4 | 68 | Solution (vec): 2 1 1 1  | New max = 0.306000; F = 1.530000; n = 4
+New max = 0.568000; F = 1.420000; n = 3
+New max = 0.618000; F = 1.030000; n = 2
+Count = 20
+1 1 5 | 58 | Solution (vec): 0 1 0 0 1  | New max = 0.825000; F = 2.750000; n = 7
+New max = 1.270000; F = 2.540000; n = 5
+New max = 1.608000; F = 2.010000; n = 2
+Count = 10
+2 1 5 | 47 | Solution (vec): 1 1 0 0 1  | New max = 0.562667; F = 2.110000; n = 11
+New max = 0.900667; F = 1.930000; n = 8
+New max = 0.901333; F = 1.690000; n = 7
+New max = 1.085333; F = 1.480000; n = 4
+Count = 16
+3 1 5 | 106 | Solution (vec): 1 1 0 0 1  | New max = 0.495000; F = 1.980000; n = 15
+New max = 0.780000; F = 1.950000; n = 12
+New max = 0.832500; F = 1.850000; n = 11
+New max = 1.183000; F = 1.820000; n = 7
+Count = 10
+4 1 5 | 70 | Solution (vec): 0 1 1 0 1  | New max = 0.776000; F = 1.940000; n = 15
+New max = 0.993200; F = 1.910000; n = 12
+New max = 1.203200; F = 1.880000; n = 9
+New max = 1.297200; F = 1.410000; n = 2
+Count = 11
+5 1 5 | 71 | Solution (vec): 0 0 1 1 0  | New max = 0.816667; F = 2.450000; n = 20
+New max = 1.200000; F = 2.400000; n = 15
+New max = 1.336333; F = 2.110000; n = 11
+New max = 1.441333; F = 1.880000; n = 7
+Count = 13
+6 1 5 | 83 | Solution (vec): 1 0 1 0 1  | New max = 0.644000; F = 3.220000; n = 4
+New max = 1.048000; F = 2.620000; n = 3
+New max = 1.146000; F = 1.910000; n = 2
+Count = 207
+1 2 5 | 573 | Solution (vec): 0 1 0 1 0  | New max = 1.096000; F = 2.740000; n = 6
+New max = 1.250000; F = 2.500000; n = 5
+New max = 1.494000; F = 2.490000; n = 4
+New max = 1.575000; F = 2.250000; n = 3
+New max = 1.704000; F = 2.130000; n = 2
+Count = 31
+2 2 5 | 146 | Solution (vec): 1 0 0 1 1  | New max = 0.836667; F = 2.510000; n = 10
+New max = 1.162000; F = 2.490000; n = 8
+New max = 1.386000; F = 2.310000; n = 6
+New max = 1.547333; F = 2.110000; n = 4
+New max = 1.560000; F = 1.800000; n = 2
+Count = 39
+3 2 5 | 157 | Solution (vec): 0 1 0 0 1  | New max = 1.974000; F = 3.290000; n = 8
+New max = 2.116500; F = 2.490000; n = 3
+Count = 23
+4 2 5 | 115 | Solution (vec): 1 0 1 1 1  | New max = 1.736800; F = 3.340000; n = 12
+New max = 1.856000; F = 2.900000; n = 9
+New max = 2.037600; F = 2.830000; n = 7
+Count = 35
+5 2 5 | 157 | Solution (vec): 0 1 1 1 1  | New max = 1.029333; F = 3.860000; n = 22
+New max = 1.389667; F = 3.790000; n = 19
+New max = 1.512333; F = 3.490000; n = 17
+New max = 1.735000; F = 3.470000; n = 15
+New max = 1.813333; F = 3.400000; n = 14
+New max = 1.919000; F = 3.030000; n = 11
+New max = 2.072000; F = 2.960000; n = 9
+Count = 67
+6 2 5 | 248 | Solution (vec): 2 1 0 1 2  | New max = 0.594000; F = 2.970000; n = 4
+New max = 0.968000; F = 2.420000; n = 3
+New max = 1.098000; F = 1.830000; n = 2
+Count = 576
+1 3 5 | 1902 | Solution (vec): 1 0 0 0 1  | New max = 0.860000; F = 4.300000; n = 8
+New max = 1.203000; F = 4.010000; n = 7
+New max = 1.432000; F = 3.580000; n = 6
+New max = 1.530000; F = 3.060000; n = 5
+New max = 1.578000; F = 2.630000; n = 4
+New max = 1.610000; F = 2.300000; n = 3
+New max = 1.680000; F = 2.100000; n = 2
+Count = 399
+2 3 5 | 1400 | Solution (vec): 3 0 0 1 1  | New max = 1.216667; F = 3.650000; n = 10
+New max = 1.456000; F = 3.640000; n = 9
+New max = 1.605333; F = 3.010000; n = 7
+New max = 1.770000; F = 2.950000; n = 6
+Count = 327
+3 3 5 | 1213 | Solution (vec): 1 1 1 0 1  | New max = 1.732500; F = 3.850000; n = 11
+New max = 2.106500; F = 3.830000; n = 9
+New max = 2.431000; F = 3.740000; n = 7
+New max = 2.976000; F = 3.720000; n = 4
+Count = 47
+4 3 5 | 249 | Solution (vec): 1 1 2 1 2  | New max = 1.606800; F = 3.090000; n = 12
+New max = 1.696800; F = 3.030000; n = 11
+New max = 1.881600; F = 2.940000; n = 9
+New max = 2.023200; F = 2.810000; n = 7
+New max = 2.125200; F = 2.530000; n = 4
+New max = 2.208000; F = 2.400000; n = 2
+Count = 75
+5 3 5 | 284 | Solution (vec): 0 1 1 1 3  | New max = 0.708333; F = 4.250000; n = 25
+New max = 1.248000; F = 4.160000; n = 21
+New max = 1.444667; F = 3.940000; n = 19
+New max = 1.655333; F = 3.820000; n = 17
+New max = 1.720000; F = 3.440000; n = 15
+New max = 1.906333; F = 3.010000; n = 11
+New max = 2.119333; F = 2.890000; n = 8
+Count = 264
+6 3 5 | 897 | Solution (vec): 2 0 1 3 1  | New max = 0.706000; F = 3.530000; n = 4
+New max = 1.072000; F = 2.680000; n = 3
+New max = 1.080000; F = 1.800000; n = 2
+Count = 2470
+1 4 5 | 8220 | Solution (vec): 0 1 0 0 1  | New max = 1.200000; F = 4.000000; n = 7
+New max = 1.584000; F = 3.960000; n = 6
+New max = 2.334000; F = 3.890000; n = 4
+Count = 621
+2 4 5 | 2011 | Solution (vec): 1 2 1 1 2  | New max = 1.370000; F = 4.110000; n = 10
+New max = 1.480000; F = 3.700000; n = 9
+New max = 1.498000; F = 3.210000; n = 8
+New max = 1.896000; F = 3.160000; n = 6
+Count = 802
+3 4 5 | 2597 | Solution (vec): 1 1 0 1 1  | New max = 1.984500; F = 4.410000; n = 11
+New max = 2.120000; F = 4.240000; n = 10
+New max = 2.128500; F = 3.870000; n = 9
+New max = 2.172000; F = 3.620000; n = 8
+New max = 2.177500; F = 3.350000; n = 7
+New max = 2.289000; F = 3.270000; n = 6
+New max = 2.635000; F = 3.100000; n = 3
+Count = 234
+4 4 5 | 819 | Solution (vec): 1 2 4 0 1  | New max = 2.454000; F = 4.090000; n = 10
+New max = 2.613600; F = 3.630000; n = 7
+New max = 2.704000; F = 3.380000; n = 5
+Count = 95
+5 4 5 | 360 | Solution (vec): 1 0 1 1 1  | New max = 1.801333; F = 3.860000; n = 16
+New max = 1.865000; F = 3.730000; n = 15
+New max = 1.904000; F = 3.570000; n = 14
+New max = 2.064000; F = 3.440000; n = 12
+New max = 2.088000; F = 2.610000; n = 6
+Count = 485
+6 4 5 | 1745 | Solution (vec): 1 1 2 0 1  | New max = 0.746000; F = 3.730000; n = 4
+New max = 1.128000; F = 2.820000; n = 3
+Count = 4096; F = 2.040000
+New max = 1.146000; F = 1.910000; n = 2
+Count = 5222
+1 5 5 | 18449 | Solution (vec): 0 1 0 0 1  | New max = 1.038000; F = 3.460000; n = 7
+New max = 1.700000; F = 3.400000; n = 5
+New max = 1.926000; F = 3.210000; n = 4
+New max = 2.016000; F = 2.880000; n = 3
+Count = 725
+2 5 5 | 4816 | Solution (vec): 4 1 1 1 0  | New max = 0.918000; F = 4.590000; n = 12
+New max = 1.194667; F = 4.480000; n = 11
+New max = 1.420000; F = 4.260000; n = 10
+New max = 1.604000; F = 4.010000; n = 9
+New max = 1.698667; F = 3.640000; n = 8
+New max = 1.824000; F = 3.420000; n = 7
+New max = 2.016000; F = 3.360000; n = 6
+New max = 2.088000; F = 2.610000; n = 3
+New max = 2.123333; F = 2.450000; n = 2
+Count = 1518
+3 5 5 | 7508 | Solution (vec): 3 1 0 0 1  | New max = 1.676000; F = 4.190000; n = 12
+New max = 1.867500; F = 4.150000; n = 11
+New max = 2.015000; F = 4.030000; n = 10
+New max = 2.035000; F = 3.700000; n = 9
+New max = 2.058000; F = 3.430000; n = 8
+New max = 2.138500; F = 3.290000; n = 7
+New max = 2.242500; F = 2.990000; n = 5
+Count = 1354
+4 5 5 | 4718 | Solution (vec): 4 1 1 0 1  | New max = 0.830000; F = 4.150000; n = 20
+New max = 1.159200; F = 4.140000; n = 18
+New max = 1.483200; F = 4.120000; n = 16
+New max = 1.628000; F = 4.070000; n = 15
+New max = 1.944000; F = 4.050000; n = 13
+New max = 2.077600; F = 3.710000; n = 11
+New max = 2.214400; F = 3.460000; n = 9
+New max = 2.386400; F = 3.140000; n = 6
+Count = 445
+5 5 5 | 1592 | Solution (vec): 2 2 1 0 3  | New max = 1.955333; F = 4.190000; n = 16
+New max = 2.454000; F = 4.090000; n = 12
+New max = 2.786000; F = 3.980000; n = 9
+New max = 3.033333; F = 3.640000; n = 5
+Count = 117
+6 5 5 | 443 | Solution (vec): 1 2 3 2 1  | New max = 0.700000; F = 3.500000; n = 4
+New max = 1.072000; F = 2.680000; n = 3
+Count = 4096; F = 2.420000
+New max = 1.086000; F = 1.810000; n = 2
+Count = 8192; F = 1.230000
+Count = 8379
+1 6 5 | 30707 | Solution (vec): 1 0 1 0 0  | New max = 0.838000; F = 4.190000; n = 8
+New max = 1.257000; F = 4.190000; n = 7
+New max = 1.875000; F = 3.750000; n = 5
+New max = 1.962000; F = 3.270000; n = 4
+Count = 4096; F = 2.050000
+Count = 4440
+2 6 5 | 16290 | Solution (vec): 0 2 1 1 1  | New max = 0.824000; F = 4.120000; n = 12
+New max = 1.350000; F = 4.050000; n = 10
+New max = 1.848000; F = 3.960000; n = 8
+New max = 1.946667; F = 3.650000; n = 7
+New max = 2.088000; F = 3.480000; n = 6
+New max = 2.246667; F = 3.370000; n = 5
+New max = 2.432000; F = 3.040000; n = 3
+Count = 1681
+3 6 5 | 5357 | Solution (vec): 0 2 1 1 2  | New max = 1.854000; F = 4.120000; n = 11
+New max = 1.875000; F = 3.750000; n = 10
+New max = 2.062500; F = 3.750000; n = 9
+New max = 2.138500; F = 3.290000; n = 7
+New max = 2.460000; F = 3.280000; n = 5
+New max = 2.538000; F = 2.820000; n = 2
+Count = 494
+4 6 5 | 1950 | Solution (vec): 1 0 0 1 1  | New max = 1.795200; F = 4.080000; n = 14
+New max = 2.418000; F = 4.030000; n = 10
+New max = 2.441200; F = 3.590000; n = 8
+New max = 2.568000; F = 3.210000; n = 5
+Count = 1034
+5 6 5 | 4468 | Solution (vec): 1 0 3 1 2  | New max = 2.234667; F = 4.190000; n = 14
+New max = 2.508000; F = 4.180000; n = 12
+New max = 3.151000; F = 4.110000; n = 7
+New max = 3.192000; F = 3.990000; n = 6
+Count = 397
+6 6 5 | 1630 | Solution (vec): 1 3 2 1 2  | New max = 0.363333; F = 2.180000; n = 5
+New max = 0.636667; F = 1.910000; n = 4
+New max = 0.780000; F = 1.560000; n = 3
+New max = 0.786667; F = 1.180000; n = 2
+Count = 48
+1 1 6 | 196 | Solution (vec): 0 0 1 0 1 0  | New max = 0.496667; F = 2.980000; n = 10
+New max = 0.695000; F = 2.780000; n = 9
+New max = 0.893333; F = 2.680000; n = 8
+New max = 1.033333; F = 2.480000; n = 7
+New max = 1.185000; F = 2.370000; n = 6
+New max = 1.265833; F = 2.170000; n = 5
+New max = 1.383333; F = 1.660000; n = 2
+Count = 34
+2 1 6 | 91 | Solution (vec): 0 0 0 0 1 1  | New max = 0.736111; F = 2.650000; n = 13
+New max = 0.925556; F = 2.380000; n = 11
+New max = 1.017778; F = 2.290000; n = 10
+New max = 1.234444; F = 2.020000; n = 7
+Count = 33
+3 1 6 | 91 | Solution (vec): 0 1 1 1 0 1  | New max = 0.980000; F = 2.940000; n = 16
+New max = 1.460000; F = 2.920000; n = 12
+New max = 1.750000; F = 2.800000; n = 9
+New max = 1.827500; F = 2.580000; n = 7
+Count = 23
+4 1 6 | 79 | Solution (vec): 1 0 1 0 1 0  | New max = 0.820000; F = 2.050000; n = 18
+New max = 0.866667; F = 2.000000; n = 17
+New max = 1.110000; F = 1.850000; n = 12
+New max = 1.140000; F = 1.800000; n = 11
+Count = 25
+5 1 6 | 78 | Solution (vec): 0 1 1 0 1 1  | New max = 1.270278; F = 2.690000; n = 19
+New max = 1.403889; F = 2.660000; n = 17
+New max = 1.533333; F = 2.300000; n = 12
+New max = 1.635000; F = 2.180000; n = 9
+Count = 18
+6 1 6 | 75 | Solution (vec): 1 0 1 1 1 0  | 
