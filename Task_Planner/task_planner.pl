@@ -150,6 +150,25 @@ iterate_([T|Ts],Prev,Ss,Os) :-
     ->  iterate_(Ts,Prev,Ss ,Os)
     ;   iterate_(Ts,Step,Ss1,Os)).
 
+%-------------------------------------------------------------------------------
+% SRM: Preview version of calculate_F function for each solution:
+
+calculate_F(Ts,Rnames,T1,T1,F,F0) :-
+    calc_consumptions_at(Ts,Rnames,T1,CapCons),
+    ponderate_and_sum(CapCons,F,F0).
+calculate_F(Ts,Rnames,T0,T1,F,F0) :-
+    calc_consumptions_at(Ts,Rnames,T0,CapCons),
+    ponderate_and_sum(CapCons,F,F0),
+    T2 is T0+1,
+    calculate_F(Ts,Rnames,T2,T1,F1,F).
+    
+ponderate_and_sum([Cap|[Cons|Cs]],F,F0) :-
+	ponderate_and_sum(Cs,F1,F0),
+	F is F1+(1-(Cons/Cap)).
+ponderate_and_sum([],F0,F0) :-!.
+
+%-------------------------------------------------------------------------------
+
 
 schedule([],[]).
 schedule(Original,Tasks) :-
@@ -196,6 +215,8 @@ schedule(Original,Tasks) :-
     (define(debug,yes)
     ->  findall(R,resource_options(R,_),Rnames),
         flag(dbg_time,Now,Now),
+        % SRM: calculate_F(Subtasks,Rnames,T0,T1,F,0),
+        % SRM: write('F value for this schedule would be: '),writeln(F/4),
         define(dbg_dir, Dbgdir),
         format_time(string(StrTime),"%Y%m%d_%H%M%S/",Now),
         atomic_list_concat([Dbgdir,StrTime,'stat_dynamic_resources.csv'],DynPath),

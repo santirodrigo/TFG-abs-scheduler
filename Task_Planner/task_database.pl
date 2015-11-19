@@ -14,7 +14,7 @@
 
 task(t1).
 task_priority(t1,1).
-task_timing(t1, period(0,0,15,0), duration(0,0,1,0), init_delay(0,0,0,0), infinity, 0.100000).
+task_timing(t1, period(0,0,15,0), duration(1), init_delay(0,0,0,0), infinity, 0.100000).
 task_positioning(t1, positions([]), 5).
 task_static_constraints(t1,resources([
     temperature_range(10,300),
@@ -29,7 +29,7 @@ task_dynamic_resources(t1,resources([
     
 task(t2).
 task_priority(t2,2).
-task_timing(t2, period(0,0,15,0), duration(0,0,1,0), init_delay(0,0,0,0), infinity, 0.000000).
+task_timing(t2, period(0,0,15,0), duration(1), init_delay(0,0,0,0), infinity, 0.000000).
 task_positioning(t2, positions([]), 5).
 task_static_constraints(t2,resources([
     temperature_range(10,300),

@@ -63,7 +63,7 @@ resource_options(energy      ,[cumulative(true)]).
 %
 
 resource_capacity(storage     ,[   1000-100]). % 1000 MB
-resource_capacity(simultaneity,[     10-100]). % 10 tasks
+resource_capacity(simultaneity,[     1-100]). % 10 tasks
 resource_capacity(power       ,[   1000-100]). % 1 Watt
 resource_capacity(energy      ,[2400000-40,    % 2 W/s = 120 mJ/min (starting @ 2400 J)  
                                 2520000-41,

@@ -237,12 +237,15 @@ build_tasks_([ID|IDs],[Task|Tasks]) :- % SRM: [Tasks is an outgoing parameter]
     scheduler_param(time_start, Tstart), % SRM: "Saves" time_start defined in task_planner_globals in the Tstart variable
     scheduler_param(time_end,   Tend),
     % Constrain domains:
+    write('******* Calling constrain_all/4:'),writeln(ID), %SRM: debug
     (constrain_all(Dom,ID,Tstart,Tend)	% SRM: Obtains Time Domain in which the task can be executed (see definition below)
     ->  % Build Task Objects:
         S in Dom,						% SRM: Without instantiating S, adds the information of S being in constrained Domain
         E in Dom,
         %task_timing(ID,_,duration(D1,H1,M1,_),_,_,_), % TODO TODO TODO TODO TODO TODO TODO TODO TODO Fix and allow to use previous predicate % SRM: Esto ya está en la memoria...
+        write('******* Calling task_timing/6:'),writeln(ID), %SRM: debug
         task_timing(ID,_,duration(D),_,_,_),
+        write('******* Calling task_dynamic_resources/6:'),writeln(ID), %SRM: debug
         task_dynamic_resources(ID,resources(Rs)),
         task_priority(ID,Prio),
         Task = task(S,D,E,Rs,Prio,ID), % SRM: Starttime, Duration, Endtime, Rsources(list), Priority, ID
@@ -285,9 +288,13 @@ prepare_task_dynres_(R,Dy,L) :-
 %   Time0 and Time1.
 
 constrain_all(Dom,Task,Time0,Time1) :-
+    write('******* Calling constrain_time/4:'),writeln(Task), %SRM: debug	
     (constrain_time(DomTime,Task,Time0,Time1)        -> true ; D in inf..sup, fd_dom(D,DomTime)), 
+    write('******* Calling constrain_position/4:'),writeln(Task), %SRM: debug
     (constrain_position(DomPos,Task,Time0,Time1)     -> true ; D in inf..sup, fd_dom(D,DomPos)),
+    write('******* Calling constrain_temperature/4:'),writeln(Task), %SRM: debug
     (constrain_temperature(DomTemp,Task,Time0,Time1) -> true ; D in inf..sup, fd_dom(D,DomTemp)),
+    write('******* Calling constrain_radiation/4:'),writeln(Task), %SRM: debug
     (constrain_radiation(DomRad,Task,Time0,Time1)    -> true ; D in inf..sup, fd_dom(D,DomRad)),
     X in DomTime,
     X in DomPos,

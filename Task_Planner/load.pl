@@ -28,7 +28,7 @@
 %% define(Parameter,Value)
 %
 
-define(debug     , no ).                /* Whether to debug or not.                                 */
+define(debug     , yes ).                /* Whether to debug or not.                                 */
 define(out_dir   ,'out/').              /* Output directory (should end with "/")                   */
 define(out_file  ,'task_planner.out').  /* Output file name.                                        */
 define(dbg_dir   ,'out/').              /* Debug directory (should end with "/")                    */
