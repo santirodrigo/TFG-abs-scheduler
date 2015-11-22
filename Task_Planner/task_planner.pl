@@ -21,8 +21,8 @@
 :- module(task_planner, [
                         planner/2,
                         order_by_priority/2,
-                        iterate/2,
-                        schedule/3,
+                        iterate/4,
+                        schedule/4,
                         task_bs/3,
                         task_running/4,
                         subset2/2,
@@ -66,7 +66,7 @@ planner(Tasks,Outcome) :- % planner/2
 	Como esto es a priori un problema en sí mismo (hacer un "recorrido" en F para probar de manera óptima las N soluciones y obtener las supuestas Delta mejores), se puede comenzar haciendo scheduler con el Iterator original y modificando prioridades a cada vez...
 	
 ******************************************************************/
-    iterate(Ts,Outcome),!.
+    iterate(Ts,Outcome,TaskComb,FList),display_list_task_lists(TaskComb,FList),!.
 
 
 %% order_by_priority(+Tasks:list, -Sorted:list)
@@ -94,6 +94,28 @@ pivot(H,[X|T],L,[X|G]) :-
     PrioX > PrioH,
     pivot(H,T,L,G).
     
+% SRM : ------------------------------------------------------------------------
+%
+% Multiply all elements in a list (L) by a constant value (C) to get result (R)
+
+multiply_list([],C,[]).
+multiply_list([ElemL|L],C,[ElemR|R]) :-
+	ElemR is ElemL * C,
+	multiply_list(L,C,R).
+	
+% Display a list of task lists TL
+
+display_list_task_lists([],[]).
+display_list_task_lists([Elem|TL],[F|FList]) :-
+	display_task_list(Elem),write('F: '),writeln(F),
+	display_list_task_lists(TL,FList).
+
+display_list([]) :-
+	writeln('.').
+display_list([Elem|List]) :-
+	write(Elem),write(';'),
+	display_list(List).
+% SRM --------------------------------------------------------------------------
 
 %%  iterate(+Tasks, +Params, -Outcome) is semidet
 %
@@ -117,39 +139,43 @@ iterate_([T|Ts],P,Ss,Os) :-
     iterate_(Ts,P,Ss,Os).
    */ 
     
-iterate(Tasks,Scheduleds) :-
+iterate(Tasks,Scheduleds,TaskComb,FList) :-
     write('Starting the iterator:'),nl,
-    (iterate0(Tasks,[],[T|Ts],[],[R|_])     % Finds a list of "schedulable alone" tasks ([T|Ts]) and
-    ->  length([T|Ts],NumPosTasks)                                %   their solutions [R|Rs], but we don't care about Rs. % SRM: should we care about it? We can use this to accumulate solutions
+    (iterate0(Tasks,[],[T|Ts],[],[R|_],[],F0List)     % Finds a list of "schedulable alone" tasks ([T|Ts]) and
+    ->  length([T|Ts],NumPosTasks),
+    	PondValue is (1 / NumPosTasks),
+    	multiply_list(F0List,PondValue,FList0)                         %   their solutions [R|Rs], but we don't care about Rs. % SRM: should we care about it?
     ;   Scheduleds = [],
     	NumPosTasks is 0),                   % If there is no task schedulable alone, there is no solution.
-    iterate_(Ts,[T],[],Solutions,NumPosTasks),          % Iterates starting by task T. 
+    iterate_(Ts,[T],[],Solutions,NumPosTasks,FList0,FList,[T|Ts],TaskComb),          % Iterates starting by task T. 
     (Solutions = [] 
     ->  Scheduleds = R                      % If the iterator can't find any valid step, the % SRM: En la llamada a iterate0([]... R1 = R0
     ;   Scheduleds = Solutions).            %   solution is the previously found R. 
 
-iterate0([]    ,FS1,FS1,R1,R1).				% SRM: Copy FS0 into FS1; R0 into R1
-iterate0([T|Ts],FS0,FS1,R0,R1) :-
+iterate0([]    ,FS1,FS1,R1,R1,FList,FList).				% SRM: Copy FS0 into FS1; R0 into R1
+iterate0([T|Ts],FS0,FS1,R0,R1,FList0,FList) :-
     scheduler_param(algorithm_timeout, Timeout),
     (Timeout > 0
-    ->  catch(call_with_time_limit(Timeout,schedule([T],R,0)),_,R=[]) % SRM: We take care of the algorithm timeout
-    ;   schedule([T],R,0)),	% SRM: Schedule of the task list's head
+    ->  catch(call_with_time_limit(Timeout,schedule([T],R,0,F)),_,R=[]) % SRM: We take care of the algorithm timeout
+    ;   schedule([T],R,0,F)),	% SRM: Schedule of the task list's head
+    write('F value for this schedule would be: '),writeln(F),
     (R = [] 
-    ->  iterate0(Ts,FS0,FS1,R0,R1) % SRM: If there is no solution, call recursively without adding T to the list of solved tasks and solutions
-    ;   iterate0(Ts,[T|FS0],FS1,[R|R0],R1)). % SRM: Else, call recursively adding T and its solution
+    ->  iterate0(Ts,FS0,FS1,R0,R1,FList0,FList) % SRM: If there is no solution, call recursively without adding T to the list of solved tasks and solutions
+    ;   iterate0(Ts,[T|FS0],FS1,[R|R0],R1,[F|FList0],FList)). % SRM: Else, call recursively adding T and its solution
     
-iterate_([]    ,_   ,Os,Os,NumPosT).
-iterate_([T|Ts],Prev,Ss,Os,NumPosT) :-
+iterate_([]    ,_   ,Os,Os,NumPosT,FList,FList,TaskComb,TaskComb).
+iterate_([T|Ts],Prev,Ss,Os,NumPosT,FList0,FList,TaskComb0,TaskComb) :-
     scheduler_param(algorithm_timeout, Timeout),
     append(Prev,[T],Step),
     !,
     (Timeout > 0
-    ->  catch(call_with_time_limit(Timeout,schedule(Step,Ss1,NumPosT)),_,Ss1=[])
-    ;   schedule(Step,Ss1,NumPosT)),
+    ->  catch(call_with_time_limit(Timeout,schedule(Step,Ss1,NumPosT,F)),_,Ss1=[])
+    ;   schedule(Step,Ss1,NumPosT,F)),
     !,
+    write('F value for this schedule would be: '),writeln(F),
     (Ss1 = []
-    ->  iterate_(Ts,Prev,Ss ,Os,NumPosT)
-    ;   iterate_(Ts,Step,Ss1,Os,NumPosT)).
+    ->  iterate_(Ts,Prev,Ss ,Os,NumPosT,FList0,FList,TaskComb0,TaskComb)
+    ;   iterate_(Ts,Step,Ss1,Os,NumPosT,[F|FList0],FList,[Step|TaskComb0],TaskComb)).
 
 %-------------------------------------------------------------------------------
 % SRM: Preview version of calculate_F function for each solution:
@@ -171,8 +197,8 @@ ponderate_and_sum([],F0,F0) :-!.
 %-------------------------------------------------------------------------------
 
 
-schedule([],[],_).
-schedule(Original,Tasks,NumPosT) :-
+schedule([],[],_,_).
+schedule(Original,Tasks,NumPosT,F) :-
     % Copies to preserve original variables uninstantiated:
     copy_term(Original,Tasks,Gs),
     maplist(call,Gs),
@@ -224,7 +250,7 @@ schedule(Original,Tasks,NumPosT) :-
         (NumPosT = 0 ->
         	F is F0
         ;	F is F0 * (TaskNum / NumPosT)),
-        write('F value for this schedule would be: '),writeln(F),
+        %write('F value for this schedule would be: '),writeln(F),
         % SRM: -----------------------------------------------------------------
         define(dbg_dir, Dbgdir),
         format_time(string(StrTime),"%Y%m%d_%H%M%S/",Now),
@@ -237,7 +263,7 @@ schedule(Original,Tasks,NumPosT) :-
         set_output(CO)
     ;   true).
 % If the first predicate did not succeed then there is no solution, but schedule/2 always succeeds:
-schedule(_,[],_).
+schedule(_,[],_,_).
 
 /** DEBUG PURPOSES ** TODO : REMOVE WHEN DONE ******************************************************/
 write_subtasks([]).
@@ -638,6 +664,11 @@ display_task_list([T|Ts]) :-
    T = task(_,_,_,_,Prio,Id),
    write(' - ('),write(Prio),write(') '),write(Id),nl,
    display_task_list(Ts).
+%SRM : --------------------------------------------Added for convenience--------
+display_task_list(T) :- % As it is the last occurrence of display_task_list, it is only used for one task lists
+   T = task(_,_,_,_,Prio,Id),
+   write(' - ('),write(Prio),write(') '),write(Id),nl.
+%SRM----------------------------------------------------------------------------
     
 display_task_ids([]) :- !.
 display_task_ids([T|Ts]) :-
