@@ -22,7 +22,7 @@
                         planner/2,
                         order_by_priority/2,
                         iterate/2,
-                        schedule/2,
+                        schedule/3,
                         task_bs/3,
                         task_running/4,
                         subset2/2,
@@ -120,9 +120,10 @@ iterate_([T|Ts],P,Ss,Os) :-
 iterate(Tasks,Scheduleds) :-
     write('Starting the iterator:'),nl,
     (iterate0(Tasks,[],[T|Ts],[],[R|_])     % Finds a list of "schedulable alone" tasks ([T|Ts]) and
-    ->  true                                %   their solutions [R|Rs], but we don't care about Rs. % SRM: should we care about it? We can use this to accumulate solutions
-    ;   Scheduleds = []),                   % If there is no task schedulable alone, there is no solution.
-    iterate_(Ts,[T],[],Solutions),          % Iterates starting by task T. 
+    ->  length([T|Ts],NumPosTasks)                                %   their solutions [R|Rs], but we don't care about Rs. % SRM: should we care about it? We can use this to accumulate solutions
+    ;   Scheduleds = [],
+    	NumPosTasks is 0),                   % If there is no task schedulable alone, there is no solution.
+    iterate_(Ts,[T],[],Solutions,NumPosTasks),          % Iterates starting by task T. 
     (Solutions = [] 
     ->  Scheduleds = R                      % If the iterator can't find any valid step, the % SRM: En la llamada a iterate0([]... R1 = R0
     ;   Scheduleds = Solutions).            %   solution is the previously found R. 
@@ -131,24 +132,24 @@ iterate0([]    ,FS1,FS1,R1,R1).				% SRM: Copy FS0 into FS1; R0 into R1
 iterate0([T|Ts],FS0,FS1,R0,R1) :-
     scheduler_param(algorithm_timeout, Timeout),
     (Timeout > 0
-    ->  catch(call_with_time_limit(Timeout,schedule([T],R)),_,R=[]) % SRM: We take care of the algorithm timeout
-    ;   schedule([T],R)),	% SRM: Schedule of the task list's head
+    ->  catch(call_with_time_limit(Timeout,schedule([T],R,0)),_,R=[]) % SRM: We take care of the algorithm timeout
+    ;   schedule([T],R,0)),	% SRM: Schedule of the task list's head
     (R = [] 
     ->  iterate0(Ts,FS0,FS1,R0,R1) % SRM: If there is no solution, call recursively without adding T to the list of solved tasks and solutions
     ;   iterate0(Ts,[T|FS0],FS1,[R|R0],R1)). % SRM: Else, call recursively adding T and its solution
     
-iterate_([]    ,_   ,Os,Os).
-iterate_([T|Ts],Prev,Ss,Os) :-
+iterate_([]    ,_   ,Os,Os,NumPosT).
+iterate_([T|Ts],Prev,Ss,Os,NumPosT) :-
     scheduler_param(algorithm_timeout, Timeout),
     append(Prev,[T],Step),
     !,
     (Timeout > 0
-    ->  catch(call_with_time_limit(Timeout,schedule(Step,Ss1)),_,Ss1=[])
-    ;   schedule(Step,Ss1)),
+    ->  catch(call_with_time_limit(Timeout,schedule(Step,Ss1,NumPosT)),_,Ss1=[])
+    ;   schedule(Step,Ss1,NumPosT)),
     !,
     (Ss1 = []
-    ->  iterate_(Ts,Prev,Ss ,Os)
-    ;   iterate_(Ts,Step,Ss1,Os)).
+    ->  iterate_(Ts,Prev,Ss ,Os,NumPosT)
+    ;   iterate_(Ts,Step,Ss1,Os,NumPosT)).
 
 %-------------------------------------------------------------------------------
 % SRM: Preview version of calculate_F function for each solution:
@@ -170,8 +171,8 @@ ponderate_and_sum([],F0,F0) :-!.
 %-------------------------------------------------------------------------------
 
 
-schedule([],[]).
-schedule(Original,Tasks) :-
+schedule([],[],_).
+schedule(Original,Tasks,NumPosT) :-
     % Copies to preserve original variables uninstantiated:
     copy_term(Original,Tasks,Gs),
     maplist(call,Gs),
@@ -219,7 +220,10 @@ schedule(Original,Tasks) :-
         calculate_F(Subtasks,Rnames,T0,T1,Ftot,0),
         length(Rnames,Rnum),
         Ttot is T1 - T0 + 1,
-        F is Ftot / (Rnum * Ttot),
+        F0 is Ftot / (Rnum * Ttot),
+        (NumPosT = 0 ->
+        	F is F0
+        ;	F is F0 * (TaskNum / NumPosT)),
         write('F value for this schedule would be: '),writeln(F),
         % SRM: -----------------------------------------------------------------
         define(dbg_dir, Dbgdir),
@@ -233,7 +237,7 @@ schedule(Original,Tasks) :-
         set_output(CO)
     ;   true).
 % If the first predicate did not succeed then there is no solution, but schedule/2 always succeeds:
-schedule(_,[]).
+schedule(_,[],_).
 
 /** DEBUG PURPOSES ** TODO : REMOVE WHEN DONE ******************************************************/
 write_subtasks([]).
