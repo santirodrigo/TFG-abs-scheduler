@@ -296,12 +296,21 @@ constrain_all(Dom,Task,Time0,Time1) :-
     (constrain_temperature(DomTemp,Task,Time0,Time1) -> true ; D in inf..sup, fd_dom(D,DomTemp)),
     write('******* Calling constrain_radiation/4:'),writeln(Task), %SRM: debug
     (constrain_radiation(DomRad,Task,Time0,Time1)    -> true ; D in inf..sup, fd_dom(D,DomRad)),
-    X in DomTime,
-    X in DomPos,
-    X in DomTemp,
-    X in DomRad,
+    % SRM: ------ CREATE XTRA DOMAIN -------------------------------------------
+    Y in DomTime,
+    Y in DomPos,
+    Y in DomTemp,
+    Y in DomRad,
+    fd_dom(Y,DomNorm),
+    task_timing(Task,_,duration(Duration),_,_,_),
+    TimeXtra is Time1 + Duration + 1,
+    writeln(TimeXtra),
+    T in Time1..TimeXtra, fd_dom(T,XDom),
+    X in XDom \/ DomNorm,
     fd_dom(X,Dom),
-    
+    %% SRM: Create Extra Domain (Dom2), with task_timing and so...
+    % For domains union: X in Dom1 \/ Dom2
+    % --------------------------------------------------------------------------
     (define(debug,yes)
     ->  flag(dbg_time,Now,Now),
         define(dbg_dir,Dir),

@@ -39,6 +39,19 @@
 TODO doc
 */
 
+obtain_max_xtra_time(Tasks,XtraTime) :-
+	findall(ID,task(ID),TasksIDs),
+	obtain_max_xtra_time_(TasksIDs,Tasks,0,XtraTime).
+	
+obtain_max_xtra_time_([],[],XtraTime,XtraTime):- write('MaxXtraTime: '),writeln(XtraTime).
+obtain_max_xtra_time_([ID|IDs],[Task|Tasks],XtraTime0,XtraTime) :-
+	Task = task(_,_,E,_,_,_),
+	fd_sup(E,MaxE),
+	(MaxE > XtraTime0 ->
+		XtraTime1 is MaxE
+	;	XtraTime1 is XtraTime0),
+	obtain_max_xtra_time_(IDs,Tasks,XtraTime1,XtraTime).
+
 %%  planner(+Tasks, +Params, -Outcome)
 %   
 %   Calls schedule/2 following the priority order defined by iterate/3 and generates the Outcome as 
@@ -46,6 +59,25 @@ TODO doc
 
 planner(Tasks,Outcome) :- % planner/2
     order_by_priority(Tasks,Ts),
+    %-------------------------------------------------------------------------------
+    obtain_max_xtra_time(Tasks,XtraTime),
+    asserta(time_xtra(XtraTime)),
+%    write('Starting the iterator:'),nl,
+%    (iterate0(TasksOrd,[],[T|Ts],[],[R|_],[],F0List)     % Finds a list of "schedulable alone" tasks ([T|Ts]) and the F List of the scheludable alone tasks
+%    ->  length([T|Ts],NumPosTasks),					  % Now we know how much tasks are schedulable alone. This is for correctly calculating the F value.
+%    	PondValue is (1 / NumPosTasks),				  
+%    	multiply_list(F0List,PondValue,FList0)                         %   their solutions [R|Rs], but we don't care about Rs. % SRM: should we care about it?
+%    ;   Scheduleds = [],
+%    	NumPosTasks is 0),                   % If there is no task schedulable alone, there is no solution.
+%	time_xtra(TXX),
+%	write('time_xtra: '),writeln(TXX),
+%	write('num_pos_tasks: '),writeln(NumPosTasks).
+%    findall(Outcome0, schedule(TasksOrd,Outcome0,0,F), Outcomes),
+%	Outcomes = [Outcome|OutcomesList],
+%    length(Outcomes,L),
+%    write('Length Outcomes: '),writeln(L).
+%-------------------------------------------------------------------------------
+	iterate(Ts,Outcome,TaskComb,FList),display_list_task_lists(TaskComb,FList),!.
     % SRM: For aviding the iteration part, we should do directly: scheduler_param(algorithm_timeout, Timeout),
     															 % (Timeout > 0
     															 % ->  catch(call_with_time_limit(Timeout,schedule(Ts,Outcome)),_,Outcome=[])
@@ -66,8 +98,6 @@ planner(Tasks,Outcome) :- % planner/2
 	Como esto es a priori un problema en sí mismo (hacer un "recorrido" en F para probar de manera óptima las N soluciones y obtener las supuestas Delta mejores), se puede comenzar haciendo scheduler con el Iterator original y modificando prioridades a cada vez...
 	
 ******************************************************************/
-    iterate(Ts,Outcome,TaskComb,FList),display_list_task_lists(TaskComb,FList),!.
-
 
 %% order_by_priority(+Tasks:list, -Sorted:list)
 %
@@ -208,7 +238,7 @@ schedule(Original,Tasks,NumPosT,F) :-
     display_task_list(Tasks),nl,
     
     /* The global start time must be less than the global end time. */
-    ((scheduler_param(time_start,T0), scheduler_param(time_end,T1)) -> T1 > T0),
+    ((scheduler_param(time_start,T0), time_xtra(T1)) -> T1 > T0),
     must_be(integer,T0), 
     must_be(integer,T1),
     
@@ -250,7 +280,6 @@ schedule(Original,Tasks,NumPosT,F) :-
         (NumPosT = 0 ->
         	F is F0
         ;	F is F0 * (TaskNum / NumPosT)),
-        %write('F value for this schedule would be: '),writeln(F),
         % SRM: -----------------------------------------------------------------
         define(dbg_dir, Dbgdir),
         format_time(string(StrTime),"%Y%m%d_%H%M%S/",Now),
@@ -354,7 +383,7 @@ create_subtasks(Ek,E,Name,[],_,LastC,Prio,_,K) :-
     ;   Cumulative = false),
     
     (Cumulative = true 
-    ->  scheduler_param(time_end,TE),
+    ->  time_xtra(TE),
         Dk #= TE-Ek,
         Ck =.. [Name,LastC],
         K = [subtask(Ek,Dk,TE,Ck,Prio,0)]

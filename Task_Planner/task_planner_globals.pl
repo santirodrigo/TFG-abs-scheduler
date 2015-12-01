@@ -37,7 +37,7 @@ and their capacities.
 
 scheduler_param(mission_start       , -1000).
 scheduler_param(time_start          , 0).
-scheduler_param(time_end            , 100).
+scheduler_param(time_end            , 3).
 scheduler_param(domain_similarity   , 0.70).
 scheduler_param(minimize_overlapping, false).
 scheduler_param(mo_allow_permutation, false).
@@ -53,39 +53,16 @@ scheduler_param(orbit_propagator    , 'orbit_propagator.out'). % SRM: NEEDED
 %%  resource_options(+Rname, -Options)
 %
 
-resource_options(power       ,[cumulative(false)]).
 resource_options(simultaneity,[cumulative(false)]).
 resource_options(storage     ,[cumulative(true)]).
-resource_options(energy      ,[cumulative(true)]).
 
 
 %%  resource_capacity(+Rname, -Capacity)
 %
 
-resource_capacity(storage     ,[   1000-100]). % 1000 MB
-resource_capacity(simultaneity,[     1-100]). % 10 tasks
-resource_capacity(power       ,[   1000-100]). % 1 Watt
-resource_capacity(energy      ,[2400000-40,    % 2 W/s = 120 mJ/min (starting @ 2400 J)  
-                                2520000-41,
-                                2640000-42,
-                                2760000-43,
-                                2880000-44,
-                                3000000-45,
-                                3120000-46,
-                                3240000-47,
-                                3360000-48,
-                                3480000-49,
-                                3600000-50,
-                                3720000-51,
-                                3840000-52,
-                                3960000-53,
-                                4080000-54,
-                                4200000-55,
-                                4320000-56,
-                                4440000-57,
-                                4560000-58,
-                                4680000-59,
-                                4800000-100 ]).
+resource_capacity(storage     ,[   4-2, 	% Definir hasta el time_end menos 1 los recursos reales
+								  80-5]). 	% A continuación definimos hasta el time_end + max_duración + 1 de las tareas los recursos "infinitos"
+resource_capacity(simultaneity,[     1-5]). % 10 tasks
                                 
                                 
                                 
