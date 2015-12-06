@@ -34,16 +34,18 @@
 /* Modules to include *******************************************************************************/
 :- use_module(library(clpfd)).          /* Constraint Logic Programming over Finite Domains.        */
 :- use_module(task_planner_globals).    /* Task Planner configuration.                              */
-
 /** <module> Task Planner
 TODO doc
 */
+
+:- dynamic
+        cache/1.
 
 obtain_max_xtra_time(Tasks,XtraTime) :-
 	findall(ID,task(ID),TasksIDs),
 	obtain_max_xtra_time_(TasksIDs,Tasks,0,XtraTime).
 	
-obtain_max_xtra_time_([],[],XtraTime,XtraTime):- write('MaxXtraTime: '),writeln(XtraTime).
+obtain_max_xtra_time_([],[],XtraTime,XtraTime):- write('MaxXtraTime: '),writeln(XtraTime). %DEBUG SRM
 obtain_max_xtra_time_([ID|IDs],[Task|Tasks],XtraTime0,XtraTime) :-
 	Task = task(_,_,E,_,_,_),
 	fd_sup(E,MaxE),
@@ -52,36 +54,90 @@ obtain_max_xtra_time_([ID|IDs],[Task|Tasks],XtraTime0,XtraTime) :-
 	;	XtraTime1 is XtraTime0),
 	obtain_max_xtra_time_(IDs,Tasks,XtraTime1,XtraTime).
 
+%---USEFUL BUT NOT USED---------------------------------------------------------
+schedules(NSols,TasksOrd,_,NumPosT,F) :-
+  schedule(TasksOrd,Outcome,NumPosT,F),
+  (cache(Outcomes) -> retractall(cache(_)) ; Outcomes = []),
+  asserta(cache([Outcome|Outcomes])),
+  length(Outcomes,L_1),
+  L is L_1 + 1,
+ (L >= NSols -> true ; fail).
+schedules(_,_,Outcomes,_,_) :-
+  retract(cache(Outcomes)).
+%---USEFUL BUT NOT USED---------------------------------------------------------
+
+%--------------------------------IMPORTANT--------------------------------------
+%%      findnsols(+N, ?Template, :Generator, -List)
+%
+%       As findall/3, but generating at most   N solutions of Generator.
+%       Thus, the length of List will not   be  greater than N. If N=<0,
+%       returns directly an empty  list.   This  predicate is especially
+%       useful if Generator may have an infinite number of solutions.
+%
+%       @compat ciao
+
+findnsols(N, Template, Generator, List) :-
+        findnsols(N, Template, Generator, List, []).
+
+%%      findnsols(+N, ?Template, :Generator, -List, -Tail)
+%
+%       As findnsols/4, but returning in Tail the tail of List.
+%
+%       @compat ciao
+
+findnsols(N, Template, Generator, List, Tail) :-
+        findall(Template, maxsols(N, Generator), List, Tail).
+
+maxsols(N, Generator) :-
+        State = count(0),
+        Generator,
+        arg(1, State, C0),
+        C1 is C0+1,
+        (   C1 == N
+        ->  !
+        ;   nb_setarg(1, State, C1)
+        ). 
+%--------------------------------IMPORTANT--------------------------------------
+
 %%  planner(+Tasks, +Params, -Outcome)
 %   
 %   Calls schedule/2 following the priority order defined by iterate/3 and generates the Outcome as 
 %   a set of schedulable Tasks. See schedule/2 to see Tasks and Params structure.
 
-planner(Tasks,Outcome) :- % planner/2
-    order_by_priority(Tasks,Ts),
-    %-------------------------------------------------------------------------------
+planner(Tasks,Outcomes) :- % planner/2
+    order_by_priority(Tasks,TasksOrd),
+%-------------------------------------------------------------------------------
+%---Obtener el tiempo necesario para aumentar el dominio------------------------
     obtain_max_xtra_time(Tasks,XtraTime),
     asserta(time_xtra(XtraTime)),
-%    write('Starting the iterator:'),nl,
-%    (iterate0(TasksOrd,[],[T|Ts],[],[R|_],[],F0List)     % Finds a list of "schedulable alone" tasks ([T|Ts]) and the F List of the scheludable alone tasks
-%    ->  length([T|Ts],NumPosTasks),					  % Now we know how much tasks are schedulable alone. This is for correctly calculating the F value.
-%    	PondValue is (1 / NumPosTasks),				  
-%    	multiply_list(F0List,PondValue,FList0)                         %   their solutions [R|Rs], but we don't care about Rs. % SRM: should we care about it?
-%    ;   Scheduleds = [],
-%    	NumPosTasks is 0),                   % If there is no task schedulable alone, there is no solution.
-%	time_xtra(TXX),
-%	write('time_xtra: '),writeln(TXX),
-%	write('num_pos_tasks: '),writeln(NumPosTasks).
-%    findall(Outcome0, schedule(TasksOrd,Outcome0,0,F), Outcomes),
-%	Outcomes = [Outcome|OutcomesList],
-%    length(Outcomes,L),
-%    write('Length Outcomes: '),writeln(L).
+    
 %-------------------------------------------------------------------------------
-	iterate(Ts,Outcome,TaskComb,FList),display_list_task_lists(TaskComb,FList),!.
-    % SRM: For aviding the iteration part, we should do directly: scheduler_param(algorithm_timeout, Timeout),
-    															 % (Timeout > 0
-    															 % ->  catch(call_with_time_limit(Timeout,schedule(Ts,Outcome)),_,Outcome=[])
-    															 % ;   schedule(Ts,Outcome)),!.
+%---Recorrer todas las tareas una por una para detectar cuáles son factibles----
+    write('Starting the iterator:'),nl,
+    (iterate0(TasksOrd,[],Ts,[],[R|_],[],F0List)     % Finds a list of "schedulable alone" tasks ([T|Ts]) and the F List of the scheludable alone tasks
+    ->  length(Ts,NumPosTasks),					  % Now we know how much tasks are schedulable alone. This is for correctly calculating the F value.
+    	PondValue is (1 / NumPosTasks),				  
+    	multiply_list(F0List,PondValue,FList0)                         %   their solutions [R|Rs], but we don't care about Rs. % SRM: should we care about it?
+    ;   Outcome = [],
+    	NumPosTasks is 0),                   % If there is no task schedulable alone, there is no solution.
+	write('Number of tasks that can be done individually: '),writeln(NumPosTasks),
+	!,
+	scheduler_param(algorithm_timeout, Timeout),
+	scheduler_param(delta_solutions,N),
+    (Timeout > 0
+    ->  catch(call_with_time_limit(Timeout,findnsols(N,F-Outcome,schedule(Ts,Outcome,NumPosTasks,F),Outcomes)),_,schedule(Ts,Outcome,NumPosTasks,F))
+    ;   findnsols(N,F-Outcome,schedule(Ts,Outcome,NumPosTasks,F),Outcomes)),
+%	retractall(cache(_)),
+%	schedules(2,TasksOrd,Outcome,0,F),
+%   cache(Outcomes),
+    length(Outcomes,L),
+    write('Length Outcomes: '),	writeln(L). % DEBUG SRM
+    
+    
+    
+%-------------------------------------------------------------------------------
+%	iterate(TasksOrd,Outcome,TaskComb,FList),display_list_task_lists(TaskComb,FList),!.
+%-------------------------------------------------------------------------------
 
 /* POSIBILIDADES PARA LA BÚSQUEDA DE MÚLTIPLES SOLUCIONES:
    =============================================================
@@ -212,7 +268,7 @@ iterate_([T|Ts],Prev,Ss,Os,NumPosT,FList0,FList,TaskComb0,TaskComb) :-
 
 calculate_F(Ts,Rnames,T1,T1,F,F0) :-
     calc_consumptions_at(Ts,Rnames,T1,CapCons),
-    ponderate_and_sum(CapCons,F,F0).
+    ponderate_and_sum(CapCons,F,F0),!.
 calculate_F(Ts,Rnames,T0,T1,F,F0) :-
     T2 is T0+1,
     calculate_F(Ts,Rnames,T2,T1,F1,F0),
@@ -221,8 +277,19 @@ calculate_F(Ts,Rnames,T0,T1,F,F0) :-
     
 ponderate_and_sum([Cap|[Cons|Cs]],F,F0) :-
 	ponderate_and_sum(Cs,F1,F0),
-	F is F1+(1-(Cons/Cap)).
-ponderate_and_sum([],F0,F0) :-!.
+	F_i is (1-(Cons/Cap)),
+	(F_i < F1 -> F is F_i ; F is F1).%Valor de pico de los recursos consumidos
+	% F is F1+(1-(Cons/Cap)). %Valor medio de los recursos consumidos
+ponderate_and_sum([],F0,F0).
+
+calculate_done_tasks([],0).
+calculate_done_tasks([Task|Ts],TasksDone) :-
+	calculate_done_tasks(Ts,TasksDone0),
+	Task = task(Start,_,_,_,_,_),
+	write('Start time: '),writeln(Start),
+	scheduler_param(time_end,TEnd),
+	write('End time: '),writeln(TEnd),
+	(Start >= TEnd -> TasksDone is TasksDone0 ; TasksDone is TasksDone0 + 1).
 
 %-------------------------------------------------------------------------------
 
@@ -238,12 +305,15 @@ schedule(Original,Tasks,NumPosT,F) :-
     display_task_list(Tasks),nl,
     
     /* The global start time must be less than the global end time. */
-    ((scheduler_param(time_start,T0), time_xtra(T1)) -> T1 > T0),
+    (NumPosT = 0 ->
+    	((scheduler_param(time_start,T0), scheduler_param(time_end,T1)) -> T1 > T0)
+    	;
+    	((scheduler_param(time_start,T0), time_xtra(T1)) -> T1 > T0)),
     must_be(integer,T0), 
     must_be(integer,T1),
     
     writeln('Finding subtasks.'),
-    time(find_subtasks(Tasks,[],Subtasks)), % SRM:  Subtasks are simpler objects that consume a single resource with a constant value.
+    time(find_subtasks(NumPosT,Tasks,[],Subtasks)), % SRM:  Subtasks are simpler objects that consume a single resource with a constant value.
     
     writeln('Extracting domain bounds.'),
     time((  maplist(arg(1), Tasks, Starts),
@@ -273,13 +343,18 @@ schedule(Original,Tasks,NumPosT,F) :-
     ->  findall(R,resource_options(R,_),Rnames),
         flag(dbg_time,Now,Now),
         % SRM: F calculation ---------------------------------------------------
-        calculate_F(Subtasks,Rnames,T0,T1,Ftot,0),
-        length(Rnames,Rnum),
-        Ttot is T1 - T0 + 1,
-        F0 is Ftot / (Rnum * Ttot),
+        calculate_F(Subtasks,Rnames,T0,T1,F0,1), % Ahora F0 y no Ftot
+			% SRM: Estas líneas serían para hacer la media, pero ahora queremos 
+			%      valor de pico
+			%        length(Rnames,Rnum),
+			%        Ttot is T1 - T0 + 1,
+			%        F0 is Ftot / (Rnum * Ttot), 
+			% ------------------------------------------------------------------
         (NumPosT = 0 ->
         	F is F0
-        ;	F is F0 * (TaskNum / NumPosT)),
+        ;	calculate_done_tasks(Tasks,TasksDone),
+	       	write('Tasks really done: '),writeln(TasksDone),
+       		F is F0 * (TasksDone / NumPosT)),
         % SRM: -----------------------------------------------------------------
         define(dbg_dir, Dbgdir),
         format_time(string(StrTime),"%Y%m%d_%H%M%S/",Now),
@@ -292,7 +367,7 @@ schedule(Original,Tasks,NumPosT,F) :-
         set_output(CO)
     ;   true).
 % If the first predicate did not succeed then there is no solution, but schedule/2 always succeeds:
-schedule(_,[],_,_).
+schedule(_,[],0,_). % SRM: For quicker cutting solutions tree in findnsols
 
 /** DEBUG PURPOSES ** TODO : REMOVE WHEN DONE ******************************************************/
 write_subtasks([]).
@@ -344,12 +419,12 @@ write_cap_cons([]).
 /***************************************************************************************************/
 
 
-find_subtasks([],     Ks, Ks).
-find_subtasks([T|Ts], S , Ks) :-
+find_subtasks(_,[],     Ks, Ks).
+find_subtasks(TimeEndOrXtra,[T|Ts], S , Ks) :- % TimeEndOrXtra = 0 -> scheduler_param(time_end,_) ; time_xtra(_)
     split_byresource(T,S0s),
-    split_tasks(S0s,[],S1s),
+    split_tasks(TimeEndOrXtra,S0s,[],S1s),
     append(S,S1s,S2s),
-    find_subtasks(Ts,S2s,Ks).
+    find_subtasks(TimeEndOrXtra,Ts,S2s,Ks).
 
 
 split_byresource(T,[]) :- T = task(_,_,_,[],_,_).
@@ -359,22 +434,22 @@ split_byresource(T,[A|As]) :-
     Rest = task(S,D,E,Cs,Prio,Id),
     split_byresource(Rest,As).
     
-split_tasks([]    , Ks , Ks).
-split_tasks([T|Ts], K0s, Ks) :-
-    catch(split_task(T,K1s),scheduler_error(E),write_error(E)),
+split_tasks(_,[]    , Ks , Ks).
+split_tasks(TimeEndOrXtra,[T|Ts], K0s, Ks) :-
+    catch(split_task(TimeEndOrXtra,T,K1s),scheduler_error(E),write_error(E)),
     append(K0s,K1s,K2s),
-    split_tasks(Ts,K2s,Ks).
+    split_tasks(TimeEndOrXtra,Ts,K2s,Ks).
 
-split_task(T,[K|Ks]) :-
+split_task(TimeEndOrXtra,T,[K|Ks]) :-
     T = task(S,_,E,C,Prio,Id),
     C =.. [Name|[Pairs]], % name([ value1-time1 , value2-time2, ... ])
     (resource_capacity(Name,_) % Checks whether the resource capacity has been defined
-    ->  create_subtasks(S,E,Name,Pairs,0,0,Prio,Id,[K|Ks]),
+    ->  create_subtasks(TimeEndOrXtra,S,E,Name,Pairs,0,0,Prio,Id,[K|Ks]),
         K = subtask(Sk,_,_,_,_,_),
         Sk #= S
     ;   throw(scheduler_error(undefined_resource(Name)))).
 
-create_subtasks(Ek,E,Name,[],_,LastC,Prio,_,K) :-
+create_subtasks(TimeEndOrXtra,Ek,E,Name,[],_,LastC,Prio,_,K) :-
     Ek #= E,
 
     (resource_options(Name,Opts)
@@ -383,19 +458,19 @@ create_subtasks(Ek,E,Name,[],_,LastC,Prio,_,K) :-
     ;   Cumulative = false),
     
     (Cumulative = true 
-    ->  time_xtra(TE),
+    ->  (TimeEndOrXtra = 0 -> scheduler_param(time_end,TE) ; time_xtra(TE)),
         Dk #= TE-Ek,
         Ck =.. [Name,LastC],
         K = [subtask(Ek,Dk,TE,Ck,Prio,0)]
     ;   K = []
     ).
-create_subtasks(Sk,E,Name,[V|Vs],Time0,_,Prio,Id,[K|Ks]) :-
+create_subtasks(TimeEndOrXtra,Sk,E,Name,[V|Vs],Time0,_,Prio,Id,[K|Ks]) :-
     V = Consumption-Time1,
     Dk #= Time1-Time0,
     Ek #= Sk+Dk,
     Ck =.. [Name,Consumption], % name(consumption)
     K = subtask(Sk,Dk,Ek,Ck,Prio,Id),
-    create_subtasks(Ek,E,Name,Vs,Time1,Consumption,Prio,Id,Ks).
+    create_subtasks(TimeEndOrXtra,Ek,E,Name,Vs,Time1,Consumption,Prio,Id,Ks).
     
     
 
@@ -704,189 +779,7 @@ display_task_ids([T|Ts]) :-
    T = task(_,_,_,_,_,Id),
    write(Id),write(','),
    display_task_ids(Ts).
-/*
 
-test_mo :-
-    Ss = [A,B,C,D,E,F,G],
-    [A,B,C] ins 0..100,
-    [D,E,F] ins 50..150,
-    [G] ins 100..200,
-    display_domain(A,0,200),nl,
-    display_domain(B,0,200),nl,
-    display_domain(C,0,200),nl,
-    display_domain(D,0,200),nl,
-    display_domain(E,0,200),nl,
-    display_domain(F,0,200),nl,
-    display_domain(G,0,200),nl,
-    overlapping_groups(Ss,[],Gs),
-    writeln(Gs).
-
-overlapping_groups(Durations,Starts,Groups) :-
-    maplist(domain_slots,Starts,Slots),
-    overlapping_groups_(Durations,Starts,Slots,[],MOGs),
-    extract_mog(MOGs,Groups).    
-
-overlapping_groups_([]    ,[]    ,[]      ,Fs,Fs).
-overlapping_groups_([D|Ds],[S|Ss],[Xs|Xss],Gs,Fs) :-
-    match_group(D,S,Xs,Gs,Gs2),
-    overlapping_groups_(Ds,Ss,Xss,Gs2,Fs).
-
-
-match_group(D,S,Xs,[],[mog([D,S,Xs])]). % There is no group to match with
-match_group(D,S,Xs,Gs,Gs2) :-
-    % Include it in an existing group
-    nth0(I,Gs,mog(MOGs),Rest),
-    mog_elems(MOGs,Ds,Ss,Xss),
-    similar_domains_all(S,Ss),
-    mo_optimizable(D,Xs,Ds,Xss),
-    nth0(I,Gs2,mog([[D,S,Xs]|MOGs]),Rest).
-match_group(D,S,Xs,Gs,[mog([D,S,Xs])|Gs]). % It doesn't match any group
-
-mog_elems([]        ,[]    ,[]    ,[]).
-mog_elems([MOG|MOGs],[D|Ds],[S|Ss],[Xs|Xss]) :-
-    MOG = [D,S,Xs],
-    mog_elems(MOGs,Ds,Ss,Xss).
-
-mo_optimizable(_ ,_ ,[]      ,[]).
-mo_optimizable(D1,Xs,[D2|D2s],[Ys|Yss]) :-
-    mo_optimizable(D1,Xs,D2,Ys),
-    mo_optimizable(D1,Xs,D2s,Yss).
-mo_optimizable(D1,Xs,D2,Ys) :-
-    maplist(integer,[D1,D2]),
-    mo_optimizable_(D1,Xs,D2,Ys,0,Acc),
-    length(Xs,Xslots),
-    length(Ys,Yslots),
-    Acc >= 0.66 * Xslots * Yslots.
-
-mo_optimizable_(_ ,[]    ,_ ,_ ,Acc,Acc).
-mo_optimizable_(D1,[X|Xs],D2,Ys,Acc,Bcc) :-
-    include(mo_optimizable_(D1,X,D2),Ys,Yopts),
-    length(Yopts,LYopts),
-    Acc1 is Acc + LYopts,
-    mo_optimizable_(D1,Xs,D2,Ys,Acc1,Bcc).
-
-
-mo_optimizable_(D1,X,D2,Y) :-
-    maplist(clpfd:finite_domain,[X,Y]),
-    maplist(domain_continuous,[X,Y]),
-    mo_eligible([D1,D2],[X,Y]),
-    similar_domains_intersect(X,Y,0.75).
-
-    
-
-test_mo :-
-    A mod 10 #= 0,
-    A #>= 0,
-    A #< 200,
-    B in 0..100,
-    Da #= 5,
-    Db #= 5,
-    display_domain(A,0,200), writeln(Da),
-    display_domain(B,0,200), writeln(Db),
-    domain_slots(A,As),
-    length(As,N),
-    mo_optimizable_(Da,As,Db,[B],0,Acc),
-    (Acc >= 0.66*N -> write('YES : '),writeln(Acc) ; write('NO : '),writeln(Acc)).
-    
-
-domain_slots(X,[Z]) :-
-    domain_continuous(X),
-    fd_dom(X,Dom),
-    Z in Dom.
-domain_slots(X,[S|Ss]) :-
-    domain_slot(X,D,Rest),
-    Y in Rest,
-    S in D,
-    domain_slots(Y,Ss).
-domain_slot(X,Y,Rest) :-
-    fd_dom(X,Rest\/Y).
-    
-
-domain_continuous(X) :-
-    clpfd:finite_domain(X),
-    \+domain_slot(X,_,_).
-
-similar_domains_all(_,[]    ,_).
-similar_domains_all(A,[B|Bs],Ratio) :-
-    similar_domains(A,B,Ratio),
-    similar_domains_all(A,Bs,Ratio).
-    
-similar_domains(A,B,Ratio) :-
-    fd_dom(A,DomA),
-    fd_dom(B,DomB),
-    C in DomA,
-    C in DomB,
-    fd_size(A,SizeA),
-    fd_size(B,SizeB),
-    fd_size(C,SizeC),
-    SizeC >= SizeA*Ratio,
-    SizeC >= SizeB*Ratio. 
-similar_domains_intersect(A,B,Ratio) :-
-    fd_dom(A,DomA),
-    fd_dom(B,DomB),
-    C in DomA,
-    C in DomB,
-    fd_size(A,SizeA),
-    fd_size(B,SizeB),
-    fd_size(C,SizeC),
-    min_list([SizeA,SizeB],MinSize),
-    SizeC >= MinSize*Ratio.
-
-similar_durations(D1,D2,Ratio) :-
-    must_be(list(integer),[D1,D2]),
-    (D1 >= D2 -> Ratio =< D2/D1 ; Ratio > D1/D2).
-
-mo_eligible(Ds,Xs) :-
-    maplist(fd_size,Xs,Sizes),
-    min_list(Sizes,Size),
-    sum(Ds,#=<,Size).
-*/
-
-
-/*
-% Execution Aborted
-?- test(5,360,10),!.
-Finding subtasks.
-% 27,980 inferences, 0.011 CPU in 0.010 seconds (100% CPU, 2662328 Lips)
-Extracting domain bounds.
-% 104 inferences, 0.000 CPU in 0.000 seconds (99% CPU, 1783356 Lips)
-Calculating Bs.
-% 20,001,731 inferences, 2.028 CPU in 2.026 seconds (100% CPU, 9863465 Lips)
-Constraining consumptions.
-% 164,835,876 inferences, 16.952 CPU in 16.937 seconds (100% CPU, 9723854 Lips)
-Labeling.
-% 111,233,935,920 inferences, 10877.565 CPU in 11818.714 seconds (92% CPU, 10225996 Lips)
-% 2 inferences, 0.002 CPU in 0.002 seconds (100% CPU, 910 Lips)
-% 2 inferences, 0.000 CPU in 0.000 seconds (99% CPU, 177336 Lips)
-false.
-
-*/
-
-
-/*
-
-intersection([],_).
-intersection([S-_|Ps],I) :-
-    fd_dom(S,DomS),
-    I in DomS,
-    intersection(Ps,I).
-
-sum_durations(G,Sum) :-
-    sum_durations_(G,0,Sum).
-sum_durations_([]      ,Acc,Acc).
-sum_durations_([_-D|Ps],Acc,Sum) :-
-    Acc1 is Acc + D,
-    sum_durations_(Ps,Acc1,Sum).
-    
-*/
-
-/**
-    fd_inf(S,Lb),
-    fd_sup(S,Ub),
-    random_between(Lb,Ub,A),
-    S #= A,
-    set_starts(Ss).
-*/
 test_random(N) :-
     length([L1,L2|Ls],N),
     L1 in 1..N,
@@ -1016,17 +909,3 @@ sweep_bs(Bs,T,Tstop,S,E) :-
     ),
     T1 is T+1,
     sweep_bs(Bs,T1,Tstop,S,E).
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-

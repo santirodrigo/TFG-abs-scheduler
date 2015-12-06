@@ -152,7 +152,7 @@ stat_mem :-
     
     close(Strm).
 
-stat_info(Ts,TaskCount) :-
+stat_info(F-Ts,TaskCount) :-
     stat_param(inf_file, InfF),
     flag(dbg_time,Now,Now),
     define(dbg_dir,DbgDir),
@@ -161,13 +161,13 @@ stat_info(Ts,TaskCount) :-
     open(InfPath,write,Stream,[]),
     current_output(CO),
     set_output(Stream),
-    write_info(Ts,TaskCount),
+    write_info(F-Ts,TaskCount),
     set_output(CO),
     close(Stream),
-    write_info(Ts,TaskCount),
+    write_info(F-Ts,TaskCount),
     generate_csv(Ts).
     
-write_info(Ts,TaskCount) :-
+write_info(F-Ts,TaskCount) :-
     flag(ga_max,GAMax,GAMax),
     flag(gu_max,GUMax,GAMax),
     flag(la_max,LAMax,LAMax),
@@ -246,7 +246,8 @@ write_info(Ts,TaskCount) :-
     
     length(Ts,TaskN),
     TaskM is TaskCount - TaskN,
-    format('List of built tasks (showing ~d, skipped ~d tasks without solution):~n',[TaskN,TaskM]),
+    format('List of built tasks (showing ~d, skipped ~d tasks without solution).~n',[TaskN,TaskM]),
+    format('This solution has an F of ~1f:~n',[F]),
     format('+~`-t~20|+~`-t~30|+~`-t~50|+~`-t~65|+~`-t~85|+~`-t+~100|~n'),
     format('| Task ID~32t~20||  Prio.~32t~30||  Start~32t~50||  Duration~32t~65||  End~32t~85||  N. cons.~32t|~100|~n'),
     format('+~`-t~20|+~`-t~30|+~`-t~50|+~`-t~65|+~`-t~85|+~`-t+~100|~n'),

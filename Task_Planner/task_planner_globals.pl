@@ -35,9 +35,10 @@ and their capacities.
 %
 %   
 
+scheduler_param(satellite_id		, 1).
 scheduler_param(mission_start       , -1000).
 scheduler_param(time_start          , 0).
-scheduler_param(time_end            , 3).
+scheduler_param(time_end            , 5).
 scheduler_param(domain_similarity   , 0.70).
 scheduler_param(minimize_overlapping, false).
 scheduler_param(mo_allow_permutation, false).
@@ -45,6 +46,7 @@ scheduler_param(mo_max_group_members, 10).
 scheduler_param(mo_once             , true).
 scheduler_param(labeling_options    , [ffc,bisect]). %random_value(376)).
 scheduler_param(algorithm_timeout   , 3600).
+scheduler_param(delta_solutions		, 10).
 scheduler_param(pred_temperature    , 'predictor_temperature.out'). % SRM: NEEDED
 scheduler_param(pred_radiation      , 'predictor_radiation.out'). % SRM: NEEDED
 scheduler_param(orbit_propagator    , 'orbit_propagator.out'). % SRM: NEEDED
@@ -60,9 +62,9 @@ resource_options(storage     ,[cumulative(true)]).
 %%  resource_capacity(+Rname, -Capacity)
 %
 
-resource_capacity(storage     ,[   4-2, 	% Definir hasta el time_end menos 1 los recursos reales
-								  80-5]). 	% A continuación definimos hasta el time_end + max_duración + 1 de las tareas los recursos "infinitos"
-resource_capacity(simultaneity,[     1-5]). % 10 tasks
+resource_capacity(storage     ,[   4-4, 	% Definir hasta el time_end menos 1 los recursos reales
+								  80-7]). 	% A continuación definimos hasta el time_end + max_duración + 1 de las tareas los recursos "infinitos"
+resource_capacity(simultaneity,[     2-7]). % 10 tasks
                                 
                                 
                                 
