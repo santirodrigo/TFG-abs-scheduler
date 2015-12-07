@@ -8,7 +8,7 @@ APPLICATION = sched
 
 # Source files (including the main C file)
 SOURCES = sched.c \
-          sched_local.c \
+          sched_distributed_local.c \
           sched_mat.c \
           ordered_set.c 
           
@@ -16,7 +16,7 @@ SOURCES = sched.c \
 VPATH = 
 
 # Extra Compiler and Linker Flags:
-EXTRACFLAGS = -D_GNU_SOURCE -DSYSCORE_VERBOSE -DSYSCORE_DEBUG
+EXTRACFLAGS = -D_GNU_SOURCE -DSYSCORE_VERBOSE -DSYSCORE_DEBUG # -DDEBUGBASIC -DDEBUG -DDEBUG_DIST_LOC
 EXTRALDFLAGS = -lm
 
 # Default configuration:

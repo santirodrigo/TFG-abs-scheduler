@@ -35,7 +35,7 @@ and their capacities.
 %
 %   
 
-scheduler_param(satellite_id		, 1).
+scheduler_param(satellite_id		, 3).
 scheduler_param(mission_start       , -1000).
 scheduler_param(time_start          , 0).
 scheduler_param(time_end            , 5).
@@ -62,9 +62,10 @@ resource_options(storage     ,[cumulative(true)]).
 %%  resource_capacity(+Rname, -Capacity)
 %
 
-resource_capacity(storage     ,[   4-4, 	% Definir hasta el time_end menos 1 los recursos reales
+resource_capacity(storage     ,[   2-4, 	% Definir hasta el time_end menos 1 los recursos reales
 								  80-7]). 	% A continuación definimos hasta el time_end + max_duración + 1 de las tareas los recursos "infinitos"
-resource_capacity(simultaneity,[     2-7]). % 10 tasks
+resource_capacity(simultaneity,[     5-4,
+								  10-7]). % ntasks
                                 
                                 
                                 

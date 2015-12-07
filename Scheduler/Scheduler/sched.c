@@ -40,7 +40,7 @@ int total_occurrences(Satellite *sats, int *combination) {
 			}
 		if (sum[i] == 1)
 			continue; // Substitute by if (sum[i] > 1) n += sum[i];
-		n += sum[i];
+		n += sum[i]; // Mmmmm... Estoy sumando la vez que la hago bien y las repeticiones...
 	}
 	// tic = (ntasks - nzeros) * 10 / ntasks; // DEPRECATED: Delete?
 	free(sum);
@@ -157,15 +157,34 @@ int solve(Satellite *sats, int *combination, int *solution) {
 		if (!first) {
 			finished = 0;
 			for (n = 0; n < nsats && !finished; n++) {
+				// Para la combinación actual introducimos en el conjunto s
+				// aquellas combinaciones que son sucesoras directas de la com-
+				// binación actual. Sin embargo, como una combinación cualquiera
+				// puede tener más de un predecesor, sólo estudiamos un subcon-
+				// junto de las sucesoras de cada combinación, de manera que no
+				// estudiemos una misma combinación más de una vez. El subcon-
+				// junto de las sucesoras que sí estudiamos de una combinación c
+				// cualquiera viene dado por todas las sucesoras directas de c
+				// tales que si c es de la forma (1,...,1,i,j,...,n) sólo modi-
+				// ficamos aquellas posiciones de c que son igual a 1 ADEMÁS de
+				// la que es igual a i (i.e., la inmediatamente posterior a la
+				// última posición de la ráfaga de 1s que encontramos al co-
+				// mienzo de c. Observación: Si c no empieza por uno, sólo
+				// modificamos la primera posición.
 				if (combination[n] != 1) finished = 1;
 				if (combination[n] != 0) {
 					if (combination[n] == sats[n].golden_index)
 						combination[n] = 0;
 					else combination[n]++;
-				} else continue;
+				} else continue; // Si combination[n] es 0, no hay sucesor.
 				r = total_reward(sats, combination);
 				int m = 0;
 				int opt_comb[nsats];
+				// La combinación óptima (opt_comb) es aquella sucesora de la 
+				// combinación actual (combination) con mayor número de 0s ->
+				// representa con total seguridad el menor número de repeticio-
+				// nes que puede alcanzar el subconjunto de las sucesoras de la
+				// combinación actual, incluida ella misma.
 				int fin = 0;
 				while (m < nsats) {
 					if (fin) opt_comb[m] = combination[m]; 
@@ -185,26 +204,28 @@ int solve(Satellite *sats, int *combination, int *solution) {
 			second = 1;
 		}
 		max_node = get_and_delete_max(&s);
-		combination = max_node->id;
-		r = max_node->F;
-		if (r <= max)
-			break;
+		if (max_node != NULL) { // Es posible que s estuviera vacío: saltamos.
+			combination = max_node->id;
+			r = max_node->F;
+			if (r <= max)
+				break;
 
-		n = total_occurrences(sats, combination);
-		num = r * (1. - (float)n / (float)(nsats*ntasks));
-		if (num > max) {
-			max = num;
-			max_rep = n;
+			n = total_occurrences(sats, combination);
+			num = r * (1. - (float)n / (float)(nsats*ntasks));
+			if (num > max) {
+				max = num;
+				max_rep = n;
+				#ifdef DEBUGBASIC
+				printf("New max = %f; F = %f; n = %d\n", max, r, n);
+				#endif
+				copy_solution(combination, solution);
+			}
+			count++;
 			#ifdef DEBUGBASIC
-			printf("New max = %f; F = %f; n = %d\n", max, r, n);
+			if (!(count & 0xFFF))
+				printf("Count = %d; F = %f; set_size = %d\n", count, r, size(&s));
 			#endif
-			copy_solution(combination, solution);
 		}
-		count++;
-		#ifdef DEBUGBASIC
-		if (!(count & 0xFFF))
-			printf("Count = %d; F = %f; set_size = %d\n", count, r, size(&s));
-		#endif
 	}
 	#ifdef DEBUGBASIC
 	printf("Count = %d\n", count);
@@ -331,12 +352,12 @@ int main(int argc, char *argcv[]) {
 	srand(start_time_u); // The seed of the random number
 
 // SRM: Uncomment only if using brute solve ////////////////////////////////////
-/*  error = generate_array(nsats, &combination_b);*/
-/*  if (error == -1)*/
-/*    return error;*/
-/*  error = generate_array(nsats, &solution_b);*/
-/*  if (error == -1)*/
-/*    return error;*/
+  error = generate_array(nsats, &combination_b);
+  if (error == -1)
+    return error;
+  error = generate_array(nsats, &solution_b);
+  if (error == -1)
+    return error;
 ////////////////////////////////////////////////////////////////////////////////
 
 	error = generate_array(nsats, &combination);
@@ -354,19 +375,19 @@ int main(int argc, char *argcv[]) {
 		return 1;
 
 // SRM: Solve in the brute way... //////////////////////////////////////////////
-/*  start_time_u = time.tv_usec;*/
-/*  start_time_s = time.tv_sec;*/
-/*  solve_brute(sats, combination_b, solution_b);*/
-/*  if (gettimeofday(&time, &tz))*/
-/*    return 1;*/
-/*  final_time_u = time.tv_usec;*/
-/*  final_time_s = time.tv_sec;*/
-/*  bf_time =*/
-/*      (final_time_s - start_time_s) * 1000000 + final_time_u - start_time_u;*/
-/*  printf(" | %.0f\t| %f\t", bf_time, max_brute);*/
-/*  print_array("Solution (brute)", solution_b, nsats);*/
-/*  free(solution_b);*/
-/*  free(combination_b);*/
+  start_time_u = time.tv_usec;
+  start_time_s = time.tv_sec;
+  solve_brute(sats, combination_b, solution_b);
+  if (gettimeofday(&time, &tz))
+    return 1;
+  final_time_u = time.tv_usec;
+  final_time_s = time.tv_sec;
+  bf_time =
+      (final_time_s - start_time_s) * 1000000 + final_time_u - start_time_u;
+  printf(" | %.0f\t| %f\t", bf_time, max_brute);
+  print_array("Solution (brute)", solution_b, nsats);
+  free(solution_b);
+  free(combination_b);
 ////////////////////////////////////////////////////////////////////////////////
 
 // SRM: Solve efficiently... //////////////////////////////////////////////////
