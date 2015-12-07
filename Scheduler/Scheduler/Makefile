@@ -4,7 +4,7 @@
 
 # Application that you want to compile and link. Must have the same name as C file containing 
 # the 'main()' function.
-APPLICATION = sched
+APPLICATION = sched.exe
 
 # Source files (including the main C file)
 SOURCES = sched.c \

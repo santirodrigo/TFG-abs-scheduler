@@ -54,7 +54,7 @@ else
 				for m in `seq 1 $numrep`;
 				do
 					echo -n -e "\rSolving ${k} ${j} ${i} (${m})..."
-					./sched $k $j $i >> "results_${mintasks}-${maxtasks}_${mingolden}-${maxgolden}_${minsats}-${maxsats}_${numrep}/sched.txt";
+					./sched.exe $k $j $i >> "results_${mintasks}-${maxtasks}_${mingolden}-${maxgolden}_${minsats}-${maxsats}_${numrep}/sched.txt";
 				done
 			done
 		done
