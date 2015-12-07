@@ -41,8 +41,8 @@ else
 		echo "Usage: ./test.sh [-c] mintasks maxtasks mingolden maxgolden minsats maxsats numrep"
 	fi
 
-	rm -fr "results_${mintasks}-${maxtasks}_${mingolden}-${maxgolden}_${minsats}-${maxsats}_${numrep}" 
-	mkdir "results_${mintasks}-${maxtasks}_${mingolden}-${maxgolden}_${minsats}-${maxsats}_${numrep}"
+	rm -fr "out/results_${mintasks}-${maxtasks}_${mingolden}-${maxgolden}_${minsats}-${maxsats}_${numrep}" 
+	mkdir "out/results_${mintasks}-${maxtasks}_${mingolden}-${maxgolden}_${minsats}-${maxsats}_${numrep}"
 	echo "Executing tests..."
 	echo "=================="
 	for i in `seq $minsats $maxsats`;
@@ -54,7 +54,7 @@ else
 				for m in `seq 1 $numrep`;
 				do
 					echo -n -e "\rSolving ${k} ${j} ${i} (${m})..."
-					./sched.exe $k $j $i >> "results_${mintasks}-${maxtasks}_${mingolden}-${maxgolden}_${minsats}-${maxsats}_${numrep}/sched.txt";
+					./sched.exe $k $j $i >> "out/results_${mintasks}-${maxtasks}_${mingolden}-${maxgolden}_${minsats}-${maxsats}_${numrep}/sched.txt";
 				done
 			done
 		done
