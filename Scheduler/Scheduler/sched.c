@@ -136,7 +136,8 @@ int solve(Satellite *sats, int *combination, int *solution) {
 	error = generate_array(nsats, &dups);
 	if (error == -1)
 		return error;
-		
+	
+	golden_index_max = 0; //reiniciamos el valor por si no es el de entrada
 	get_golden_index_max(sats);
 	for (k = 0; k < nsats; k++) {
 		combination[k] = 1; // We start from the combination 1 1 .. 1
@@ -244,6 +245,7 @@ int solve_brute(Satellite *sats, int *combination, int *solution) {
 	error = generate_array(nsats, &dups);
 	if (error == -1)
 		return error;
+	golden_index_max = 0; //reiniciamos el valor por si no es el de entrada
 	get_golden_index_max(sats);
 	for (k = 0; k < nsats; k++) {
 		combination[k] = 1; // We start from the combination 1 1 .. 1
@@ -308,9 +310,7 @@ int init_satellites(Satellite **sats) {
 		
 	allocate_satellites(*sats);
 	for (k = 0; k < nsats; k++) {
-		/// SRM ///
 		generate_solutions(&(*sats)[k]);
-		/// SRM ///
 	}
 	return 0;
 }
@@ -366,9 +366,7 @@ int main(int argc, char *argcv[]) {
 	error = generate_array(nsats, &solution);
 	if (error == -1)
 		return error;
-	/// SRM ///
 	error = init_satellites(&sats);
-	/// SRM ///
 	if (error == -1)
 		return error;
 	if (gettimeofday(&time, &tz))

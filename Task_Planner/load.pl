@@ -117,10 +117,7 @@ write_answer_fraction([Task|Ts],Stream) :-
 	(Start >= TEnd -> true ; write(Stream,Id),write(Stream,':')),
 	write_answer_fraction(Ts,Stream).
 
-send_answer_to_global([],GlobalFile) :-
-	open(GlobalFile,append,Stream,[]),
-    write(Stream,'EOF'),
-    close(Stream).
+send_answer_to_global([],GlobalFile).
 send_answer_to_global([F-Outcome|Outcomes],GlobalFile) :-
 	open(GlobalFile,append,Stream,[]),
 	write(Stream,'F:'),write(Stream,F),write(Stream,':'),
