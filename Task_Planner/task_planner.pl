@@ -264,22 +264,25 @@ iterate_([T|Ts],Prev,Ss,Os,NumPosT,FList0,FList,TaskComb0,TaskComb) :-
     ;   iterate_(Ts,Step,Ss1,Os,NumPosT,[F|FList0],FList,[Step|TaskComb0],TaskComb)).
 
 %-------------------------------------------------------------------------------
-% SRM: Preview version of calculate_F function for each solution:
+% SRM: Preview version of calculate_Cij function for each solution:
 
-calculate_F(Ts,Rnames,T1,T1,F,F0) :-
+calculate_Cij(Ts,Rnames,T1,T1,F,F0) :-
     calc_consumptions_at(Ts,Rnames,T1,CapCons),
-    ponderate_and_sum(CapCons,F,F0),!.
-calculate_F(Ts,Rnames,T0,T1,F,F0) :-
+    ponderate_and_sum(CapCons,Fsum,0),
+    length(Rnames,R_i),
+    F is Fsum/R_i,!.
+calculate_Cij(Ts,Rnames,T0,T1,F,F0) :-
     T2 is T0+1,
-    calculate_F(Ts,Rnames,T2,T1,F1,F0),
+    calculate_Cij(Ts,Rnames,T2,T1,F1,F0),
     calc_consumptions_at(Ts,Rnames,T0,CapCons),
-    ponderate_and_sum(CapCons,F,F1).
+    ponderate_and_sum(CapCons,Fsum,0),
+    length(Rnames,R_i),
+    F_i is Fsum/R_i,
+    (F_i < F1 -> F is F_i ; F is F1). % Ojo, no es el max, sino min
     
 ponderate_and_sum([Cap|[Cons|Cs]],F,F0) :-
 	ponderate_and_sum(Cs,F1,F0),
-	F_i is (1-(Cons/Cap)),
-	(F_i < F1 -> F is F_i ; F is F1).%Valor de pico de los recursos consumidos
-	% F is F1+(1-(Cons/Cap)). %Valor medio de los recursos consumidos
+	F is F1+(1-(Cons/Cap)). %Valor medio de los recursos consumidos
 ponderate_and_sum([],F0,F0).
 
 calculate_done_tasks([],0).
@@ -343,7 +346,7 @@ schedule(Original,Tasks,NumPosT,F) :-
     ->  findall(R,resource_options(R,_),Rnames),
         flag(dbg_time,Now,Now),
         % SRM: F calculation ---------------------------------------------------
-        calculate_F(Subtasks,Rnames,T0,T1,F0,1), % Ahora F0 y no Ftot
+        calculate_Cij(Subtasks,Rnames,T0,T1,F0,1), % Ahora F0 y no Ftot
 			% SRM: Estas líneas serían para hacer la media, pero ahora queremos 
 			%      valor de pico
 			%        length(Rnames,Rnum),
@@ -537,7 +540,11 @@ resource_limit(T0,T,Subtasks,Bss,Rn) :-
 
 resource_capacity_at(Rn,T,Cap) :-
     resource_capacity(Rn,Caps),
-    seek_time(T,Caps,Cap).
+    (seek_time(T,Caps,Cap)
+    ->
+    	true
+    ;
+    	false).% resource_capacity_xtra_time(Rn,Cap)).
 
 
 /* TODO - Optimize search - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
