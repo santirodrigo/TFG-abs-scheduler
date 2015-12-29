@@ -35,7 +35,8 @@ else
 		echo "Usage: ./test_L-G.sh [-c] tasks maxgolden sats"
 	fi
 
-	outdir="out_L-G/results_${tasks}_${maxgolden}_${sats}" 
+	DATE=`date +%Y%m%dT%H%M%S`
+	outdir="out_L-G/results_${DATE}:${tasks}_${maxgolden}_${sats}" 
 	rm -fr ${outdir}
 	mkdir ${outdir}
 	echo "Executing test..."
@@ -49,7 +50,7 @@ else
 		echo "[task_planner_globals_${i}]." >> "${outdir}/swipl_execution.in"
 		echo "drun." >> "${outdir}/swipl_execution.in"
 	done
-	cd Task_Planner/ && swipl < ../${outdir}/swipl_execution > "${outdir}/swipl_execution.out"
+	cd Task_Planner/ && swipl < "../${outdir}/swipl_execution.in" > "${outdir}/swipl_execution.out"
 	Scheduler/Scheduler/sched.exe $tasks $maxgolden $sats > "${outdir}/sched.txt"
 	echo " "
 	echo "Tests completed!!"
