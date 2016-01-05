@@ -41,17 +41,21 @@ else
 	mkdir ${outdir}
 	echo "Executing test..."
 	echo "=================="
-	echo "[task_planner_globals_1]." > "${outdir}/swipl_execution.in"
+	echo "[task_planner_globals]." > "${outdir}/swipl_execution.in"
 	echo "[task_database]." >> "${outdir}/swipl_execution.in"
 	echo "[load]." >> "${outdir}/swipl_execution.in"
 	echo "drun." >> "${outdir}/swipl_execution.in"
-	for i in `seq 2 $sats`;
+	cd Task_Planner/
+	for i in `seq 1 $sats`;
 	do
-		echo "[task_planner_globals_${i}]." >> "${outdir}/swipl_execution.in"
-		echo "drun." >> "${outdir}/swipl_execution.in"
+		cp task_planner_globals_${i}.pl task_planner_globals.pl
+		swipl < "../${outdir}/swipl_execution.in"
+		lastpath=`cat out/last_path.out`
+		`cp -r out/${i} ../${outdir}`
+		`cp out/${lastpath}* ../${outdir}/${i}`
 	done
-	cd Task_Planner/ && swipl < "../${outdir}/swipl_execution.in" > "${outdir}/swipl_execution.out"
-	Scheduler/Scheduler/sched.exe $tasks $maxgolden $sats > "${outdir}/sched.txt"
+	cd ../Scheduler/Scheduler/
+	`./sched.exe ${tasks} ${maxgolden} ${sats} > "../../${outdir}/sched.txt"`
 	echo " "
 	echo "Tests completed!!"
 fi
