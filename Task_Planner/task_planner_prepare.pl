@@ -243,8 +243,8 @@ build_tasks_([ID|IDs],[Task|Tasks]) :- % SRM: [Tasks is an outgoing parameter]
         S in Dom,						% SRM: Without instantiating S, adds the information of S being in constrained Domain
         E in Dom,
         %task_timing(ID,_,duration(D1,H1,M1,_),_,_,_), % TODO TODO TODO TODO TODO TODO TODO TODO TODO Fix and allow to use previous predicate % SRM: Esto ya está en la memoria...
-        write('******* Calling task_timing/6:'),writeln(ID), %SRM: debug
-        task_timing(ID,_,duration(D),_,_,_),
+        write('******* Calling task_timing/7:'),writeln(ID), %SRM: debug
+        task_timing(ID,_,duration(D),_,_,_,_),
         write('******* Calling task_dynamic_resources/6:'),writeln(ID), %SRM: debug
         task_dynamic_resources(ID,resources(Rs)),
         task_priority(ID,Prio),
@@ -284,7 +284,7 @@ prepare_task_dynres_(R,Dy,L) :-
 %
 %   Domain is the CLP(FD) domain where task TaskID meets all constraining requirements. These 
 %   requirements are defined by task's timing, temperature, radiation and position and are declared 
-%   in task_timing/6, task_static_constraints/2 and task_positioning/3. The domain is bounded by
+%   in task_timing/7, task_static_constraints/2 and task_positioning/3. The domain is bounded by
 %   Time0 and Time1.
 
 constrain_all(Dom,Task,Time0,Time1) :-
@@ -302,7 +302,7 @@ constrain_all(Dom,Task,Time0,Time1) :-
     Y in DomTemp,
     Y in DomRad,
     fd_dom(Y,DomNorm),
-    task_timing(Task,_,duration(Duration),_,_,_),
+    task_timing(Task,_,duration(Duration),_,_,_,_),
     TimeXtra is Time1 + Duration + 1,
     writeln(TimeXtra),
     T in Time1..TimeXtra, fd_dom(T,XDom),
@@ -314,7 +314,10 @@ constrain_all(Dom,Task,Time0,Time1) :-
     (define(debug,yes)
     ->  flag(dbg_time,Now,Now),
         define(dbg_dir,Dir),
-        format_time(string(StrTime),"%Y%m%d_%H%M%S/",Now),
+        format_time(string(StrT),"%Y%m%d_%H%M%S",Now),
+        scheduler_param(satellite_id,SatID),
+    	format(string(StrSatID),"~d/",[SatID]),
+    	string_concat(StrT,StrSatID,StrTime),
         string_concat(Dir,StrTime,Tmp),
         string_concat(Tmp,'domains.out',Path),
         open(Path,append,Stream,[]),
@@ -333,7 +336,10 @@ write_csv_domain(X,ID,T0,T1) :-
     current_output(CO),
     flag(dbg_time,Now,Now),
     define(dbg_dir, Dbgdir),
-    format_time(string(StrTime),"%Y%m%d_%H%M%S/",Now),
+    format_time(string(StrT),"%Y%m%d_%H%M%S",Now),
+    scheduler_param(satellite_id,SatID),
+	format(string(StrSatID),"~d/",[SatID]),
+	string_concat(StrT,StrSatID,StrTime),
     atomic_list_concat([Dbgdir,StrTime,'domain_',ID,'.csv'],Path),
     open(Path,append,Stream,[]),
     set_output(Stream),
@@ -355,7 +361,7 @@ write_csv_domain_(X,P,T0,T2) :-
 %%  constrain_time(-Domain, +TaskID, +Time0, +Time1)
 %
 %   Domain is the CLP(FD) domain where task TaskID meets timing requirements. These 
-%   requirements are defined in task_timing/6. The domain is bounded by Time0 and Time1. Mission 
+%   requirements are defined in task_timing/7. The domain is bounded by Time0 and Time1. Mission 
 %   start time *must* be defined prior to calling this predicate (see mission_start/1 in 
 %   task_planner_globals.pl)
 %   
@@ -369,46 +375,56 @@ constrain_time(Dom,Task,Time,Th) :-
     Time > MStime,
     
     %task_timing(Task,period(D0,H0,M0,_),duration(D1,H1,M1,_),init_delay(D2,H2,M2,_),Iterations,Drift), % TODO TODO TODO TODO TODO TODO TODO TODO TODO Fix and allow to use previous predicate
-    task_timing(Task,period(Period),duration(Duration),init_delay(Delay),Iterations,Drift),
-    
-    task_iteration(Task,I_curr),
-    task_last_start(Task,LS),!,
-    
-    (   Iterations = infinity 
-    ->  (   I_curr > 0
-        ->  I_left #= (Th-(LS+Period))/Period       % If it has been run: I_left is all the iterations fitting within its next start time and the horizon.
-        ;   I_left #= (Th-(MStime+Delay))/Period    % If it has never been run: I_left is all the iterations since the theoretical start, until the time horizon.
-        ) 
-    ;   I_left #= Iterations-I_curr),               % If it has to run a finite number of times: I_left is the amount of iterations left to do.
-    
-    (   Time < MStime+Delay
-        % Td: "time delay"
-    ->  Td #= MStime+Delay          % If task does not have to start at Time, but later: Td is set to the time at which it should start.
-    ;   (   I_curr = 0              
-        ->  Td #= MStime+Delay      % If task has not started: Td is also the time at which it should start.
-        ;   Td #= LS+Period)),      % If the task has alreay started: Td is the next start time.
-    
-    /* 
-    The domain is found following the algorithm below:
-    - EST = Earliest Start Time = Initial_delay - Drift.
-    - LET = Latest Start Time = End_time + Drift = Initial_delay + Duration + Drift.
-    - Drift is calculated as a fraction of the Period.
-    - T_0 is: all time values inside one time slot.
-    - T_i is: all time values inside all time slots.
-      Finding all possible T_i the actual domain can be created as a union of points.  
-    */
-    EST is round(-Period*Drift)+Td, 
-    LET is round(Duration+Period*Drift)+Td, 
-    T_0 in EST..LET,!,
-    
-    findall(T_i,(
-        T_i #= T_0 + K*Period,
-        K in 0..I_left,
-        T_i in Time..Th,
-        label([T_i,K,T_0]) 
-    ),T_is),
-    
-    union_points(T_is,Dom).
+	task_timing(Task, _, _, init_delay(Delay), _, _, deadline(Deadline)),
+    T in Time..Th,
+    T #> Delay,
+    T #=< Deadline,
+    fd_dom(T, Dom).
+%    
+%    task_iteration(Task,I_curr),
+%    task_last_start(Task,LS),!,
+%    
+%    (   Iterations = infinity 
+%    ->  (   I_curr > 0
+%        ->  I_left #= (Th-(LS+Period))/Period       % If it has been run: I_left is all the iterations fitting within its next start time and the horizon.
+%        ;   I_left #= (Th-(MStime+Delay))/Period    % If it has never been run: I_left is all the iterations since the theoretical start, until the time horizon.
+%        ) 
+%    ;   I_left #= Iterations-I_curr),               % If it has to run a finite number of times: I_left is the amount of iterations left to do.
+%    
+%    (   Time < MStime+Delay
+%        % Td: "time delay"
+%    ->  Td #= MStime+Delay          % If task does not have to start at Time, but later: Td is set to the time at which it should start.
+%    ;   (   I_curr = 0              
+%        ->  Td #= MStime+Delay      % If task has not started: Td is also the time at which it should start.
+%        ;   Td #= LS+Period)),      % If the task has alreay started: Td is the next start time.
+%    
+%    /* 
+%    The domain is found following the algorithm below:
+%    - EST = Earliest Start Time = Initial_delay - Drift.
+%    - LET = Latest Start Time = End_time + Drift = Initial_delay + Duration + Drift. % SRM: ???
+%    - Drift is calculated as a fraction of the Period.
+%    - T_0 is: all time values inside one time slot.
+%    - T_i is: all time values inside all time slots.
+%      Finding all possible T_i the actual domain can be created as a union of points.  
+%    */
+%    EST is round(-Period*Drift)+Td, 
+
+%%===============================================================================    
+%    % SRM: Con deadline habría que hacer:
+%    % LET is min(round(Duration+Period*Drift)+Td, Deadline), CREO...
+%%===============================================================================    
+%    LET is round(Duration+Period*Drift)+Td, 
+%    
+%    T_0 in EST..LET,!,  
+%    
+%    findall(T_i,(
+%        T_i #= T_0 + K*Period,
+%        K in 0..I_left,
+%        T_i in Time..Th,
+%        label([T_i,K,T_0]) 
+%    ),T_is),
+%    
+%    union_points(T_is,Dom).
 
 union_points(Ts,Dom) :-
     X #= -1,

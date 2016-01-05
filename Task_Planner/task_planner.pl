@@ -110,50 +110,31 @@ planner(Tasks,Outcomes) :- % planner/2
 %---Obtener el tiempo necesario para aumentar el dominio------------------------
     obtain_max_xtra_time(Tasks,XtraTime),
     asserta(time_xtra(XtraTime)),
-    
+
+	check_resources(TasksOrd,[],TasksPos), % Calculation of A'ij
+	length(TasksPos, NumPosTasks), % Calculation of |A'ij|
+ 
 %-------------------------------------------------------------------------------
 %---Recorrer todas las tareas una por una para detectar cuáles son factibles----
     write('Starting the iterator:'),nl,
-    (iterate0(TasksOrd,[],Ts,[],[R|_],[],F0List)     % Finds a list of "schedulable alone" tasks ([T|Ts]) and the F List of the scheludable alone tasks
-    ->  length(Ts,NumPosTasks),					  % Now we know how much tasks are schedulable alone. This is for correctly calculating the F value.
-    	PondValue is (1 / NumPosTasks),				  
-    	multiply_list(F0List,PondValue,FList0)                         %   their solutions [R|Rs], but we don't care about Rs. % SRM: should we care about it?
-    ;   Outcome = [],
-    	NumPosTasks is 0),                   % If there is no task schedulable alone, there is no solution.
-	write('Number of tasks that can be done individually: '),writeln(NumPosTasks),
-	!,
-	scheduler_param(algorithm_timeout, Timeout),
-	scheduler_param(delta_solutions,N),
-    (Timeout > 0
-    ->  catch(call_with_time_limit(Timeout,findnsols(N,F-Outcome,schedule(Ts,Outcome,NumPosTasks,F),Outcomes)),_,schedule(Ts,Outcome,NumPosTasks,F))
-    ;   findnsols(N,F-Outcome,schedule(Ts,Outcome,NumPosTasks,F),Outcomes)),
+    (iterate0(TasksPos,[],Ts,[],[R|_],[],F0List)     % Finds a list of "schedulable alone" tasks ([T|Ts]) and the F List of the scheludable alone tasks
+    ->  true
+    ;   Outcome = []),                   % If there is no task schedulable alone, there is no solution.
+	(Ts = [] ->
+		Outcomes = []
+	;
+		write('Number of tasks that can be done individually: '),writeln(NumPosTasks),
+		!,
+		scheduler_param(algorithm_timeout, Timeout),
+		scheduler_param(delta_solutions,N),
+		(Timeout > 0
+		->  catch(call_with_time_limit(Timeout,findnsols(N,F-Outcome,schedule(Ts,Outcome,NumPosTasks,F),Outcomes)),_,Outcomes = [])
+		;   findnsols(N,F-Outcome,schedule(Ts,Outcome,NumPosTasks,F),Outcomes))),
 %	retractall(cache(_)),
 %	schedules(2,TasksOrd,Outcome,0,F),
 %   cache(Outcomes),
     length(Outcomes,L),
     write('Length Outcomes: '),	writeln(L). % DEBUG SRM
-    
-    
-    
-%-------------------------------------------------------------------------------
-%	iterate(TasksOrd,Outcome,TaskComb,FList),display_list_task_lists(TaskComb,FList),!.
-%-------------------------------------------------------------------------------
-
-/* POSIBILIDADES PARA LA BÚSQUEDA DE MÚLTIPLES SOLUCIONES:
-   =============================================================
-
-	Llamar múltiples veces a schedule(Tasklist, Outcome) de manera que obtengamos N >> Delta soluciones parciales y de ahí seleccionemos sólo las Delta soluciones mejores. Puede hacerse directamente en el Prolog o desde fuera (obviamente es mejor la primera solución).
-	
-	Esto se debería implementar de manera que ~ las N veces que llamemos a schedule:
-		1) Exista solución.
-		2) La mejora sea incremental o similar (backtracking)
-	
-	1) se puede garantizar parcialmente probando primero de hacer schedule con una función muy silimar a iterate: cortar de la combinatoria de tareas aquellas combinaciones que contengan un subconjunto de tareas insoluble por sí solo.
-	2) se debe estudiar la función F de calificación de las soluciones, para ver cómo se comporta a medida que quitamos o añadimos soluciones de tareas
-	
-	Como esto es a priori un problema en sí mismo (hacer un "recorrido" en F para probar de manera óptima las N soluciones y obtener las supuestas Delta mejores), se puede comenzar haciendo scheduler con el Iterator original y modificando prioridades a cada vez...
-	
-******************************************************************/
 
 %% order_by_priority(+Tasks:list, -Sorted:list)
 %
@@ -189,6 +170,23 @@ multiply_list([ElemL|L],C,[ElemR|R]) :-
 	ElemR is ElemL * C,
 	multiply_list(L,C,R).
 	
+compare_resources([],Rnames).
+compare_resources([R|Rs],Rnames) :-
+	R =.. [Functor,_],
+	memberchk(Functor,Rnames),
+	compare_resources(Rs,Rnames).
+	
+	
+check_resources([], PosTasks, PosTasks).
+check_resources([T|Ts], PosTasks, PosTasksNext) :-
+	findall(R,resource_options(R,_),Rnames),
+	T = task(_,_,_,Rs,_,_),
+	(compare_resources(Rs,Rnames) ->
+		PosTasksNew = [T|PosTasks],
+		check_resources(Ts, PosTasksNew, PosTasksNext)
+	;
+		check_resources(Ts,	PosTasks, PosTasksNext)).	
+	
 % Display a list of task lists TL
 
 display_list_task_lists([],[]).
@@ -201,6 +199,7 @@ display_list([]) :-
 display_list([Elem|List]) :-
 	write(Elem),write(';'),
 	display_list(List).
+	
 % SRM --------------------------------------------------------------------------
 
 %%  iterate(+Tasks, +Params, -Outcome) is semidet
@@ -209,21 +208,6 @@ display_list([Elem|List]) :-
 %   and parameters needed in the predicate schedule/2. Outcome is the list of tasks that are 
 %   scheduled. All tasks in Outcome, have succeded schedule/2 and their priority order is kept. 
 %   Complexity _|O(x)|_ of this predicate is  _|O(|Tasks|) <= O(x) <= O(2*|Tasks|-1)|_
-
-/*iterate(Tasks,Params,Scheduleds) :-
-    include(schedule(Params),Tasks,[T|Ts]),!, % Finds a list of "schedulable alone" tasks
-    iterate_(Ts,Params,[T],Scheduleds). % Iterates starting by T.
-    
-iterate_([],_,Ss,Ss).
-iterate_([T|Ts],P,Ss,Os) :-
-    append(Ss,[T],Ss1),!,
-    schedule(P,Ss1),!,
-    iterate_(Ts,P,Ss1,Os).
-iterate_([T|Ts],P,Ss,Os) :-
-    append(Ss,[T],Ss1),
-    write('Can\'t schedule '),write(Ss1),nl,
-    iterate_(Ts,P,Ss,Os).
-   */ 
     
 iterate(Tasks,Scheduleds,TaskComb,FList) :-
     write('Starting the iterator:'),nl,
@@ -244,7 +228,8 @@ iterate0([T|Ts],FS0,FS1,R0,R1,FList0,FList) :-
     (Timeout > 0
     ->  catch(call_with_time_limit(Timeout,schedule([T],R,0,F)),_,R=[]) % SRM: We take care of the algorithm timeout
     ;   schedule([T],R,0,F)),	% SRM: Schedule of the task list's head
-    write('F value for this schedule would be: '),writeln(F),
+    F = [Cij,Gij,Uij,Eij,Dij],
+    write('F value for this schedule would be: '),write(Cij),write(', '),write(Gij),write(', '),write(Uij),write(', '),write(Eij),write(', '),writeln(Dij),
     (R = [] 
     ->  iterate0(Ts,FS0,FS1,R0,R1,FList0,FList) % SRM: If there is no solution, call recursively without adding T to the list of solved tasks and solutions
     ;   iterate0(Ts,[T|FS0],FS1,[R|R0],R1,[F|FList0],FList)). % SRM: Else, call recursively adding T and its solution
@@ -264,35 +249,66 @@ iterate_([T|Ts],Prev,Ss,Os,NumPosT,FList0,FList,TaskComb0,TaskComb) :-
     ;   iterate_(Ts,Step,Ss1,Os,NumPosT,[F|FList0],FList,[Step|TaskComb0],TaskComb)).
 
 %-------------------------------------------------------------------------------
-% SRM: Preview version of calculate_Cij function for each solution:
+% SRM: Final version of calculate_Cij function for each solution:
 
-calculate_Cij(Ts,Rnames,T1,T1,F,F0) :-
+calculate_Cij(Ts,Rnames,T1,T1,Cij,Cij0) :-
     calc_consumptions_at(Ts,Rnames,T1,CapCons),
-    ponderate_and_sum(CapCons,Fsum,0),
+    ponderate_and_sum(CapCons,Cijsum,0),
     length(Rnames,R_i),
-    F is Fsum/R_i,!.
-calculate_Cij(Ts,Rnames,T0,T1,F,F0) :-
+    Cij is Cijsum/R_i,!.
+calculate_Cij(Ts,Rnames,T0,T1,Cij,Cij0) :-
     T2 is T0+1,
-    calculate_Cij(Ts,Rnames,T2,T1,F1,F0),
+    calculate_Cij(Ts,Rnames,T2,T1,Cij1,Cij0),
     calc_consumptions_at(Ts,Rnames,T0,CapCons),
-    ponderate_and_sum(CapCons,Fsum,0),
+    ponderate_and_sum(CapCons,Cijsum,0),
     length(Rnames,R_i),
-    F_i is Fsum/R_i,
-    (F_i < F1 -> F is F_i ; F is F1). % Ojo, no es el max, sino min
+    Cij_i is Cijsum/R_i,
+    (Cij_i < Cij1 -> Cij is Cij_i ; Cij is Cij1). % Ojo, no es el max, sino min
     
-ponderate_and_sum([Cap|[Cons|Cs]],F,F0) :-
-	ponderate_and_sum(Cs,F1,F0),
-	F is F1+(1-(Cons/Cap)). %Valor medio de los recursos consumidos
-ponderate_and_sum([],F0,F0).
+ponderate_and_sum([Cap|[Cons|Cs]],Cij,Cij0) :-
+	ponderate_and_sum(Cs,Cij1,Cij0),
+	Cij is Cij1+(1-(Cons/Cap)). %Valor medio de los recursos consumidos
+ponderate_and_sum([],Cij0,Cij0).
 
-calculate_done_tasks([],0).
-calculate_done_tasks([Task|Ts],TasksDone) :-
-	calculate_done_tasks(Ts,TasksDone0),
+done_tasks([],[]).
+done_tasks([Task|Ts],TasksDone) :-
+	done_tasks(Ts,TasksDone0),
 	Task = task(Start,_,_,_,_,_),
 	write('Start time: '),writeln(Start),
 	scheduler_param(time_end,TEnd),
 	write('End time: '),writeln(TEnd),
-	(Start >= TEnd -> TasksDone is TasksDone0 ; TasksDone is TasksDone0 + 1).
+	(Start >= TEnd -> TasksDone = TasksDone0 ; TasksDone = [Task|TasksDone0]).
+	
+min_deadline([],MinDeadline,MinDeadline).
+min_deadline([T|TasksDone],MinDeadline,MinDeadline0) :-
+	T = task(_,_,_,_,_,ID),
+	task_timing(ID,_,_,_,_,_,deadline(MinDeadlineNew)),
+	(MinDeadline0 = infinity ->
+		min_deadline(TasksDone,MinDeadline,MinDeadlineNew)
+	;
+		(MinDeadlineNew < MinDeadline0 ->
+			min_deadline(TasksDone,MinDeadline,MinDeadlineNew)
+		;
+			min_deadline(TasksDone,MinDeadline,MinDeadline0))).
+
+min_start_time([],MinStart,MinStart).
+min_start_time([T|TasksDone],MinStart,MinStart0) :-
+	T = task(MinStartNew,_,_,_,_,_),
+	(MinStart0 = infinity ->
+		min_start_time(TasksDone,MinStart,MinStartNew)
+	;
+		(MinStartNew < MinStart0 ->
+			min_start_time(TasksDone,MinStart,MinStartNew)
+		;
+			min_start_time(TasksDone,MinStart,MinStart0))).
+
+max_end_time([],MaxEnd,MaxEnd).
+max_end_time([T|TasksDone],MaxEnd,MaxEnd0) :-
+	T = task(_,_,MaxEndNew,_,_,_),
+	(MaxEndNew > MaxEnd0 ->
+			max_end_time(TasksDone,MaxEnd,MaxEndNew)
+		;
+			max_end_time(TasksDone,MaxEnd,MaxEnd0)).
 
 %-------------------------------------------------------------------------------
 
@@ -312,6 +328,13 @@ schedule(Original,Tasks,NumPosT,F) :-
     	((scheduler_param(time_start,T0), scheduler_param(time_end,T1)) -> T1 > T0)
     	;
     	((scheduler_param(time_start,T0), time_xtra(T1)) -> T1 > T0)),
+
+%===============================================================================        	
+	% SRM: SI INCLUIMOS TASKS CON DEADLINES QUE SE CUMPLEN EN EL PERÍODO DE SCHEDULE
+	% ACTUAL, NO PODRÉ DAR SOLUCIONES "IRREALES" PARA ÉSTAS... 
+	% AUNQUE POR OTRA PARTE ESTÁ BIEN, YA QUE TIENEN QUE SER RESUELTAS SÍ O SÍ
+%===============================================================================    
+
     must_be(integer,T0), 
     must_be(integer,T1),
     
@@ -346,21 +369,45 @@ schedule(Original,Tasks,NumPosT,F) :-
     ->  findall(R,resource_options(R,_),Rnames),
         flag(dbg_time,Now,Now),
         % SRM: F calculation ---------------------------------------------------
-        calculate_Cij(Subtasks,Rnames,T0,T1,F0,1), % Ahora F0 y no Ftot
-			% SRM: Estas líneas serían para hacer la media, pero ahora queremos 
-			%      valor de pico
-			%        length(Rnames,Rnum),
-			%        Ttot is T1 - T0 + 1,
-			%        F0 is Ftot / (Rnum * Ttot), 
-			% ------------------------------------------------------------------
+        done_tasks(Tasks,TasksDone),
+    	length(TasksDone,NTD),
+       	write('Tasks really done: '),writeln(NTD),
+       	min_deadline(TasksDone,MinDeadline,infinity),
+       	write('The minimum deadline for this schedule is: '),writeln(MinDeadline),
+       	scheduler_param(time_start, Tbegin),
+       	scheduler_param(time_end, Tend),
+       	Tw is Tend - Tbegin,
+       	min_start_time(TasksDone,T_0,infinity),
+       	max_end_time(TasksDone,T_1,0),
+       	write('The min_start is: '),write(T_0),write(' and the max end is: '),writeln(T_1),
+       	(T_0 = infinity ->
+       		Eij is 0 % Debería ser infinity, pero para el cálculo de Dij esto es lo mismo
+       	;
+       		Eij is (T_1 - T_0) / Tw),
+       	Uij is T_1 / Tend,
+		scheduler_param(priority_periods, Ns),
+       	(MinDeadline = infinity ->
+       		Lij is (Ns * Tw) + 1 % Debería ser infinity, pero para el cálculo de Dij esto es lo mismo
+       	;
+       		Lij is MinDeadline - Tbegin),
+       	(Lij =< Ns * Tw ->
+       		Dij is (2 - (Lij/(Ns * Tw)))
+       	;
+       		Dij is 1),
+        calculate_Cij(Subtasks,Rnames,T0,T1,Cij,1), % Ahora F0 y no Ftot
         (NumPosT = 0 ->
-        	F is F0
-        ;	calculate_done_tasks(Tasks,TasksDone),
-	       	write('Tasks really done: '),writeln(TasksDone),
-       		F is F0 * (TasksDone / NumPosT)),
+        	Gij is 1
+        ;	
+       		Gij is (NTD / NumPosT)),
+       	
+       	F = [Cij,Gij,Uij,Eij,Dij],
+       	
         % SRM: -----------------------------------------------------------------
         define(dbg_dir, Dbgdir),
-        format_time(string(StrTime),"%Y%m%d_%H%M%S/",Now),
+        format_time(string(StrT),"%Y%m%d_%H%M%S",Now),
+        scheduler_param(satellite_id,SatID),
+    	format(string(StrSatID),"~d/",[SatID]),
+    	string_concat(StrT,StrSatID,StrTime),
         atomic_list_concat([Dbgdir,StrTime,'stat_dynamic_resources.csv'],DynPath),
         open(DynPath,write,Stream2,[]),
         current_output(CO),

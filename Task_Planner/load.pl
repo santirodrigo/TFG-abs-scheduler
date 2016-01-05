@@ -28,9 +28,10 @@
 %% define(Parameter,Value)
 %
 
-define(debug     , yes ).                /* Whether to debug or not.                                 */
+define(debug     , yes ).               /* Whether to debug or not.                                 */
 define(out_dir   ,'out/').              /* Output directory (should end with "/")                   */
 define(out_file  ,'task_planner.out').  /* Output file name.                                        */
+define(out_time	 ,'last_path.out').		/* Time depending output path								*/
 define(global_file  ,'satellite.out').  /* Output file name.                                        */
 define(dbg_dir   ,'out/').              /* Debug directory (should end with "/")                    */
 define(use_folder, yes).                /* Whether to use a different folder preceding these paths. */
@@ -46,12 +47,16 @@ drun :-
     define(out_file,OutFile),
     define(global_file,GlobalFileTmp),
     define(out_dir, DbgDir),
+    define(out_time, OutTime),
     (define(use_folder,yes) 
-    ->  format_time(string(StrTime),"%Y%m%d_%H%M%S/",Now),
+    ->  format_time(string(StrT),"%Y%m%d_%H%M%S",Now),
+        scheduler_param(satellite_id,SatID),
+    	string_concat(OutDir,OutTime,OutT),
+    	format(string(StrSatID),"~d/",[SatID]),
+    	string_concat(StrT,StrSatID,StrTime),
+    	writeln(StrTime),
         string_concat(OutDir,StrTime,OutTmp),
         string_concat(DbgDir,StrTime,DbgPath),
-        scheduler_param(satellite_id,SatID),
-    	format(string(StrSatID),"~d/",[SatID]),
         string_concat(OutDir,StrSatID,GlobalPath),
         catch(make_directory(OutDir),_,true),
         catch(make_directory(DbgDir),_,true),
@@ -68,7 +73,7 @@ drun :-
     % Clean files:
     (exists_file(OutPath) -> delete_file(OutPath) ; true),
     (exists_file(DbgPath) -> delete_file(DbgPath) ; true),
-    (exists_file(GlobalPath) -> delete_file(GlobalPath) ; true),
+    (exists_file(GlobalFile) -> delete_file(GlobalFile) ; true),
     
     (define(dbg_sampling_freq,StatRate) -> true ; StatRate = 1),
     stat_init(DbgPath),
@@ -83,9 +88,15 @@ drun :-
     time((
             planner(Tasks,Outcomes),
             (Outcomes = []
-            ->  writeln('******* There is no solution.')
+            ->  writeln('******* There is no solution.'),
+                open(OutT,write,Stream,[]),
+                write(Stream,StrTime),
+                close(Stream)                
             ;   writeln('******* Plan successfully generated.'),
                 write_list_outcomes(Outcomes,OutPath),
+                open(OutT,write,Stream,[]),
+                write(Stream,StrTime),
+                close(Stream),
                 send_answer_to_global(Outcomes,GlobalFile)
             )
          )),!,
@@ -120,7 +131,10 @@ write_answer_fraction([Task|Ts],Stream) :-
 send_answer_to_global([],GlobalFile).
 send_answer_to_global([F-Outcome|Outcomes],GlobalFile) :-
 	open(GlobalFile,append,Stream,[]),
-	write(Stream,'F:'),write(Stream,F),write(Stream,':'),
+	F = [Cij, Gij, Uij, Eij, Dij],
+	scheduler_param(weights,[Wc,Wg,Wu,We,Wd]),
+	Fpond is ((Wc * Cij) + (Wg * Gij) + (Wu * Uij) + (We * Eij) + (Wd * Dij)),
+	write(Stream,'F:'),write(Stream,Fpond),write(Stream,':'),
     write_answer_fraction(Outcome,Stream),
     close(Stream),
 	send_answer_to_global(Outcomes,GlobalFile).
