@@ -17,6 +17,8 @@ void generate_solutions(Satellite *sat) {
 	
 	LocalSolution *actsol;
 	
+	if (input_file == NULL) sat->golden_index = 0;
+	
 	for (j = 0; j < sat->golden_index; j++) {
 		actsol = (LocalSolution *)&(sat->local_solutions[j]);
 		actsol->id = j+1;
@@ -34,6 +36,9 @@ void generate_solutions(Satellite *sat) {
 				d+=2;
 			}
 		}
+	#ifdef DEBUG_DIST_LOC
+		printf("\nGolden_index = %d\n",sat->golden_index);
+	#endif
 	}
 	for (c = 0; c < (sat->golden_index - 1); c++) {
 		for (d = 0; d < sat->golden_index - c - 1; d++) {

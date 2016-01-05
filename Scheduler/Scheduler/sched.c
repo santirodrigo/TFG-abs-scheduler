@@ -3,7 +3,6 @@
 int golden_index_max = 0;
 int nsats;
 int ntasks;
-static float tic; // proportion of the number of different tasks in combination
 static float max = 0;
 static float max_brute = 0;
 
@@ -42,7 +41,6 @@ int total_occurrences(Satellite *sats, int *combination) {
 			continue; // Substitute by if (sum[i] > 1) n += sum[i];
 		n += sum[i]; // Mmmmm... Estoy sumando la vez que la hago bien y las repeticiones...
 	}
-	// tic = (ntasks - nzeros) * 10 / ntasks; // DEPRECATED: Delete?
 	free(sum);
 	return n;
 }
@@ -140,7 +138,8 @@ int solve(Satellite *sats, int *combination, int *solution) {
 	golden_index_max = 0; //reiniciamos el valor por si no es el de entrada
 	get_golden_index_max(sats);
 	for (k = 0; k < nsats; k++) {
-		combination[k] = 1; // We start from the combination 1 1 .. 1
+		if (sats[k].golden_index >= 1) combination[k] = 1;
+		else combination[k] = 0;// We start from the combination 1 1 .. 1
 	}
 
 	struct ordered_set s;
@@ -164,17 +163,17 @@ int solve(Satellite *sats, int *combination, int *solution) {
 				// puede tener más de un predecesor, sólo estudiamos un subcon-
 				// junto de las sucesoras de cada combinación, de manera que no
 				// estudiemos una misma combinación más de una vez. El subcon-
-				// junto de las sucesoras que sí estudiamos de una combinación c
+				// junto de las sucesoras que sí estudiamos de una combinación 
 				// cualquiera viene dado por todas las sucesoras directas de c
 				// tales que si c es de la forma (1,...,1,i,j,...,n) sólo modi-
 				// ficamos aquellas posiciones de c que son igual a 1 ADEMÁS de
 				// la que es igual a i (i.e., la inmediatamente posterior a la
 				// última posición de la ráfaga de 1s que encontramos al co-
-				// mienzo de c. Observación: Si c no empieza por uno, sólo
+				// mienzo de c). Observación: Si c no empieza por uno, sólo
 				// modificamos la primera posición.
-				if (combination[n] != 1) finished = 1;
+				if (combination[n] != 1 && !(sats[n].golden_index == 0)) finished = 1;
 				if (combination[n] != 0) {
-					if (combination[n] == sats[n].golden_index)
+					if (combination[n] >= sats[n].golden_index)
 						combination[n] = 0;
 					else combination[n]++;
 				} else continue; // Si combination[n] es 0, no hay sucesor.
@@ -213,6 +212,7 @@ int solve(Satellite *sats, int *combination, int *solution) {
 
 			n = total_occurrences(sats, combination);
 			num = r * (1. - (float)n / (float)(nsats*ntasks));
+			// Posible: Incluir una penalización por el número de tareas realizadas en absoluto
 			if (num > max) {
 				max = num;
 				max_rep = n;
