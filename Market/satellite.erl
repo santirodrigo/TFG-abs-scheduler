@@ -37,7 +37,8 @@ start(Name, Time0, Position, Energy, Cts) ->
 		SlavesPositions = [],
 		CommCost = [{self(),0}],
 		ProcReleaseT = 0,
-		waiting_leader(Scheduling, Name, Time0, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, EnergyVector, Cts, Slaves)
+		TimeElapsed = 0,
+		waiting_leader(Scheduling, Name, Time0, TimeElapsed, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, EnergyVector, Cts, Slaves)
 		end).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -67,19 +68,21 @@ start(Name, Time0, Position, Energy, Cts, Leader) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%--------------------------- LEADER WAITING STATE ---------------------------%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-waiting_leader(Scheduling, Name, Time0, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves) ->
+waiting_leader(Scheduling, Name, Time0, TimeElapsed, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves) ->
 	if
 		Scheduling == yes ->
 			Ej = energy_at(max_key(Energy),Energy),
 			if 
 				Ej =< 0 ->
-					io:format("leader ~s: I can't execute more tasks, but I will be here for whatever you need me~n~n", [Name]),
+					%io:format("leader ~s: I can't execute more tasks, but I will be here for whatever you need me~n~n", [Name]),
 					NewScheduling = no,
-					waiting_leader(NewScheduling, Name, Time0, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves);
+					waiting_leader(NewScheduling, Name, Time0, TimeElapsed, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves);
 				true ->
-					io:format("leader ~s: Waiting for messages...~nSchedule = ~w~nAssignedTasks = ~w~nPosition = ~w~nSlavesPositions = ~w~nCommCost = ~w~nProcReleaseT = ~w~nEnergy = ~w~nCts = ~w~nSlaves = ~w~n~n", [Name, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves])
+					ok,
+					say_goodbye_extended(Name, AssignedTasks, TimeElapsed)
+					%io:format("leader ~s: Waiting for messages...~nSchedule = ~w~nAssignedTasks = ~w~nPosition = ~w~nSlavesPositions = ~w~nCommCost = ~w~nProcReleaseT = ~w~nEnergy = ~w~nCts = ~w~nSlaves = ~w~nTimeElapsed = ~w~n~n", [Name, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves, TimeElapsed])
 			end;
-		true -> io:format("leader ~s: I can't execute more tasks, but I will be here for whatever you need me~n~n", [Name])
+		true -> ok %io:format("leader ~s: I can't execute more tasks, but I will be here for whatever you need me~n~n", [Name])
 	end,
 	receive
         {join, Peer, SlavePosition} ->
@@ -89,7 +92,7 @@ waiting_leader(Scheduling, Name, Time0, Schedule, AssignedTasks, Position, Slave
             NewCommCost = lists:append(CommCost, [{Peer,NewDistance}]),
             NewSlavePosTuple = tuple_list_from_lists(NewSlaves, NewPositions),           
             bcast({view, self(), lists:append(NewSlavePosTuple,[{self(),Position}])}, NewSlaves),
-            waiting_leader(Scheduling, Name, Time0, Schedule, AssignedTasks, Position, NewPositions, NewCommCost, ProcReleaseT, Energy, Cts, NewSlaves);
+            waiting_leader(Scheduling, Name, Time0, TimeElapsed, Schedule, AssignedTasks, Position, NewPositions, NewCommCost, ProcReleaseT, Energy, Cts, NewSlaves);
         {goodbye, Peer, SlavePosition} ->
         	NewSlaves = lists:delete(Peer, Slaves),
         	NewPositions = lists:delete(SlavePosition, SlavesPositions),
@@ -100,70 +103,76 @@ waiting_leader(Scheduling, Name, Time0, Schedule, AssignedTasks, Position, Slave
         			say_goodbye(Name, Schedule, Energy);
         		true ->
 		        	bcast({view, self(), lists:append(NewSlavePosTuple,[{self(),Position}])}, NewSlaves),
-		        	waiting_leader(Scheduling, Name, Time0, Schedule, AssignedTasks, Position, NewPositions, NewCommCost, ProcReleaseT, Energy, Cts, NewSlaves)
+		        	waiting_leader(Scheduling, Name, Time0, TimeElapsed, Schedule, AssignedTasks, Position, NewPositions, NewCommCost, ProcReleaseT, Energy, Cts, NewSlaves)
 		    end;
         {task, TimeStamp, TaskInfo} ->
 			Diff = (timer:now_diff(now(), TimeStamp))/1000,
 			if
 				Diff < 0 -> 
 					io:format("leader ~s: strange TimeStamp ~w~n", [Name, TimeStamp]),
-					waiting_leader(Scheduling, Name, Time0, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves);
+					waiting_leader(Scheduling, Name, Time0, TimeElapsed, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves);
 				true ->
 					bcast({task, TimeStamp, TaskInfo}, Slaves),
 					io:format("leader ~s: Scheduling = ~w~n", [Name, Scheduling]),
 					if
 						Scheduling == yes ->
 							TimeDiff = (timer:now_diff(TimeStamp,Time0))/1000,
-							listening_leader(Name, Time0, Schedule, AssignedTasks, TimeDiff, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves, TaskInfo);
+							listening_leader(Name, Time0, TimeElapsed, Schedule, AssignedTasks, TimeDiff, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves, TaskInfo);
 						true ->
-							waiting_leader(Scheduling, Name, Time0, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves)
+							waiting_leader(Scheduling, Name, Time0, TimeElapsed, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves)
 					end
             end;
         {bid, Sender, TaskID, _} ->
         	if
 		    	Scheduling == no ->
 		    		NewAssignedTasks = lists:append(AssignedTasks, [{TaskID,Sender}]),
-			    	waiting_leader(Scheduling, Name, Time0, Schedule, NewAssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves);
+			    	waiting_leader(Scheduling, Name, Time0, TimeElapsed, Schedule, NewAssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves);
 	        	true ->
-	        		waiting_leader(Scheduling, Name, Time0, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves)
+	        		waiting_leader(Scheduling, Name, Time0, TimeElapsed, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves)
 	        end;
         stop ->
             io:format("leader ~s: stopping...~n", [Name]),
-            say_goodbye(Name, Schedule, Energy);
+            say_goodbye(Name, Schedule, Energy),
+            say_goodbye_extended(Name, AssignedTasks, TimeElapsed);
         Error ->
             io:format("leader ~s: strange message ~w~n", [Name, Error]),
-            waiting_leader(yes, Name, Time0, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves)
+            waiting_leader(yes, Name, Time0, TimeElapsed, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves)
     end.
 		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%-------------------------- LEADER LISTENING STATE --------------------------%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
-listening_leader(Name, Time0, Schedule, AssignedTasks, TimeDiff, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves, TaskInfo) ->
+listening_leader(Name, Time0, TimeElapsed, Schedule, AssignedTasks, TimeDiff, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves, TaskInfo) ->
+	Time = now(),
 	[TaskID, TaskSize, TaskDeadline, PrevTask] = TaskInfo,
 	{Pij, Tw} = calculate_bid(Name, AssignedTasks, TimeDiff, Time0, CommCost, ProcReleaseT, Energy, Cts, TaskSize, TaskDeadline, PrevTask),
 
 	receive
 		{bid, Sender, TaskID, Pkj} ->
+			NewTime = (timer:now_diff(now(), Time)) / 1000000,
+    		NewTimeElapsed = TimeElapsed + NewTime,
 			if
 				Pkj =< Pij ->
 					NewAssignedTasks = lists:append(AssignedTasks,[{TaskID,Sender}]),
-					waiting_leader(yes, Name, Time0, Schedule, NewAssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves);
+					waiting_leader(yes, Name, Time0, NewTimeElapsed, Schedule, NewAssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves);
 				Pkj > Pij ->
 					io:format("leader ~s: ~w has sent a worst bid (~w) before me!", [Name, Sender, Pkj]),
 					NewAssignedTasks = lists:append(AssignedTasks,[{TaskID,Sender}]),
-					waiting_leader(yes, Name, Time0, Schedule, NewAssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves)
+					waiting_leader(yes, Name, Time0, NewTimeElapsed, Schedule, NewAssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves)
 			end
 	after
     	Tw ->
+    		NewTime = (timer:now_diff(now(), Time)) / 1000000,
+    		NewTimeElapsed = TimeElapsed + NewTime,
     		if
     			Pij == infinity ->
-    				waiting_leader(yes, Name, Time0, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves);
+    				waiting_leader(yes, Name, Time0, NewTimeElapsed, Schedule, AssignedTasks, Position, SlavesPositions, CommCost, ProcReleaseT, Energy, Cts, Slaves);
 				true ->
 					io:format("leader ~s: I have won with a bid of ~w~n", [Name, Pij]),
 					bcast({bid, self(), TaskID, Pij}, Slaves),
 					NewAssignedTasks = lists:append(AssignedTasks,[{TaskID,self()}]),
 					{NewProcReleaseT, NewEnergy, NewSchedule} = add_task(Schedule, TimeDiff, ProcReleaseT, Energy, TaskInfo),
-					waiting_leader(yes, Name, Time0, NewSchedule, NewAssignedTasks, Position, SlavesPositions, CommCost, NewProcReleaseT, NewEnergy, Cts, Slaves)
+					waiting_leader(yes, Name, Time0, NewTimeElapsed, NewSchedule, NewAssignedTasks, Position, SlavesPositions, CommCost, NewProcReleaseT, NewEnergy, Cts, Slaves)
 			end
 	end.
 
@@ -178,7 +187,8 @@ waiting_slave(Name, Time0, Schedule, AssignedTasks, Position, CommCost, ProcRele
 			Leader ! {goodbye, self(), Position},
 			self() ! stop;
 		true ->
-			io:format("slave ~s: Waiting for messages...~nSchedule = ~w~nAssignedTasks = ~w~nPosition = ~w~nCommCost = ~w~nProcReleaseT = ~w~nEnergy = ~w~nCts = ~w~nLeader = ~w~nPeers = ~w~n~n", [Name, Schedule, AssignedTasks, Position, CommCost, ProcReleaseT, Energy, Cts, Leader, Peers])
+			ok
+			%io:format("slave ~s: Waiting for messages...~nSchedule = ~w~nAssignedTasks = ~w~nPosition = ~w~nCommCost = ~w~nProcReleaseT = ~w~nEnergy = ~w~nCts = ~w~nLeader = ~w~nPeers = ~w~n~n", [Name, Schedule, AssignedTasks, Position, CommCost, ProcReleaseT, Energy, Cts, Leader, Peers])
 	end,
 	receive
         {join, Peer, PeerPosition} ->
@@ -188,6 +198,8 @@ waiting_slave(Name, Time0, Schedule, AssignedTasks, Position, CommCost, ProcRele
         	Diff = (timer:now_diff(now(), TimeStamp))/1000,
 			if
 				Diff < 0 -> 
+%					TimeDiff = (timer:now_diff(TimeStamp,Time0))/1000,
+%					listening_slave(Name, Time0, Schedule, AssignedTasks, TimeDiff, Position, CommCost, ProcReleaseT, Energy, Cts, Leader, Peers, TaskInfo),
 					io:format("slave ~s: strange TimeStamp ~w~n", [Name, TimeStamp]),
 					waiting_slave(Name, Time0, Schedule, AssignedTasks, Position, CommCost, ProcReleaseT, Energy, Cts, Leader, Peers);
 				true ->
@@ -301,8 +313,8 @@ energy_at(Time,Energy) ->
 %%------------------------- FIND VALUE OF A GIVEN KEY ------------------------%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 find_value(Key, List) ->
-    case lists:keyfind(Key, 1, List) of
-        {Key, Result} -> Result;
+    case lists:keyfind(Key, 1, List) of	
+        {_, Result} -> Result;
         false -> nothing
     end.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -321,8 +333,14 @@ refresh_resources(TimeExecBegin, Energy, [_, TaskSize, _, _]) -> % El primer y t
 	[RT,NewEnergy].
 	
 say_goodbye(Name, Schedule, Energy) ->
-	io:format("~s: Goodbye! I can't execute more tasks~nSchedule = ~w~nEnergy = ~w~n~n", [Name, Schedule, Energy]),
+	%io:format("~s: Goodbye! I can't execute more tasks~nSchedule = ~w~nEnergy = ~w~n~n", [Name, Schedule, Energy]),
 	file:write_file(io_lib:fwrite("out/~s.out",[Name]), io_lib:fwrite("~s: Goodbye! I can't execute more tasks~nSchedule = ~w~nEnergy = ~w~n~n", [Name, Schedule, Energy])).
+	
+say_goodbye_extended(Name, AssignedTasks, TimeElapsed) ->
+	file:write_file("out/results.out", io_lib:fwrite("~s: Test results~nAssignedTasks = ~w~n~n", [Name, AssignedTasks])),
+	L = length(AssignedTasks),
+	RealTimeEl= TimeElapsed*100,
+	file:write_file("out/timing.out", io_lib:fwrite("~p - ~p", [RealTimeEl, L])).	
 
 tuple_list_from_lists([],[]) -> [];
 tuple_list_from_lists([Elem1|List1],[Elem2|List2]) ->

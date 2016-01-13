@@ -108,12 +108,15 @@ planner(Tasks,Outcomes) :- % planner/2
     order_by_priority(Tasks,TasksOrd),
 %-------------------------------------------------------------------------------
 %---Obtener el tiempo necesario para aumentar el dominio------------------------
-    obtain_max_xtra_time(Tasks,XtraTime),
+%    obtain_max_xtra_time(Tasks,XtraTime), % 11/01/2016 Hemos decidido que el tiempo extra sea ahora el de la ventana de scheduling
+	scheduler_param(time_end,EndT),
+	XtraTime is EndT * 2,
     asserta(time_xtra(XtraTime)),
 
 	check_resources(TasksOrd,[],TasksPos), % Calculation of A'ij
 	length(TasksPos, NumPosTasks), % Calculation of |A'ij|
- 
+	write('Number of tasks that we are able to do: '),writeln(NumPosTasks),
+	
 %-------------------------------------------------------------------------------
 %---Recorrer todas las tareas una por una para detectar cuáles son factibles----
     write('Starting the iterator:'),nl,
@@ -123,13 +126,16 @@ planner(Tasks,Outcomes) :- % planner/2
 	(Ts = [] ->
 		Outcomes = []
 	;
-		write('Number of tasks that can be done individually: '),writeln(NumPosTasks),
+		length(Ts, LengthTs),
+		write('Number of tasks that can be done individually: '),writeln(LengthTs),
 		!,
 		scheduler_param(algorithm_timeout, Timeout),
 		scheduler_param(delta_solutions,N),
-		(Timeout > 0
-		->  catch(call_with_time_limit(Timeout,findnsols(N,F-Outcome,schedule(Ts,Outcome,NumPosTasks,F),Outcomes)),_,Outcomes = [])
-		;   findnsols(N,F-Outcome,schedule(Ts,Outcome,NumPosTasks,F),Outcomes))),
+		(N \= 0 ->
+			(Timeout > 0
+			->  catch(call_with_time_limit(Timeout,findnsols(N,F-Outcome,schedule(Ts,Outcome,NumPosTasks,F),Outcomes)),_,Outcomes = [])
+			;   findnsols(N,F-Outcome,schedule(Ts,Outcome,NumPosTasks,F),Outcomes))
+		;	Outcomes = [])),
 %	retractall(cache(_)),
 %	schedules(2,TasksOrd,Outcome,0,F),
 %   cache(Outcomes),

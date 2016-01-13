@@ -40,6 +40,7 @@ void generate_solutions(Satellite *sat) {
 		printf("\nGolden_index = %d\n",sat->golden_index);
 	#endif
 	}
+	printf("\nSat %d: golden_index = %d",sat->id,sat->golden_index);
 	for (c = 0; c < (sat->golden_index - 1); c++) {
 		for (d = 0; d < sat->golden_index - c - 1; d++) {
 			if (((sat->local_solutions[d]).F) < ((sat->local_solutions[d+1]).F)) {
@@ -57,14 +58,12 @@ void generate_solutions(Satellite *sat) {
 			}
 		}
 	}
-	#ifdef DEBUG_DIST_LOC
 	printf("\n");
 	for (i = 0; i < sat->golden_index; i++) {
-		printf("\nF : %f",(sat->local_solutions[i]).F);
+		printf("\n%d)\tF : %f",i+1,(sat->local_solutions[i]).F);
 		for (j = 0; j < ntasks; j++) {
 			printf(" %d ",(sat->local_solutions[i]).tasks[j]);
 		}
 	}
 	printf("\n");
-	#endif
 }

@@ -12,19 +12,11 @@ else
 	then
 		if [ $1 = "-c" ]
 		then
-			echo "Cleaning the blackboard..."
-			echo "=========================="
-
 			cd Scheduler/Scheduler
 			make clean
 
-			echo " "
-			echo "Compiling the files..."
-			echo "======================"
-
 			make
 			cd ../..
-			echo " "
 			tasks=$2
 			maxgolden=$3
 			sats=$4
@@ -39,23 +31,36 @@ else
 	outdir="out_L-G/results_${DATE}:${tasks}_${maxgolden}_${sats}" 
 	rm -fr ${outdir}
 	mkdir ${outdir}
-	echo "Executing test..."
-	echo "=================="
 	echo "[task_planner_globals]." > "${outdir}/swipl_execution.in"
 	echo "[task_database]." >> "${outdir}/swipl_execution.in"
 	echo "[load]." >> "${outdir}/swipl_execution.in"
 	echo "drun." >> "${outdir}/swipl_execution.in"
 	cd Task_Planner/
+	maxtime=0
 	for i in `seq 1 $sats`;
 	do
 		cp task_planner_globals_${i}.pl task_planner_globals.pl
-		swipl < "../${outdir}/swipl_execution.in"
+		cp task_planner_globals_${i}.pl "../${outdir}/task_planner_globals_${i}.pl"
+		/usr/bin/time -f "%e" -o output_${i}.txt swipl < "../${outdir}/swipl_execution.in" > "../${outdir}/swipl_execution_${i}.out" 2> "../${outdir}/swipl_execution_${i}.err"
+		temp=`cat output_${i}.txt`
+		rm output_${i}.txt
+		comp=`echo $maxtime'>'$temp | bc -l`
+		if [ $comp -eq 0 ]
+		then
+			maxtime=$temp
+		fi
 		lastpath=`cat out/last_path.out`
 		`cp -r out/${i} ../${outdir}`
 		`cp out/${lastpath}* ../${outdir}/${i}`
 	done
+	cp task_database.pl "../${outdir}/task_database.pl"
 	cd ../Scheduler/Scheduler/
-	`./sched.exe ${tasks} ${maxgolden} ${sats} > "../../${outdir}/sched.txt"`
-	echo " "
-	echo "Tests completed!!"
+	rm output.txt
+	rm taskcount.txt
+	/usr/bin/time -f "%M-%e" -o output.txt ./sched.exe ${tasks} ${maxgolden} ${sats} taskcount.txt > "../../${outdir}/sched.txt"
+	temp=`cat output.txt | cut -d "-" -f 2`
+	mem=`cat output.txt | cut -d "-" -f 1`
+	tc=`cat taskcount.txt`
+	totaltime=`echo "$temp + $maxtime" | bc -l`
+	echo "$mem - $totaltime - $tc"
 fi

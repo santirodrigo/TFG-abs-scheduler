@@ -45,6 +45,36 @@ int total_occurrences(Satellite *sats, int *combination) {
 	return n;
 }
 
+int task_count(Satellite *sats, int *combination) {
+	int i, k;
+	int *present; // set if a task is done in this combination
+	int error;
+	int n = 0;
+
+	error = generate_array(ntasks, &present);
+	if (error == -1)
+		return error;
+
+	for (i = 0; i < ntasks; i++) {
+		present[i] = 0;
+	}
+	
+	for (k = 0; k < nsats; k++) {
+		if (combination[k] != 0) {
+			for (i = 0; i < ntasks; i++) {
+				if (sats[k].local_solutions[combination[k] - 1].tasks[i] == 1 && present[i] == 0)
+					present[i] = 1;
+			}
+		}
+	}
+	
+	for (i = 0; i < ntasks; i++) {
+		if (present[i] == 1) n += present[i];
+	}
+	free(present);
+	return n;
+}
+
 // Computes the sum of the reward function for each satellite and solution
 float total_reward(Satellite *sats, int *combination) {
 	float sum_reward = 0;
@@ -329,15 +359,16 @@ void free_satellites(Satellite *sats) {
 int main(int argc, char *argcv[]) {
 	float bf_time;
 	int error;
-	int *combination_b, *combination, *solution_b, *solution;
+/*	int *combination_b, *solution_b;*/
+	int *combination, *solution;
 	Satellite *sats;
 	struct timeval time;
 	struct timezone tz;
 	suseconds_t start_time_u, final_time_u;
 	time_t start_time_s, final_time_s;
 
-	if (argc != 4) {
-		fprintf(stderr, "Usage: %s tasks solutions satellites\n",
+	if (argc != 5) {
+		fprintf(stderr, "Usage: %s tasks solutions satellites filename\n",
 		basename(argcv[0]));
 		return 1;
 	} else {
@@ -345,19 +376,19 @@ int main(int argc, char *argcv[]) {
 		golden_index_max = atoi(argcv[2]);
 		nsats = atoi(argcv[3]);
 	}
-	printf("%d %d %d ", ntasks, golden_index_max, nsats);
+	printf("%d %d %d \n", ntasks, golden_index_max, nsats);
 	if (gettimeofday(&time, &tz))
 		return 1;
 	start_time_u = time.tv_usec;
 	srand(start_time_u); // The seed of the random number
 
 // SRM: Uncomment only if using brute solve ////////////////////////////////////
-  error = generate_array(nsats, &combination_b);
-  if (error == -1)
-    return error;
-  error = generate_array(nsats, &solution_b);
-  if (error == -1)
-    return error;
+/*  error = generate_array(nsats, &combination_b);*/
+/*  if (error == -1)*/
+/*    return error;*/
+/*  error = generate_array(nsats, &solution_b);*/
+/*  if (error == -1)*/
+/*    return error;*/
 ////////////////////////////////////////////////////////////////////////////////
 
 	error = generate_array(nsats, &combination);
@@ -373,19 +404,19 @@ int main(int argc, char *argcv[]) {
 		return 1;
 
 // SRM: Solve in the brute way... //////////////////////////////////////////////
-  start_time_u = time.tv_usec;
-  start_time_s = time.tv_sec;
-  solve_brute(sats, combination_b, solution_b);
-  if (gettimeofday(&time, &tz))
-    return 1;
-  final_time_u = time.tv_usec;
-  final_time_s = time.tv_sec;
-  bf_time =
-      (final_time_s - start_time_s) * 1000000 + final_time_u - start_time_u;
-  printf(" | %.0f\t| %f\t", bf_time, max_brute);
-  print_array("Solution (brute)", solution_b, nsats);
-  free(solution_b);
-  free(combination_b);
+/*  start_time_u = time.tv_usec;*/
+/*  start_time_s = time.tv_sec;*/
+/*  solve_brute(sats, combination_b, solution_b);*/
+/*  if (gettimeofday(&time, &tz))*/
+/*    return 1;*/
+/*  final_time_u = time.tv_usec;*/
+/*  final_time_s = time.tv_sec;*/
+/*  bf_time =*/
+/*      (final_time_s - start_time_s) * 1000000 + final_time_u - start_time_u;*/
+/*  printf("\n Time (brute): %.0f\t| Max (brute): %f\t| ", bf_time, max_brute);*/
+/*  print_array("Solution (brute)", solution_b, nsats);*/
+/*  free(solution_b);*/
+/*  free(combination_b);*/
 ////////////////////////////////////////////////////////////////////////////////
 
 // SRM: Solve efficiently... //////////////////////////////////////////////////
@@ -398,7 +429,11 @@ int main(int argc, char *argcv[]) {
 	final_time_s = time.tv_sec;
 	bf_time =
 	(final_time_s - start_time_s) * 1000000 + final_time_u - start_time_u;
-	printf(" | %.0f\t| %f\t", bf_time, max);
+	int tc = task_count(sats, combination);
+	FILE *file = fopen(argcv[4], "a" );
+	fprintf(file, "%d", tc);
+    fclose(file);
+	printf(" | Time: %.0f\t| Max: %f\t| ", bf_time, max);
 	print_array("Solution", solution, nsats);
 	printf("\n");
 ////////////////////////////////////////////////////////////////////////////////
