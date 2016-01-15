@@ -10,7 +10,11 @@
 
 \section{Consensus: the key for a non-centralized distributed system}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+There are multiple architecture designs available for distributed systems, having both centralized and fully-independent structures. However, although sometimes it is needed to have a single node doing some special functions to control the state of the entire system (and, in fact, leader election and recovery is one of the most critical functionalities in distributed programming), it means always a single point-of-failure, a weakness that affects the robustness of the entire system, apart from decreasing the system throughput whenever it is needed to contact the leader, which can be a bottleneck.
+
+Hence, the research in the distributed algorithms field is also divided into centralized and non-centralized structures. As it can be easily observed, our Local-Global policy is a centralized distributed algorithm. However, most of the research in distributed task schedulers appears to be focused on decentralized algorithms, having a common key concept among all of them: the consensus.
+
+A consensus-based distributed algorithm's aim is that every non-faulty node in the distributed system agree on some value within a finite number of steps \citep{Tanenbaum:2006:DSP:1202502}. At first, it could be applied in both centralized and non-centralized structures but again we find that the little research that has been carried out in consensus-driven distributed task schedulers is focused on decentralized architectures.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
@@ -18,14 +22,71 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacin
 
 \section{Comparison: algorithms chosen to test the Local-Global}
 
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+As it has been already stated, the research in the field of distributed task schedulers is still in its first steps, having that the computational capabilities of nodes in typical distributed systems has been traditionally very low to consider a fully-autonomous system-wide distributed task scheduler running on every node.
+
+The criteria used for choosing the state-of-the-art algorithm to compare the Local-Global with was that it should be as representative of distributed algorithms as possible. Papers presenting such kind of distributed task scheduler are only a few, and sometimes the context was too different to compare our algorithm with (nearly infinite bandwidth, multi-processor scheduling...). Finally a market-based approach was found, adequately simple but powerful and showing a fully decentralized distributed proposal.
 
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
 \subsection{A market-based approach}
 
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+In \citep{Edalat09} an adaptive task allocation scheme is presented to be used on wireless sensor networks, which is a similar context to that of our initial problem: a resource-constrained environment. A market-based architecture is proposed, in which each node is modelled as a seller who calculates the price for deploying a specific task and offers it to the consumer (the task sender), adapting the price to the changing resources availability for a better energy balance amongst the nodes composing the system. It is important to observe that it schedules the tasks \emph{on the go}, i.e. it is an \emph{online} task scheduler.
+
+In this section a brief description of the presented algorithm, as described in the article mentioned before, is presented, and in \ref{MBimplementation} the details of the implementation carried out in this Thesis will be detailed.
+
+The basic operation of this price-based task allocator is the one that follows: whenever a task arrives to the system, all the nodes in the system are broadcasted the task information. Each node calculates the price it will offer based on his resources and time constraints. High prices mean less energy remaining in the node and/or later processing of the task. Two methods for determining the winner in each round are introduced, having a centralized scheme and a fully distributed one. Results presented in the paper state that the distributed scheme requires less overhead and is more efficient, simply by delaying the price transmission a period of time proportional to the calculated price. This mechanism is further explained later.
+
+The algorithm can be divided in three phases:
+
+\begin{enumerate}
+\item \textbf{Listing Phase. } It is proposed a decomposition of an initial set of tasks into a set of smaller sub-tasks forming a task sequence that respects the time constraints and concurrency requirements of the initial group of tasks. Each subtask is represented by an Earliest Start Time (EST, the first time instant in which it can be executed without interfering with its predecessor tasks) and a Latest Start Time (LST, the last time instant in which the task can be begun for letting the successor tasks to be executed). The tasks are queued on a list ordered by their ESTs and LSTs. This queue keeps the order in which the tasks will be broadcasted to the nodes, ready for the task-assignment phase.
+\item \textbf{Price-Based Task Assignment Phase. } As it have been stated before, this phase is executed \emph{online}, so the tasks are scheduled  as they arrive in the system. The core of this phase is the price formulation which moreover allows to increase the privacy of the nodes, as they do not transmit the real value of their remaining resources, but only a derived cost.
+
+The parameters that the proposal includes for the price formulation are: task size, energy price, base task price, communication cost, task deadline and processor release time.
+\begin{description}
+\item[Task Size] ($ S $): the energy needed to process that particular task.
+\item[Energy Price] ($ EP $): this value's objective is twofold: to show higher prices for devices with lower energy available (in fact, it is in some way inversely proportional to the instantaneous energy level) and to reflect the cost of recharging the energy. Its value for the node $i$ is defined as:
+
+\begin{equation}
+EP_i = \frac{a}{1-e^{E_i/b}}
+\end{equation}
+ 
+\item[Base Price] ($ BP $): the computational cost of processing a task in a particular node. It is defined as (node $i$, task $j$):
+
+\begin{equation}
+BP_{ij} = S_j \prod EP_i
+\end{equation}
+
+\item[Communication Cost] ($ CommCost $): the cost of transmitting the output of a task to the node that will process its successor task.
+
+\item[Task Deadline] ($ TD $): the LST already defined in the Listing Phase.
+
+\item[Processor Release Time] ($ RT $): the time at which the task execution would finish if the node finally schedules it.
+\end{description}
+
+With all these variables, the proposed price calculation is the one of Eq. \ref{MBPrice1}, with DL the arriving time of the task.
+
+\begin{equation}
+P_{ij} = (CommCost + BP_{ij})\left[1+exp^{\left[\frac{\lambda(t,DL_j)}{\gamma(t,RT_i)}\right]}\right]
+\end{equation}
+
+\begin{center}
+$\lambda(t,DL_j) = \left\{ \begin{array}{lrc}
+             k(t - DL_j), &   \mathrm{for } & t \geq DL_j \\
+             \\ \epsilon &  \mathrm{for } & t \leq DL_j \\
+             \end{array}
+   \right.$
+   
+$\gamma(t,RT_i) = \left\{ \begin{array}{lrc}
+             k(t - RT_i), &   \mathrm{for } & t \geq RT_i \\
+             \\ \epsilon &  \mathrm{for } & t \leq RT_i \\
+             \end{array}
+   \right. $
+\end{center}
+\label{MBPrice1}
+
+\end{enumerate}
 
 %-----------------------------------
 %	SUBSECTION 2
