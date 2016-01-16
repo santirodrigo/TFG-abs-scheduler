@@ -1,8 +1,8 @@
 % Chapter Template
 
-\chapter{Project development} % Main chapter title
+\chapter{Design and implementation of a distributed task scheduler} % Main chapter title
 
-\label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+\label{Chapter3} % For referencing this chapter elsewhere, use \ref{Chapter3}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
@@ -11,21 +11,156 @@
 \section{Local-Global implementation}
 \label{LGimplementation}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+Carrying out a real executable implementation from a more or less theoretical description of an algorithm involves taking some design decisions and choosing programming techniques to achieve an efficient and fair result. A quicker and simpler approach may cause extremely bad results in performance terms. Of course, the comparison we are carrying out requires to carefully design the code of both algorithms for having an impartial and trustful result.
+
+As a result of this rigorously design and implementation process, we have achieved the first real implementation of this distributed task scheduler, being sufficiently complete to conclude with strong arguments about the behaviour of it.
+
+In the case of the Local-Global implementation, two clearly different modules can be told apart: the \emph{Local} entity and the \emph{Global} one. Each one can be described as a unique problem and therefore, each one has to be studied individually.
 
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
-\subsection{Reusing a ProLog local scheduler}
+\subsection{Adapting a Prolog satellite local scheduler}
 
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+%La parte local es un scheduler completamente "local".
+%Del ³Cat-1 ya había desarrollado un scheduler local.
+%Adaptaciones que se han tenido que hacer: obtener n soluciones, posibilitar que no tenga que incluir todas las tareas, añadir el cálculo de la F (detallar) y comunicación con el global (formato del fichero de output y las entradas).
+
+If we go back to the description of the Local-Global policy of the section \ref{previouswork}, we can observe that the problem to be solved by each \emph{Local} entity in the Local-Global policy is fully system-agnostic and can be expressed as it follows: given a set \emph{A} of tasks where task $a_j$ has a processing time equal to $l^{a_{j}}$, arrives to the system at $t_0^{a_j}$ and has to be finished before the deadline $t_{\text{max}}^{a_j}$, and a set of resources $R_i$ which will constrain the set of possible schedule solutions, obtain a sub-solution set $P_{i}$ formed by at most $\Delta_i$ schedules that locally meet all the constraints.
+
+The complete independence of this problem from the rest of the system makes it a traditional local task scheduler problem, with the particularity of having to obtain more than one schedule solution for the same set of tasks. This is very important, since it means that any previously designed and implemented valid local task scheduler can be adapted to satisfy the needs of the \emph{Local} entity in the Local-Global policy. To prove that, we decided to do exactly that: implement the necessary pieces of code for adjusting an existing local task scheduler used in a previous project of the UPC, the $^3$Cat-1.
+
+This local scheduler of the $^3$Cat-1 project was written in Prolog\footnote{Prolog comes from the french words \textit{PROgrammation en LOGique}, and is a declarative logic programming language}, and is able to solve scheduling problems from a given set of tasks with their time and resource constraints within a scheduling window time $T_w$ and a given set of resources.
+
+Hence, we needed to add extended functionalities to actually have a practical \emph{Local} entity, which are the ones listed below:
+
+\begin{enumerate}
+\item \textbf{Calculate $\Delta_i$ scheduling solutions. } Simply repeating the execution of the task scheduler $\Delta_i$ times is not sufficient and neither it is time nor memory efficient. Moreover, it will give $\Delta_i$ identical solutions. We had to add a logic to force the solver to iterate $\Delta_i$ times for exploring the solutions space and collect a number of them.
+
+The main trouble here is to avoid identical solutions, but the solution is in the core of Prolog's logic: as it is a declarative programming language, its execution procedure is based on checking that the input query can be proven as true according to the input facts and rules that constrain and define the problem. Whenever during the execution of the query an inconsistency is found, backtracking is used to a previous state and explores other possible conditions that are able to satisfy that inconsistency. In our case, we could use this built-in backtracking capabilities to find more than one scheduling solution that satisfies all the constrain.
+
+\item \textbf{Enable and upgrade the task selection capabilities for the schedule solution. } The $^3$Cat-1 task scheduler's procedure to select the tasks that could fit in the schedule was an iterative process that uses task priorities, something that at the moment we do not need to consider for the Local-Global policy. This iteration process generates a valid combination of tasks by gradually expanding an initial sub-problem with more tasks. It starts with the simplest sub-problem (e.g. ``allocate resources to task $a_1$'') and continuous adding subsequent tasks, backtracking in the combinations tree whenever an unfeasible problem is found.
+
+In our case, we do not iterate in this way but we always try to solve the problem with \emph{all} the input tasks. However, we need some way to be able to provide a scheduling solution whenever a task set is unfeasible in the given time $T_w$.
+
+The solution to this issue was to expand the scheduling time in such a way that an artificial extra period of time is added to the initial scheduling window. This period of time is special because it has \emph{infinite} resources, so any task can be scheduled within this time. Therefore, whenever we find a task or a number of them that cannot be scheduled because of resource or time constraints, the solver will simply provide a solution with these tasks placed in this extra time period.
+
+\item \textbf{Figure of merit ($F$) definition and calculation. } A main part of the Local-Global policy is the figure of merit, which describes the goodness of each sub-solution reported to the \emph{Global} layer. A critical contribution of this Thesis has been a proposal for the definition of $F$. This does not mean only to enumerate a set of variables that can describe the solution, but to study these variables and stablish a valid bounded adaptive combination of all of them depending on each parameter's contribution to the schedule. 
+
+The figure of merit is the sole parameter of goodness information about each sub-solution that the \emph{Global} layer will receive. So, it is the unique information it has to obtain the optimal combination of sub-solutions. Instead of having an extensive knowledge of the resources available in each satellite, it only possesses the figure of merit's value. Because of that, the definition must be as complete as possible, containing all and only the variables that really characterize the sub-solution against any other one. We further define $F$ it below.
+
+\item \textbf{Communication with the \emph{Global}. } The local scheduler designed for $^3$Cat-1 simply output the found solution, but the \emph{Local} entity must also send the set of sub-solutions to the \emph{Global} layer. As it has been already said, the information that the \emph{Local} must transmit is limited to the subset of tasks included in each sub-solution, and its figure of merit. For the version implemented in this Thesis this communication with the \emph{Global} has been modelled as outputting to a file the $\Delta_i$ solutions found. This files generated by all the \emph{Local} schedulers will be later processed by the \emph{Global} process.
+
+\end{enumerate}
+
+Apart from these added abilities, the $^3$Cat-1 local scheduler was entirely revised and individually tested for ensuring the best performance.
+
+\subsubsection{Mathematically describing a scheduling solution}
+
+As it has been previously said, defining the $F$ is a crucial step for implementing the Local-Global task scheduler, as it will provide the final \emph{goodness} of the global solution fruit of the combination of the \emph{Locals} provided sub-solutions.
+
+Let all the terms present in the multiple-satellites multiple-tasks scheduler problem that is to be solved by the Local-Global policy be defined:
+
+\begin{description}
+\item[$S$] Number of satellites in the constellation.
+\item[$\Delta_i$] Golden number: number of sub-solutions requested to/delivered by satellite $i$. This value is either set dynamically by the global algorithm or generated statically to equalize the computational load in each local scheduler.
+\item[$P_{ij}$] The set of sub-solutions generated by satellite $i$ to a given scheduling problem. This term is defined with the pair $\left\langle A_{ij}, F_{ij}\right\rangle$, where
+\begin{description}
+\item[$A_{ij}$] is the task subset\footnote{Letter $A$ is chosen to prevent confusing the term with time-related variables, denoted with $T$.} included in sub-solution $j$ of satellite $i$ and
+\item[$F_{ij}$] is the figure of merit for sub-solution $j$ from satellite $i$.
+\end{description}
+\item[$T_\text{begin}$] Absolute time at which the scheduling window begins. 
+\item[$T_\text{end}$] Absolute time at which the scheduling window ends.
+\item[$T_w$] Scheduling time window shared across all satellites, defined as:
+\begin{equation}
+T_w = T_\text{end} - T_\text{begin}
+\end{equation}
+\end{description}
+
+Five variables finally form the definition of the figure of merit $F$ value: deadline-based priority, resource utilization, eagerness, satellite processing utilization and responsiveness. This parameters are described below.
+
+Since the Local-Global policy is aimed at planning tasks within the scheduling window $T_w$, the algorithm may yield a final combination of sub-solutions which excludes some tasks. This may be caused either due to their execution domains not being within the current $T_w$ (e.g. a point in the orbit which is never reached by any of the satellites in the constellation) or because the tasks are only present in sub-solutions that are not part of the final global one. In order to account for this behaviour and to include a prioritization method for tasks with shorter deadlines, the global scheduler will consider a fixed number of future scheduling windows and will promote those solutions where there is a task with sorter deadline\footnote{Deadlines are time values set by ground operators corresponding to the task's $t_{\text{max}}^{a_j}$ value} than that. In order to formulate this feature, let the following terms be defined:
+\begin{description}%[leftmargin=1.5cm,labelindent=!]
+\item[$L_{ij}$] The minimum distance (in time) between a task deadline and $T_\text{begin}$, for sub-solution $j$ in satellite $i$. 
+\item[$N_s$] Number of periods in deadline prioritization. $N_s$ is a static parameter (see (\ref{eq_local-global_deadline_def})). 
+\end{description}
+
+Therefore, the \textbf{prioritization term} $\mathbf{D_{ij}}$ can be defined as follows:
+\begin{equation}
+\label{eq_local-global_deadline_def}
+D_{ij} = 
+\begin{cases}
+2-\dfrac{L_{ij}}{N_s \cdot T_w} & \text{if} \quad L_{ij} \leq N_s \cdot T_w\\
+1 & \text{otherwise}
+\end{cases}
+\end{equation}
+
+Despite the \emph{Global} section of the policy not requiring details about the resources and their capacity allocation to tasks (this is actually what \emph{Local} entities solve), part of a solution's figure of merit ($F_{ij}$), which represents the goodness of a solution, is computed from each satellite's resource usage that derives from each local plan. In order to complete $F$ definition, the capacities and consumptions of each (local) resource are defined:
+
+\begin{description}
+\item[$R_i$] Set of resources present in satellite $i$. Therefore, $\bigcup_i{R_i}$ represents the total set of resources of the infrastructure.
+\item[$c_{ijk}(t)$] Aggregated\footnote{The sum of resource consumptions by each scheduled task.} consumption of resource $k$ for satellite $i$ and sub-solution $j$ at time $t$.
+\item[$m_{ik}(t)$] Capacity of the resource $k$ for satellite $i$ at time $t$.
+\end{description}
+
+$\mathbf{C_{ij}}$ is then defined to provide a metric to evaluate sub-solutions in terms of \textbf{resource utilization} as:
+
+\begin{equation}
+C_{ij} = \max_{t}\left\lbrace \sum_{k \in R_i}\left(1-\dfrac{c_{ijk}(t)}{m_{ik}(t)}\right)\dfrac{1}{|R_i|}\right\rbrace \qquad C_{ij} \in \left[0,1\right]
+\end{equation}
+
+Another variable to evaluate the goodness of a given sub-solution is $\mathbf{G_{ij}}$, which somehow represents the \textbf{eagerness} of the local satellite $i$ with respect to the execution of tasks in sub-solution $j$. A sub-solution will be better if it includes more tasks. However, not all satellites are able to perform every task. Some tasks might have constraints that are impossible to meet for satellites (e.g. a position in the orbit that they never reach) or require the use of specialized instruments which are not common for all satellites. Therefore, the figure of merit needs to evaluate the goodness of a sub-solution with respect to the tasks which each satellite has the capability to execute. In order to do so, $G_{ij}$ is defined as follows:
+\begin{description}
+\item[$A'_i$] Subset of tasks that satellite $i$ has the capability to perform. If a given satellite is equipped with a resource $k$, but this resource does not have enough capacity to perform a given task, this task will still be present in this subset ($a \in A_i'$).
+\end{description}
+
+\begin{equation}
+G_{ij} = \dfrac{|A_{ij}|}{|A'_i|}
+\end{equation}
+
+Having $G$ and $C$ to evaluate the the number of tasks in a sub-solution and the utilization of resources and $D$ to modify the figure of merit of priority tasks, the following parameters will assess the goodness of a sub-solution with respect to the satellite \textbf{utilization} ($\mathbf{U_{ij}}$) and \textbf{responsiveness} ($\mathbf{E_{ij}}$). 
+
+\begin{eqnarray}
+U_{ij} &=& \dfrac{t_{1(ij)}}{T_\text{end}}\\
+E_{ij} &=& \dfrac{t_{1(ij)}-t_{0(ij)}}{T_w}
+\end{eqnarray}
+
+Where
+
+\begin{description}
+\item[$t_0$] Minimum start time among all tasks in sub-solution $j$, corresponding to $\min_{\forall a \in A_i'}{start(a)}$.
+\item[$t_1$] Maximum end time among all tasks in sub-solution $j$, corresponding to $\max_{\forall a \in A_i'}{end(a)}$.
+\end{description}
+
+These five parameters describe in very different contexts the quality of the sub-solution, providing knowledge of each \emph{Local} entity to the \emph{Global} with small overhead. It should be observed that 	all the parameters are bounded within the interval $\left[0,1\right]$, with the exception of $D_{ij}$, which is bounded within the interval $\left[1,2\right]$. This could be unnecessary as long as every parameter was proportional to the goodness aspect it represents, but is required by the \emph{Global} entity for making a more efficient optimization. Moreover, this bounding happens to give each parameter a range of values that can vary at most exactly a value equal to $1$, so the relative importance given to each parameter is normalized.
+
+Putting everything together, the \textbf{figure of merit} $\mathbf{F}$ is finally defined as:
+\begin{equation}
+F_{ij} = w_c\cdot C_{ij} + w_g\cdot G_{ij} + w_u\cdot U_{ij} + w_e\cdot E_{ij} + w_d\cdot D_{ij} 
+\end{equation}
+
+The combination of the five parameters is a weighted sum of their values, Where $w$ are the static weights for each parameter, which can modify the by-default balanced relative importance of each parameter.
 
 %-----------------------------------
 %	SUBSECTION 2
 %-----------------------------------
 
 \subsection{Optimizing the optimization: the Global algorithm}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+%Como ya se ha comentado, la capa global es un problema NP-hard de optimización. Complejidad en función de las variables que entran en juego (de forma simple).
+%Desarrollo de un algoritmo eficiente: funcionamiento (ordered_list, cuándo cortamos la búsqueda...)
+%Coordinación con el local.
+%Comparación de los tiempos de ejecución para un set aleatorio de sub-soluciones con un algoritmo de fuerza bruta.
+
+Finally, the global scheduling algorithm needs to solve the combinatorial optimization problem defined in (\ref{eq_local-global_global_optimization}), where the binary decision variables $x_{ij}=1$ if sub-solution $P_{ij}$ is part of the final combination and 0 otherwise.
+
+\begin{subequations}
+\label{eq_local-global_global_optimization}
+\begin{align}
+\text{Maximize} \qquad r(P) &= \left(\sum_{i=0}^{S-1}\sum_{j=0}^{\Delta_i-1}x_{ij}{\prod_{f \in F_{ij}}f}\right)\cdot\left(1-\dfrac{N_b}{S\cdot |A|}\right)\\
+\text{where:} \qquad B_{ijk} &= \begin{cases}1 & \text{if} ~k \in A_{ij}\\ 0 & \text{otherwise}\end{cases}\\
+N_b &= \sum_{i=0}^{S-1}\sum_{j=0}^{\Delta_i-1}\sum_{k \in A}{B_{ijk}\cdot x_{ij}}
+\end{align}
+\end{subequations}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
@@ -48,11 +183,3 @@ Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum an
 
 \subsection{Modifications over the original proposal}
 Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
-%----------------------------------------------------------------------------------------
-%	SECTION 3
-%----------------------------------------------------------------------------------------
-
-\section{[Implementing a simple Ring consensus algorithm]}
-
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.

@@ -8,13 +8,17 @@
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{Consensus: the key for a non-centralized distributed system}
+\section{A taxonomy of the existing task scheduler paradigms}
 
-There are multiple architecture designs available for distributed systems, having both centralized and fully-independent structures. However, although sometimes it is needed to have a single node doing some special functions to control the state of the entire system (and, in fact, leader election and recovery is one of the most critical functionalities in distributed programming), it means always a single point-of-failure, a weakness that affects the robustness of the entire system, apart from decreasing the system throughput whenever it is needed to contact the leader, which can be a bottleneck.
+As it was mentioned before, the existing distributed system architectures can be classified according to the grade of centralization, from completely hierarchical systems to fully independent nodes. The research in the distributed algorithms field can also be divided into centralized and non-centralized paradigms, but it cannot be limited to that. However, completely new problems appear in the distributed systems, such as synchronization, leader election or data consistency,  and every different problem opens new approaches and new paradigms.
 
-Hence, the research in the distributed algorithms field is also divided into centralized and non-centralized structures. As it can be easily observed, our Local-Global policy is a centralized distributed algorithm. However, most of the research in distributed task schedulers appears to be focused on decentralized algorithms, having a common key concept among all of them: the consensus.
+In particular, into the field of task scheduling, many approaches have been taken. While searching for state-of-the-art algorithms that could be compared with the Local-Global proposal, we found from high-complexity fully-centralized algorithms that may be solved using dynamic or constraint-based programming (meanly for grid-computing or High Performance Computing, as in \cite{anderson2005high}; \cite{ramamritham1984dynamic}; \cite{yu2005taxonomy}), to low-computational decentralized schedulers (\cite{1310996}; \cite{zhu2007tasks}).
 
-A consensus-based distributed algorithm's aim is that every non-faulty node in the distributed system agree on some value within a finite number of steps \citep{Tanenbaum:2006:DSP:1202502}. At first, it could be applied in both centralized and non-centralized structures but again we find that the little research that has been carried out in consensus-driven distributed task schedulers is focused on decentralized architectures.
+In the last years, distributed task scheduler research has mainly worked over three different paradigms: \textbf{negotiation or consensus} algorithms, in which nodes in the system \emph{agree} the final schedule --it can be done \emph{offline} as well as \emph{online}--, \textbf{centralized} optimized schedulers --where the degree of centralization can vary-- and more recently \textbf{bio-inspired} approaches --which take profit from observing and imitating the behaviour of the distributed systems present in the nature--.
+
+Of these three categories, the one which almost unexplored is the third one: the research on it is almost only theoretical and only simple and descriptive approaches have been published. Usually they propose a procedure that imitates an observed behaviour on ant colonies or other such distributed \emph{nature} systems. For instance, an adaptation of the stigmergy used by ants to stablish an optimal path is presented in \cite{Stigmergy} and a resources balancing technique extracted from the one observed in ant colonies is described in \cite{antcollonies}. Although these are very interesting approaches, they are still not quite practical for a comparison like the one we want to do.
+
+Completing the classification, our Local-Global policy could be described as a centralized distributed algorithm, while consensus-based distributed task schedulers would be a research-mature third option, fitting our needs for the comparison. As these are actually candidates for the comparison, we will briefly describe in the next section some of the most interesting approaches that have been found, and what are the reasons for having chosen a particular one.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
@@ -22,16 +26,30 @@ A consensus-based distributed algorithm's aim is that every non-faulty node in t
 
 \section{Comparison: algorithms chosen to test the Local-Global}
 
+Having explored the paradigms that are being investigated in the distributed task scheduler field, we must find out a state-of-the-art algorithm that can be compared with the Local-Global proposal: it should be designed for a similar context and resources requirements.
+
 As it has been already stated, the research in the field of distributed task schedulers is still in its first steps, having that the computational capabilities of nodes in typical distributed systems has been traditionally very low to consider a fully-autonomous system-wide distributed task scheduler running on every node.
 
-The criteria used for choosing the state-of-the-art algorithm to compare the Local-Global with was that it should be as representative of distributed algorithms as possible. Papers presenting such kind of distributed task scheduler are only a few, and sometimes the context was too different to compare our algorithm with (nearly infinite bandwidth, multi-processor scheduling...). Finally a market-based approach was found, adequately simple but powerful and showing a fully decentralized distributed proposal.
+The criteria used for choosing the state-of-the-art algorithm to compare the Local-Global with was that it should be as representative of distributed algorithms as possible. Papers presenting such kind of distributed task scheduler are only a few, and sometimes the context is too different to compare our algorithm with (nearly infinite bandwidth, multi-processor scheduling...).
+
+In fact, the context in which the Local-Global policy is meant to work is a very special one: it is a highly-constrained environment in terms of resources and communication, a medium processing capacity (as it is aimed to work on a satellite-on-a-phone nano-satellite, which has higher computing capabilities than standard nano-satellites) and possibly fully independent nodes (depending on the final distributed software architecture).
+
+This reduces our search field: algorithms thought to run on practically infinite communication bandwidth grid computing platforms (as the one presented in \cite{servers}) cannot be compared with the Local-Global.
+
+We cannot also use for the comparison algorithms that are in fact designed to be used for distributed Operating Systems or deploying distributed heavy applications, where the timing requirements are highly-constrained but the communication is practically unlimited (\cite{anderson2007consensus}; \cite{pilloni2012decentralized}). There are also other invalid approaches such as that presented in \cite{luo2013distributed} as it does consider resources requirements in a simple way and the problem resolution is fully centralized, with no participation of the system nodes. However, it presents an auction decision model, something which is also present in the final chosen algorithm.
+
+Two very interesting approaches can be found in \cite{choi2009consensus} and in \cite{bonnet2008coordination}. The contexts are very similar to the ABS satellite constellation. In the first proposal, a combination of consensus and auction-based decision making is used to coordinate a fleet of autonomous vehicles with two decentralized algorithms. Nevertheless, the task description is more complex than the one we need for the ABS case. The second paper describes a communication-constrained based task allocator in the same context of that on ABS project: a satellite constellation. However, the local scheduler of each satellite is not described in the paper, which makes very difficult to be able to use it for comparing with the Local-Global.
+
+Finally, an distributed-architecture-agnostic market-based approach was found in \citep{Edalat09}. The description of the tasks is adequate to what we need and its simplicity yet completeness shows a fully decentralized distributed proposal good for our comparison.
+
+Additionally, a ring-architecture task scheduler algorithm has been designed from the leader election algorithm described in \cite{Tanenbaum:2006:DSP:1202502}, page 266. The reason of designing this algorithm was to use a typical distributed structure such as a ring for combining it with the Local-Global policy (as an optimization) in future research.
 
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
 \subsection{A market-based approach}
 
-In \citep{Edalat09} an adaptive task allocation scheme is presented to be used on wireless sensor networks, which is a similar context to that of our initial problem: a resource-constrained environment. A market-based architecture is proposed, in which each node is modelled as a seller who calculates the price for deploying a specific task and offers it to the consumer (the task sender), adapting the price to the changing resources availability for a better energy balance amongst the nodes composing the system. It is important to observe that it schedules the tasks \emph{on the go}, i.e. it is an \emph{online} task scheduler.
+The proposal of \citep{Edalat09} is an adaptive task allocation scheme, which is presented to be used on wireless sensor networks, which is a similar context to that of our initial problem: a resource-constrained environment. A market-based architecture is proposed, in which each node is modelled as a seller who calculates the price for deploying a specific task and offers it to the consumer (the task sender), adapting the price to the changing resources availability for a better energy balance amongst the nodes composing the system. It is important to observe that it schedules the tasks \emph{on the go}, i.e. it is an \emph{online} task scheduler.
 
 In this section a brief description of the presented algorithm, as described in the article mentioned before, is presented, and in \ref{MBimplementation} the details of the implementation carried out in this Thesis will be detailed.
 
@@ -55,7 +73,7 @@ EP_i = \frac{a}{1-e^{E_i/b}}
 \item[Base Price] ($ BP $): the computational cost of processing a task in a particular node. It is defined as (node $i$, task $j$):
 
 \begin{equation}
-BP_{ij} = S_j \prod EP_i
+BP_{ij} = S_j \times EP_i
 \end{equation}
 
 \item[Communication Cost] ($ CommCost $): the cost of transmitting the output of a task to the node that will process its successor task.
@@ -65,32 +83,46 @@ BP_{ij} = S_j \prod EP_i
 \item[Processor Release Time] ($ RT $): the time at which the task execution would finish if the node finally schedules it.
 \end{description}
 
-With all these variables, the proposed price calculation is the one of Eq. \ref{MBPrice1}, with DL the arriving time of the task.
+With all these variables, the proposed price calculation is the one of Eq. \ref{MBPrice1}, with DL the arriving time of the task. This price calculation's goal is to balance the energy consumption among the nodes and to achieve a quicker processing time to more urgent tasks.
 
 \begin{equation}
 P_{ij} = (CommCost + BP_{ij})\left[1+exp^{\left[\frac{\lambda(t,DL_j)}{\gamma(t,RT_i)}\right]}\right]
 \end{equation}
+\label{MBPrice1}
 
 \begin{center}
+\begin{tiny}
+\begin{minipage}{0.4\textwidth}
 $\lambda(t,DL_j) = \left\{ \begin{array}{lrc}
              k(t - DL_j), &   \mathrm{for } & t \geq DL_j \\
              \\ \epsilon &  \mathrm{for } & t \leq DL_j \\
              \end{array}
    \right.$
-   
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{0.4\textwidth}
 $\gamma(t,RT_i) = \left\{ \begin{array}{lrc}
              k(t - RT_i), &   \mathrm{for } & t \geq RT_i \\
              \\ \epsilon &  \mathrm{for } & t \leq RT_i \\
              \end{array}
    \right. $
+\end{minipage}
+\end{tiny}
 \end{center}
-\label{MBPrice1}
 
+\item \textbf{Recovery Phase. } This phase is intended for recovering from node failures during the task assignment phase, taking into account the existing dependence between tasks.
+
+\item \textbf{Price offering. } Two methods are presented to select the winner bid. Here we will focus on the more efficient decentralized method, as it is the one which we will implement. The core of this procedure is that instead of transmitting to the client the price calculated as soon as it has been obtained, each node waits for a proportional waiting time before broadcasting it to all nodes and goes to a LISTEN mode. If a lower price is received, the node leaves the competition and does not broadcast its bid. Therefore, only the node with lower price effectively sends its bid, reducing the amount of transmitted information.
 \end{enumerate}
 
 %-----------------------------------
 %	SUBSECTION 2
 %-----------------------------------
 
-\subsection{[A pure consensus algorithm]}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+\subsection{Another ring algorithm}
+The leader election algorithm found on \cite{Tanenbaum:2006:DSP:1202502} is a quite simple one, but it is very representative of a typical distributed architecture: the ring structure. We will now describe the design that has been performed in this work to adapt this algorithm for having a distributed task scheduler. Instead of agreeing on who will be the next leader after a leader failure, we want to agree on a schedule for the whole system.
+
+We assume that the satellites in the system are physically (in fact, the ring formation is a practical architecture for satellite constellations) or logically ordered, so that each satellite knows who its successor is, and is able to communicate with it. When a task scheduling process is triggered, the global layer sends to a \emph{master} satellite the set of tasks to be performed. Then the master satellite runs its local scheduler to provide a number of local scheduling sub-solutions for them. Then, it builds up a message with the task set and votes the best sub-solution of those that he has found. The vote consists on \emph{marking} with the sub-solution's \emph{figure of merit} every single task scheduled in that particular sub-solution. This SCHEDULING message is sent to its successor in the ring. At each step, each satellite calculates a number of scheduling sub-solutions and votes the corresponding tasks.
+
+Eventually, the message arrives again to the \emph{master} satellite --he will recognize this message as it will contain its own votes--. Now, the master changes the message type to SOLUTION and looks for the tasks that he had voted. He will effectively assign himself those tasks in which his vote is the highest one. The message goes round the ring again and when it turns to the \emph{master} leader, the scheduling process has finished.
+
+Another variation would be that instead of having only one \emph{voting} round, there would be many of them. At each new round, the satellite would vote the tasks of other calculated sub-solution, if the first task set he voted has been won by other satellite. The algorithm converges to a consensual solution when no more sub-solutions can be voted or every satellite has won the task set it has voted.
