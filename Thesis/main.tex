@@ -44,7 +44,7 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{amsfonts}
 \usepackage{amssymb}
 
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage[backend=bibtex,style=numeric-comp,natbib=true,sorting=none]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
 
 \addbibresource{example.bib} % The filename of the bibliography
 
@@ -114,7 +114,7 @@ headsepline, % Uncomment to get a line under the header
 \Large \textbf{\degreename}\\[2.0cm] % University requirement text
 
 \emph{Advisors:} \\
-\large \textbf{Carles \textsc{Araguz L\'opez}}\\\textbf{Dr. Elisenda \textsc{Bou Balust}}\\[1.0cm]
+\large \textbf{Carles \textsc{Araguz L\'opez}}\\\textbf{Elisenda \textsc{Bou Balust}}\\[1.0cm]
 
 \Large \emph{Reporting advisor (ponent):} \\
 \large \textbf{\supname}\\[1.0cm]
@@ -208,6 +208,8 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 \textbf{EST} & \textbf{E}arliest \textbf{S}tart \textbf{T}ime\\
 \
 \textbf{LST} & \textbf{L}atest \textbf{S}tart \textbf{T}ime\\
+\
+\textbf{LEO} & \textbf{L}ow \textbf{E}arth \textbf{O}rbit\\
 
 \end{abbreviations}
 
@@ -255,7 +257,7 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 \input{Chapters/Chapter2} 
 \input{Chapters/Chapter3}
 \input{Chapters/Chapter4} 
-%\input{Chapters/Chapter5} 
+\input{Chapters/Chapter5} 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
@@ -266,7 +268,7 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-\input{Appendices/AppendixA}
+%\input{Appendices/AppendixA}
 %\input{Appendices/AppendixB}
 %\input{Appendices/AppendixC}
 

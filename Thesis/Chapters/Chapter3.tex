@@ -136,6 +136,7 @@ These five parameters describe in very different contexts the quality of the sub
 
 Putting everything together, the \textbf{figure of merit} $\mathbf{F}$ is finally defined as:
 \begin{equation}
+\label{eq_F_weighted}
 F_{ij} = w_c\cdot C_{ij} + w_g\cdot G_{ij} + w_u\cdot U_{ij} + w_e\cdot E_{ij} + w_d\cdot D_{ij} 
 \end{equation}
 
@@ -147,20 +148,104 @@ The combination of the five parameters is a weighted sum of their values, Where 
 
 \subsection{Optimizing the optimization: the Global algorithm}
 %Como ya se ha comentado, la capa global es un problema NP-hard de optimización. Complejidad en función de las variables que entran en juego (de forma simple).
-%Desarrollo de un algoritmo eficiente: funcionamiento (ordered_list, cuándo cortamos la búsqueda...)
+%Desarrollo de un algoritmo eficiente: funcionamiento (ordered_list, cuándo cortamos la búsqueda...) gráficas.
 %Coordinación con el local.
-%Comparación de los tiempos de ejecución para un set aleatorio de sub-soluciones con un algoritmo de fuerza bruta.
+%Comparación de los tiempos de ejecución para un set aleatorio de sub-soluciones con un algoritmo de fuerza bruta ¡No! Eso va en resultados.
 
-Finally, the global scheduling algorithm needs to solve the combinatorial optimization problem defined in (\ref{eq_local-global_global_optimization}), where the binary decision variables $x_{ij}=1$ if sub-solution $P_{ij}$ is part of the final combination and 0 otherwise.
+As it has already been explained, the global scheduling algorithm is basically a combinatorial optimization problem, that can be described as in (\ref{eq_local-global_global_optimization}). The \emph{Global} layer receives\ $S$ sets of $\Delta_i$ sub-solutions each, described by a pair formed by the scheduled tasks set and its figure of merit. A potential solution is a combination of at most $S$ sub-solutions, selecting one or none for each satellite. However, it is very important to determine how the combination of sub-solutions can be qualified in terms of the figures of merit of each one of them.
+
+We could simply aggregate the values summing them, but there is something that must be considered when combining scheduling sub-solutions: a task can appear in more than one sub-solution of the set forming the combination: how does this affect to the quality of this combination as a possible final global solution?
+
+To reflect this degradation of the global solution's quality, we have decided to weight the sum of the $F$ values with a multiplying factor that depends on the sum of the number of occurrences of all tasks ($N_b$) normalized to the maximum number of occurrences, which is equal to $S\cdot |A|$. Below the complete definition of the global problem can be found. Note that the binary decision variables $x_{ij}=1$ if sub-solution $P_{ij}$ is part of the final combination and $0$ otherwise: 
 
 \begin{subequations}
 \label{eq_local-global_global_optimization}
 \begin{align}
 \text{Maximize} \qquad r(P) &= \left(\sum_{i=0}^{S-1}\sum_{j=0}^{\Delta_i-1}x_{ij}{\prod_{f \in F_{ij}}f}\right)\cdot\left(1-\dfrac{N_b}{S\cdot |A|}\right)\\
-\text{where:} \qquad B_{ijk} &= \begin{cases}1 & \text{if} ~k \in A_{ij}\\ 0 & \text{otherwise}\end{cases}\\
-N_b &= \sum_{i=0}^{S-1}\sum_{j=0}^{\Delta_i-1}\sum_{k \in A}{B_{ijk}\cdot x_{ij}}
+\text{where:} \qquad N_b &= \sum_{i=0}^{S-1}\sum_{j=0}^{\Delta_i-1}\sum_{k \in A}{B_{ijk}\cdot x_{ij}}\\
+B_{ijk} &= \begin{cases}1 & \text{if} ~k \in A_{ij}\\ 0 & \text{otherwise}\end{cases}
 \end{align}
 \end{subequations}
+
+We will divide the description of the \emph{Global} entity implementation in three different subsections: the first one is devoted to briefly analyse the computational complexity of the optimization combinatorial problem to be solved, the second is basically an enumeration of the efficiency-based design and recursive improvements made on the algorithm, and finally in the third part the coordination with the \emph{Local} entity is explored. 
+
+\subsubsection{An exploding combinatorial problem}
+
+The optimization problem described in (\ref{eq_local-global_global_optimization}) is basically an optimal search problem characterised by mainly three variables: number of satellites $S$, number of sub-solutions provided by each satellite $\Delta$ and the number of scheduling input tasks $|A|$. The entire space of possible combinations is formed by combinations of $S$ elements in which each element is the sub-solution identity selected on each satellite. For instance, for a satellite constellation formed by 5 satellites and having that the first satellite provides 4 sub-solutions, the second provides 3, the third only 2, and both the fourth and the fifth provide 5 sub-solutions, a possible \emph{Global} combination can be represented as the following:
+
+\begin{center}
+$ \left(2 0 1 0 3\right) $
+\end{center}
+
+This would mean that this particular combination has selected the second sub-solution provided by the first satellite, the first sub-solution provided by the third and the third one from the fifth satellite. Note that it has not selected any sub-solution for the satellites 2 and 4.
+
+In brief, it can be easily observed that the entire space of combinations would be a set of $\prod_{i=1}^{S}{\left(\Delta_i + 1\right)}$ combinations, which in an homogeneous case where $\Delta_i = \Delta_{\text{system}}$ for every satellite would be approximately $\Delta_{\text{system}}^S$.
+
+However, this expression does not completely include the complexity of the search. To find out the optimal combination the value of $r(P)$ function must be calculated for each one, and this calculation depends basically on both the number of input tasks and the number of satellites of the system. This dependence is linear, as one can easily observe that the calculation is fully dominated by the sum of $F$ values, which varies linearly with $S$ (at most exactly $S$ sums must be done) and by the calculation of $N_b$, which depends linearly with the number of tasks $|A|$ (see (\ref{eq_local-global_global_optimization})).
+
+In a basic computational complexity analysis notation, this would lead to a problem dependence on these three variables as shown below:
+
+\begin{equation}
+\label{eq_LG_complexity}
+Global(\Delta_{\text{system}},|A|,|A|) \in \Theta\big((\Delta_{\text{system}})^S \cdot  |A|\big)
+\end{equation}
+
+\indent To conclude, it can be observed the evolution of the computational complexity when varying only one input with the others kept as a constant value:
+
+\noindent -- If both $S$ and $|A|$ are kept constant:
+\[Global(\Delta,S=S_0,|A|=|A|_0) \in \Theta\big(|A|_0(\Delta_{\text{system}})^{S_0}\big)=\Theta\big((\Delta_{\text{system}})^{S_0}\big) \rightarrow \text{potential variation} \]
+
+\noindent -- If $\Delta_{\text{system}}=\Delta_0$ and $|A|$ is kept constant:
+\[Global(\Delta_{\text{system}}=\Delta_0,S,|A|=|A|_0) \in \Theta\big(|A|_0(\Delta_0)^S\big)=\Theta\big((\Delta_0)^S\big) \rightarrow \text{exponential variation}	\]
+
+\noindent -- If $\Delta_{\text{system}}=\Delta_0$ and $S$ is kept constant:
+\[Global(\Delta_{\text{system}}=\Delta_0,S=S_0,|A|) \in \Theta\big(|A|(\Delta_{\text{system}})^{S_0}\big)=\Theta(|A|) \rightarrow \text{linear variation}	\]
+
+Hence, we are facing an exponentially exploding problem when solving the \emph{Global} entity combinatorial optimization
+
+\subsubsection{An efficiency-based design of the combinatorial search}
+
+The most basic and simple resolution procedure of this problem would be a brute force approach: explore the entire space of possible combinations and simply compare the values of $r(P)$ function of each of them and select the one who maximizes it. However, when facing a problem that depends exponentially as we increase the number of satellites and the $\Delta$ value of each one, the brute force approach can be completely useless, because of the long time it takes to end the exploration.
+
+That is why some efficiency implementation decisions have been taken and a careful study on the algorithmics and data structures that could be used has been performed. The design explained below --and its subsequent implementation-- has been completely carried out during the development of this Bachelor Thesis.
+
+First of all, it is very important that we observe two characteristics of the function to be optimized, $r(P)$ (see (\ref{eq_local-global_global_optimization})):
+\begin{itemize}
+\item It is a bounded function, concretely in the interval $\left[0, W\right]$, where $W$ is the sum of the $F$ weights (see (\ref{eq_F_weighted})): $w_c + w_g + w_u + w_e + w_d\cdot 2$ (remember that $D_{ij}$ is bounded in $\left[1, 2\right]$ instead of $\left[0, 1\right]$).
+\item It is formed by the multiplication of two different terms: the sum of $F$ and a weighting value depending on the tasks occurrences, which is also bounded in $\left[0, 1\right]$
+\end{itemize}
+
+This means that $r(P)$ itself is bounded in the interval $\left[0, W\right]$ and, what is even more specific, in the interval $\left[1, \dot{F}\right]$, where $\dot{F}$ is the sum of $F$ of a particular combination.
+
+Therefore, \textbf{if we find out the way of exploring the space of combinations in a way that $\dot{F}$ value is decreasing, we will be able to cut the exploration} as soon as we find a combination such that its $r(P)$ value is equal to its $\dot{F}$ value (and this is the optimal combination, as we will prove later) or we find a combination which $\dot{F}$ value is equal or below the maximum $r(P)$ found till now.
+
+A brief justification of these two affirmations is the one that follows: the fact that $r(P)$ value is bounded in the interval $\left[1, \dot{F}\right]$, and that we are exploring the combinations space in decreasing $\dot{F}$ makes that no combination with lower $\dot{F}$ than any other with $r(P) = \dot{F}$ will have an $r(P)$ higher than this one because $r(P$ is never bigger than $\dot{F}$ value (first cutting context) and that no combination with lower $\dot{F}$ than the maximum $r(P)$ value found till now will have a higher $r(P)$ than this maximum, for the same reason (second cutting context). In Fig. \ref{fig_r_vs_F} this two situations can be seen.
+
+Having this, we must find the way of exploring the combinations space in decreasing $\dot{F}$. Let us assume that we have the $S$ lists of $\Delta_i$ sub-solutions delivered by each satellite ordered by decreasing $F$. This means that combination $\left(1 1 ... 1)\right)$ is the one who has the highest $\dot{F}$ value. However, this does not mean that this combination is the one that has a maximum $r(P)$ value.
+
+Hence, if we want to explore the combinations space in decreasing $\dot{F}$, we already know where to begin: by the combination $\left(1 1 ... 1)\right)$. The way to follow the exploration is explained below.
+
+Let us define two key concepts for this explanation:
+\begin{itemize}
+\item A combination's \textbf{successor} is any other combination that is the selection of exactly the same sub-solutions as the first one except by one and only one satellite, for which it has selected the sub-solution immediately following the one that has selected the first combination in order of decreasing F. For instance, the combination $\left(2 3 \mathbf{3} 4 0)\right)$ is the successor of $\left(2 3 \mathbf{2} 4 0)\right)$. Observe, however, that it is also successor of $\left(2 3 3 \mathbf{3} 0)\right)$.
+\item In the same way, a combination's \textbf{predecessor} is any other combination that is the selection of exactly the same sub-solutions as the first one except by one and only one satellite, for which it has selected the sub-solution immediately preceding the one that has selected the first combination in order of decreasing F. $\left(2 3 \mathbf{2} 4 0)\right)$ and $\left(2 3 3 \mathbf{3} 0)\right)$ are predecessors of $\left(2 3 \mathbf{3 4} 0)\right)$.
+\end{itemize}
+
+Therefore, it can be proved that we will explore in decreasing $\dot{F}$ the combinations space if we follow the following procedure: for each combination we are processing we insert its successors in an ordered list and select the first element in the list as the following combination to be processed, starting from the combination $\left(1 1 ... 1)\right)$.
+
+There is only an observation that must be made: as it has been already said, a combination has more than one predecessor, so it would be inserted more than once in the ordered list, and hence it would be unnecessarily processed more than once. In order to insert the elements once and only once in the ordered list, each combination selects the successors to be inserted in the following way: from all the set of successors of a combination $c$ of the form $\left(1 1 ... c_k ... c_n)\right)$ where $c_k \in [2, \Delta_i]$ and $k \in [1,n]$, the inserted combinations subset is formed by all the successors of $c$ which differ from $c$ in any of the first $k$ components / satellite sub-solutions selections (e.g. the combination $(1 1 4 2 6)$ would insert $(2 1 4 2 6)$, $(1 2 4 2 6)$ and $(1 1 5 2 6)$).
+
+For the implementation carried out in this project, this optimized design has been implemented using C language, and an efficient ordered list library has been also implemented in order to have everything in the code controlled for best performance. In chapter \ref{Chapter4}, particular results for this implementation compared with a brute force search are shown.
+
+\subsubsection{Coordination with the \emph{Local} entities}
+
+To end up this section, we will devote this part to explain the implementation of the \emph{Global}'s process which is in charge of collecting all the solutions submitted by all the \emph{Local} entities and process them for preparing the optimization search described before.
+
+As it has been already said, for our simulations the \emph{Local} entities write out in a text file the $\Delta_i$ sub-solutions, detailing for each one the subset of tasks included and the $F$ value.
+
+Therefore, the \emph{Global} has to read that output text files and process them to initialize the internal variables that will represent the satellites' sub-solutions for combining them. If any of the satellites has not been able to send its sub-solutions (e.g. it is down or is not able to communicate with the \emph{Global} entity), the process simply considers it as it had a $\Delta_i = 0$.
+
+At last, this input processing instance orders by descending $F$ value each set of sub-solutions, as the optimized combinatorial search requires.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
@@ -168,18 +253,87 @@ N_b &= \sum_{i=0}^{S-1}\sum_{j=0}^{\Delta_i-1}\sum_{k \in A}{B_{ijk}\cdot x_{ij}
 
 \section{The price-based adaptive Task Allocator}
 \label{MBimplementation}
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+
+To implemented the proposal described in \cite{Edalat09}, some implementation details which are not comprehensively specified (e.g. the system architecture, the communication cost, the scheduling time window...) have been designed. Also some other aspects of the algorithm, such as the price calculation or some synchronization problems, have been improved for a best performance in the tests again the Local-Global policy.
 
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
-\subsection{Erlang: programming for distributed systems}
+\subsection{A state graph model}
+%Describir el sistema según un grafo de estados.
+%Implementación en Erlang, comunicación "real" entre nodos, arquitectura líder-esclavos.
+%Ventana de tiempo concreta
+%Nada de Listing Phase: sistema simple de dependencias
+%Variables que mantiene cada nodo: Communication Cost como distancia entre satélites
 
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+A good approach for implementing a distributed algorithm like this is to model each node in the system as a state graph. In this way, programming the nodes is limited to programming all the possible states in the node, the state changes whenever it arrives to the system a particular message (or any other particular event occurs) with the functionalities performed in any of these states and the variables maintained by the node.
+
+In this case, all the \emph{sellers} can be in two different states: WAITING and LISTENING. In the first one, the satellite is ready to begin a scheduling process as soon as a TASK message arrives to the system. In the second state, the system is performing a scheduling process and the node is waiting to transmit its task bid or surrender if a lower price bid is received from other satellite. The state graph implemented for this algorithm can be seen in Fig. \ref{fig_state_graph}.
+
+The auxiliary functionalities that have been implemented are mainly two: the price calculation and the task addition to the local scheduler. The first one is a calculation based on the current state of the node and the second is executed whenever the node has won a scheduling process and assigns itself the task, reserving the corresponding resources and refreshing its own state knowledge.
+
+Let us talk now about describing the node's state knowledge. In this Bachelor Thesis' implementation it has been designed as a set of local variables maintained by each satellite:
+
+\begin{enumerate}
+\item \textbf{Name. } The satellite's ID, used for identifying each satellite's message.
+\item \textbf{Energy. } The amount of energy that has not been reserving for executing already assigned tasks.
+\item \textbf{Processor release time. } The time instant in which the processor will finish the current scheduled tasks.
+\item \textbf{Beginning time. } The initial time of the current scheduling window, used for determining timestamps relative to it, for optimizing the overhead caused by the use of a long absolute time stamp.
+\item \textbf{Peers list. } The other satellites' IDs present in the constellation. It also includes the communication cost for each one.
+\item \textbf{Schedule. } The local schedule assigned till that particular moment, generated from the different scheduling processes that have been completed since the beginning of the scheduling window.
+\item \textbf{Assignation of tasks. } For each already assigned tasks, it contains the ID of the satellite that has been assigned to execute it.
+\end{enumerate}
+
+The current implementation has been developed in Erlang code, which is a functional programming and distributed systems oriented language. Its distributed nature has allowed us to directly simulate different nodes and a real message passing system between the nodes. This truly distributed environment has required a specific architecture design for a better system management.
+
+Because of that, a leader-slaves centralized architecture has been implemented. The leader-slave relationship is only valid for system registering or de-registering --whenever a satellite wants to enter in the system, it has to communicate it to the current leader, and the same for whenever a satellite leaves the system--, but is meaningless for the scheduling algorithm.
+
+Another specificity of our implementation has been the simplification of the \emph{Listing Phase} (see \ref{sec_MBdescription}). Instead of dividing complex tasks into more simple ones, we have considered and already dependence-processed input task set. The dependence among two tasks has been modelled as an added task attribute which contains the ID of its \emph{predecessor} task i.e. the task that must be completed to begin this one. In the next section the task dependence's importance on calculating the task bid on a scheduling process is explained along with other implemented modifications in order to optimize the algorithm.
 
 %-----------------------------------
 %	SUBSECTION 2
 %-----------------------------------
 
 \subsection{Modifications over the original proposal}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+% Main modification: the bid calculation
+% Second modification: the scheduling window
+% Third modification: the communication cost meaning.
+% Fourth modification: resulting procedure (add task, task assigned...)
+As it has been said before, for the sake of performance of our implementation of this price-based proposal, some modifications to the original algorithm have been implemented.
+
+First of all, to better compare both Local-Global and market-based algorithms, a time constraint has been added to this algorithm: the scheduling window. This means that a scheduling process is bounded by this time window, in the sense that all the tasks pertaining to a scheduling execution arrive to the system and are executed during this period of time.
+
+Secondly, the communication cost for transmitting any task result from one satellite to another, which is present in the bid calculation, has been defined as a value proportional to the distance in kilometres among both satellites. In addition, the calculation of the communication cost from the task's dependence with its predecessor has been implemented in the following way: a task bid's communication cost is calculated as a value proportional to the distance from the satellite performing the calculation and the other one that has been assigned to execute the predecessor task, if any.
+
+Finally, it has been proposed and implementation a different but similar price calculation. The main problem of the reference paper's implementation is that the given definition results in a non-bounded bid. This causes that in some situations in which all the satellites have very constrained resources all of them would calculate a very high bid value, leading to a very long waiting time, which would mean that the system would be idle in the scheduling process too much time. Moreover, when two satellites calculate exactly the same bid, no tie-breaker policy is defined.
+
+To solve these problems, an optimized bid definition has been designed and implemented, modifying the following bid's components:
+
+\begin{description}
+\item[Base Price] ($ BP $): To allow a bounded value, a gaussian function has been used. Parameters $a$ and $b$ modify the maximum value and the velocity of price decay (in fact $b$ is the gaussian's variance) as the available energy is incremented, respectively. Its value for the node $i$ and the task $a_j$ (with task size $l^{a_{j}}$) is defined as:
+
+\begin{equation}
+BP_{ij} = a\cdot e^{-\left(\dfrac{1-\left(l^{a_{j}} / E_i\right)^2}{b}\right)}\text{ if } E_i \geq l^{a_{j}}
+\end{equation}
+
+\item[Communication Cost] ($ CC $): this value has been also redefined to be bounded supposing that all satellites in the system are in the same LEO\footnote{LEO stands for Low Earth Orbit} orbit and because of that are not further than $CC_{\text{max}}$, which is the diameter of the surface containing the orbit, approximated by an sphere.
+
+\begin{equation}
+CC = \begin{cases} 0 & \text{if no satellite assigned to }pred(a_j)\\
+\dfrac{d(i,k)}{CC_{\text{max}}} & \text{if satellite } k \text{ has been assigned to }pred(a_j)\end{cases}
+\end{equation}
+
+\item[Task Deadline] ($ TD $): since the \emph{Listing Phase} is not necessary in this implementation, we have redefined the Task Deadline as a value attached to each task message that represents the instant of time in which the task execution should be finished.
+\end{description}
+
+With these modifications, the proposed price calculation is the one of (ref{MBPrice2}), where $RT_i$ is the processor $i$ release time.
+
+\begin{eqnarray}
+\label{MBPrice2}
+P_{ij} = \begin{cases}CC + BP_{ij} + \dfrac{1}{DL - RT_i + 1} & \text{if } BP_{ij} \text{ defined and } DL \geq RT_i\\
+2 + a & \text{otherwise}\end{cases}
+\end{eqnarray}
+
+A small random time is added to the waiting time calculated from this value of $P_{ij}$, as a simple tie-breaking policy.
+
+Having in mind all these modifications, each satellite's execution logic can be reduced to the following description: a satellite can be in two possible scheduling states: WAITING and LISTENING. In the first state, it is ready to receive task messages to trigger a new scheduling event, during the scheduling window time. When a task message is receive, the node goes to LISTENING state. In this state it first calculates the bid following the definition shown in (\ref{MBPrice2}) and waits for a waiting time $T_\text{wait}$ proportional to the $P_{ij}$ calculated plus a small random time. If it receives within this time a bid for this task, it surrenders, saves the ID of the winner satellite for future references and returns to WAITING state. Else, it considers itself the winner of that round and schedules the task, reserving the corresponding energy. Finally, it returns to the WAITING state.

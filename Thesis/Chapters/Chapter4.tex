@@ -8,9 +8,53 @@
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
+\section{Parametrizing a distributed task scheduler}
+%Para testear hay que tener claro qué variables "barrer"
+%Cosas que afectan a la complejidad (tiempo, memoria) del problema: Número de tareas, energía de los satélites, número de satélites, ventana de scheduling,.
+%Cosas que afectan al M-B: energía de los satélites y número de tareas: desventaja de un scheduling "secuencializado".
+%Cosas que afectan al L-G: Delta! Número de satélites.
+
+In the last section all the details of both Local-Global and market-based distributed task schedulers implementations carried out in this Bachelor Thesis have been detailed. However, to be able to detect the differences in the performance of both algorithms, a benchmark of simulations had to be done.
+
+Nevertheless, whenever is wanted to test an algorithm, its input variables and how these do affect to the time and memory spent in resolving a particular problem must be analysed.
+
+First of all, let us highlight the parameters that affect the general scheduling problem, independent of the particular algorithm chosen to solve it (whether it is the Local-Global or the market-based or any other one):
+
+\begin{itemize}
+\item \textbf{Number of tasks. } As the number of tasks to be scheduled increase, the problems complexity increases, as we have the same resources (energy, time...) for more work. In this sense, the problem is more difficult to solve.
+
+\item \textbf{Satellites resources. } For the same number of tasks, if we decrease the resources available at the system, we will have the same problem as in the case of increasing number of tasks.
+
+\item \textbf{Number of satellites. } Even though this supposes having more resources available and hence more possibilities of finding out a solution, the increasing number of satellites causes a bigger distributed system to coordinate, which could lead to an unmanageable system full of resources but unable to schedule any task.
+
+\item \textbf{Scheduling window. } If the scheduling window time is increased, the task allocation problem's complexity could increase, as there are more timing combinations available to \emph{test}. However, if it is set to a very low value, it could create an unsolvable problem, as the same tasks are trying to be nested in an insufficient time period.
+\end{itemize}
+
+Secondly, we will enumerate the variables that particularly can influence on the performance of the Local-Global policy:
+
+\begin{itemize}
+\item \textbf{Golden index. } This variable is of course completely particular to this algorithm as it is a value defined for it. As the golden index increases more sub-solutions combinations are possible and therefore the complexity of the problem is greater (see \ref{eq_LG_complexity}).
+
+\item \textbf{Number of satellites. } Although this parameter affects the abstract scheduling problem, it's influence on the Local-Global should be highlighted as the number of sub-solutions combinations to be analysed by the \emph{Global} entity depends exponentially of this variable.
+\end{itemize}
+
+Finally, the market-based algorithm variable analysis lead us to highlight the following:
+
+\begin{itemize}
+\item \textbf{Satellites resources. } The algorithm results can be quite poor in terms of the optimality if the final schedule when the satellite have not much resources, because this lead to high bid calculations and therefore to large scheduling process times and less scheduled tasks.
+
+\item \textbf{Number of tasks. } The market-based has a big handicap in the ``sequentialization'' that it introduces in the scheduling process: each task is processed and scheduled in non-overlapping rounds, so a high number of tasks could lead to a overloaded system not able to schedule tasks at the same velocity that they arrive in the system.
+\end{itemize}
+
+Sweeping these parameters will show us the behaviour of each algorithm and its input limits (i.e. the limits on the input's complexity for the algorithm to be able to solve it in a reasonable period of time and spending a reasonable amount of memory). Moreover, this previous analysis should be confirmed by the experimental simulations shown below.
+
 \section{Performance Tests}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+After having theoretically analysed the critical variables for the generic scheduling problem and for each one of the algorithms, experimental simulations have been carried out.
+
+In order to have a good testing platform for being able to perform extensive simulations sweeping the critical variables and executing several tests for a statistically measure, a simple tester application tester has been implemented. This application receives the set of input variables (number of satellites, number of tasks, golden index, scheduling window...) and the sweep required for them. Then it first simulates an Erlang execution with random generated tasks satisfying the input parameters and after that a Local-Global environment, using the same task set for both. Finally, it measures the time and memory expense and reports it to an output file, in such a format that can be easily processed by a specific Matlab script, also developed for this Bachelor Thesis.
+
+For a better comprehension and analysis of each one of the simulations performed, the results will be shown in three different sections: first the Local-Global policy and the market-based results are separately analysed, and finally both are compared.
 
 %-----------------------------------
 %	SUBSECTION 1
@@ -30,28 +74,5 @@ Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar p
 %	SUBSECTION 3
 %-----------------------------------
 
-\subsection{[Ring]}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
-%-----------------------------------
-%	SUBSECTION 4
-%-----------------------------------
-
 \subsection{The comparison}
 Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
-%----------------------------------------------------------------------------------------
-%	SECTION 2
-%----------------------------------------------------------------------------------------
-
-\section{Solutions quality: fine-grained descriptive tests}
-
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
-
-%----------------------------------------------------------------------------------------
-%	SECTION 3
-%----------------------------------------------------------------------------------------
-
-\section{Conclussions and future development}
-
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.

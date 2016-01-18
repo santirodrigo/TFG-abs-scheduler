@@ -12,7 +12,7 @@
 
 As it was mentioned before, the existing distributed system architectures can be classified according to the grade of centralization, from completely hierarchical systems to fully independent nodes. The research in the distributed algorithms field can also be divided into centralized and non-centralized paradigms, but it cannot be limited to that. However, completely new problems appear in the distributed systems, such as synchronization, leader election or data consistency,  and every different problem opens new approaches and new paradigms.
 
-In particular, into the field of task scheduling, many approaches have been taken. While searching for state-of-the-art algorithms that could be compared with the Local-Global proposal, we found from high-complexity fully-centralized algorithms that may be solved using dynamic or constraint-based programming (meanly for grid-computing or High Performance Computing, as in \cite{anderson2005high}; \cite{ramamritham1984dynamic}; \cite{yu2005taxonomy}), to low-computational decentralized schedulers (\cite{1310996}; \cite{zhu2007tasks}).
+In particular, into the field of task scheduling, many approaches have been taken. While searching for state-of-the-art algorithms that could be compared with the Local-Global proposal, we found from high-complexity fully-centralized algorithms that may be solved using dynamic or constraint-based programming (meanly for grid-computing or High Performance Computing, as in \cite{anderson2005high,ramamritham1984dynamic,yu2005taxonomy}), to low-computational decentralized schedulers \citep{1310996,zhu2007tasks}.
 
 In the last years, distributed task scheduler research has mainly worked over three different paradigms: \textbf{negotiation or consensus} algorithms, in which nodes in the system \emph{agree} the final schedule --it can be done \emph{offline} as well as \emph{online}--, \textbf{centralized} optimized schedulers --where the degree of centralization can vary-- and more recently \textbf{bio-inspired} approaches --which take profit from observing and imitating the behaviour of the distributed systems present in the nature--.
 
@@ -36,20 +36,21 @@ In fact, the context in which the Local-Global policy is meant to work is a very
 
 This reduces our search field: algorithms thought to run on practically infinite communication bandwidth grid computing platforms (as the one presented in \cite{servers}) cannot be compared with the Local-Global.
 
-We cannot also use for the comparison algorithms that are in fact designed to be used for distributed Operating Systems or deploying distributed heavy applications, where the timing requirements are highly-constrained but the communication is practically unlimited (\cite{anderson2007consensus}; \cite{pilloni2012decentralized}). There are also other invalid approaches such as that presented in \cite{luo2013distributed} as it does consider resources requirements in a simple way and the problem resolution is fully centralized, with no participation of the system nodes. However, it presents an auction decision model, something which is also present in the final chosen algorithm.
+We cannot also use for the comparison algorithms that are in fact designed to be used for distributed Operating Systems or deploying distributed heavy applications, where the timing requirements are highly-constrained but the communication is practically unlimited \citep{anderson2007consensus,pilloni2012decentralized}. There are also other invalid approaches such as that presented in \cite{luo2013distributed} as it does consider resources requirements in a simple way and the problem resolution is fully centralized, with no participation of the system nodes. However, it presents an auction decision model, something which is also present in the final chosen algorithm.
 
 Two very interesting approaches can be found in \cite{choi2009consensus} and in \cite{bonnet2008coordination}. The contexts are very similar to the ABS satellite constellation. In the first proposal, a combination of consensus and auction-based decision making is used to coordinate a fleet of autonomous vehicles with two decentralized algorithms. Nevertheless, the task description is more complex than the one we need for the ABS case. The second paper describes a communication-constrained based task allocator in the same context of that on ABS project: a satellite constellation. However, the local scheduler of each satellite is not described in the paper, which makes very difficult to be able to use it for comparing with the Local-Global.
 
-Finally, an distributed-architecture-agnostic market-based approach was found in \citep{Edalat09}. The description of the tasks is adequate to what we need and its simplicity yet completeness shows a fully decentralized distributed proposal good for our comparison.
+Finally, an distributed-architecture-agnostic market-based approach was found in \cite{Edalat09}. The description of the tasks is adequate to what we need and its simplicity yet completeness shows a fully decentralized distributed proposal good for our comparison.
 
-Additionally, a ring-architecture task scheduler algorithm has been designed from the leader election algorithm described in \cite{Tanenbaum:2006:DSP:1202502}, page 266. The reason of designing this algorithm was to use a typical distributed structure such as a ring for combining it with the Local-Global policy (as an optimization) in future research.
+Additionally, a ring-architecture task scheduler algorithm has been designed from the leader election algorithm described in \cite[p.~266]{Tanenbaum:2006:DSP:1202502}. The reason of designing this algorithm was to use a typical distributed structure such as a ring for combining it with the Local-Global policy (as an optimization) in future research.
 
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
 \subsection{A market-based approach}
+\label{sec_MBdescription}
 
-The proposal of \citep{Edalat09} is an adaptive task allocation scheme, which is presented to be used on wireless sensor networks, which is a similar context to that of our initial problem: a resource-constrained environment. A market-based architecture is proposed, in which each node is modelled as a seller who calculates the price for deploying a specific task and offers it to the consumer (the task sender), adapting the price to the changing resources availability for a better energy balance amongst the nodes composing the system. It is important to observe that it schedules the tasks \emph{on the go}, i.e. it is an \emph{online} task scheduler.
+The proposal of \cite{Edalat09} is an adaptive task allocation scheme, which is presented to be used on wireless sensor networks, which is a similar context to that of our initial problem: a resource-constrained environment. A market-based architecture is proposed, in which each node is modelled as a seller who calculates the price for deploying a specific task and offers it to the consumer (the task sender), adapting the price to the changing resources availability for a better energy balance amongst the nodes composing the system. It is important to observe that it schedules the tasks \emph{on the go}, i.e. it is an \emph{online} task scheduler.
 
 In this section a brief description of the presented algorithm, as described in the article mentioned before, is presented, and in \ref{MBimplementation} the details of the implementation carried out in this Thesis will be detailed.
 
@@ -83,12 +84,13 @@ BP_{ij} = S_j \times EP_i
 \item[Processor Release Time] ($ RT $): the time at which the task execution would finish if the node finally schedules it.
 \end{description}
 
-With all these variables, the proposed price calculation is the one of Eq. \ref{MBPrice1}, with DL the arriving time of the task. This price calculation's goal is to balance the energy consumption among the nodes and to achieve a quicker processing time to more urgent tasks.
+With all these variables, the proposed price calculation is the one of (\ref{MBPrice1}), with DL the arriving time of the task. This price calculation's goal is to balance the energy consumption among the nodes and to achieve a quicker processing time to more urgent tasks.
 
 \begin{equation}
+\label{MBPrice1}
 P_{ij} = (CommCost + BP_{ij})\left[1+exp^{\left[\frac{\lambda(t,DL_j)}{\gamma(t,RT_i)}\right]}\right]
 \end{equation}
-\label{MBPrice1}
+
 
 \begin{center}
 \begin{tiny}
