@@ -52,16 +52,16 @@ Sweeping these parameters will show us the behaviour of each algorithm and its i
 
 After having theoretically analysed the critical variables for the generic scheduling problem and for each one of the algorithms, experimental simulations have been carried out.
 
-In order to have a good testing platform for being able to perform extensive simulations sweeping the critical variables and executing several tests for a statistically measure, a simple tester application tester has been implemented. This application receives the set of input variables (number of satellites, number of tasks, golden index, scheduling window...) and the sweep required for them. Then it first simulates an Erlang execution with random generated tasks satisfying the input parameters and after that a Local-Global environment, using the same task set for both. Finally, it measures the time and memory expense and reports it to an output file, in such a format that can be easily processed by a specific Matlab script, also developed for this Bachelor Thesis.
+In order to have a good testing platform for being able to perform extensive simulations sweeping the critical variables and executing several tests for a statistically measure, a simple tester application tester has been implemented. This application receives the set of input variables (number of satellites, number of tasks, golden index, scheduling window...) and the sweep required for them. Then it first simulates an Erlang execution with random generated tasks satisfying the input parameters and after that a Local-Global environment, using the same task set for both. Finally, it measures the time and memory expense and reports it to an output file, in such a format that can be easily processed by a specific Matlab script, also developed for this Bachelor Thesis. Each simulation is performed several times for being able to statistically approximate the real behaviour.
 
-For a better comprehension and analysis of each one of the simulations performed, the results will be shown in three different sections: first the Local-Global policy and the market-based results are separately analysed, and finally both are compared.
+Six main test sets have been performed: three tests in which one out of the main critical variables (i.e. number of satellites, number of tasks and golden index) have been fixed while the other two were swept and three tests sweeping only one of the three variables in order to find the limits on the problem size able to solve for each algorithm. For a better comprehension and analysis of each one of the simulations performed, the results will be shown in three different sections: first the Local-Global policy and the market-based results are separately analysed, and finally both are compared.
 
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
 \subsection{Local-Global}
 
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+Six main test sets have been performed
 
 %-----------------------------------
 %	SUBSECTION 2
