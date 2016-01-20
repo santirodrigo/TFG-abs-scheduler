@@ -8,6 +8,8 @@
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
+In this work the Local-Global policy's design has been completed and fully implemented, finding out and implementing the most appropriate state-of-the-art system for comparing both and test the real Local-Global's performance. The parameters fitting most to the comparison's goals have been defined and large testing benchmarks have been performed for both algorithms, quantitatively measuring the behaviour of each one of them.
+
 \section{Results analysis and solutions quality}
 
 In the last section the most significant results have been shown. However, some specificities of each algorithm that we may not observe in those figures must have been explained for a better comprehension of the behaviour, advantages and disadvantages of each algorithm.
@@ -19,8 +21,6 @@ The price-based scheduler has also some characteristics that are not found on Lo
 When both algorithms are compared, we find that the price-based execution times and memory usage is lower than the Local-Global's, but there are some handicaps to be observed: the price-based ``sequentilaization'' of the scheduling process is a bottleneck and causes a saturation point that decreases the performance for high number of input tasks, while the Local-Global's saturation is softer and it achieves to maintain the number of scheduled tasks for this situation. Price-based scheduler also requires good communication among the satellites forming the cluster, something not very realistic in a highly-constrained bandwidth context such as the open space. The Local-Global's poor performance for high values of number of satellites and golden index can be improved by optimizing the \emph{Local} entity and smartly adapting the values of the golden index.
 
 \section{Future work}
-
-In this work the Local-Global policy's design has been completed and fully implemented, finding out and implementing the most appropriate state-of-the-art system for comparing both and test the real Local-Global's performance. The parameters fitting most to the comparison's goals have been defined and large testing benchmarks have been performed for both algorithms, quantitatively measuring the behaviour of each one of them.
 
 These complete work allows us to firmly state some conclusions about the Local-Global policy's future work to be done:
 \begin{itemize}

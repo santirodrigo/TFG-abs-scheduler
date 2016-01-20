@@ -14,26 +14,66 @@
 \newcommand{\option}[1]{\texttt{\itshape#1}}
 
 %----------------------------------------------------------------------------------------
-The main aim of this thesis is to implement and compare a distributed task scheduler proposed in \cite{Araguz15} with some distributed scheduling algorithms to determine whether it performs good at solving the problems it has been designed for. % OJO %
+\section{Autonomy and decentralization in current satellite systems}
 
-A scheduling algorithm is a type of optimization problem consisting on distributing tasks over a determined time window (and maybe also among a number of workers, although there could be only one) while satisfying some resource or time requirements, such as task deadlines or processing resources in the worker. In our case, we are studying a particular task scheduler which has the particularity of being \emph{distributed}: this means that in this case the scheduling problem is not solved by a sole machine but by a group of them.
+%1) Actualmente se estan estudiando nuevos conceptos y arquitecturas de misión: las misiones distribuidas.
+In the context of satellite missions, new mission architectures and original approaches are being studied. One of the most research-attracting concepts is the \textbf{distributed mission}. This missions tend to accomplish the same goals that traditionally have been performed by expensive, monolithic satellites, with clusters of several smaller modules, such as fractionated nano-satellite structures or satellite swarms.
 
-This thesis has been developed in the context of the Android Beyond the Stratosphere (ABS) UPC project, which will be explained later in the document. But before that, a brief description of what an task scheduler algorithm is and how complex  it can be will be done. The ABS proposal and other state-of-the-art task allocating algorithms will be presented, %OJO%
-and the details of the implementation of the compared algorithms will be explored.
+%2) Aunque es un ámbito nuevo que aún está en vías de exploración, este contexto exige el estudio de sistemas de gestión para tales misiones.
+%3) Los sistemas de gestión tradicionales para satélites se basan en planificadores complejos y centralizados que se ejecutan en el segmento de Tierra.
+Despite the fact that this concept is still on its first steps, the context it provides is demanding an increasing research on management systems able to govern these complex structures, as traditional management systems are mainly based on centralized complex schedulers that run on the ground station, which do not fit well in this new type of missions.
 
-The most important desired result is to conclude whether the ABS proposal behaves well in a simulated environment --similar to that which is designed for-- compared to other algorithms or not.% OJO%
-By \emph{behaving well} we mean that it achieves to schedule the tasks among the workers in a reasonable time and using a reasonable quantity of the limited resources of each node. For accomplishing this goal we have tested the algorithms with a benchmark of multiple simulated scheduling problems and studied the results, which are shown at the end of the present document, before concluding and stating the future work to be done.
+%4) Paralelamente, hay un paradigma que cada día se extiende más: proveer de autonomía a las naves (spacecraft).
+However, the research on satellite missions is also being more and more focused on a new paradigm in the satellite's conception: to provide increasing \textbf{autonomy} to the spacecraft.
+%5) La autonomía se prevé necesaria, sobretodo, por los siguientes motivos:
+%	5.a) Para ganar en resiliencia (y por tanto mejorar la robusteza de la misión).
+%	5.b) Para mejorar el performance de la misión mediante el análisis de datos a bordo, que permiten ajustar mejor los instrumentos y centrarse en puntos de mayor interés (sin tener que pasar por Tierra y perder tiempo, y en consecuencia sin perder oportunidades de observación).
+%	5.c) En misiones distribuidas con muchos nodos conectados, en los que mantener el control centralizado es inviable.
+This independence is thought to be needed for the following reasons:
+\begin{itemize}
+\item To provide a better resilience to the system (e.g., it does not depend on other entity and the state of its communication channel), which will increase the robustness of the whole mission.
+\item To improve the mission's performance through the on-board data analysis. This allows to enhance the capacity of regulating the different instruments and focusing on higher interest locations or events without having to transmit the data to ground and wait for instructions).
+\item To enable huge distributed systems with many interconnected nodes to decentralize the management, as in these cases a centralized operation would be impossible.
+\end{itemize}
+
+%6) Autonomía + Misiones distribuidas = se requiere explorar nuevos sistemas de planificación (Mission Planning Systems), que sean distribuidos y que se ejecuten on-board (dos puntos clave).
+%7) El objetivo es proveer de autonomía a la constelación y solucionar el problema de gestión.
+Both concepts (autonomy and distributed missions) can be present in the same system, as their combination increases the capacity of the entire structure. This combination has led to the exploration of adapted Mission Planning Systems (MPS), requiring them to be \textbf{distributed} and \textbf{executed on-board}. These two conditions are key for keeping the independence between nodes, and enable these MPSs to achieve the main goal of providing autonomy to the constellation and solving the spacecraft management problem.
+
+%8) Eso conlleva la definición de políticas de planificación diferentes, como la que se propone para ABS. 
+%9) Además, la política L-G de ABS tiene en cuenta la importancia que tienen (y tendrán en el futuro inmediato) las arquitecturas basadas en nano-satélite, en las que las capacidades computacionales se ven reducidas debido a las restricciones de potencia.
+%11) La política L-G, simplemente plantea desmenuzar un problema complejo en multiples pequeños más simples (analogía: la predicción meteorológica se basa en múltiples modelos locales y un macro modelo global que los "pega" y aporta coherencia en los contornos).
+In this context, different approaches for scheduling policies are being defined. One of these proposals is the one that has been presented for the Android Beyond the Stratosphere (ABS) project: the Local-Global policy \cite{Araguz15}. A specificity of this approach is that it focuses on the nano-satellite based architectures, taking into account the importance they have as the next-generation satellite missions spacecrafts. A big challenge present in these structures is that the computational capacities are reduced due to the existing power restrictions, something considered in this policy's design. This required computational simplicity and decentralization is achieved by a partition of the scheduling problem in several simpler sub-problems such that each satellite is able to solve one of them (this could be compared to what is done for meteorology predictions, in which a number of local models are combined within a global macro-model, providing coherence for the existing borders between two models).
+
+%10) Tu trabajo se centra en explorar el sistema de autonomía basado en la política L-G.
+The main aim of this Bachelor Thesis is to explore the autonomy system based on this Local-Global policy, by implementing and comparing it with a state-of-the-art distributed scheduling algorithm to determine whether it performs good at solving the problems it has been designed for.
+
+%--------------------------------------------------------------------------------------------------
+%A scheduling algorithm is a type of optimization problem consisting on distributing tasks over a determined time window (and maybe also among a number of workers, although there could be only one) while satisfying some resource or time requirements, such as task deadlines or processing resources in the worker. In our case, we are studying a particular task scheduler which has the particularity of being \emph{distributed}: this means that in this case the scheduling problem is not solved by a sole machine but by a group of them.
+%--------------------------------------------------------------------------------------------------
+
+This thesis has been developed in the context of the \emph{Universitat Polit\`ecnica de Catalunya}'s (UPC) ABS project, which will be explained later in the document. But before that, a brief description of what a task scheduler algorithm is and how complex it can be will be done. The ABS proposal and other state-of-the-art task allocating algorithms will be presented, and the details of the implementation of the two compared algorithms will be explored.
+
+The most important desired result is to conclude whether the ABS proposal behaves well in a simulated environment (similar to that which is designed for) compared to other algorithms or not. By \emph{behaving well} it is meant that it achieves to schedule the tasks among the workers in a reasonable time and using a reasonable quantity of the limited resources of each node. For accomplishing this goal the algorithms have been tested with a benchmark of multiple simulated scheduling problems and studied the results, which are shown at the end of the present document, before concluding and stating the future work to be done.
 
 \section{Scheduling tasks: a hard optimization problem}
-The core of this thesis is a typical optimization problem: to schedule some input tasks with varying or fix processing time taking into account the resources available in the system and the time requirements that the tasks may have, such as different arrival times, deadlines or dependence between tasks.
+
+%A scheduling algorithm is a type of optimization problem consisting on distributing tasks over a determined time window (and maybe also among a number of workers, although there could be only one) while satisfying some resource or time requirements, such as task deadlines or processing resources in the worker. In our case, we are studying a particular task scheduler which has the particularity of being \emph{distributed}: this means that in this case the scheduling problem is not solved by a sole machine but by a group of them.
+
+The core of this thesis is a typical optimization problem: distributing some input tasks over a determined time window (and maybe also among several workers, although there could be only one) while satisfying some resource or time requirements, such as task deadlines or processing capabilities in the worker. In this case, the task scheduler under study has the particularity of being \emph{distributed}: this means that the scheduling problem is not solved by a sole machine but by a group of them.
+%to schedule some input tasks with varying or fix processing time taking into account the resources available in the system and the time requirements that the tasks may have, such as different arrival times, deadlines or dependence between tasks.
 
 Scheduling turns out into a hard problem that has to be solved with advanced programming techniques such as constraint-based programming or heuristics. In fact, multiprocessor scheduling and some other scheduling problems are NP-hard optimization problems.
 
-The problem that our algorithm must solve can be reduced to a multiprocessor scheduling problem (so it can be demonstrated it is a NP-hard problem): given a set \emph{A} of jobs where job $a_i$ has a processing time equal to $l^{a_{i}}$, arrives to the system at $t_0^{a_i}$ and has to be finished before the deadline $t_{\text{max}}^{a_i}$, and a set of workers \emph{W}, which is the optimal schedule of the maximum of jobs such that all resource and time requirements are accomplished? The optimality here can be described as a set of attributes of the solution that are chosen for a particular problem. In the algorithm description section we will explain the parameters that we have chosen as \emph{optimality testers}.
+%--------------------------------------------------------------------------------------------------
+%The problem that our algorithm must solve can be reduced to a multiprocessor scheduling problem (so it can be demonstrated it is a NP-hard problem): given a set \emph{A} of jobs where job $a_i$ has a processing time equal to $l^{a_{i}}$, arrives to the system at $t_0^{a_i}$ and has to be finished before the deadline $t_{\text{max}}^{a_i}$, and a set of workers \emph{W}, which is the optimal schedule of the maximum of jobs such that all resource and time requirements are accomplished? The optimality here can be described as a set of attributes of the solution that are chosen for a particular problem. In the algorithm description section we will explain the parameters that we have chosen as \emph{optimality testers}.
+%--------------------------------------------------------------------------------------------------
 
-This problem has been studied deeply --in fact it is a very mature field of research--, and there are many well-known scheduler algorithms for one or many workers (e.g.: EDF, RM…). However, they are meanly mono-processor algorithms, i.e. the algorithm runs in a unique machine and if the solution applies to other machines, it is sent to them. The possibility of having a distributed scheduler (as we are looking for) has not been a research field of interest till the recent growth of distributed systems with increasing processing capacity, very present in the IoT (wireless sensor networks) and robotics. 
+This problem has been studied deeply (in fact it is a very mature field of research), and there are many well-known scheduler algorithms for one or many workers (e.g., EDF, RM…). However, they are meanly mono-processor algorithms, 
+%i.e. the algorithm runs in a unique machine 
+and if the solution applies to other machines, it is sent to them. The possibility of having a distributed scheduler (as in this thesis is being looked for) has not been a research field of interest till the recent growth of distributed systems with increasing processing capacity, very present in the IoT, WSNs (Wireless Sensor Networks) and robotics. 
 
-This last case applies to our issue: we want to solve an NP-hard problem collaboratively, i.e. the nodes executing the algorithm must achieve a solution which is good for all the system by only knowing its own state and communicating with the others to agree the final solution. Moreover, the nodes are working in a highly-constrained environment, which will make very difficult the communication among them. It can be easily concluded that \emph{distributing} a task scheduler adds much complexity to an already computationally hard problem. But it is not necessarily true: one of the most widely used computer science paradigm is ``divide and conquer''. Distributing a problem among several nodes, if done in an efficient manner, should at last be also very helpful.
+This last case applies to the issue presented in this work: a NP-hard problem is required to be solved collaboratively, i.e. the nodes executing the algorithm must achieve a solution which is good for all the system by only knowing its own state and communicating with the others to agree the final solution. Moreover, the nodes are working in a highly-constrained environment, which will make very difficult the communication among them. It can be easily concluded that \emph{distributing} a task scheduler adds much complexity to an already computationally hard problem. But this is not necessarily true: one of the most widely used computer science paradigm is ``divide and conquer''. Distributing a problem among several nodes, if done in an efficient manner, should at last be also very helpful.
 
 %----------------------------------------------------------------------------------------
 
@@ -43,7 +83,7 @@ The objective of this section is twofold: to have a basic knowledge of what is a
 
 In \cite{Coulouris:2011:DSC:2029110} a distributed system is described as \textit{``a software system in which components located on networked computers communicate and coordinate their actions by passing messages''}. This tell us about the basis of these type of software systems: the communication. By \emph{talking} with the other nodes in the network a component of the system can take into account the shared knowledge about the others' state and work to obtain the whole system's goal.
 
-There are multiple architecture designs available for distributed systems, having both \textbf{centralized} and \textbf{fully-independent} structures. However, although sometimes it is needed to have a single node doing some special functions to control the state of the entire system (and, in fact, leader election and recovery is one of the most critical functionalities in distributed programming), it means always a single point-of-failure, a weakness that affects the robustness of the entire system, apart from decreasing the system throughput whenever it is needed to contact the leader, which can be a bottleneck. This does not mean that in some situations the presence of a \emph{master} node is a strength for the system, because it itself is a high-capacity robust node (e.g.: consider the ground station of a satellite constellation).
+There are multiple architecture designs available for distributed systems, having both \textbf{centralized} and \textbf{fully-independent} structures. However, although sometimes it is needed to have a single node doing some special functions to control the state of the entire system (and, in fact, leader election and recovery is one of the most critical functionalities in distributed programming), it means always a single point-of-failure, a weakness that affects the robustness of the entire system, apart from decreasing the system throughput whenever it is needed to contact the leader, which can be a bottleneck. This does not mean that in some situations the presence of a \emph{master} node is a strength for the system, because it itself is a high-capacity robust node (e.g., consider the ground station of a satellite constellation).
 
 \subsection{Distributed algorithms}
  
@@ -57,7 +97,7 @@ In our problem, we will not focus on the synchronism and failures problems, but 
 
 \section{The Android Beyond the Stratosphere Project}
 
-Before deepening on the distributed task scheduler theory, let us contextualize a little more the work that is being presented within this report. This Bachelor Thesis has been carried out in the context of a bigger project: Android Beyond the Stratosphere. This project, performed at the Laboratory of Small Satellites and Payloads of the Technical University of Catalonia UPC BarcelonaTech, aims to design a standardized modular open-source nano-satellite platform based on commercial components and open standards. The satellite-on-a-phone architecture is being explored to make possible a low-cost nano-satellite based on a well-known system such as Android.
+Before deepening on the distributed task scheduler theory, let us contextualize a little more the work that is being presented within this report. This Bachelor Thesis has been carried out in the context of a bigger project: Android Beyond the Stratosphere. This project, performed at the Laboratory of Small Satellites and Payloads of the Technical University of Catalonia (UPC) BarcelonaTech, aims to design a standardized modular open-source nano-satellite platform based on commercial components and open standards. The satellite-on-a-phone architecture is being explored to make possible a low-cost nano-satellite based on a well-known system such as Android.
 
 Moreover, it is intended to develop a fully distributed system in which a number of these low-capacity Android-based satellites interact and collaborate to achieve global targets. The needed synchronization for this collaborative satellite constellation requires some advanced scheduler algorithm that allows the system to distribute the tasks among all the satellites forming the system in a fair and optimal way (in terms of time and resource consumption). This task scheduler is the main objective of this Bachelor Thesis and the previous work that has already been carried out.
 
@@ -81,7 +121,7 @@ The policy basically divides the multiple-tasks multiple-workers problem into se
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{Figures/LGsteps.png} 
+\includegraphics[scale=0.3]{Figures/figure_policy_steps.pdf} 
 \caption{Local-Global policy steps (as extracted from \cite{Araguz15})}
 \label{LGsteps}
 \end{figure}
@@ -92,7 +132,7 @@ Having described the basics of the Local-Global algorithm we will now specify th
 
 \begin{enumerate}
 \item \textbf{Characterization.} The $ \Delta $ value for each satellite is assigned, after considering its computing capabilities.
-\item \textbf{Task delivery.} Master node selects the time window (duration of the schedule to be produced by the scheduloing algorithm) and discard tasks not fitting within it. After this, it sends to every \emph{Local} entity the set of tasks, so that they can begin to compute sub-solutions.
+\item \textbf{Task delivery.} Master node selects the time window (duration of the schedule to be produced by the scheduling algorithm) and discard tasks not fitting within it. After this, it sends to every \emph{Local} entity the set of tasks, so that they can begin to compute sub-solutions.
 \item \textbf{Local evaluation.} Local entities' task planners produce as many solutions as its $ \Delta_i $ value, attaching each sub-solution an \emph{F} value.
 \item \textbf{Submission of solutions.} Each satellite provides the set of at most $ \Delta_i $ solutions, sending for each one the list of tasks included in that schedule solution and its figure of merit \emph{F}.
 \item \textbf{Global selection and combination.} The master triggers a combinatorial optimization process that selects at most one sub-solution per satellite in order to maximize the aggregated \emph{F} value, which is not necessarily the sum of the single \emph{F} values.
