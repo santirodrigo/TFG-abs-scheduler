@@ -1,7 +1,48 @@
 % Appendix A
 
-\chapter{Appendix Title Here} % Main appendix title
+\chapter{Modifications over the original price-based policy} % Main appendix title
 
 \label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
 
-Write your Appendix content here.
+% Main modification: the bid calculation
+% Second modification: the scheduling window
+% Third modification: the communication cost meaning.
+% Fourth modification: resulting procedure (add task, task assigned...)
+As it has been stated in section \ref{sec_MBimplementation}, for the sake of performance of the implementation of the price-based algorithm chosen for the comparison with the Local-Global policy, some improvements to the original algorithm have been implemented. In this appendix these modifications are discussed in detail.
+
+First of all, to better compare both Local-Global and price-based algorithms, a time constraint has been added to this algorithm: the \textbf{scheduling window}. This means that a scheduling process is bounded by this time window, in the sense that all the tasks pertaining to a scheduling execution arrive to the system and are executed during this period of time.
+
+Secondly, the \textbf{communication cost} for transmitting any task result from one satellite to another, which is present in the bid calculation, has been defined as a value proportional to the distance in kilometres among both satellites. In addition, the calculation of the communication cost from the task's dependence with its predecessor has been implemented in the following way: a task bid's communication cost is calculated as a value proportional to the distance from the satellite performing the calculation and the other one that has been assigned to execute the predecessor task, if any.
+
+Finally, it has been proposed and implementation a different but similar \textbf{price calculation}. The main problem of the reference paper's implementation is that the given definition results in a non-bounded bid. This causes that in some situations in which all the satellites have very constrained resources all of them would calculate a very high bid value, leading to a very long waiting time, which would mean that the system would be idle in the scheduling process too much time. Moreover, when two satellites calculate exactly the same bid, no tie-breaker policy is defined.
+
+To solve these problems, an optimized bid definition has been designed and implemented, modifying the following bid's components:
+
+\begin{description}
+\item[Base Price] ($ BP $): To allow a bounded value, a gaussian function has been used. Parameters $a$ and $b$ modify the maximum value and the velocity of price decay (in fact $b$ is the gaussian's variance) as the available energy is incremented, respectively. Its value for the node $i$ and the task $a_j$ (with task size $l^{a_{j}}$) is defined as:
+
+\begin{equation}
+BP_{ij} = a\cdot \mathrm{exp}^{-\left(\dfrac{1-\left(l^{a_{j}} / E_i\right)^2}{b}\right)}\text{ \quad if } E_i \geq l^{a_{j}}
+\end{equation}
+
+\item[Communication Cost] ($ CC $): this value has been also redefined to be bounded supposing that all satellites in the system are in the same LEO\footnote{LEO stands for Low Earth Orbit} orbit and because of that are not further than $CC_{\text{max}}$, which is the diameter of the surface containing the orbit, approximated by an sphere.
+
+\begin{equation}
+CC = \begin{cases} 0 & \text{if no satellite assigned to }pred(a_j)\\
+\dfrac{d(i,k)}{CC_{\text{max}}} & \text{if satellite } k \text{ has been assigned to }pred(a_j)\end{cases}
+\end{equation}
+
+\item[Task Deadline] ($ TD $): since the \emph{Listing Phase} is not necessary in this implementation, the Task Deadline has been redefined as a value attached to each task message that represents the instant of time in which the task execution should be finished.
+\end{description}
+
+With these modifications, the proposed price calculation is the one of (ref{MBPrice2}), where $RT_i$ is the processor $i$ release time.
+
+\begin{eqnarray}
+\label{MBPrice2}
+P_{ij} = \begin{cases}CC + BP_{ij} + \dfrac{1}{DL - RT_i + 1} & \text{if } BP_{ij} \text{ defined and } DL \geq RT_i\\
+2 + a & \text{otherwise}\end{cases}
+\end{eqnarray}
+
+A small random time is added to the waiting time calculated from this value of $P_{ij}$, as a simple tie-breaking policy.
+
+Having in mind all these modifications, each satellite's execution procedure can be reduced to the following description: a satellite can be in two possible scheduling states: WAITING and LISTENING. In the first state, it is ready to receive task messages to trigger a new scheduling event, during the scheduling window time. When a task message is receive, the node goes to LISTENING state. In this state it first calculates the bid following the definition shown in (\ref{MBPrice2}) and waits for a waiting time $T_\text{wait}$ proportional to the $P_{ij}$ calculated plus a small random time. If it receives within this time a bid for this task, it surrenders, saves the ID of the winner satellite for future references and returns to WAITING state. Else, it considers itself the winner of that round and schedules the task, reserving the corresponding energy. Finally, it returns to the WAITING state.

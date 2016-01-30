@@ -359,7 +359,9 @@ void free_satellites(Satellite *sats) {
 int main(int argc, char *argcv[]) {
 	float bf_time;
 	int error;
+// SRM: Uncomment only if using brute solve ////////////////////////////////////
 /*	int *combination_b, *solution_b;*/
+////////////////////////////////////////////////////////////////////////////////
 	int *combination, *solution;
 	Satellite *sats;
 	struct timeval time;

@@ -1,0 +1,38 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Local-Global policy steps (as extracted from \cite {Araguz15})\relax }}{5}{figure.caption.19}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Ring-based scheduler approach\relax }}{11}{figure.caption.42}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Example of $^3$Cat-1 local scheduler prioritization heuristics\relax }}{14}{figure.caption.51}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A graphical representation of the combination of several sub-solutions\relax }}{18}{figure.caption.73}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Efficient optimal combination search\relax }}{20}{figure.caption.80}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Price-based policy flowchart\relax }}{21}{figure.caption.84}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Local-Global: execution time (satellites fixed)\relax }}{25}{figure.caption.107}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Local-Global: execution time (input tasks fixed)\relax }}{25}{figure.caption.107}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Local-Global: execution time (golden index fixed)\relax }}{25}{figure.caption.108}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Local-Global: memory usage (satellites fixed)\relax }}{25}{figure.caption.108}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Local-Global: memory usage (input tasks fixed)\relax }}{26}{figure.caption.109}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Local-Global: memory usage (golden index fixed)\relax }}{26}{figure.caption.109}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Local-Global: execution time and memory usage (varying number of satellites)\relax }}{26}{figure.caption.110}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Local-Global: execution time and memory usage (varying number of input tasks)\relax }}{26}{figure.caption.111}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Local-Global: execution time and memory usage (varying golden index)\relax }}{27}{figure.caption.112}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Local-Global: scheduled tasks (satellites fixed)\relax }}{27}{figure.caption.113}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Local-Global: scheduled tasks (golden index fixed)\relax }}{27}{figure.caption.113}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Local-Global: scheduled tasks for large input tasks range\relax }}{27}{figure.caption.114}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Global optimization: execution time comparison (combinatorial search vs. brute-force)\relax }}{28}{figure.caption.115}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Price-based: execution time\relax }}{28}{figure.caption.117}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Price-based: memory usage\relax }}{28}{figure.caption.117}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Price-based: scheduled tasks\relax }}{28}{figure.caption.118}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Price-based: scheduled tasks for large input tasks range\relax }}{28}{figure.caption.118}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Local-Global vs price-based: execution time comparison\relax }}{29}{figure.caption.120}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Local-Global vs price-based: memory usage comparison\relax }}{29}{figure.caption.121}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Local-Global vs price-based: scheduled tasks comparison\relax }}{30}{figure.caption.122}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Local-Global: execution time differentiating the Local and the Global algorithms (varying number of satellites)\relax }}{32}{figure.caption.125}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Predecessor and sucesors in the combinations space\relax }}{39}{figure.caption.134}

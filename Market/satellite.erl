@@ -339,8 +339,7 @@ say_goodbye(Name, Schedule, Energy) ->
 say_goodbye_extended(Name, AssignedTasks, TimeElapsed) ->
 	file:write_file("out/results.out", io_lib:fwrite("~s: Test results~nAssignedTasks = ~w~n~n", [Name, AssignedTasks])),
 	L = length(AssignedTasks),
-	RealTimeEl= TimeElapsed*100,
-	file:write_file("out/timing.out", io_lib:fwrite("~p - ~p", [RealTimeEl, L])).	
+	file:write_file("out/timing.out", io_lib:fwrite("~p-~p", [TimeElapsed, L])).	
 
 tuple_list_from_lists([],[]) -> [];
 tuple_list_from_lists([Elem1|List1],[Elem2|List2]) ->

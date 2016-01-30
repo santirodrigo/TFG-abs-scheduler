@@ -1,14 +1,15 @@
 #!/bin/bash
 if [ $# -lt 12 ]
 then
-	echo "Usage: ./test_generator.sh\n\ttasks\n\ttasksize\n\tmingolden(escalar)\n\tmaxgolden\n\tsats\n\ttimelength\n\tenergy\n\tbadtasks [y/n]\n\ttaskdependence [y/n]\n\tgoldenfix [y/n]\n\tnumrep(escalar)\n\ttimescale(relation between prolog and erlang time)\n[interval input -> min:max]" # No ponemos de momento weights y/o cts ni priority_periods (lo dejamos fijo)
+	echo -e "Usage: ./test_generator.sh\n\ttasks\n\ttasksize\n\tmingolden(escalar)\n\tmaxgolden\n\tsats\n\ttimelength\n\tenergy\n\tbadtasks [y/n]\n\ttaskdependence [y/n]\n\tgoldenfix [y/n]\n\tnumrep(escalar)\n\ttimescale(relation between prolog and erlang time)\n[interval input -> min:increment:max]" # No ponemos de momento weights y/o cts ni priority_periods (lo dejamos fijo)
 else
 	if [ $# -eq 12 ]
 	then
 		error=0
 		tasks=$1
 		mintasks=`echo $tasks | cut -d ":" -f 1`
-		maxtasks=`echo $tasks | cut -d ":" -f 2`
+		steptasks=`echo $tasks | cut -d ":" -f 2`
+		maxtasks=`echo $tasks | cut -d ":" -f 3`
 		if [ $maxtasks -lt $mintasks ]
 		then
 			echo "The tasks interval must be built as min:max"
@@ -40,7 +41,8 @@ else
 		fi
 		maxgolden=$4
 		minmaxgolden=`echo $maxgolden | cut -d ":" -f 1`
-		maxmaxgolden=`echo $maxgolden | cut -d ":" -f 2`
+		stepmaxgolden=`echo $maxgolden | cut -d ":" -f 2`
+		maxmaxgolden=`echo $maxgolden | cut -d ":" -f 3`
 		if [ $maxmaxgolden -lt $minmaxgolden ]
 		then
 			echo "The maxgolden interval must be built as min:max"
@@ -58,7 +60,8 @@ else
 		fi
 		sats=$5
 		minsats=`echo $sats | cut -d ":" -f 1`
-		maxsats=`echo $sats | cut -d ":" -f 2`
+		stepsats=`echo $sats | cut -d ":" -f 2`
+		maxsats=`echo $sats | cut -d ":" -f 3`
 		if [ $maxsats -lt $minsats ]
 		then
 			echo "The sats interval must be built as min:max"
@@ -71,7 +74,8 @@ else
 		fi		
 		timelength=$6
 		mintimelength=`echo $timelength | cut -d ":" -f 1`
-		maxtimelength=`echo $timelength | cut -d ":" -f 2`
+		steptimelength=`echo $timelength | cut -d ":" -f 2`
+		maxtimelength=`echo $timelength | cut -d ":" -f 3`
 		if [ $maxtimelength -lt $mintimelength ]
 		then
 			echo "The timelength interval must be built as min:max"
@@ -101,7 +105,7 @@ else
 		numrep=${11}
 		timescale=${12}
 	else
-		echo "Usage: ./test_generator.sh\n\ttasks\n\ttasksize\n\tmingolden(escalar)\n\tmaxgolden\n\tsats\n\ttimelength\n\tenergy\n\tbadtasks [y/n]\n\ttaskdependence [y/n]\n\tgoldenfix [y/n]\n\tnumrep(escalar)\n\ttimescale(relation between prolog and erlang time)\n[interval input -> min:max]" # No ponemos de momento weights y/o cts ni priority_periods (lo dejamos fijo)
+		echo -e "Usage: ./test_generator.sh\n\ttasks\n\ttasksize\n\tmingolden(escalar)\n\tmaxgolden\n\tsats\n\ttimelength\n\tenergy\n\tbadtasks [y/n]\n\ttaskdependence [y/n]\n\tgoldenfix [y/n]\n\tnumrep(escalar)\n\ttimescale(relation between prolog and erlang time)\n[interval input -> min:increment:max]" # No ponemos de momento weights y/o cts ni priority_periods (lo dejamos fijo)
 	fi
 	
 	if [ $error -eq 1 ]
@@ -119,17 +123,17 @@ else
 			echo -e "nsats\tgolden\tntasks\twindow\t- timingLG - timingMB" > "${outdir}/results_${z}.txt"
 		done
 		echo "$minsats $maxsats $minmaxgolden $maxmaxgolden $mintasks $maxtasks $mintimelength $maxtimelength $numrep"
-		for i in `seq $minsats $maxsats`;
+		for i in `seq $minsats $stepsats $maxsats`;
 		do
-			for j in `seq $minmaxgolden $maxmaxgolden`;
+			for j in `seq $minmaxgolden $stepmaxgolden $maxmaxgolden`;
 			do
-				for k in `seq $mintasks $maxtasks`;
+				for k in `seq $mintasks $steptasks $maxtasks`;
 				do 
-					for l in `seq $mintimelength $maxtimelength`;
+					for l in `seq $mintimelength $steptimelength $maxtimelength`;
 					do
 						for z in `seq 1 $numrep`;
 						do
-							echo -n -e "\rCreating ${i} ${j} ${k} ${l}..."
+							echo -n -e "\rCreating ${i} ${j} ${k} ${l} (${z})..."
 							echo "MyBeginTime = now()." > "${outdir}/erl_execution_${i}_${j}_${k}_${l}.in"
 							echo "{A1, A2, A3} = MyBeginTime." >> "${outdir}/erl_execution_${i}_${j}_${k}_${l}.in"
 
@@ -331,19 +335,19 @@ else
 							done
 
 							echo "timer:apply_after($timescale*MissionEndTime,market,stop,[NameSats])." >> "${outdir}/erl_execution_${i}_${j}_${k}_${l}.in"
-							echo "timer:sleep($timescale*MissionEndTime+2500)." >> "${outdir}/erl_execution_${i}_${j}_${k}_${l}.in"
+							echo "timer:sleep($timescale*MissionEndTime+10000)." >> "${outdir}/erl_execution_${i}_${j}_${k}_${l}.in"
 						
 							# Ahora toca copiar al directorio que toca y ejecutar...
 						
 							cp "${outdir}/erl_execution_${i}_${j}_${k}_${l}.in" "Market/erl_execution.in"
-							timingMB=`./test_M-B.sh`
+							#timingMB=`./test_M-B.sh`
 							for m in `seq 1 $i`;
 							do
 								cp "${outdir}/task_planner_globals_${m}_${i}_${j}_${k}_${l}.pl" "Task_Planner/task_planner_globals_${m}.pl"
 							done
 							cp "${outdir}/task_database_${i}_${j}_${k}_${l}.pl" "Task_Planner/task_database.pl"
 							timingLG=`./test_L-G.sh ${k} ${j} ${i}`
-							echo -e "$i\t$j\t$k\t$l\t- $timingLG - $timingMB" >> "${outdir}/results_${z}.txt"
+							echo -e "$i\t$j\t$k\t$l\t- $timingLG" >> "${outdir}/results_${z}.txt"
 						done
 					done
 				done

@@ -1,0 +1,754 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{Araguz15}{inproceedings}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Araguz}{A.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Alvaro}{A.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Del~Portillo}{D.~P.}%
+     {I.}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Root}{R.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Alarcon}{A.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bou-Balust}{B.-B.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{aerospace computing;artificial satellites;software architecture;space
+  vehicles;adaptive management policy;autonomous software
+  architectures;collaborative spacecraft;distributed architecture
+  missions;distributed mission control;distributed spacecraft
+  architectures;fractionated spacecraft;hardware perspective;hardware
+  technologies;local global approach;local global policy;management
+  policy;satellite swarms;Collaboration;Computer
+  architecture;Hardware;Satellites;Software;Software architecture;Space
+  vehicles}
+  \strng{namehash}{AC+1}
+  \strng{fullhash}{ACAADPIRKAEBBE1}
+  \field{booktitle}{Aerospace Conference, 2015 IEEE}
+  \verb{doi}
+  \verb 10.1109/AERO.2015.7119182
+  \endverb
+  \field{pages}{1\bibrangedash 9}
+  \field{title}{On autonomous software architectures for distributed
+  spacecraft: A Local-Global Policy}
+  \field{year}{2015}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{d2012distributed}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {D'Errico}{D.}%
+     {Marco}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{DM1}
+  \strng{fullhash}{DM1}
+  \field{title}{Distributed Space Missions for Earth System Monitoring}
+  \field{volume}{31}
+  \field{year}{2012}
+\endentry
+
+\entry{golkar2013federated}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Golkar}{G.}%
+     {Alessandro}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GA1}
+  \strng{fullhash}{GA1}
+  \field{booktitle}{9th IAA Symposium on Small Satellites for Earth
+  Observation, International Academy of Astronautics, Berlin, Germany}
+  \field{title}{Federated Satellite Systems: a vision towards an innovation in
+  space systems design}
+  \field{year}{2013}
+\endentry
+
+\entry{leung2004handbook}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Leung}{L.}%
+     {Joseph~YT}{J.~Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {CRC Press}%
+  }
+  \strng{namehash}{LJY1}
+  \strng{fullhash}{LJY1}
+  \field{title}{Handbook of scheduling: algorithms, models, and performance
+  analysis}
+  \field{year}{2004}
+\endentry
+
+\entry{Coulouris:2011:DSC:2029110}{book}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Coulouris}{C.}%
+     {George}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dollimore}{D.}%
+     {Jean}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kindberg}{K.}%
+     {Tim}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Blair}{B.}%
+     {Gordon}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Addison-Wesley Publishing Company}%
+  }
+  \strng{namehash}{CG+1}
+  \strng{fullhash}{CGDJKTBG1}
+  \field{edition}{5th}
+  \field{isbn}{0132143011, 9780132143011}
+  \field{title}{Distributed Systems: Concepts and Design}
+  \list{location}{1}{%
+    {USA}%
+  }
+  \field{year}{2011}
+\endentry
+
+\entry{Tanenbaum:2006:DSP:1202502}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Tanenbaum}{T.}%
+     {Andrew~S.}{A.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Steen}{S.}%
+     {Maarten~van}{M.~v.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Prentice-Hall, Inc.}%
+  }
+  \strng{namehash}{TASSMv1}
+  \strng{fullhash}{TASSMv1}
+  \field{isbn}{0132392275}
+  \field{title}{Distributed Systems: Principles and Paradigms (2nd Edition)}
+  \list{location}{1}{%
+    {Upper Saddle River, NJ, USA}%
+  }
+  \field{year}{2006}
+\endentry
+
+\entry{anderson2005high}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Anderson}{A.}%
+     {David~P}{D.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Korpela}{K.}%
+     {Eric}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Walton}{W.}%
+     {Rom}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{ADPKEWR1}
+  \strng{fullhash}{ADPKEWR1}
+  \field{booktitle}{e-Science and Grid Computing, 2005. First International
+  Conference on}
+  \field{pages}{8\bibrangedash pp}
+  \field{title}{High-performance task distribution for volunteer computing}
+  \field{year}{2005}
+\endentry
+
+\entry{ramamritham1984dynamic}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Ramamritham}{R.}%
+     {Krithi}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Stankovic}{S.}%
+     {John~A}{J.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{RKSJA1}
+  \strng{fullhash}{RKSJA1}
+  \field{number}{3}
+  \field{pages}{65\bibrangedash 75}
+  \field{title}{Dynamic task scheduling in hard real-time distributed systems}
+  \field{journaltitle}{IEEE software}
+  \field{year}{1984}
+\endentry
+
+\entry{yu2005taxonomy}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Yu}{Y.}%
+     {Jia}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Buyya}{B.}%
+     {Rajkumar}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \strng{namehash}{YJBR1}
+  \strng{fullhash}{YJBR1}
+  \field{number}{3}
+  \field{pages}{44\bibrangedash 49}
+  \field{title}{A taxonomy of scientific workflow systems for grid computing}
+  \field{volume}{34}
+  \field{journaltitle}{ACM Sigmod Record}
+  \field{year}{2005}
+\endentry
+
+\entry{1310996}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Giannecchini}{G.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Caccamo}{C.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Shih}{S.}%
+     {Chi-Sheng}{C.-S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Internet;real-time systems;resource allocation;wireless sensor
+  networks;CoRAl;collaborative resource allocation;communication channel;fast
+  online resource allocation;network capacity;wireless sensor
+  networks;Bandwidth;Batteries;Capacitive sensors;Collaboration;Communication
+  channels;Computer networks;Heuristic algorithms;Real time systems;Resource
+  management;Wireless sensor networks}
+  \strng{namehash}{GSCMSCS1}
+  \strng{fullhash}{GSCMSCS1}
+  \field{booktitle}{Real-Time Systems, 2004. ECRTS 2004. Proceedings. 16th
+  Euromicro Conference on}
+  \verb{doi}
+  \verb 10.1109/EMRTS.2004.1310996
+  \endverb
+  \field{issn}{1068-3070}
+  \field{pages}{35\bibrangedash 44}
+  \field{title}{Collaborative resource allocation in wireless sensor networks}
+  \field{year}{2004}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{zhu2007tasks}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zhu}{Z.}%
+     {Jinghua}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Li}{L.}%
+     {Jianzhong}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gao}{G.}%
+     {Hong}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{ZJLJGH1}
+  \strng{fullhash}{ZJLJGH1}
+  \field{booktitle}{Software Engineering, Artificial Intelligence, Networking,
+  and Parallel/Distributed Computing, 2007. SNPD 2007. Eighth ACIS
+  International Conference on}
+  \field{pages}{20\bibrangedash 25}
+  \field{title}{Tasks allocation for real-time applications in heterogeneous
+  sensor networks for energy minimization}
+  \field{volume}{2}
+  \field{year}{2007}
+\endentry
+
+\entry{anderson2007consensus}{incollection}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Anderson}{A.}%
+     {Jonathan~S}{J.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ravindran}{R.}%
+     {Binoy}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jensen}{J.}%
+     {E~Douglas}{E.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{AJSRBJED1}
+  \strng{fullhash}{AJSRBJED1}
+  \field{booktitle}{Embedded and Ubiquitous Computing}
+  \field{pages}{247\bibrangedash 260}
+  \field{title}{Consensus-driven distributable thread scheduling in networked
+  embedded systems}
+  \field{year}{2007}
+\endentry
+
+\entry{colistra2014problem}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Colistra}{C.}%
+     {Giuseppe}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pilloni}{P.}%
+     {Virginia}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Atzori}{A.}%
+     {Luigi}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{CGPVAL1}
+  \strng{fullhash}{CGPVAL1}
+  \field{pages}{98\bibrangedash 111}
+  \field{title}{The problem of task allocation in the internet of things and
+  the consensus-based approach}
+  \field{volume}{73}
+  \field{journaltitle}{Computer Networks}
+  \field{year}{2014}
+\endentry
+
+\entry{pilloni2012decentralized}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Pilloni}{P.}%
+     {Virginia}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Franceschelli}{F.}%
+     {Mauro}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Atzori}{A.}%
+     {Luigi}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Giua}{G.}%
+     {Alessandro}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{PV+1}
+  \strng{fullhash}{PVFMALGA1}
+  \field{booktitle}{Communications (ICC), 2012 IEEE International Conference
+  on}
+  \field{pages}{1372\bibrangedash 1377}
+  \field{title}{A decentralized lifetime maximization algorithm for distributed
+  applications in wireless sensor networks}
+  \field{year}{2012}
+\endentry
+
+\entry{Edalat09}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Edalat}{E.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Xiao}{X.}%
+     {Wendong}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tham}{T.}%
+     {Chen-Khong}{C.-K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Keikha}{K.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ong}{O.}%
+     {Lee-Ling}{L.-L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{pricing;resource allocation;wireless sensor networks;adaptive task
+  allocation scheme;energy balancing;energy consumption;environmental
+  changes;market-based architecture;message exchanged mechanisms;network sensor
+  nodes;price-based adaptive task allocation;resource-constrained
+  network;static task scheduling;wireless sensor
+  networks;Availability;Delay;Dynamic scheduling;Energy
+  consumption;Pricing;Processor scheduling;Resource management;Sensor phenomena
+  and characterization;Voltage control;Wireless sensor networks}
+  \strng{namehash}{EN+1}
+  \strng{fullhash}{ENXWTCKKEOLL1}
+  \field{booktitle}{Mobile Adhoc and Sensor Systems, 2009. MASS '09. IEEE 6th
+  International Conference on}
+  \verb{doi}
+  \verb 10.1109/MOBHOC.2009.5337039
+  \endverb
+  \field{pages}{888\bibrangedash 893}
+  \field{title}{A price-based adaptive task allocation for Wireless Sensor
+  Network}
+  \field{year}{2009}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{choi2009consensus}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Choi}{C.}%
+     {Han-Lim}{H.-L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Brunet}{B.}%
+     {Luc}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {How}{H.}%
+     {Jonathan~P}{J.~P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{CHLBLHJP1}
+  \strng{fullhash}{CHLBLHJP1}
+  \field{number}{4}
+  \field{pages}{912\bibrangedash 926}
+  \field{title}{Consensus-based decentralized auctions for robust task
+  allocation}
+  \field{volume}{25}
+  \field{journaltitle}{Robotics, IEEE Transactions on}
+  \field{year}{2009}
+\endentry
+
+\entry{bonnet2008coordination}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bonnet}{B.}%
+     {Gr{\'e}gory}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tessier}{T.}%
+     {Catherine}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BGTC1}
+  \strng{fullhash}{BGTC1}
+  \field{booktitle}{3rd National Conference on Control Architectures of Robots}
+  \field{pages}{89\bibrangedash 100}
+  \field{title}{Coordination despite constrained communications: a satellite
+  constellation case}
+  \field{year}{2008}
+\endentry
+
+\entry{pilloni2011deployment}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Pilloni}{P.}%
+     {Virginia}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Atzori}{A.}%
+     {Luigi}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Molecular Diversity Preservation International}%
+  }
+  \strng{namehash}{PVAL1}
+  \strng{fullhash}{PVAL1}
+  \field{number}{8}
+  \field{pages}{7395\bibrangedash 7419}
+  \field{title}{Deployment of distributed applications in wireless sensor
+  networks}
+  \field{volume}{11}
+  \field{journaltitle}{Sensors}
+  \field{year}{2011}
+\endentry
+
+\entry{servers}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bonomi}{B.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kumar}{K.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{multiprocessing systems;queueing theory;scheduling;Poisson;adaptive
+  optimal load balancing;adaptive quasi-static algorithms;affine
+  function;average job response time;central job scheduler;dedicated arrival
+  stream;exponentially distributed service requirements;generic jobs;generic
+  stream;job allocation;load parameters;noisy values;nonexponentially
+  distributed service times;nonhomogeneous multiserver system;probabilistic
+  splitting;queue;server idle times;service speeds;weighted
+  least-squares;weighting coefficients;Adaptive control;Context
+  modeling;Delay;Least squares methods;Load management;Queueing
+  analysis;Routing;Scheduling algorithm;Standards development;Time measurement}
+  \strng{namehash}{BFKA1}
+  \strng{fullhash}{BFKA1}
+  \verb{doi}
+  \verb 10.1109/12.59854
+  \endverb
+  \field{issn}{0018-9340}
+  \field{number}{10}
+  \field{pages}{1232\bibrangedash 1250}
+  \field{title}{Adaptive optimal load balancing in a nonhomogeneous multiserver
+  system with a central job scheduler}
+  \field{volume}{39}
+  \field{journaltitle}{Computers, IEEE Transactions on}
+  \field{year}{1990}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{Stigmergy}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Tripp}{T.}%
+     {Howard}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Palmer}{P.}%
+     {Phil}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Stigmergy}
+  \strng{namehash}{THPP1}
+  \strng{fullhash}{THPP1}
+  \verb{doi}
+  \verb http://dx.doi.org/10.1016/j.actaastro.2009.09.017
+  \endverb
+  \field{issn}{0094-5765}
+  \field{number}{7–8}
+  \field{pages}{1052 \bibrangedash  1071}
+  \field{title}{Stigmergy based behavioural coordination for satellite
+  clusters}
+  \verb{url}
+  \verb http://www.sciencedirect.com/science/article/pii/S0094576509004561
+  \endverb
+  \field{volume}{66}
+  \field{journaltitle}{Acta Astronautica}
+  \field{year}{2010}
+\endentry
+
+\entry{antcollonies}{incollection}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Cornejo}{C.}%
+     {Alejandro}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dornhaus}{D.}%
+     {Anna}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lynch}{L.}%
+     {Nancy}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nagpal}{N.}%
+     {Radhika}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{1}{}{%
+    {{}%
+     {Kuhn}{K.}%
+     {Fabian}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{language}{1}{%
+    {English}%
+  }
+  \list{publisher}{1}{%
+    {Springer Berlin Heidelberg}%
+  }
+  \strng{namehash}{CA+1}
+  \strng{fullhash}{CADALNNR1}
+  \field{booktitle}{Distributed Computing}
+  \verb{doi}
+  \verb 10.1007/978-3-662-45174-8_4
+  \endverb
+  \field{isbn}{978-3-662-45173-1}
+  \field{pages}{46\bibrangedash 60}
+  \field{series}{Lecture Notes in Computer Science}
+  \field{title}{Task Allocation in Ant Colonies}
+  \verb{url}
+  \verb http://dx.doi.org/10.1007/978-3-662-45174-8_4
+  \endverb
+  \field{volume}{8784}
+  \field{year}{2014}
+\endentry
+
+\entry{luo2013distributed}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Luo}{L.}%
+     {Lingzhi}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chakraborty}{C.}%
+     {Nilanjan}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sycara}{S.}%
+     {Katia}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{LLCNSK1}
+  \strng{fullhash}{LLCNSK1}
+  \field{booktitle}{Robotics and Automation (ICRA), 2013 IEEE International
+  Conference on}
+  \field{pages}{3007\bibrangedash 3013}
+  \field{title}{Distributed algorithm design for multi-robot task assignment
+  with deadlines for tasks}
+  \field{year}{2013}
+\endentry
+
+\entry{marsh2008stigmergic}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Marsh}{M.}%
+     {Leslie}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Onof}{O.}%
+     {Christian}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{MLOC1}
+  \strng{fullhash}{MLOC1}
+  \field{number}{1}
+  \field{pages}{136\bibrangedash 149}
+  \field{title}{Stigmergic epistemology, stigmergic cognition}
+  \field{volume}{9}
+  \field{journaltitle}{Cognitive Systems Research}
+  \field{year}{2008}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

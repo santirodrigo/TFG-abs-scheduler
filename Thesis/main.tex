@@ -51,13 +51,15 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
+\usepackage{hyphenat}
+
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
 
 \geometry{
 	paper=a4paper, % Change to letterpaper for US letter
-	inner=2cm, % Inner margin
+	inner=1.5cm, % Inner margin
 	outer=3cm, % Outer margin
 	bindingoffset=2cm, % Binding offset
 	top=1.5cm, % Top margin
@@ -79,9 +81,9 @@ headsepline, % Uncomment to get a line under the header
 \subject{} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
 \keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
 \university{\href{http://www.upc.edu}{Universitat Polit\`ecnica de Catalunya}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
-\department{\href{http://www.etsetb.upc.edu}{Escola T\`ecnica d'Enginyeria de Telecomunicaci\'o de Barcelona}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
-\group{\href{http://www.etsetb.upc.edu}{Escola T\`ecnica d'Enginyeria de Telecomunicaci\'o de Barcelona}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
-\faculty{\href{http://www.etsetb.upc.edu}{Escola T\`ecnica d'Enginyeria de Telecomunicaci\'o de Barcelona}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+\department{\href{http://www.etsetb.upc.edu}{Escola T\`ecnica Superior d'Enginyeria de Telecomunicaci\'o de Barcelona}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{\href{http://www.etsetb.upc.edu}{Escola T\`ecnica Superior d'Enginyeria de Telecomunicaci\'o de Barcelona}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{\href{http://www.etsetb.upc.edu}{Escola T\`ecnica Superior d'Enginyeria de Telecomunicaci\'o de Barcelona}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
 
 \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
 \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
@@ -106,7 +108,7 @@ headsepline, % Uncomment to get a line under the header
 {\huge \bfseries \ttitle}\\[0.2cm] % Thesis title
 \HRule \\[3.5cm] % Horizontal line
  
-\large \textit{A Degree Thesis Submitted to the Faculty of the \facname ~by}\\[0.2cm]
+\large \textit{A Degree Thesis Submitted to the \facname ~by}\\[0.2cm]
 
 \Large \textbf{\authorname}\\[0.2cm]
 
@@ -115,7 +117,7 @@ headsepline, % Uncomment to get a line under the header
 \Large \textbf{\degreename}\\[2.0cm] % University requirement text
 
 \emph{Advisors:} \\
-\large \textbf{Carles \textsc{Araguz L\'opez}}\\\textbf{Elisenda \textsc{Bou Balust}}\\[1.0cm]
+\large \textbf{Elisenda \textsc{Bou Balust}}\\\textbf{Carles \textsc{Araguz L\'opez}}\\[1.0cm]
 
 \Large \emph{Reporting advisor (ponent):} \\
 \large \textbf{\supname}\\[1.0cm]
@@ -158,7 +160,14 @@ headsepline, % Uncomment to get a line under the header
 %	DEDICATION
 %----------------------------------------------------------------------------------------
 
-\dedicatory{For/Dedicated to/To my\ldots} 
+\dedicatory{
+\vspace{8cm}
+\begin{minipage}[c]{\linewidth}
+\centering
+Dedicated to my family and friends, who are always there when I need them.
+\centering
+\end{minipage}
+} 
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
@@ -166,8 +175,15 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{acknowledgements}
 \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+\bigskip
 
-The acknowledgments and the people to thank go here, don't forget to include your project advisor\ldots
+First of all, I would like to thank Prof. Eduard Alarc\'on, Elisenda Bou and Carles Araguz, the advisors of this project, for the opportunity of carrying out this work and for guiding and helping me during all this time.
+
+To all my family and friends goes my most sincere gratitude for their invaluable affection and support.
+
+I am also very grateful to all the people in the NanoSat Lab who helped me, specially to Marc Marí and Arnau Prat, who introduced me to the software development for space applications, in the context of the ABS project.
+
+Finally, I would like to express my gratitude to those professors of the UPC who knew how to transmit the enthusiasm over what they do at university.
 
 \end{acknowledgements}
 
@@ -178,13 +194,53 @@ The acknowledgments and the people to thank go here, don't forget to include you
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
 
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+Current trends in space systems are towards the design of autonomous spacecraft that are capable to generate their own plans of action based on system constraints, on-board data analysis and mission goals set by ground operators. At the same time, the requests in Earth Observation  applications has forced the exploration of innovative satellite systems such as satellite swarms, constellations, fully-fractionated spacecraft and federated satellite systems. Enabled by miniaturization techniques and small-spacecraft technologies (e.g. nano-satellites), these distributed mission architectures present improved system qualities (i.e. modularity, scalability, resiliency, incremental deployment...) and performance (e.g. spatial resolution, shorter revisit times...)
+
+Although Mission Planning Systems (MPS) for satellites are traditionally ground-based and centralized, providing autonomous capabilities to distributed spacecraft could be the only feasible solution in these new mission architectures where requests are served in a cooperative manner. Regardless of the benefits of autonomous distributed spacecraft, these approaches pose significant challenges in the core component of their planning systems, namely, distributed task schedulers. In this context, this thesis will contribute to the exploration of task schedulers for distributed spacecraft.
+
+The purpose of this thesis is twofold: on the one hand to fully design and implement a distributed task scheduling policy. This approach is targeted for the broad range of distributed satellite missions, presenting an adaptive management policy based on the collaboration between two levels of control for dynamic environments with limited computational capabilities.
+
+On the other hand the performance of this policy is tested in a simulated environment, against another state-of-the-art alternative, which has been also completely implemented. A benchmark framework has been specifically designed for this purpose. The obtained results have allowed to detect the weaknesses and strengths of this policy and the next steps to be taken in order to have a distributed task scheduler prepared for the future distributed spacecraft architectures.
 
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INCLUIR CASTELLANO Y CATALAN %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE (SP)
+%----------------------------------------------------------------------------------------
+
+\begin{abstractes}
+\addchaptertocentry{Resumen}
+
+Las tendencias actuales en los sistemas espaciales se dirigen hacia el diseño de naves espaciales autónomas que sean capaces de generar sus propios planes de acción teniendo en cuenta las limitaciones del sistema, los objetivos de la misión establecidos por los operadores de tierra y los datos obtenidos por la instrumentación de a bordo. Al mismo tiempo, los requerimientos de las aplicaciones de observación de la Tierra han llevado a la exploración de innovadores sistemas de satélites, como los enjambres (\emph{swarms}) de satélites, las constelaciones, los satélites fraccionados y los sistemas de satélites federados. Gracias a las técnicas existentes de miniaturización y las tecnologías orientadas a los satélites de tamaño reducido (como los nanosatélites), estas arquitecturas de misión distribuidas presentan mejoras en cuanto a sistema (como la modularidad, escalabilidad, flexibilidad, implementación incremental,...) y en cuanto al rendimiento (una mejor resolución espacial, periodos de revisión más cortos,...).
+
+Aunque tradicionalmente los sistemas de planificación de misión (MPS) para satélites han sido centralizados y controlados desde tierra, proporcionar una mayor autonomía a las naves espaciales distribuidas podría ser la única solución factible en estas nuevas arquitecturas de misión donde se atienden las peticiones de una manera cooperativa. Independientemente de los beneficios de los sistemas espaciales autónomos, estos enfoques plantean desafíos significativos en el componente principal de sus sistemas de planificación: a saber, los planificadores de tareas distribuidos. En este contexto, esta tesis contribuye a la exploración de los planificadores de tareas para naves espaciales distribuidas.
+
+El propósito de esta tesis es doble: por un lado, diseñar completamente e implementar una política de planificación de tareas distribuida. Esta propuesta está dirigida a toda la amplia gama de sistemas espaciales distribuidos, puesto que presenta una política de gestión adaptativa basada en la colaboración entre dos niveles de control para sistemas con continuos cambios y con capacidades computacionales limitadas.
+
+Por otra parte, la realización de esta política se ha puesto a prueba en un entorno simulado, comparándola con otra alternativa del \emph{estado del arte} en este campo, y que ha sido también completamente implementada. Para este propósito, se ha diseñado un entorno de simulación específico. Los resultados obtenidos han permitido detectar las debilidades y fortalezas de esta política y los próximos pasos a seguir con el fin de tener un planificador de tareas distribuido preparado para las futuras arquitecturas de satélites distribuidas.
+
+\end{abstractes}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE (CA)
+%----------------------------------------------------------------------------------------
+
+\begin{abstractca}
+\addchaptertocentry{Resum}
+
+Les tendències actuals en els sistemes espacials es dirigeixen cap al disseny de satèl.lits autònoms que siguin capaços de generar els seus propis plans d'acció tenint en compte les limitacions del sistema, els objectius de la missió establerts pels operadors de terra i les dades obtingudes per la instrumentació de bord. Alhora, els requeriments de les aplicacions d'observació de la Terra han portat a l'exploració d'innovadors sistemes de satèl.lits, com els eixams (\emph{swarms}) de satèl.lits, les constel.lacions, els satèl.lits fraccionats i els sistemes de satèl.lits federats. Gràcies a les tècniques existents de miniaturització i les tecnologies orientades als satèl.lits de mida reduïda (com els nanosatèl.lits), aquestes arquitectures de missió distribuïdes presenten millores pel que fa al sistema (com ara la modularitat, escalabilitat, flexibilitat, implementació incremental,...) i pel que fa al rendiment (una millor resolució espacial, períodes de revisió més curts,...).
+
+Encara que tradicionalment els sistemes de planificació de missió (MPS) per a satèl.lits han estat centralitzats i controlats des de terra, proporcionar una major autonomia a les naus espacials distribuïdes podria ser l'única solució factible en aquestes noves arquitectures de missió on s'atenen les peticions d'una manera cooperativa. Independentment dels beneficis dels sistemes espacials autònoms, aquests enfocaments plantegen desafiaments significatius en el component principal dels seus sistemes de planificació: a saber, els planificadors de tasques distribuïts. En aquest context, aquesta tesi contribueix a l'exploració dels planificadors de tasques per a naus espacials distribuïdes.
+
+El propòsit d'aquesta tesi és doble: d'una banda, dissenyar completament i implementar una política de planificació de tasques distribuïda. Aquesta proposta està dirigida a tota l'àmplia gamma de sistemes espacials distribuïts, ja que presenta una política de gestió adaptativa basada en la col.laboració entre dos nivells de control per a sistemes amb continus canvis i amb capacitats computacionals limitades.
+
+D'altra banda, la realització d'aquesta política s'ha posat a prova en un entorn simulat, comparant-la amb una altra alternativa de l'\emph{estat de l'art} d'aquest camp, i que ha estat també completament implementada. Per a aquest propòsit, s'ha dissenyat un entorn de simulació específic. Els resultats obtinguts han permès detectar les debilitats i fortaleses d'aquesta política i els propers passos a seguir amb la finalitat de tenir un planificador de tasques distribuït preparat per a les futures arquitectures de satèl·lits distribuïdes.
+
+\end{abstractca}
 
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
@@ -201,16 +257,28 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 %----------------------------------------------------------------------------------------
 
 \begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
-
-\textbf{MPS} & \textbf{M}ission \textbf{P}lanning \textbf{S}ystems\\
+\
+\textbf{GPS} & \textbf{G}lobal \textbf{P}ositioning \textbf{S}ystem\\
+\
+\textbf{MPS} & \textbf{M}ission \textbf{P}lanning \textbf{S}ystem\\
 \
 \textbf{ABS} & \textbf{A}ndroid \textbf{B}eyond the \textbf{S}tratosphere\\
 \
 \textbf{UPC} & \emph{\textbf{U}niversitat \textbf{P}olit\`ecnica de \textbf{C}atalunya}\\
 \
+\textbf{EDD} & \textbf{E}arliest \textbf{D}ue \textbf{D}ate scheduling\\
+\
+\textbf{EDF} & \textbf{E}arliest \textbf{D}eadline \textbf{F}irst scheduling\\
+\
+\textbf{RM}  & \textbf{R}ate \textbf{M}onotonic scheduling\\
+\
 \textbf{IoT} & \textbf{I}nternet \textbf{o}f \textbf{T}hings\\
 \
 \textbf{WSN} & \textbf{W}ireless \textbf{S}ensor \textbf{N}etworks\\
+\
+\textbf{UAV} & \textbf{U}nmanned \textbf{A}erial \textbf{V}ehicle\\
+\
+\textbf{ISL} & \textbf{I}nter-\textbf{S}atellite \textbf{L}ink\\
 \
 \textbf{EST} & \textbf{E}arliest \textbf{S}tart \textbf{T}ime\\
 \
@@ -267,6 +335,12 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 \input{Chapters/Chapter5} 
 
 %----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\printbibliography[heading=bibintoc]
+
+%----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
 
@@ -275,16 +349,8 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-%\input{Appendices/AppendixA}
-%\input{Appendices/AppendixB}
+\input{Appendices/AppendixA}
+\input{Appendices/AppendixB}
 %\input{Appendices/AppendixC}
-
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
-
-\printbibliography[heading=bibintoc]
-
-%----------------------------------------------------------------------------------------
 
 \end{document}  

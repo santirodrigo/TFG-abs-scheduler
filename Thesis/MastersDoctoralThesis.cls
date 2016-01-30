@@ -152,7 +152,7 @@
 \RequirePackage{booktabs} % Required for better table rules
 
 \RequirePackage[centerlast,small,sc]{caption} % Required for customising the captions
-\setlength{\captionmargin}{50pt}
+\setlength{\captionmargin}{20pt}
 
 %----------------------------------------------------------------------------------------
 
@@ -277,14 +277,14 @@ KOMA-script documentation for details.}]{fancyhdr}
 \newcommand\dedicatory[1]{
 	\checktoopen
 	\tttypeout{Dedicatory}
-	\null\vfil
+	\null
 	\thispagestyle{plain}
-	\begin{center}{\Large\slshape #1}\end{center}
-	\vfil\null
+	{\slshape #1}
+	\null
 }
 
 %----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE DESIGN
+%	ABSTRACT PAGE DESIGN (ENGLISH)
 %----------------------------------------------------------------------------------------
 
 \newcommand{\byname}{by}
@@ -313,6 +313,63 @@ KOMA-script documentation for details.}]{fancyhdr}
 {
   \vfil\vfil\vfil\null
 }
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE DESIGN (SPANISH)
+%----------------------------------------------------------------------------------------
+
+\newenvironment{abstractes}{
+	\checktoopen
+	\tttypeout{Resumen}
+	\null\vfil
+	\thispagestyle{plain}
+	\begin{center}
+	{\normalsize \MakeUppercase{Universidad Polit\'ecnica de Catalu\~na} \par} % University name in capitals
+	\bigskip
+	{\huge\textit{Resumen} \par}
+	\bigskip
+	{\normalsize Escuela T\'ecnica Superior de Ingenier\'ia de Telecomunicaci\'on de Barcelona \par} % Faculty name
+	\bigskip
+	{\normalsize Grado en Ciencias y Tecnolog\'ias de las Telecomunicaciones\par} % Degree name
+	\bigskip
+	{\normalsize\bfseries Un sistema distribuido escalable de autonom\'ia para misiones de sat\'elites fraccionados \par} % Thesis title
+	\medskip
+	{\normalsize por \authorname \par} % Author name
+	\bigskip
+	\end{center}
+}
+{
+  \vfil\vfil\vfil\null
+}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE DESIGN (CATALAN)
+%----------------------------------------------------------------------------------------
+
+\newenvironment{abstractca}{
+	\checktoopen
+	\tttypeout{Resum}
+	\null\vfil
+	\thispagestyle{plain}
+	\begin{center}
+	{\normalsize \MakeUppercase{\univname} \par} % University name in capitals
+	\bigskip
+	{\huge\textit{Resum} \par}
+	\bigskip
+	{\normalsize \facname \par} % Faculty name
+	\bigskip
+	{\normalsize Grau en Ci\`encies i Tecnologies de Telecomunicaci\'o \par} % Degree name
+	\bigskip
+	{\normalsize\bfseries Un sistema distribu\"it escalable de autonomia per missions de sat\`el.lits fraccionats \par} % Thesis title
+	\medskip
+	{\normalsize per \authorname \par} % Author name
+	\bigskip
+	\end{center}
+}
+{
+  \vfil\vfil\vfil\null
+}
+
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS PAGE DESIGN

@@ -37,18 +37,22 @@ else
 	echo "drun." >> "${outdir}/swipl_execution.in"
 	cd Task_Planner/
 	maxtime=0
+	summem=0
 	for i in `seq 1 $sats`;
 	do
 		cp task_planner_globals_${i}.pl task_planner_globals.pl
 		cp task_planner_globals_${i}.pl "../${outdir}/task_planner_globals_${i}.pl"
-		/usr/bin/time -f "%e" -o output_${i}.txt swipl < "../${outdir}/swipl_execution.in" > "../${outdir}/swipl_execution_${i}.out" 2> "../${outdir}/swipl_execution_${i}.err"
-		temp=`cat output_${i}.txt`
+		/usr/bin/time -f "%M-%e" -o output_${i}.txt swipl < "../${outdir}/swipl_execution.in" > "../${outdir}/swipl_execution_${i}.out" 2> "../${outdir}/swipl_execution_${i}.err"
+		temp=`cat output_${i}.txt | cut -d "-" -f 2`
+		mem=`cat output_${i}.txt | cut -d "-" -f 1`
 		rm output_${i}.txt
-		comp=`echo $maxtime'>'$temp | bc -l`
-		if [ $comp -eq 0 ]
+		comptemp=`echo $maxtime'>'$temp | bc -l`
+		summem=`echo "$summem + $mem" | bc -l`
+		if [ $comptemp -eq 0 ]
 		then
 			maxtime=$temp
 		fi
+		
 		lastpath=`cat out/last_path.out`
 		`cp -r out/${i} ../${outdir}`
 		`cp out/${lastpath}* ../${outdir}/${i}`
@@ -62,5 +66,6 @@ else
 	mem=`cat output.txt | cut -d "-" -f 1`
 	tc=`cat taskcount.txt`
 	totaltime=`echo "$temp + $maxtime" | bc -l`
-	echo "$mem - $totaltime - $tc"
+	totalmem=`echo "$mem + $summem" | bc -l`
+	echo "$totalmem - $mem - $summem - $totaltime - $temp - $maxtime - $tc"
 fi

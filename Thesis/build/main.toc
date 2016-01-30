@@ -3,32 +3,36 @@
 \select@language {english}
 \contentsline {chapter}{Acknowledgements}{v}{section*.1}
 \contentsline {chapter}{Abstract}{vii}{section*.2}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.6}
-\contentsline {section}{\numberline {1.1}Scheduling tasks: a hard optimization problem}{1}{section.7}
-\contentsline {section}{\numberline {1.2}The Android Beyond the Stratosphere Project}{1}{section.8}
-\contentsline {section}{\numberline {1.3}Distributed systems}{1}{section.9}
-\contentsline {subsection}{\numberline {1.3.1}Distributed algorithms}{2}{subsection.10}
-\contentsline {section}{\numberline {1.4}The Local-Global proposal}{2}{section.11}
-\contentsline {subsection}{\numberline {1.4.1}Previous work}{2}{subsection.12}
-\contentsline {chapter}{\numberline {2}State of the art}{3}{chapter.13}
-\contentsline {section}{\numberline {2.1}Consensus: the key for a non-centralized distributed system}{3}{section.14}
-\contentsline {section}{\numberline {2.2}Comparison: algorithms chosen to test the Local-Global}{3}{section.15}
-\contentsline {subsection}{\numberline {2.2.1}A market-based approach}{3}{subsection.16}
-\contentsline {subsection}{\numberline {2.2.2}[A pure consensus algorithm]}{3}{subsection.17}
-\contentsline {chapter}{\numberline {3}Project development}{5}{chapter.18}
-\contentsline {section}{\numberline {3.1}Local-Global implementation}{5}{section.19}
-\contentsline {subsection}{\numberline {3.1.1}Reusing a ProLog local scheduler}{5}{subsection.20}
-\contentsline {subsection}{\numberline {3.1.2}Optimizing the optimization: the Global algorithm}{5}{subsection.21}
-\contentsline {section}{\numberline {3.2}The price-based adaptive Task Allocator}{5}{section.22}
-\contentsline {subsection}{\numberline {3.2.1}Erlang: programming for distributed systems}{6}{subsection.23}
-\contentsline {subsection}{\numberline {3.2.2}Modifications over the original proposal}{6}{subsection.24}
-\contentsline {section}{\numberline {3.3}[Implementing a simple Ring consensus algorithm]}{6}{section.25}
-\contentsline {chapter}{\numberline {4}Results}{7}{chapter.26}
-\contentsline {section}{\numberline {4.1}Performance Tests}{7}{section.27}
-\contentsline {subsection}{\numberline {4.1.1}Local-Global}{7}{subsection.28}
-\contentsline {subsection}{\numberline {4.1.2}Price-based}{7}{subsection.29}
-\contentsline {subsection}{\numberline {4.1.3}[Ring]}{7}{subsection.30}
-\contentsline {subsection}{\numberline {4.1.4}The comparison}{8}{subsection.31}
-\contentsline {section}{\numberline {4.2}Solutions quality: fine-grained descriptive tests}{8}{section.32}
-\contentsline {section}{\numberline {4.3}Conclussions and future development}{8}{section.33}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{9}{appendix.34}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.8}
+\contentsline {section}{\numberline {1.1}Scheduling tasks: a hard optimization problem}{1}{section.9}
+\contentsline {section}{\numberline {1.2}Distributed systems}{2}{section.10}
+\contentsline {subsection}{\numberline {1.2.1}Distributed algorithms}{3}{subsection.11}
+\contentsline {section}{\numberline {1.3}The Android Beyond the Stratosphere Project}{3}{section.12}
+\contentsline {section}{\numberline {1.4}Previous work}{4}{section.13}
+\contentsline {subsection}{\numberline {1.4.1}The Local-Global proposal}{4}{subsection.14}
+\contentsline {chapter}{\numberline {2}State of the art}{7}{chapter.22}
+\contentsline {section}{\numberline {2.1}A taxonomy of the existing task scheduler paradigms}{7}{section.23}
+\contentsline {section}{\numberline {2.2}Comparison: algorithms chosen to test the Local-Global}{8}{section.24}
+\contentsline {subsection}{\numberline {2.2.1}A market-based approach}{9}{subsection.25}
+\contentsline {subsection}{\numberline {2.2.2}Another ring algorithm}{11}{subsection.33}
+\contentsline {chapter}{\numberline {3}Design and implementation of a distributed task scheduler}{13}{chapter.34}
+\contentsline {section}{\numberline {3.1}Local-Global implementation}{13}{section.35}
+\contentsline {subsection}{\numberline {3.1.1}Adapting a Prolog satellite local scheduler}{13}{subsection.36}
+\contentsline {subsubsection}{Mathematically describing a scheduling solution}{15}{section*.42}
+\contentsline {subsection}{\numberline {3.1.2}Optimizing the optimization: the Global algorithm}{18}{subsection.52}
+\contentsline {subsubsection}{An exploding combinatorial problem}{19}{section*.57}
+\contentsline {subsubsection}{An efficiency-based design of the combinatorial search}{20}{section*.59}
+\contentsline {subsubsection}{Coordination with the \emph {Local} entities}{22}{section*.60}
+\contentsline {section}{\numberline {3.2}The price-based adaptive Task Allocator}{22}{section.61}
+\contentsline {subsection}{\numberline {3.2.1}A state graph model}{22}{subsection.62}
+\contentsline {subsection}{\numberline {3.2.2}Modifications over the original proposal}{24}{subsection.70}
+\contentsline {chapter}{\numberline {4}Results}{27}{chapter.75}
+\contentsline {section}{\numberline {4.1}Parametrizing a distributed task scheduler}{27}{section.76}
+\contentsline {section}{\numberline {4.2}Performance Tests}{28}{section.77}
+\contentsline {subsection}{\numberline {4.2.1}Local-Global}{29}{subsection.78}
+\contentsline {subsection}{\numberline {4.2.2}Price-based}{30}{subsection.79}
+\contentsline {subsection}{\numberline {4.2.3}The comparison}{30}{subsection.80}
+\contentsline {chapter}{\numberline {5}Conclusions}{31}{chapter.81}
+\contentsline {section}{\numberline {5.1}Results analysis}{31}{section.82}
+\contentsline {section}{\numberline {5.2}Future work}{31}{section.83}
+\contentsline {chapter}{Bibliography}{33}{appendix*.84}
